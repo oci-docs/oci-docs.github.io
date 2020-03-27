@@ -3,6 +3,56 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/010.oci_101/basic_concept/</loc>
+    <lastmod>2020-03-26T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/</loc>
+    <lastmod>2020-03-26T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/basic_concept/oci_introduction/</loc>
+    <lastmod>2020-03-25T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/hands-on/</loc>
+    <lastmod>2020-03-26T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/basic_concept/terminologies/</loc>
+    <lastmod>2020-03-26T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/basic_concept/oci_classic_and_oci_gen2/</loc>
+    <lastmod>2020-03-26T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/basic_concept/oci_resion_info/</loc>
+    <lastmod>2020-03-01T08:54:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/basic_concept/oci_services_in_regions/</loc>
+    <lastmod>2020-03-05T08:54:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/basic_concept/oci_free_trial/</loc>
+    <lastmod>2020-03-27T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/</loc>
+    <lastmod>2020-03-26T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2020-03-25T14:11:05+09:00</lastmod>
   </url>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>오라클 클라우드 사용자 가이드</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -9,13 +8,15 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위하여 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위하여 주요 문서를 정리합니다." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="OCI(Oracle Cloud Infrasturcture)" />
+<meta property="og:description" content="OCI(Oracle Cloud Infrastructure)를 소개합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/010.oci_101/basic_concept/oci_introduction/" />
 
 
 
+<meta property="article:published_time" content="2020-03-25T09:11:05&#43;09:00"/>
+<meta property="article:modified_time" content="2020-03-25T09:11:05&#43;09:00"/>
 
 
 
@@ -32,7 +33,7 @@
 
 
 
-<title>404 Page not found :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI(Oracle Cloud Infrasturcture) :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -44,7 +45,7 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위하여 주요 문서를 정리합니다.">
+<meta name="description" content="OCI(Oracle Cloud Infrastructure)를 소개합니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -67,7 +68,7 @@
 
     
   </head>
-  <body data-url="">
+  <body data-url="/010.oci_101/basic_concept/oci_introduction/">
     
       <header>
   <div class="logo">
@@ -101,21 +102,21 @@
 <article>
   <aside>
     <ul class="menu">
-    <li data-nav-id="/010.oci_101/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_101/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_101/">OCI(Oracle Cloud)-101 Course</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/010.oci_101/basic_concept/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_101/basic_concept/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_101/basic_concept/">OCI 101: 기본 개념</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_101/basic_concept/oci_introduction/" class="dd-item">
+      <li data-nav-id="/010.oci_101/basic_concept/oci_introduction/" class="dd-item active">
         <div>
           <a href="/010.oci_101/basic_concept/oci_introduction/">
             OCI(Oracle Cloud Infrasturcture)
@@ -225,7 +226,7 @@
     <option value="/010.oci_101/basic_concept/" >
   - 
    OCI 101: 기본 개념</option> 
-      <option value="/010.oci_101/basic_concept/oci_introduction/" >-- OCI(Oracle Cloud Infrasturcture)</option>
+      <option value="/010.oci_101/basic_concept/oci_introduction/"  selected>-- OCI(Oracle Cloud Infrasturcture)</option>
       <option value="/010.oci_101/basic_concept/terminologies/" >-- OCI 기초 용어 정리</option>
       <option value="/010.oci_101/basic_concept/oci_classic_and_oci_gen2/" >-- OCI Classic과 OCI Gen2</option>
       <option value="/010.oci_101/basic_concept/oci_resion_info/" >-- OCI 리전 정보</option>
@@ -260,7 +261,8 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>404 Page not found</h1>
+    <h1>OCI(Oracle Cloud Infrasturcture)</h1>
+    <p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/020.jpg" alt="OCI(Oracle Cloud Infrasturcture)"></p>
 
 
      
@@ -268,30 +270,69 @@
   
     
     
-	<h1>Error</h1>
-	<p>
-	</p>
-	<p>Woops. Looks like this page doesn&#39;t exist.</p>
-	<p></p>
-	<p><a href="/">Go to homepage</a></p>
-	<p><img src="/images/gopher-404.jpg" style="width:50%"></img></p>    
+    
+    
+
+<p>OCI(Oracle Cloud Infrastructure)는 Oracle 제공하는 클라우드 서비스입니다. 오라클은 2016년 하반기에 OCI 서비스를 시작했습니다. 이 문서에서는 OCI 서비스에 대한 주요 특징을 소개합니다.</p>
+
+<hr />
+
+<p>이번 문서는 다음과 같은 목차로 구성됩니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><nav id="TableOfContents">
+<ul>
+<li><a href="#오라클-클라우드">오라클 클라우드</a></li>
+<li><a href="#참고-문서">참고 문서</a></li>
+</ul>
+</nav>
+</div></div>
+
+
+<hr />
+
+<h1 id="오라클-클라우드">오라클 클라우드</h1>
+
+<p>Oracle Cloud의 공식 브랜드 명은 OCI(Oracle Cloud Infrastructure)입니다. 오라클은 2016년 하반기에 OCI 서비스를 시작했습니다. OCI에서 특정 지역에 구성된 단위 데이터 센터를 리전(Region)이라고 합니다. 2020년 3월 기준 OCI는 전 세계에 16개 리전을 서비스하고 있습니다. 2020년 말까지 총 36개 리전까지 확대할 계획에 있습니다.</p>
+
+<p>Oracle Cloud Infrastructure는 탄력적이고 유연한 자원 관리의 특징을 갖는 퍼블릭 클라우드와 온-프레미스 인프라의 정밀한 제어, 보안 및 시스템 예측 가능성을 결합한 클라우드 서비스를 지향합니다.</p>
+
+<h1 id="참고-문서">참고 문서</h1>
+
+<ul>
+<li><a href="https://www.oracle.com/a/ocom/docs/cloud/oracle-cloud-infrastructure-platform-overview-wp.pdf" target="_blank">Oracle Cloud Infrastructure Platform Overview <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+</ul>
+
+
     
     
       <div class="alert alert-info" role="alter">
-  <li><strong>문서 생성:</strong> 0001-01-01 00:00 / <string>최종 문서 수정:</strong> 0001-01-01 00:00 </li>
+  <li><strong>문서 생성:</strong> 2020-03-25 09:11 / <string>최종 문서 수정:</strong> 2020-03-25 09:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-</div>
+<a class="nav nav-prev" href="/010.oci_101/basic_concept/" title="OCI 101: 기본 개념"> <i class="fa fa-chevron-left"></i><label>OCI 101: 기본 개념</label></a>
+    <a class="nav nav-next" href="/010.oci_101/basic_concept/terminologies/" title="OCI 기초 용어 정리" style="margin-right: 0px;"><label>OCI 기초 용어 정리</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
-      <div class="panel panel-danger">
+      <div class="row">
+    <div class="author left">
+        <img alt="김태완 avatar" src="https://taewanmerepo.github.io//taewan2.jpg" height="90" width="90">
+    </div>
+    <div class="author right">
+		<li><b>작성자: 김태완</b></li>
+        <li>사랑하는 민수와 데이터 관리, 데이터 분석 &amp; 클라우드에 집중하고 있습니다.</li>
+        <li>E-mail: taewanme@gmail.com</li>
+    </div>
+</div><div class="panel panel-danger">
 <div class="panel-heading">Disclaimer</div>
 <div class="panel-body">이 저작물은 Oracle과 관계없이 개인으로서 개인의 시간을 할애하여 작성된 글 입니다. 본 글의 내용, 입장, 예측은 Oracle을 공식적으로 <font color="red"><bold>절대</bold></font> 대변하지 않습니다.</div>
 </div>
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_101/basic_concept/oci_introduction/"></div>
 
   </div>
 
@@ -305,6 +346,10 @@
 
     
 
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 25/03/2020
+    </div>
     
   </div>
 
@@ -361,5 +406,3 @@
 
   </body>
 </html>
-
-
