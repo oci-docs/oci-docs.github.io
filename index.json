@@ -22,10 +22,10 @@
 },
 {
 	"uri": "/010.oci_101/hands-on/",
-	"title": "OCI 101: 기초 핸즈온",
+	"title": "OCI 101: 입문 핸즈온",
 	"tags": [],
 	"description": "OCI 기초 핸즈온입니다.",
-	"content": " OCI 101: 기본 개념 OCI 101: Basic Hands-on  "
+	"content": "//todo\n"
 },
 {
 	"uri": "/010.oci_101/basic_concept/terminologies/",
