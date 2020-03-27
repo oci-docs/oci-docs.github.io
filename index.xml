@@ -12,14 +12,14 @@
     
     
     <item>
-      <title>OCI(Oracle Cloud Infrasturcture)</title>
+      <title>Oracle Cloud Infrasturcture</title>
       <link>/010.oci_101/basic_concept/oci_introduction/</link>
       <pubDate>Wed, 25 Mar 2020 09:11:05 +0900</pubDate>
       
       <guid>/010.oci_101/basic_concept/oci_introduction/</guid>
       <description>OCI(Oracle Cloud Infrastructure)는 Oracle 제공하는 클라우드 서비스입니다. 오라클은 2016년 하반기에 OCI 서비스를 시작했습니다. 이 문서에서는 OCI 서비스에 대한 주요 특징을 소개합니다.
 이번 문서는 다음과 같은 목차로 구성됩니다.
- 오라클 클라우드  OCI 고가용성 인프라 OCI 안전성 설계  참고 문서    오라클 클라우드 오라클 클라우드는 탄력적이고 유연한 자원 관리의 특징을 갖는 퍼블릭 클라우드와 온-프레미스 인프라의 정밀한 제어, 보안 및 시스템 예측 가능성을 결합한 클라우드 서비스를 지향합니다. 이런 디자인 원칙을 적용한 Gen2 데이터센터를 새로 설계하고 Gen2 디자인에 근거하여 새로운 데이터 센터를 만들어 왔습니다.</description>
+ 오라클 클라우드  OCI 고가용성 인프라 OCI 안전성 설계 고성능 클라우드 자원 보안 우선 인프라  참고 문서    오라클 클라우드 오라클 클라우드는 탄력적이고 유연한 자원 관리의 특징을 갖는 퍼블릭 클라우드와 온-프레미스 인프라의 정밀한 제어, 보안 및 시스템 예측 가능성을 결합한 클라우드 서비스를 지향합니다.</description>
     </item>
     
     <item>
