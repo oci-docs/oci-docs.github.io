@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-27T11:37:57 KST">
+<meta name="revised" content="2020-03-27T12:03:42 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위하여 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -314,6 +314,10 @@
 <p>각 AD(Availability Domain)는 내부적으로 Fault Domain 이용하여  VM(Virtual Machine) 및 BM(Bare Metal) 컴퓨트 인스턴스의 가용성을 관리합니다. Fault Domain은 AD 내부 하드웨어와 인프라스트럭처 그룹입니다. 각 AD은 3개 Fault Domain을 갖습니다. Region를 구성하는 AD가 물리 자원을 공유하지 않듯이, AD 내부에 3개 Fault Domain은 물리 자원을 공유하지 않습니다. 한 Fault Domain에서 발생한 장애 및 유지보수 관련 서비스 중단은 다른 Fault Domain에 영향을 미치지 않습니다. 새 Compute 인스턴스를 생성할 때, 사용자는 Fault Domain을 선택할 수 있습니다. 사용자가 선택하지 않으면, 시스템이 자동으로 지정합니다. 현재 인스턴스에서 Fault Domain을 변경할 수 없습니다. Fault Domain 설정에 주의해야 합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/060.jpg?classes=border,shadow" alt="" /></p>
+
+<p>OCI 자원을 생성할 때, 다음 그림과 같이 AD와 Fault Domain을 지정하여 만들 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/070.jpg?classes=border,shadow" alt="" /></p>
 
 <h2 id="oci-안전성-설계">OCI 안전성 설계</h2>
 
