@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-27T10:44:04 KST">
+<meta name="revised" content="2020-03-27T11:37:57 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위하여 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -284,7 +284,8 @@
 <ul>
 <li><a href="#오라클-클라우드">오라클 클라우드</a>
 <ul>
-<li><a href="#안전성-설계">안전성 설계</a></li>
+<li><a href="#oci-고가용성-인프라">OCI 고가용성 인프라</a></li>
+<li><a href="#oci-안전성-설계">OCI 안전성 설계</a></li>
 </ul></li>
 <li><a href="#참고-문서">참고 문서</a></li>
 </ul>
@@ -302,7 +303,19 @@
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/040.jpg?classes=border,shadow" alt="" /></p>
 
-<h2 id="안전성-설계">안전성 설계</h2>
+<h2 id="oci-고가용성-인프라">OCI 고가용성 인프라</h2>
+
+<p>OCI는 리전(Region)과 AD(Availability Domains)로 운영됩니다. 리전은 데이터 센터가 운영되는 지리적인 영역이고 AD는 리전을 구성하고 실제 OCI 서비스가 운영되는 데이터 센터입니다. 각 OCI 리전은 1개에서 최대 3개 AD로 구성됩니다. 리전은 오라클 클라우드가 서비스되는 물리적 데이터 센터인 AD를 묶는 논리적 단위입니다. 따라서 서비스 지역의 물리적 AD를 추상화하는 서비스 거점이라는 의미를 갖습니다. 리전은 완전히 독립된 OCI 최상위 단위입니다. 각 리전은 네트워크로 연결될 뿐 모든 서비스와 자원은 완전히 격리됩니다.</p>
+
+<p>리전을 구성하는 각 AD는 어떤 물리 자원도 공유하지 않는 물리적으로 완전히 독립된 데이터 센터입니다. 따라서 특정 AD 장애가 다른 AD로 파급되지 않습니다. AD는 Region 고가용성을 위한 구성입니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/040.jpg?classes=border,shadow" alt="" /></p>
+
+<p>각 AD(Availability Domain)는 내부적으로 Fault Domain 이용하여  VM(Virtual Machine) 및 BM(Bare Metal) 컴퓨트 인스턴스의 가용성을 관리합니다. Fault Domain은 AD 내부 하드웨어와 인프라스트럭처 그룹입니다. 각 AD은 3개 Fault Domain을 갖습니다. Region를 구성하는 AD가 물리 자원을 공유하지 않듯이, AD 내부에 3개 Fault Domain은 물리 자원을 공유하지 않습니다. 한 Fault Domain에서 발생한 장애 및 유지보수 관련 서비스 중단은 다른 Fault Domain에 영향을 미치지 않습니다. 새 Compute 인스턴스를 생성할 때, 사용자는 Fault Domain을 선택할 수 있습니다. 사용자가 선택하지 않으면, 시스템이 자동으로 지정합니다. 현재 인스턴스에서 Fault Domain을 변경할 수 없습니다. Fault Domain 설정에 주의해야 합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/060.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="oci-안전성-설계">OCI 안전성 설계</h2>
 
 <p>OCI 인프라스트럭처에는 &ldquo;Off-box&rdquo;/격리 네트워크 가상화가 적용되어 있습니다. 이 네트워크 및 IO 가상화 위에 서버 스택이 배치됩니다. 하이퍼바이저 오버헤드 및 주변 환경 간섭이 없는 클라우드 인프라를 사용할 수 있습니다. 다양한 서비스 자원(VM, 컨테이너, NoSQL, ExaData)이 OCI 배포될 때, Off-Box 네트워크 가상화를 통해서 상호간의 간섭을 방지하고 보안 관점에서 안정한 인프라를 활용할 수 있습니다.</p>
 
