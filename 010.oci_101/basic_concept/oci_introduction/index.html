@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-27T10:17:56 KST">
+<meta name="revised" content="2020-03-27T10:44:04 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위하여 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -304,9 +304,9 @@
 
 <h2 id="안전성-설계">안전성 설계</h2>
 
-<p>OCI는 &ldquo;Off-box&rdquo; 또는 격리 네트워크 가상화를 구현한 서비스를  구현 한 최초의 주요 클라우드 제공 업체로, 서버 스택에서 네트워크 및 IO 가상화를 가져 와서 네트워크에 배치합니다. 결과적으로 고객은 전체 소프트웨어 정의 계층 3 네트워크 토폴로지를 사용하여 셀프 서비스, 하이퍼 바이저 오버 헤드가없는 전용 호스트 또는 시끄러운 이웃 또는 공유 리소스를 프로비저닝 할 수 있습니다.</p>
+<p>OCI 인프라스트럭처에는 &ldquo;Off-box&rdquo;/격리 네트워크 가상화가 적용되어 있습니다. 이 네트워크 및 IO 가상화 위에 서버 스택이 배치됩니다. 하이퍼바이저 오버헤드 및 주변 환경 간섭이 없는 클라우드 인프라를 사용할 수 있습니다. 다양한 서비스 자원(VM, 컨테이너, NoSQL, ExaData)이 OCI 배포될 때, Off-Box 네트워크 가상화를 통해서 상호간의 간섭을 방지하고 보안 관점에서 안정한 인프라를 활용할 수 있습니다.</p>
 
-<p>Oracle Cloud Infrastructure was the first major cloud provider to implement “off-box” or isolated network virtualization, which takes network and IO virtualization out of the server stack and puts it in the network. As a result, customers can provision self-service, dedicated hosts with no hypervisor overhead, noisy neighbors, or shared resources with a full software-defined layer 3 network topology.</p>
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/050.jpg?classes=border,shadow" alt="" /></p>
 
 <h1 id="참고-문서">참고 문서</h1>
 
