@@ -76,6 +76,17 @@
     </item>
     
     <item>
+      <title>OCI 사용자 ID 관리 서비스</title>
+      <link>/010.oci_101/basic_concept/oracle_cloud_identity_management_services/</link>
+      <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
+      
+      <guid>/010.oci_101/basic_concept/oracle_cloud_identity_management_services/</guid>
+      <description>오라클 클라우드에는 사용자 ID를 관리하는 Oracle IDCS(Identity Cloud Service)와 OCI IAM(Identity &amp;amp; Access Management) 두 개 서비스가 있습니다. OCI 계정(Tenante)을 등록하면 두 서비스는 각각 동일한 ID와 패스워드를 갖는 Admin 사용자가 만들어집니다. 두 ID 관리 서비스는 각각 ID 만들고, 이 ID가 로그인하는 방법을 제공합니다. 이 문서에서는 Oracle IDCS와 OCI IAM에 대하여 비교하고 두 서비스가 제공하는 로그인 방식에 대하여 정리합니다.
+이번 문서는 다음과 같은 목차로 구성됩니다.
+ Oracle IDCS와 OCI IAM  OCI가 갖는 두 가지 의미 OCI IAM Oracle IDCS Oracle IDCS &amp;amp; OCI IAM 비교 오라클 클라우드 로그인 옵션  오라클 클라우드 기본 로그인 OCI 홈 리전 로그인   인증 체계 선택 참고문서    Oracle IDCS와 OCI IAM 오라클 클라우드에서 ID를 관리하는 Oracle IDCS와 OCI IAM 서비스에 대하여 간략히 알아보겠습니다.</description>
+    </item>
+    
+    <item>
       <title>클라우드 서비스 용어 비교</title>
       <link>/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/</link>
       <pubDate>Thu, 26 Mar 2020 09:11:05 +0900</pubDate>

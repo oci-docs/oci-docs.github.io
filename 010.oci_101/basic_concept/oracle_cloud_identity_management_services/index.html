@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2020-03-28T11:54:31 KST">
+
+<meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
+<meta name="generator" content="Hugo 0.27.1" />
+<meta property="og:title" content="OCI 사용자 ID 관리 서비스" />
+<meta property="og:description" content="OCI 사용자의 ID 관리 체계인 Oracle IDCS(Identity Cloud Service)와 OCI IAM(Identity &amp; Access Management)에 대하여 소개합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/010.oci_101/basic_concept/oracle_cloud_identity_management_services/" />
+
+
+
+<meta property="article:published_time" content="2020-03-27T09:11:05&#43;09:00"/>
+<meta property="article:modified_time" content="2020-03-27T09:11:05&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+
+
+<title>OCI 사용자 ID 관리 서비스 :: 오라클 클라우드 사용자 가이드</title>
+
+<link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "\/";
+</script>
+<meta name="description" content="OCI 사용자의 ID 관리 체계인 Oracle IDCS(Identity Cloud Service)와 OCI IAM(Identity &amp; Access Management)에 대하여 소개합니다.">
+
+
+<link href='/css/railload.css' rel="stylesheet"/>
+
+
+<link href="/css/twstyle.css" rel="stylesheet">
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?style=Sons-Of-Obsidian"></script>
+
+
+<style>
+    li.L0, li.L1, li.L2, li.L3,
+    li.L5, li.L6, li.L7, li.L8
+       { list-style-type: decimal !important }
+</style>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162015179-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162015179-1');
+</script>
+
+
+
+
+
+    
+  </head>
+  <body data-url="/010.oci_101/basic_concept/oracle_cloud_identity_management_services/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="/">오라클 클라우드 사용자 가이드</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://cloud.oracle.com"  rel="noopener">
+                  <i class='fa fa-cloud'></i> <label>Oracle Cloud</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://docs.cloud.oracle.com/"  rel="noopener">
+                  <i class='fa fa-book'></i> <label>OCI Docs</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="http://taewan.kim/"  rel="noopener">
+                  <i class='fa fa-send'></i> <label>taewan.kim blog</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+    <li data-nav-id="/000.index/" class="dd-item
+        ">
+      <div>
+      <a href="/000.index/">오라클 클라우드 사용자 가이드</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/010.oci_101/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_101/">OCI(Oracle Cloud)-101 클래스</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/010.oci_101/basic_concept/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_101/basic_concept/">OCI 101: 기본 개념</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/010.oci_101/basic_concept/oci_introduction/" class="dd-item">
+        <div>
+          <a href="/010.oci_101/basic_concept/oci_introduction/">
+            Oracle Cloud Infrasturcture
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_101/basic_concept/terminologies/" class="dd-item">
+        <div>
+          <a href="/010.oci_101/basic_concept/terminologies/">
+            OCI 기초 용어 정리
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_101/basic_concept/oci_classic_and_oci_gen2/" class="dd-item">
+        <div>
+          <a href="/010.oci_101/basic_concept/oci_classic_and_oci_gen2/">
+            OCI Classic과 OCI Gen2
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_101/basic_concept/oci_resion_info/" class="dd-item">
+        <div>
+          <a href="/010.oci_101/basic_concept/oci_resion_info/">
+            OCI 리전 정보
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_101/basic_concept/oci_services_in_regions/" class="dd-item">
+        <div>
+          <a href="/010.oci_101/basic_concept/oci_services_in_regions/">
+            OCI 리전별 서비스 현황 
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_101/basic_concept/oci_free_trial/" class="dd-item">
+        <div>
+          <a href="/010.oci_101/basic_concept/oci_free_trial/">
+            OCI Free Tier 계정 등록
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_101/basic_concept/oracle_cloud_identity_management_services/" class="dd-item active">
+        <div>
+          <a href="/010.oci_101/basic_concept/oracle_cloud_identity_management_services/">
+            OCI 사용자 ID 관리 서비스
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/" class="dd-item">
+        <div>
+          <a href="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/">
+            클라우드 서비스 용어 비교
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/010.oci_101/hands-on/" class="dd-item alwaysopen
+        ">
+      <div>
+      <a href="/010.oci_101/hands-on/">OCI 101: 입문 핸즈온</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section><hr />
+<div class="widget-categories widget">
+	<h4 class="widget__title">&nbsp;&nbsp;License</h4>
+	<div class="widget__content">
+		&nbsp;&nbsp;<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+	</div>
+	<div class="widget__content">
+        <div>
+        이 저작물은 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+        </div>
+	</div>
+</div>
+<hr />
+<div>
+    <hr/>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8469722754608892"
+         data-ad-slot="5594090168"
+         data-ad-format="auto"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <hr/>  
+  </div>
+
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/000.index/" >
+   오라클 클라우드 사용자 가이드</option>
+    <option value="/010.oci_101/" >
+   OCI(Oracle Cloud)-101 클래스</option> 
+    <option value="/010.oci_101/basic_concept/" >
+  - 
+   OCI 101: 기본 개념</option> 
+      <option value="/010.oci_101/basic_concept/oci_introduction/" >-- Oracle Cloud Infrasturcture</option>
+      <option value="/010.oci_101/basic_concept/terminologies/" >-- OCI 기초 용어 정리</option>
+      <option value="/010.oci_101/basic_concept/oci_classic_and_oci_gen2/" >-- OCI Classic과 OCI Gen2</option>
+      <option value="/010.oci_101/basic_concept/oci_resion_info/" >-- OCI 리전 정보</option>
+      <option value="/010.oci_101/basic_concept/oci_services_in_regions/" >-- OCI 리전별 서비스 현황 </option>
+      <option value="/010.oci_101/basic_concept/oci_free_trial/" >-- OCI Free Tier 계정 등록</option>
+      <option value="/010.oci_101/basic_concept/oracle_cloud_identity_management_services/"  selected>-- OCI 사용자 ID 관리 서비스</option>
+      <option value="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/" >-- 클라우드 서비스 용어 비교</option>
+  
+    <option value="/010.oci_101/hands-on/" >
+  - 
+   OCI 101: 입문 핸즈온</option> 
+  
+  
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    <h1>OCI 사용자 ID 관리 서비스</h1>
+    <p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/200.jpg" alt="OCI 사용자 ID 관리 서비스"></p>
+
+
+     
+      
+  
+    
+    
+    
+    
+
+<p>오라클 클라우드에는 사용자 ID를 관리하는 Oracle IDCS(Identity Cloud Service)와 OCI IAM(Identity &amp; Access Management) 두 개 서비스가 있습니다. <strong>OCI</strong> 계정(Tenante)을 등록하면 두 서비스는 각각 동일한 ID와 패스워드를 갖는 Admin 사용자가 만들어집니다. 두 ID 관리 서비스는 각각 ID 만들고, 이 ID가 로그인하는 방법을 제공합니다. 이 문서에서는 Oracle IDCS와 OCI IAM에 대하여 비교하고 두 서비스가 제공하는 로그인 방식에 대하여 정리합니다.</p>
+
+<hr />
+
+<p>이번 문서는 다음과 같은 목차로 구성됩니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><nav id="TableOfContents">
+<ul>
+<li><a href="#oracle-idcs와-oci-iam">Oracle IDCS와 OCI IAM</a>
+<ul>
+<li><a href="#oci가-갖는-두-가지-의미">OCI가 갖는 두 가지 의미</a></li>
+<li><a href="#oci-iam">OCI IAM</a></li>
+<li><a href="#oracle-idcs">Oracle IDCS</a></li>
+<li><a href="#oracle-idcs-oci-iam-비교">Oracle IDCS &amp; OCI IAM 비교</a></li>
+<li><a href="#오라클-클라우드-로그인-옵션">오라클 클라우드 로그인 옵션</a>
+<ul>
+<li><a href="#오라클-클라우드-기본-로그인">오라클 클라우드 기본 로그인</a></li>
+<li><a href="#oci-홈-리전-로그인">OCI 홈 리전 로그인</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#인증-체계-선택">인증 체계 선택</a></li>
+<li><a href="#참고문서">참고문서</a></li>
+</ul>
+</nav>
+</div></div>
+
+
+<hr />
+
+<h1 id="oracle-idcs와-oci-iam">Oracle IDCS와 OCI IAM</h1>
+
+<p>오라클 클라우드에서 ID를 관리하는 Oracle IDCS와 OCI IAM 서비스에 대하여 간략히 알아보겠습니다.</p>
+
+<h2 id="oci가-갖는-두-가지-의미">OCI가 갖는 두 가지 의미</h2>
+
+<p>&ldquo;<a href="/010.oci_101/basic_concept/oci_classic_and_oci_gen2/" target="_blank">OCI Classic과 OCI Gen2 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+&rdquo; 문서에서 소개한 것처럼, 초기에 오라클 클라우드는 OPC(Oracle Public Cloud)라는 이름으로 시작했습니다. OPC 브랜드명은 OCI Classic으로 변경되었습니다. 그리고 2017년에 오라클 2세대 클라우드 인프라스트럭처인 OCI(Oracle Cloud Infrastructure)를 개발하고 새롭게 서비스를 시작했습니다.</p>
+
+<p>2020년 현재 1세대 오라클 클라우드 서비스인 OCI Classic은 대부분 2세대 클라우드 인프라인 OCI로 전환되었고, OPC 초기에 개발된 PaaS 서비스에서 부분적으로 사용되는 상황입니다. 그리고 2018년 하반기에 오라클 클라우드의 공식 브랜드 이름이 OCI로 전환되었습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/220.jpg?classes=border,shadow" alt="" /></p>
+
+<p>요약하면 <font color='red'><strong>OCI</strong></font>라는 단어는 현재 두 가지 의미로 사용됩니다.</p>
+
+<ul>
+<li>Oracle Cloud의 공식 브랜드명</li>
+<li>Oracle Cloud의 Gen2 인프라스트럭처</li>
+</ul>
+
+<p>OCI와 OCI Classic을 모두 포함하는 Oracle Cloud를 공식적으로 <font color='red'><strong>OCI</strong></font>라고 부릅니다. 2020년 03월 현재 OCI Classic이 서비스되고 있는 상황입니다. 따라서 오라클 클라우드 Gen2 인프라스트럭처도 <font color='red'><strong>OCI</strong></font>라고 합니다.</p>
+
+<h2 id="oci-iam">OCI IAM</h2>
+
+<p>Oracle Cloud의 Gen2 인프라스트럭처가 새로 개발될 때, Gen2 OCI 사용자를 관리하는 자체 서비스를 새로 개발했습니다. 이것이 OCI IAM(Identity &amp; Access Management)입니다. OCI IAM은 자체적인 인증 방법도 제공합니다. OCI IAM이 제공하는 인증 방식은 OCI 계정(Tenante)의 홈 리전에 접속하여 인증을 수행합니다. 이 인증 절차는 OCI IAM에서 만든 ID와 패스워드로 인증됩니다. OCI IAM으로부터 관리자 권한이 부여된 OCI 사용자는 OCI의 모든 자원을 사용할 수 있습니다.</p>
+
+<p>OCI IAM이 지원하는 범위는 OCI 인프라스트럭처와 OCI를 기반으로 하는 PaaS 서비스에 한정됩니다. Oracle Cloud 계정을 등록할 때, 입력한 사용자 이름과 비밀번호를 사용하여 Oracle IAM은 자체 OCI 로컬 사용자를 만듭니다. 계정 등록 단계에서 이렇게 만들어진 OCI 로컬 사용자에게는 관리자 권한이 부여됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/230.jpg?classes=border,shadow" alt="" /></p>
+
+<p>OCI IAM 구성 컴포넌트는 다음과 같습니다.</p>
+
+<ul>
+<li><strong>OCI Local User</strong>: OCI IAM으로 생성한 사용자 ID입니다.</li>
+<li><strong>User Group</strong>: OCI Local User의 묶음입니다. OCI IAM은 <strong>User Group</strong> 단위로 권한을 설정합니다.</li>
+<li><strong>Policy</strong>: OCI IAM의 권한 설정 방식입닏.  <strong>Policy</strong>는 <strong>User Group</strong> 단위로 설정됩니다.</li>
+<li><strong>Compartment</strong>: 컴파트먼트는 클라우드 자원을 구성하고 접근 제어하기 위한 논리적인 단위입니다. 컴파트먼트는 자원을 쉽게 관리할 수 있는 폴더 구조로 이해할 수 있습니다. OCI에서 만들어지는 대부분 자원은 특정 컴파트먼트에 할당됩니다.</li>
+</ul>
+
+<h2 id="oracle-idcs">Oracle IDCS</h2>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/250.jpg?classes=border,shadow" alt="" /></p>
+
+<p>오라클 클라우드의 인프라스트럭처는 현재 1세대 클라우드 서비스인 OCI Classic과 2세대 OCI로 구성됩니다. 오라클 클라우드가 제공하는 PaaS 서비스도 OCI Classic을 기반으로 하는 PaaS와 OCI를 기반으로 하는 PaaS로 구성됩니다. Oracle IDCS는 1세대 클라우드 서비스인 OCI Classic과 ID 관리 서비스입니다. Oracle IDCS가 OCI Classic와 OCI 모두를 지원하는 범위로 합니다. Oracle IDCS는 싱글사인온(SSO, Single Sign-On) 기능을 제공합니다. Oracle IDCS로 OCI에 로그인하면 다시 인증하지 않고 다른 오라클 클라우드 서비스를 이동할 수 있습니다. Oracle Cloud의 모든 서비스는 Oracle IDCS에 통합되어 있습니다.</p>
+
+<p>Oracle Cloud 계정을 등록할 때, 입력한 사용자 이름과 비밀번호를 사용하여 Oracle Identity Cloud Service에 사용자가 생성됩니다. 이렇게 등록된 이 사용자에게는 Oracle IDCS를 포함한 Oracle Cloud 서비스 모두에 대한 관리자 권한이 부여됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/240.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="oracle-idcs-oci-iam-비교">Oracle IDCS &amp; OCI IAM 비교</h2>
+
+<p>다음은 Oracle IDCS와 OCI IAM을 비교한 요약표입니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Oracle IDCS</th>
+<th>OCI IAM</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Console 접근 IP 제한</td>
+<td>지원</td>
+<td>지원하지 않음</td>
+</tr>
+
+<tr>
+<td>MFA</td>
+<td>지원</td>
+<td>지원</td>
+</tr>
+
+<tr>
+<td>MFA 지원 유형</td>
+<td>SMS, 모바일 앱 Passcode, 모바일 앱 알림, 보안 질문, E 메일</td>
+<td>모바일 앱 Passcode</td>
+</tr>
+
+<tr>
+<td>암호 정책</td>
+<td>변경 가능</td>
+<td>변경 가능</td>
+</tr>
+
+<tr>
+<td>대상 서비스</td>
+<td>OCI, Blockchain, Java Cloud, Developer Cloud, NoSQL Cloud 등 OCI Classic 기반 PaaS</td>
+<td>OCI</td>
+</tr>
+
+<tr>
+<td>다른 클라우드 서비스와의 연계</td>
+<td>Oracle Cloud, SAML, OAuth 등</td>
+<td>Azure Directory, Okta, SAML</td>
+</tr>
+
+<tr>
+<td>API</td>
+<td>IDCS 고유 (SCIM 준수)</td>
+<td>OCI API</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="오라클-클라우드-로그인-옵션">오라클 클라우드 로그인 옵션</h2>
+
+<p>오라클 클라우드는 Oracle IDCS와 OCI IAM을 이용한 2가지 로그인 방식을 제공합니다.</p>
+
+<h3 id="오라클-클라우드-기본-로그인">오라클 클라우드 기본 로그인</h3>
+
+<p><a href="https://oracle.com" target="_blank">https://oracle.com <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+이 제공하는 기본 로그인 방식은 Oracle IDCS를 이용한 방식입니다. 다음은 Oracle IDCS를 이용한 로그인 절차입니다. 인증 정보를 입력하면 Oracle IDCS가 SSO(Single Sign-On)을 처리한 다음에 OCI 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/260.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="oci-홈-리전-로그인">OCI 홈 리전 로그인</h3>
+
+<p>오라클 클라우드 계정을 생성할 때, 홈 리전을 설정합니다. 오라클 클라우드는 홈 리전 로그인 페이지를 제공합니다. 홈 리전 로그인 페이지 URL 패턴은 다음과 같습니다.</p>
+
+<pre><code>https://console.&lt;REGION-ID&gt;.oraclecloud.com/
+</code></pre>
+
+<p><REGION-ID>는 다음에서 확인할 수 있습니다.</p>
+
+<ul>
+<li><a href="/010.oci_101/basic_concept/oci_resion_info/" target="_blank">OCI 리전 정보 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+</ul>
+
+<p>아래 [접기/펼치기]를 클릭하여 2020년 3월까지 오픈한 리전 로그인 페이지 링크를 확인할 수 있습니다.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+        
+        [접기/펼치기] OCI 리전 로그인 페이지 목록
+        
+        </span>
+    </div>
+    <div class="expand-content" style="display: none;">
+<ul>
+<li><p>Amsterdam: <a href="https://console.eu-amsterdam-1.oraclecloud.com" target="_blank"><a href="https://console.eu-amsterdam-1.oraclecloud.com">https://console.eu-amsterdam-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Ashburn: <a href="https://console.us-ashburn-1.oraclecloud.com" target="_blank"><a href="https://console.us-ashburn-1.oraclecloud.com">https://console.us-ashburn-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Sao Paulo: <a href="https://console.sa-saopaulo-1.oraclecloud.com" target="_blank"><a href="https://console.sa-saopaulo-1.oraclecloud.com">https://console.sa-saopaulo-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Frankfurt: <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank"><a href="https://console.eu-frankfurt-1.oraclecloud.com">https://console.eu-frankfurt-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Jeddah: <a href="https://console.me-jeddah-1.oraclecloud.com" target="_blank"><a href="https://console.me-jeddah-1.oraclecloud.com">https://console.me-jeddah-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>London: <a href="https://console.uk-london-1.oraclecloud.com" target="_blank"><a href="https://console.uk-london-1.oraclecloud.com">https://console.uk-london-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Melbourne: <a href="https://console.ap-melbourne-1.oraclecloud.com" target="_blank"><a href="https://console.ap-melbourne-1.oraclecloud.com">https://console.ap-melbourne-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Montreal: <a href="https://console.ca-montreal-1.oraclecloud.com" target="_blank"><a href="https://console.ca-montreal-1.oraclecloud.com">https://console.ca-montreal-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Mumbai: <a href="https://console.ap-mumbai-1.oraclecloud.com" target="_blank"><a href="https://console.ap-mumbai-1.oraclecloud.com">https://console.ap-mumbai-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Osaka: <a href="https://console.ap-osaka-1.oraclecloud.com" target="_blank"><a href="https://console.ap-osaka-1.oraclecloud.com">https://console.ap-osaka-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Phoenix: <a href="https://console.us-phoenix-1.oraclecloud.com" target="_blank"><a href="https://console.us-phoenix-1.oraclecloud.com">https://console.us-phoenix-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Tokyo: <a href="https://console.ap-tokyo-1.oraclecloud.com" target="_blank"><a href="https://console.ap-tokyo-1.oraclecloud.com">https://console.ap-tokyo-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Toronto: <a href="https://console.ca-toronto-1.oraclecloud.com" target="_blank"><a href="https://console.ca-toronto-1.oraclecloud.com">https://console.ca-toronto-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Seoul: <a href="https://console.ap-seoul-1.oraclecloud.com" target="_blank"><a href="https://console.ap-seoul-1.oraclecloud.com">https://console.ap-seoul-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Sydney: <a href="https://console.ap-sydney-1.oraclecloud.com" target="_blank"><a href="https://console.ap-sydney-1.oraclecloud.com">https://console.ap-sydney-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Zurich: <a href="https://console.eu-zurich-1.oraclecloud.com" target="_blank"><a href="https://console.eu-zurich-1.oraclecloud.com">https://console.eu-zurich-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+</ul>
+
+    </div>
+</div>
+
+<p>오라클 클라우드의 각 홈 리전 로그인 페이지는 Oracle IDCS와 OCI IAM으로 로그인하는 방법을 제공합니다. Oracle IAM으로 로그인하면 OCI 자원만 접근 가능할 수 있기 때문에 다음 이미지와 같이 다른 PaaS 서비스는 메뉴에 출력되지 않습니다.</p>
+
+<p>오라클 클라우드의 각 홈 리전 로그인 페이지에서 Oracle IDCS로 로그인하면 Oracle IDCS가 SSO 처리를 합니다. 따라서 다음 이미지와 같이 오라클 클라우드에서 OCI Classic 기반으로 개발된 모든 PaaS에 접근이 가능해집니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/270.jpg?classes=border,shadow" alt="" /></p>
+
+<h1 id="인증-체계-선택">인증 체계 선택</h1>
+
+<p>Oracle IDCS와 OCI IAM 중에서 ID 관리 방식을 따라야 할지 혼동될 수 있습니다. 현재 Oracle Classic을 기반으로 개발된 PaaS는 OCI Native PaaS로 전환되는 상황이지만 다음과 같은 기준을 만들 수 있습니다.</p>
+
+<ul>
+<li>OCI 자원만을 사용할 경우: OCI IAM 체계를 선택할 수 있음</li>
+<li>OCI 자원과 Oracle PaaS와 Oracle SaaS를 사용할 경우: Oracle IDCS 권장</li>
+<li>정밀한 ID 관리 체계를 원할 경우: Oracle IDCS권장</li>
+<li>자동화에 사용하는 API 방식에 따라 선택 가능</li>
+</ul>
+
+<h1 id="참고문서">참고문서</h1>
+
+<ul>
+<li><a href="https://www.oracle.com/a/ocom/docs/iam-200.pdf" target="_blank">Identity and Access Management Level 200 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+</ul>
+
+
+    
+    
+      <div class="alert alert-info" role="alter">
+  <li><strong>문서 생성:</strong> 2020-03-27 09:11 / <string>최종 문서 수정:</strong> 2020-03-27 09:11 </li>
+</div><div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/010.oci_101/basic_concept/oci_free_trial/" title="OCI Free Tier 계정 등록"> <i class="fa fa-chevron-left"></i><label>OCI Free Tier 계정 등록</label></a>
+    <a class="nav nav-next" href="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/" title="클라우드 서비스 용어 비교" style="margin-right: 0px;"><label>클라우드 서비스 용어 비교</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+  <div class="chevrons">
+      <div class="row">
+    <div class="author left">
+        <img alt="김태완 avatar" src="https://taewanmerepo.github.io//taewan2.jpg" height="90" width="90">
+    </div>
+    <div class="author right">
+		<li><b>작성자: 김태완</b></li>
+        <li>사랑하는 민수와 데이터 관리, 데이터 분석 &amp; 클라우드에 집중하고 있습니다.</li>
+        <li>E-mail: taewanme@gmail.com</li>
+    </div>
+</div><div class="panel panel-danger">
+<div class="panel-heading">Disclaimer</div>
+<div class="panel-body">이 저작물은 Oracle과 관계없이 개인으로서 개인의 시간을 할애하여 작성된 글 입니다. 본 글의 내용, 입장, 예측은 Oracle을 공식적으로 <font color="red"><bold>절대</bold></font> 대변하지 않습니다.</div>
+</div>
+<hr />
+
+
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_101/basic_concept/oracle_cloud_identity_management_services/"></div>
+
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 27/03/2020
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+
+
+
+  </div>
+  
+  
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-72835175-1', 'auto');
+        ga('send', 'pageview');
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=404519239985000&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+    
+
+    
+    
+
+    
+
+
+  </body>
+</html>
