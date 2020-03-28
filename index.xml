@@ -87,6 +87,18 @@
     </item>
     
     <item>
+      <title>OCI Tenancy 생성</title>
+      <link>/010.oci_101/basic_concept/initial_oci_tenancy/</link>
+      <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
+      
+      <guid>/010.oci_101/basic_concept/initial_oci_tenancy/</guid>
+      <description>오라클 클라우드 계정을 등록하면 OCI Tenancy가 위 그림과 같이 만들어집니다. 오라클 클라우드 계정이 생성될 때, Oracle IDCS와 OCI IAM이 관리자를 만들고 관리자 권한을 부여하는 과정을 소개합니다.
+중심으로 사용자 계정과 권한이 설정되는 과정을 살펴보겠습니다.
+이번 문서는 다음과 같은 목차로 구성됩니다.
+ 오라클 클라우드 Tenancy 생성  Step 01: 오라클 클라우드 계정 등록 Step 02: 클라우드 사용자 생성  Oracle IDCS 권한 설정 OCI IAM 권한 설정  Step 03: IAM 관리자 권한 설정 Step 04: Oracle IDCS 계정 Federation  요약    오라클 클라우드 Tenancy 생성 오라클 클라우드 계정을 등록하면 해당 계정(Account)을 위한 Tenancy가 생성됩니다.</description>
+    </item>
+    
+    <item>
       <title>클라우드 서비스 용어 비교</title>
       <link>/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/</link>
       <pubDate>Thu, 26 Mar 2020 09:11:05 +0900</pubDate>

@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-28T11:54:31 KST">
+<meta name="revised" content="2020-03-28T18:34:12 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -181,6 +181,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/010.oci_101/basic_concept/initial_oci_tenancy/" class="dd-item">
+        <div>
+          <a href="/010.oci_101/basic_concept/initial_oci_tenancy/">
+            OCI Tenancy 생성
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/" class="dd-item">
         <div>
           <a href="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/">
@@ -252,6 +259,7 @@
       <option value="/010.oci_101/basic_concept/oci_services_in_regions/" >-- OCI 리전별 서비스 현황 </option>
       <option value="/010.oci_101/basic_concept/oci_free_trial/" >-- OCI Free Tier 계정 등록</option>
       <option value="/010.oci_101/basic_concept/oracle_cloud_identity_management_services/"  selected>-- OCI 사용자 ID 관리 서비스</option>
+      <option value="/010.oci_101/basic_concept/initial_oci_tenancy/" >-- OCI Tenancy 생성</option>
       <option value="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/" >-- 클라우드 서비스 용어 비교</option>
   
     <option value="/010.oci_101/hands-on/" >
@@ -514,7 +522,7 @@
 
 <h1 id="인증-체계-선택">인증 체계 선택</h1>
 
-<p>Oracle IDCS와 OCI IAM 중에서 ID 관리 방식을 따라야 할지 혼동될 수 있습니다. 현재 Oracle Classic을 기반으로 개발된 PaaS는 OCI Native PaaS로 전환되는 상황이지만 다음과 같은 기준을 만들 수 있습니다.</p>
+<p>Oracle IDCS와 OCI IAM 중에서 어떤 ID 관리 방식을 사용할지 혼동될 수 있습니다. ID 관리 방식 선택에 다음과 같은 선택 기준을 사용할 수 있습니다.</p>
 
 <ul>
 <li>OCI 자원만을 사용할 경우: OCI IAM 체계를 선택할 수 있음</li>
@@ -529,6 +537,9 @@
 <li><a href="https://www.oracle.com/a/ocom/docs/iam-200.pdf" target="_blank">Identity and Access Management Level 200 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
 </li>
+<li><a href="https://thekoguryo.github.io/oci/chapter02/4/" target="_blank">Cloud Account(Tenancy) 구조 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
 </ul>
 
 
@@ -539,7 +550,7 @@
 </div><div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/010.oci_101/basic_concept/oci_free_trial/" title="OCI Free Tier 계정 등록"> <i class="fa fa-chevron-left"></i><label>OCI Free Tier 계정 등록</label></a>
-    <a class="nav nav-next" href="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/" title="클라우드 서비스 용어 비교" style="margin-right: 0px;"><label>클라우드 서비스 용어 비교</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/010.oci_101/basic_concept/initial_oci_tenancy/" title="OCI Tenancy 생성" style="margin-right: 0px;"><label>OCI Tenancy 생성</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
