@@ -8,10 +8,10 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="OCI Free Tier" />
+<meta property="og:title" content="OCI Free Tier 등록" />
 <meta property="og:description" content="OCI(Oracle Cloud Infrastructure) Oracle Cloud를 사용하기 위해서는 OCI 계정이 필요합니다. 오라클이 무료로 제공하는 프로모션 프로그램인 OCI Free Tiral 계정을 만드는 과정을 소개합니다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/010.oci_101/basic_concept/oci_free_trial/" />
+<meta property="og:url" content="/010.oci_101/hands-on/000.oci_free_trial/" />
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-<title>OCI Free Tier :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI Free Tier 등록 :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -78,7 +78,7 @@
 
     
   </head>
-  <body data-url="/010.oci_101/basic_concept/oci_free_trial/">
+  <body data-url="/010.oci_101/hands-on/000.oci_free_trial/">
     
       <header>
   <div class="logo">
@@ -125,7 +125,7 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/010.oci_101/basic_concept/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/010.oci_101/basic_concept/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_101/basic_concept/">OCI 101: 기본 개념</a>
@@ -167,7 +167,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_101/basic_concept/oci_free_trial/" class="dd-item active">
+      <li data-nav-id="/010.oci_101/basic_concept/oci_free_trial/" class="dd-item">
         <div>
           <a href="/010.oci_101/basic_concept/oci_free_trial/">
             OCI Free Tier
@@ -197,14 +197,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_101/hands-on/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_101/hands-on/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_101/hands-on/">OCI 101: 입문 핸즈온</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_101/hands-on/000.oci_free_trial/" class="dd-item">
+      <li data-nav-id="/010.oci_101/hands-on/000.oci_free_trial/" class="dd-item active">
         <div>
           <a href="/010.oci_101/hands-on/000.oci_free_trial/">
             OCI Free Tier 등록
@@ -267,7 +267,7 @@
       <option value="/010.oci_101/basic_concept/oci_classic_and_oci_gen2/" >-- OCI Classic과 OCI Gen2</option>
       <option value="/010.oci_101/basic_concept/oci_resion_info/" >-- OCI 리전 정보</option>
       <option value="/010.oci_101/basic_concept/oci_services_in_regions/" >-- OCI 리전별 서비스 현황 </option>
-      <option value="/010.oci_101/basic_concept/oci_free_trial/"  selected>-- OCI Free Tier</option>
+      <option value="/010.oci_101/basic_concept/oci_free_trial/" >-- OCI Free Tier</option>
       <option value="/010.oci_101/basic_concept/oracle_cloud_identity_management_services/" >-- OCI 사용자 ID 관리 서비스</option>
       <option value="/010.oci_101/basic_concept/initial_oci_tenancy/" >-- OCI Tenancy 생성</option>
       <option value="/010.oci_101/basic_concept/cloud_terminologie_mapping_between_vendors/" >-- 클라우드 서비스 용어 비교</option>
@@ -275,7 +275,7 @@
     <option value="/010.oci_101/hands-on/" >
   - 
    OCI 101: 입문 핸즈온</option> 
-      <option value="/010.oci_101/hands-on/000.oci_free_trial/" >-- OCI Free Tier 등록</option>
+      <option value="/010.oci_101/hands-on/000.oci_free_trial/"  selected>-- OCI Free Tier 등록</option>
   
   
 
@@ -298,8 +298,8 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>OCI Free Tier</h1>
-    <p><img src="https://taewanmerepo.github.io/2019/09/freetier/post.jpg" alt="OCI Free Tier"></p>
+    <h1>OCI Free Tier 등록</h1>
+    <p><img src="https://taewanmerepo.github.io/2019/09/freetier/post.jpg" alt="OCI Free Tier 등록"></p>
 
 
      
@@ -312,26 +312,7 @@
 
 <p><strong>Oracle Cloud Free Tier</strong>는 OCI(Oracle Cloud Infrastructure)를 무료로 경험할 수 있도록 제공하는 프로그램입니다. <strong>Oracle Cloud Free Tier</strong> 계정을 신청하면 한 달 동안 사용할 수 있는 300달러 크래딧이 지급됩니다. 이 크래딧을 이용하여 OCI(Oracle Cloud Infrastructure)의 모든 서비스를 자유롭게 사용할 수 있습니다. 이 문서에서는 <strong>Oracle Cloud Free Tier</strong>에 대하여 소개하고 계정을 신청하는 절차에 대하여 알아보겠습니다.</p>
 
-<hr />
-
-<p>이번 문서는 다음과 같은 목차로 구성됩니다.</p>
-
-
-<div class="panel panel-primary"><div class="panel-body"><nav id="TableOfContents">
-<ul>
-<li><a href="#oci-free-tier-구성">OCI Free Tier 구성</a>
-<ul>
-<li><a href="#1-oracle-cloud-free-trial">1. Oracle Cloud Free Trial</a></li>
-<li><a href="#2-oracle-cloud-always-free">2. Oracle Cloud Always Free</a></li>
-</ul></li>
-<li><a href="#oci-free-tier-등록">OCI Free Tier 등록</a></li>
-<li><a href="#참고문서">참고문서</a></li>
-</ul>
-</nav>
-</div></div>
-
-
-<hr />
+<h2 id="등록-사전-준비">등록 사전 준비</h2>
 
 <p><strong>Oracle Cloud Free Tier</strong> 계정을 신청하기 위해서는 다음과 같은 정보가 필요합니다.</p>
 
@@ -351,141 +332,7 @@
 </p></div>
 
 
-<h1 id="oci-free-tier-구성">OCI Free Tier 구성</h1>
-
-<p><strong>Oracle Cloud Free Tier</strong>는 오라클 클라우드 경험 기회를 무료로 여러 사용자에게 제공하기 위한 프로그램입니다. <strong>Oracle Cloud Free Tier</strong>는 다음과 같은 2개 프로모션으로 구성됩니다.</p>
-
-<ul>
-<li><strong>Oracle Cloud Free Trial</strong></li>
-<li><strong>Oracle Cloud Always Free</strong></li>
-</ul>
-
-<p>&ldquo;<strong>Oracle Cloud Free Trial</strong>&ldquo;은 오라클 클라우드 계정을 만들면 누구나 30일 동안 300달러에 해당하는 클라우드 자원을 자유롭게 사용할 수 있는 프로그램입니다. &ldquo;<strong>Oracle Cloud Always Free</strong>&ldquo;는 특정 클라우드 서비스를 기간과 비용에 제약 없이 사용할 수 있는 프로그램입니다.</p>
-
-<p>오라클은 <strong>Oracle Cloud Free Trial</strong> 프로그램을 2016년 부터 운영해 왔습니다. <strong>Oracle Cloud Free Tier</strong>는 기존 <strong>Oracle Cloud Free Trial</strong>에 <strong>Oracle Cloud Always Free</strong>를 추가한 모델입니다.</p>
-
-<p><strong>Oracle Cloud Always Free</strong>는 Oracle OpenWorld 2019에서 발표한 새로운 프로모션입니다. <strong>Oracle Cloud Free Tier</strong> 계정을 등록한 사용자는 계정을 등록한 시점 부터 <strong>Oracle Cloud Always Free</strong> 프로그램에서 지정한 자원을 영구적으로 사용할 수 있습니다.</p>
-
-<p>2019년 9월 16일부터 <strong>Oracle Cloud Free Tier</strong> 계정으로 <strong>Oracle Cloud Free Trial</strong>과 <strong>Oracle Cloud Always Free</strong>를 모두 이용할 수 있습니다.</p>
-
-<h2 id="1-oracle-cloud-free-trial">1. Oracle Cloud Free Trial</h2>
-
-<p><strong>Oracle Cloud Free Trial</strong> 프로그램은 오라클 클라우드를 30일 동안 300달러 규모로 클라우드 서비스를 사용하는 프로모션입니다. 오라클 클라우드 서비스 사용 시간 만큼 이용 금액이 차감됩니다. 일반적으로 PaaS 서비스(Autonomous Service 등) 사용 비용은 IaaS 서비스 보다 높습니다. &ldquo;<strong>Oracle Cloud Free Trial</strong>&rdquo; 사용 기간 동안에 모든 Oracle Cloud PaaS 서비스는 IaaS 컴퓨팅 가격으로 계산됩니다. 따라서 300달러로 상당히 많은 서비스를 이용할 수 있습니다.</p>
-
-<p>&ldquo;<strong>Oracle Cloud Free Trial</strong>&ldquo;이 지원하는 주요 서비스와 사용 규모는 다음과 같습니다.</p>
-
-<ul>
-<li>Infrasturcture
-
-<ul>
-<li>Compute: 3,500시간, 1.5TB 스토리지, VM과 베어메탈(Bare Metal) 서버</li>
-<li>Storage: 5TB Object Storage</li>
-<li>Container: 관리형 쿠버네티스 (컴퓨트 기준 3,500시간), 2TB 규모의 Docker Registry</li>
-<li>Function: 서버리스 서비스로 1억 1천 2백만번 실행</li>
-<li>Load Balancer: 3500시간</li>
-</ul></li>
-<li>Database
-
-<ul>
-<li>Autonomous Transaction Processing(ATP)</li>
-<li>Autonomous Data Warehouse(ADW)</li>
-<li>NoSQL Database: 10억번 쓰기(1.25 billion writes), 25억번 읽기(2.5 billion reads), 저장공강 100GB</li>
-<li>Oracle Database Cluod Service: 3,200 시간</li>
-</ul></li>
-<li>Application Development
-
-<ul>
-<li>Java: 관리형 Weblogic 서비스 1,700 시간</li>
-<li>Digital Assistant: 챗봇 서비스, 110,000 요청 처리</li>
-<li>Mobile Hub: 110,000 요청 처리</li>
-<li>Messaging: 8억개 메시지 처리</li>
-</ul></li>
-<li>Analytics
-
-<ul>
-<li>Oracle Analytics: 4,700 시간</li>
-</ul></li>
-</ul>
-
-<p>위 목록에서 제시된 시간은 각 서비스를 구성하는 전체 VM 서버 실행 시간을 합친 값입니다. 예를 들어서 관리형 Kubernetes 서비스(OKE)의 클러스터 인스턴스를 3개 VM으로 구성하고 10시간 사용하면, 이 서비스의 총 사용 시간은 30시간으로 계산됩니다.</p>
-
-<h2 id="2-oracle-cloud-always-free">2. Oracle Cloud Always Free</h2>
-
-<p>Oracle Cloud Free Tier 계정을 등록한 사용자는 <strong>Oracle Cloud Always Free</strong> 프로그램을 통해서 다음과 같은 서비스를 기간 제약없이 영구적으로 이용할 수 있습니다.</p>
-
-<table>
-<thead>
-<tr>
-<th>서비스</th>
-<th>지원 규모</th>
-<th>비고</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Autonomous Data Warehouse(ADW)</td>
-<td>1개 인스턴스</td>
-<td>CPU: 1 OCPU, Storage: 20GB</td>
-</tr>
-
-<tr>
-<td>Autonomous Transaction Processing(ATP)</td>
-<td>1개 인스턴스</td>
-<td>CPU: 1 OCPU, Storage: 20GB)</td>
-</tr>
-
-<tr>
-<td>컴퓨트</td>
-<td>2VM</td>
-<td>VM 사양: <code>1/8</code> OCPU, 1GB 메모리</td>
-</tr>
-
-<tr>
-<td>블록스토리지</td>
-<td>2개 블록 볼륨</td>
-<td>전체 크기 100GB</td>
-</tr>
-
-<tr>
-<td>오브젝트 스토리지</td>
-<td>Standard Mode: 10GB<br/>Archive Mode: 10GB</td>
-<td>매월 50,000 API 요청</td>
-</tr>
-
-<tr>
-<td>로드 밸런서(Load Balancer)</td>
-<td>1개</td>
-<td>Bandwith: 10Mbps</td>
-</tr>
-
-<tr>
-<td>아웃바운드 데이터 전송(Outbound Data Transfer)</td>
-<td>매월 10TB</td>
-<td></td>
-</tr>
-
-<tr>
-<td>모니터링 서비스</td>
-<td>매월 5억 건의 데이터 수집, 10억 건 데이터 조회</td>
-<td></td>
-</tr>
-
-<tr>
-<td>알림 서비스</td>
-<td>매월 1백만 건 알림 서비스</td>
-<td></td>
-</tr>
-
-<tr>
-<td>메일</td>
-<td>매월 1000개 메일</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<h1 id="oci-free-tier-등록">OCI Free Tier 등록</h1>
+<h2 id="oci-free-tier-등록-절차">OCI Free Tier 등록 절차</h2>
 
 <p><strong>Oracle Cloud Free Tier</strong> 등록 페이지는 <a href="https://oracle.com" target="_blank">https://oracle.com <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
@@ -607,8 +454,8 @@
   <li><strong>문서 생성:</strong> 2020-03-27 09:11 / <string>최종 문서 수정:</strong> 2020-03-27 09:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/010.oci_101/basic_concept/oci_services_in_regions/" title="OCI 리전별 서비스 현황 "> <i class="fa fa-chevron-left"></i><label>OCI 리전별 서비스 현황 </label></a>
-    <a class="nav nav-next" href="/010.oci_101/basic_concept/oracle_cloud_identity_management_services/" title="OCI 사용자 ID 관리 서비스" style="margin-right: 0px;"><label>OCI 사용자 ID 관리 서비스</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/010.oci_101/hands-on/" title="OCI 101: 입문 핸즈온"> <i class="fa fa-chevron-left"></i><label>OCI 101: 입문 핸즈온</label></a>
+    <a class="nav nav-next" href="/010.oci_101/basic_concept/" title="OCI 101: 기본 개념" style="margin-right: 0px;"><label>OCI 101: 기본 개념</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
@@ -627,7 +474,7 @@
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_101/basic_concept/oci_free_trial/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_101/hands-on/000.oci_free_trial/"></div>
 
   </div>
 
