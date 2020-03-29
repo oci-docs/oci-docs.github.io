@@ -8,14 +8,16 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="오라클 클라우드 사용자 가이드" />
-<meta property="og:description" content="&#39;oci-oracle.cloud&#39;는 OCI(Oracle Cloud Infrastructure) 신규 사용자를 위한 기술 문서 사이트입니다." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:title" content="OCI 리전 정보" />
+<meta property="og:description" content="오라클 클라우드(OCI Cloud Infrastructure)의 리전 정보를 정리합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/010.oci_intro/basic_concept/oci_resion_info/" />
 
 
 
-<meta property="og:updated_time" content="2020-03-01T01:11:05&#43;09:00"/>
+<meta property="article:published_time" content="2020-03-01T08:54:32&#43;09:00"/>
+<meta property="article:modified_time" content="2020-03-01T08:54:32&#43;09:00"/>
+
 
 
 
@@ -31,7 +33,7 @@
 
 
 
-<title>오라클 클라우드 사용자 가이드 :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI 리전 정보 :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -43,7 +45,7 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="&#39;oci-oracle.cloud&#39;는 OCI(Oracle Cloud Infrastructure) 신규 사용자를 위한 기술 문서 사이트입니다.">
+<meta name="description" content="오라클 클라우드(OCI Cloud Infrastructure)의 리전 정보를 정리합니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -76,7 +78,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/010.oci_intro/basic_concept/oci_resion_info/">
     
       <header>
   <div class="logo">
@@ -116,14 +118,14 @@
       <a href="/000.index/">오라클 클라우드 사용자 가이드</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/010.oci_intro/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/">OCI(Oracle Cloud)-기초 입문</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/010.oci_intro/basic_concept/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/basic_concept/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/basic_concept/">OCI 입문: 기본 개념</a>
@@ -151,7 +153,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/oci_resion_info/" class="dd-item">
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_resion_info/" class="dd-item active">
         <div>
           <a href="/010.oci_intro/basic_concept/oci_resion_info/">
             OCI 리전 정보
@@ -293,7 +295,7 @@
       <option value="/010.oci_intro/basic_concept/oci_introduction/" >-- Oracle Cloud Infrasturcture</option>
       <option value="/010.oci_intro/basic_concept/terminologies/" >-- OCI 기초 용어 정리</option>
       <option value="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" >-- OCI Classic과 OCI Gen2</option>
-      <option value="/010.oci_intro/basic_concept/oci_resion_info/" >-- OCI 리전 정보</option>
+      <option value="/010.oci_intro/basic_concept/oci_resion_info/"  selected>-- OCI 리전 정보</option>
       <option value="/010.oci_intro/basic_concept/oci_services_in_regions/" >-- OCI 리전별 서비스 현황 </option>
       <option value="/010.oci_intro/basic_concept/oci_free_trial/" >-- OCI Free Tier</option>
       <option value="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" >-- OCI 사용자 ID 관리 서비스</option>
@@ -304,11 +306,6 @@
   - 
    OCI 입문: Hands-on 101 클래스</option> 
       <option value="/010.oci_intro/hands-on-101/000.oci_free_trial/" >-- OCI Free Tier 등록</option>
-    <option value="/010.oci_intro/hands-on-101/010.console/" >
-  -- 
-   OCI Console</option> 
-      <option value="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" >--- OCI Console 로그인</option>
-  
       <option value="/010.oci_intro/hands-on-101/020.oci_vcn/" >-- OCI VCN 생성</option>
       <option value="/010.oci_intro/hands-on-101/010.oci_console_login/" >-- OCI Console 로그인</option>
   
@@ -333,7 +330,8 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    
+    <h1>OCI 리전 정보</h1>
+    <p><img src="https://taewanmerepo.github.io/2020/ocidocs/regionmap.jpg" alt="OCI 리전 정보"></p>
 
 
      
@@ -342,109 +340,188 @@
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
+    
 
-
-<h1 id="오라클-클라우드-사용자-가이드">오라클 클라우드 사용자 가이드</h1>
-
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/994.jpg" alt="" /></p>
-
-<p>OCI(Oracle Cloud Infrastructure)는 오라클이 운영하는 클라우드 서비스입니다. <strong>oci-oracle.cloud</strong>는 OCI 신규 사용자를 위한 기술 문서 사이트입니다. <strong>oci-oracle.cloud</strong>는 OCI 신규 사용자를 위하여 다음과 같은 내용으로 채워질 예정입니다.</p>
+<p>OCI 리전의 기본 정보를 정리합니다.</p>
 
 <table>
 <thead>
 <tr>
-<th>주제</th>
-<th>설명</th>
+<th>리전 이름</th>
+<th>리전 ID</th>
+<th>리전 위치</th>
+<th>리전 Key</th>
+<th>Availability Domain 수</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>OCI 101/기본 개념</td>
-<td>OCI 신규 입문자를 위한 OCI 기본 소개 및 개념 정리</td>
+<td>Amsterdam</td>
+<td>eu-amsterdam-1</td>
+<td>네덜란드, 암스테르담</td>
+<td>AMS</td>
+<td>1</td>
 </tr>
 
 <tr>
-<td>OCI 101/핸드온</td>
-<td>OCI 핸드온 랩 - 따라하기 형식 메뉴얼</td>
+<td>Ashburn</td>
+<td>us-ashburn-1</td>
+<td>미국 버지니아, 애슈번</td>
+<td>IAD</td>
+<td>3</td>
 </tr>
 
 <tr>
-<td>서비스별 가이드</td>
-<td>OCI 세부 서비스 별 가이드 문서</td>
+<td>Sao Paulo</td>
+<td>sa-saopaulo-1</td>
+<td>브라질, 상파올로</td>
+<td>GRU</td>
+<td>1</td>
 </tr>
 
 <tr>
-<td>유용한 팁</td>
-<td>OCI에 도움 되는 기술 문서</td>
+<td>Frankfurt</td>
+<td>eu-frankfurt-1</td>
+<td>독일, 프랑크푸르트</td>
+<td>FRA</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Jeddah</td>
+<td>me-jeddah-1</td>
+<td>사우디 아라비아, 제다</td>
+<td>JED</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>London</td>
+<td>uk-london-1</td>
+<td>영국, 런던</td>
+<td>LHR</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Melbourne</td>
+<td>ap-melbourne-1</td>
+<td>호주, 멜버른</td>
+<td>MEL</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Montreal</td>
+<td>ca-montreal-1</td>
+<td>캐나다, 몬트리올</td>
+<td>YUL</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Mumbai</td>
+<td>ap-mumbai-1</td>
+<td>인도, 뭄바이</td>
+<td>BOM</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Osaka</td>
+<td>ap-osaka-1</td>
+<td>일본, 오사카</td>
+<td>KIX</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Phoenix</td>
+<td>us-phoenix-1</td>
+<td>미국 애리조나, 피닉스</td>
+<td>PHX</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Tokyo</td>
+<td>ap-tokyo-1</td>
+<td>일본, 도쿄</td>
+<td>NRT</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Toronto</td>
+<td>ca-toronto-1</td>
+<td>캐나다, 토론토</td>
+<td>YYZ</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Seoul</td>
+<td>ap-seoul-1</td>
+<td>대한민국, 서울</td>
+<td>ICN</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Sydney</td>
+<td>ap-sydney-1</td>
+<td>호주, 시드니</td>
+<td>SYD</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>Zurich</td>
+<td>eu-zurich-1</td>
+<td>스위스, 취리히</td>
+<td>ZRH</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
 
-<p><strong>oci-oracle.cloud</strong>는 OCI Orcle Cloud 관련 문서를 신속하게 그리고 지속적으로 업데이트함을 목표로합니다. <strong>oci-oracle.cloud</strong>는 정보를 최신 상태로 유지하는 것을 목표로하지만 시점에 따라서 내용이 현재와 다를수 있습니다. 문서를 확인하실 때 문서 생성일과 최종 문서 수정일을 꼭 확인해 주시기 바랍니다.</p>
-
-<h2 id="gitter-im-커뮤니티-페이지">gitter.im 커뮤니티 페이지</h2>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/000.jpg" alt="" /></p>
-
-<p>gitter.im에 <strong>oci-oracle.cloud</strong> 채널을 운영 중입니다. 다음과 같은 이슈가 있을때 글을 남겨주시면 적극 반영하겠습니다. gitter.im 커뮤니티 페이지의 URL은 다음과 같습니다.</p>
+<h2 id="참고-문서">참고 문서</h2>
 
 <ul>
-<li><a href="https://gitter.im/oci-oracle-cloud/community" target="_blank">gitter에 개설은 OCI Oracle Cloud 커뮤니티 채널: https://gitter.im/oci-oracle-cloud/community <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<li><a href="https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm" target="_blank">[Official OCI Docs]Regions and Availability Domains <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
 </li>
 </ul>
-
-<h2 id="2주간-변경-로그">2주간 변경 로그</h2>
-
-<p>최근 2주간 <strong>oci-oracle.cloud</strong> 변경 사항은 다음과 같습니다.</p>
-
-<table>
-<thead>
-<tr>
-<th>일자</th>
-<th>패스</th>
-<th>변경내역</th>
-<th>링크</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>2020.03.08</td>
-<td>/index.html</td>
-<td><strong>oci-oracle.cloud</strong> 메인 페이지 추가</td>
-<td><a href="/" target="_blank">oci-oracle.cloud <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
-
-</td>
-</tr>
-</tbody>
-</table>
-
-
 
 
     
     
       <div class="alert alert-info" role="alter">
-  <li><strong>문서 생성:</strong> 2020-03-01 01:11 / <string>최종 문서 수정:</strong> 2020-03-01 01:11 </li>
+  <li><strong>문서 생성:</strong> 2020-03-01 08:54 / <string>최종 문서 수정:</strong> 2020-03-01 08:54 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/000.index/" title="오라클 클라우드 사용자 가이드" style="margin-right: 0px;"><label>오라클 클라우드 사용자 가이드</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" title="OCI Classic과 OCI Gen2"> <i class="fa fa-chevron-left"></i><label>OCI Classic과 OCI Gen2</label></a>
+    <a class="nav nav-next" href="/010.oci_intro/basic_concept/oci_services_in_regions/" title="OCI 리전별 서비스 현황 " style="margin-right: 0px;"><label>OCI 리전별 서비스 현황 </label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
-      <div class="panel panel-danger">
+      <div class="row">
+    <div class="author left">
+        <img alt="김태완 avatar" src="https://taewanmerepo.github.io//taewan2.jpg" height="90" width="90">
+    </div>
+    <div class="author right">
+		<li><b>작성자: 김태완</b></li>
+        <li>사랑하는 민수와 데이터 관리, 데이터 분석 &amp; 클라우드에 집중하고 있습니다.</li>
+        <li>E-mail: taewanme@gmail.com</li>
+    </div>
+</div><div class="panel panel-danger">
 <div class="panel-heading">Disclaimer</div>
 <div class="panel-body">이 저작물은 Oracle과 관계없이 개인으로서 개인의 시간을 할애하여 작성된 글 입니다. 본 글의 내용, 입장, 예측은 Oracle을 공식적으로 <font color="red"><bold>절대</bold></font> 대변하지 않습니다.</div>
 </div>
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/basic_concept/oci_resion_info/"></div>
 
   </div>
 

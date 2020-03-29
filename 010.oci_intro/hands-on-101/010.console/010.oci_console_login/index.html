@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2020-03-29T23:19:57 KST">
+
+<meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
+<meta name="generator" content="Hugo 0.27.1" />
+<meta property="og:title" content="OCI Console 로그인" />
+<meta property="og:description" content="OCI Console 로그인 핸드온" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" />
+
+
+
+<meta property="article:published_time" content="2020-03-27T09:11:05&#43;09:00"/>
+<meta property="article:modified_time" content="2020-03-27T09:11:05&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+
+
+<title>OCI Console 로그인 :: 오라클 클라우드 사용자 가이드</title>
+
+<link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "\/";
+</script>
+<meta name="description" content="OCI Console 로그인 핸드온">
+
+
+<link href='/css/railload.css' rel="stylesheet"/>
+
+
+<link href="/css/twstyle.css" rel="stylesheet">
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?style=Sons-Of-Obsidian"></script>
+
+
+<style>
+    li.L0, li.L1, li.L2, li.L3,
+    li.L5, li.L6, li.L7, li.L8
+       { list-style-type: decimal !important }
+</style>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162015179-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162015179-1');
+</script>
+
+
+
+
+
+    
+  </head>
+  <body data-url="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="/">오라클 클라우드 사용자 가이드</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://cloud.oracle.com"  rel="noopener">
+                  <i class='fa fa-cloud'></i> <label>Oracle Cloud</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://docs.cloud.oracle.com/"  rel="noopener">
+                  <i class='fa fa-book'></i> <label>OCI Docs</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="http://taewan.kim/"  rel="noopener">
+                  <i class='fa fa-send'></i> <label>taewan.kim blog</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+    <li data-nav-id="/000.index/" class="dd-item
+        ">
+      <div>
+      <a href="/000.index/">오라클 클라우드 사용자 가이드</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/010.oci_intro/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_intro/">OCI(Oracle Cloud)-기초 입문</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/010.oci_intro/basic_concept/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_intro/basic_concept/">OCI 입문: 기본 개념</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_introduction/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_introduction/">
+            Oracle Cloud Infrasturcture
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/terminologies/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/terminologies/">
+            OCI 기초 용어 정리
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/">
+            OCI Classic과 OCI Gen2
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_resion_info/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_resion_info/">
+            OCI 리전 정보
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_services_in_regions/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_services_in_regions/">
+            OCI 리전별 서비스 현황 
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_free_trial/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_free_trial/">
+            OCI Free Tier
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/">
+            OCI 사용자 ID 관리 서비스
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/initial_oci_tenancy/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/initial_oci_tenancy/">
+            OCI Tenancy 생성
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/">
+            클라우드 서비스 용어 비교
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/010.oci_intro/hands-on-101/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_intro/hands-on-101/">OCI 입문: Hands-on 101 클래스</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/010.oci_intro/hands-on-101/000.oci_free_trial/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/000.oci_free_trial/">
+            OCI Free Tier 등록
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/010.oci_intro/hands-on-101/010.console/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_intro/hands-on-101/010.console/">OCI Console</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" class="dd-item active">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/">
+            OCI Console 로그인
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/020.oci_vcn/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/020.oci_vcn/">
+            OCI VCN 생성
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/010.oci_console_login/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/010.oci_console_login/">
+            OCI Console 로그인
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section><hr />
+<div class="widget-categories widget">
+	<h4 class="widget__title">&nbsp;&nbsp;License</h4>
+	<div class="widget__content">
+		&nbsp;&nbsp;<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+	</div>
+	<div class="widget__content">
+        <div>
+        이 저작물은 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+        </div>
+	</div>
+</div>
+<hr />
+<div>
+    <hr/>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8469722754608892"
+         data-ad-slot="5594090168"
+         data-ad-format="auto"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <hr/>  
+  </div>
+
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/000.index/" >
+   오라클 클라우드 사용자 가이드</option>
+    <option value="/010.oci_intro/" >
+   OCI(Oracle Cloud)-기초 입문</option> 
+    <option value="/010.oci_intro/basic_concept/" >
+  - 
+   OCI 입문: 기본 개념</option> 
+      <option value="/010.oci_intro/basic_concept/oci_introduction/" >-- Oracle Cloud Infrasturcture</option>
+      <option value="/010.oci_intro/basic_concept/terminologies/" >-- OCI 기초 용어 정리</option>
+      <option value="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" >-- OCI Classic과 OCI Gen2</option>
+      <option value="/010.oci_intro/basic_concept/oci_resion_info/" >-- OCI 리전 정보</option>
+      <option value="/010.oci_intro/basic_concept/oci_services_in_regions/" >-- OCI 리전별 서비스 현황 </option>
+      <option value="/010.oci_intro/basic_concept/oci_free_trial/" >-- OCI Free Tier</option>
+      <option value="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" >-- OCI 사용자 ID 관리 서비스</option>
+      <option value="/010.oci_intro/basic_concept/initial_oci_tenancy/" >-- OCI Tenancy 생성</option>
+      <option value="/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/" >-- 클라우드 서비스 용어 비교</option>
+  
+    <option value="/010.oci_intro/hands-on-101/" >
+  - 
+   OCI 입문: Hands-on 101 클래스</option> 
+      <option value="/010.oci_intro/hands-on-101/000.oci_free_trial/" >-- OCI Free Tier 등록</option>
+    <option value="/010.oci_intro/hands-on-101/010.console/" >
+  -- 
+   OCI Console</option> 
+      <option value="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/"  selected>--- OCI Console 로그인</option>
+  
+      <option value="/010.oci_intro/hands-on-101/020.oci_vcn/" >-- OCI VCN 생성</option>
+      <option value="/010.oci_intro/hands-on-101/010.oci_console_login/" >-- OCI Console 로그인</option>
+  
+  
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    <h1>OCI Console 로그인</h1>
+    <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/100.jpg" alt="OCI Console 로그인"></p>
+
+
+     
+      
+  
+    
+    
+    
+    
+
+<p><strong>Oracle Cloud</strong>에서 사용자 ID는 Oracle IDCS와 OCI IAM으로 관리됩니다. Oracle ID 관리 방식에 대하여 궁금하시다면 다음 문서를 참조하시기 바랍니다.</p>
+
+<ul>
+<li><a href="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" target="_blank">OCI 사용자 ID 관리 서비스 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+</ul>
+
+<p>이번 Hands-on Lab에서는 Oracle 계정을 등록한 다음에 Oracle Console에 로그인하는 방법을 소개합니다. 이번 Hands-on Lab에서 다음과 같은 정보로 Oracle Cloud 계정을 만들었다고 가정하고 진행하겠습니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>설정값</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Account Name</td>
+<td>apacktst01</td>
+</tr>
+
+<tr>
+<td>E-mail</td>
+<td>taewan.kim@oracle.com</td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td>Welcome123456!</td>
+</tr>
+
+<tr>
+<td>Home Region</td>
+<td>Ashburn</td>
+</tr>
+</tbody>
+</table>
+
+<p>위 설정값은 여러분의 실제 Oracle Cloud 계정 정보로 대체하고 진행하시기 바랍니다.</p>
+
+<h1 id="hands-on-oracle-cloud-로그인">Hands-on: Oracle Cloud 로그인</h1>
+
+<p>OCI Console 로그인 핸드온은 다음과 같은 목차로 진행합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
+<ul>
+<li><a href="#hands-on-oracle-cloud-로그인">Hands-on: Oracle Cloud 로그인</a>
+<ul>
+<li><a href="#oracle-홈페이지-로그인">Oracle 홈페이지 로그인</a>
+<ul>
+<li><a href="#oci-console-로그인-oracle-idcs-옵션-선택">OCI Console 로그인: Oracle IDCS 옵션 선택</a></li>
+<li><a href="#oci-console-로그인-oci-iam-옵션-선택">OCI Console 로그인: OCI IAM 옵션 선택</a></li>
+</ul></li>
+<li><a href="#oci-홈-리전-로그인-페이지">OCI 홈 리전 로그인 페이지</a></li>
+</ul></li>
+</ul>
+</nav></p>
+</div></div>
+
+
+<h2 id="oracle-홈페이지-로그인">Oracle 홈페이지 로그인</h2>
+
+<p>Oracle 홈페이지에서 OCI Console은 <a href="https://oracle.comm" target="_blank">https://oracle.comm <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+에서 로그인합니다. 오라클 홈페이지에서 로그인하는 방식은 <strong>Oracle IDCS</strong>를 사용하는 로그인 방식입니다. 오라클 홈페이지에서 다음과 같은 메뉴 패스로 오라클 클라우드 로그인 페이지로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><strong>View Accounts</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Sign in to Cloud</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/110.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>Cloud Account Name</strong> 항목이 <strong>ocidemo001</strong>을 입력하고 <strong>Next</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/120.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>사용자 이름</strong>과 <strong>비밀번호</strong>에 항목에 각각 <strong>teawanme@gmail.com</strong>과 <strong>Welcome123456!</strong>을 입력하고 로그인합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/130.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>로그인하면 OCI Classic 콘솔 페이지가 출력됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/140.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>OCI Classic 콘솔 페이지에서 다음과 같은 메뉴 패스로 OCI Console 로그인 페이지로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Infrastructure</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/150.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="oci-console-로그인-oracle-idcs-옵션-선택">OCI Console 로그인: Oracle IDCS 옵션 선택</h3>
+
+<p>OCI Console 로그인 페이지에서는 Oracle IDCS와 OCI IAM 두 가지 옵션을 모두 제공합니다. Oracle IDCS 옵션을 선택할 경우 기존 Oracle Cloud의 SSO(싱글사인온)가 적용되고 OCI IAM을 선택할 경우 새로 ID/패스워드를 입력하고 인증합니다.</p>
+
+<p>현재는 Oracle IDCS 인증 방식을 선택합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/190.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>앞에서 Oracle IDCS를 선택할 경우에 Oracle IDCS는 현재 사용자가 이미 로그인 상태라는 것은 SSO로 확인합니다. 따라서 추가 인증 정보를 요구하지 않고 바로 OCI Console로 이동합니다.</p>
+
+<p>현재 OCI Console에 로그인은 Oracle IDCS로 로그인했습니다. 따라서 OCI Console의 메뉴에는 Oracle Classic 기반 PaaS 서비스가 출력됩니다. 현재 이용가능한 OCI Classic PaaS 서비스는 다음 메뉴 패스로 확인할 수 있습니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>플랫폼 서비스</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/170.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>OCI Console을 다음 메뉴 패스로 로그아웃합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><strong>사용자 프로파일 아이콘</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>사인 아웃</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/180.jpg?classes=border,shadow" alt="" /></p>
+
+<p><strong>사인 아웃</strong> 버튼을 클릭하면 다음과 같이 OCI Console 로그인 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/210.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="oci-console-로그인-oci-iam-옵션-선택">OCI Console 로그인: OCI IAM 옵션 선택</h3>
+
+<p>OCI Console 로그인 페이지에서 OCI IAM 인증을 위한 ID/패스워드를 입력하고 인증합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/200.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>OCI IAM 인증을 하면 인증이 적용되는 범위는 OCI에 국한됩니다. 따라서 OCI Console 메뉴에서 OCI Classic 기반 PaaS 서비스 목록은 출력하지 않습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/220.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>OCI Console을 다음 메뉴 패스로 로그아웃합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><strong>사용자 프로파일 아이콘</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>사인 아웃</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/180.jpg?classes=border,shadow" alt="" /></p>
+
+<p><strong>사인 아웃</strong> 버튼을 클릭하면 다음과 같이 OCI Console 로그인 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/210.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="oci-홈-리전-로그인-페이지">OCI 홈 리전 로그인 페이지</h2>
+
+<p>앞에서 OCI Console에 접근하기 위해서 다음과 같은 경로를 거쳤습니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><strong>oracle.com 홈페이지</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>oracle cloud 로그인 페이지</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>OCI Classic Console</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <font color='red'><strong>OCI Console 로그인 페이지</strong></font> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>OCI Console</strong></div></div>
+
+
+<p>이 방식은 약간 번거롭게 느껴집니다. <strong>oracle.com 홈페이지</strong>를 거치지 않고 직접 OCI Console 로그인 페이지에 접근할 수 있습니다. OCI Console 로그인 페이지는 OCI Account(Tenente)가 사용하는 Home Region에 따라서 달라집니다. OCI Console 로그인 페이지 패턴은 다음과 같습니다.</p>
+
+<pre><code>https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/
+https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
+</code></pre>
+
+<p>OCI_REGION_ID는 다음 페이지에서 확인할 수 있습니다.</p>
+
+<ul>
+<li><a href="/010.oci_101/basic_concept/oci_resion_info/" target="_blank">OCI 리전 정보 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+</ul>
+
+<p>현재 Handson-Lab에서 사용하는 계정은 테넌트 명은 <strong>ocidemo001</strong>이고 서울 리전을 <strong>Home Region</strong>으로 사용합니다. OCI 서울리전 ID는 <strong>ap_seoul_1</strong>입니다. 따라서 OCI Console 로그인 페이지는 다음과 같습니다.</p>
+
+<pre><code>https://console.ap-seoul-1.oraclecloud.com/?tenant=ocidemo001
+</code></pre>
+
+<p>위 URL을 실행하면 다음 페이지가 출력됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/190.jpg?classes=border,shadow" alt="" /></p>
+
+<p>현재 Hands-on Lab에서 사용하는 ID는 <strong>ocidemo001</strong> 계정의 관리자 ID입니다. OCI Console 로그인 페이지에서 Oracle IDCS와 OCI IAM을 모두 선택하고 로그인할 수 있습니다.</p>
+
+<p>OCI Console 로그인 페이지에서 Oracle IDCS 로그인 방식을 사용할 경우, 현재 SSO 로그인한 상태라면 바로 OCI Console 페이지로 이동합니다. 반대로 Oracle IDCS가 SSO 로그인 상태가 아니라면 ID/Passowd를 입력하는 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/130.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>OCI Console 로그인 페이지에서 OCI IAM 로그인 방식을 사용할 경우, 해당 페이지에서 ID/Password를 입력하고 OCI Console 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/200.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>OCI Console 로그인 페이지에서 Oracle IDCS 혹은 OCI IAM으로 인증을 완료하면 다음과 같은 OCI Console 페이지가 출력됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/230.jpg?classes=border,shadow" alt="" /></p>
+
+
+    
+    
+      <div class="alert alert-info" role="alter">
+  <li><strong>문서 생성:</strong> 2020-03-27 09:11 / <string>최종 문서 수정:</strong> 2020-03-27 09:11 </li>
+</div><div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/010.console/" title="OCI Console"> <i class="fa fa-chevron-left"></i><label>OCI Console</label></a>
+    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/020.oci_vcn/" title="OCI VCN 생성" style="margin-right: 0px;"><label>OCI VCN 생성</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+  <div class="chevrons">
+      <div class="row">
+    <div class="author left">
+        <img alt="김태완 avatar" src="https://taewanmerepo.github.io//taewan2.jpg" height="90" width="90">
+    </div>
+    <div class="author right">
+		<li><b>작성자: 김태완</b></li>
+        <li>사랑하는 민수와 데이터 관리, 데이터 분석 &amp; 클라우드에 집중하고 있습니다.</li>
+        <li>E-mail: taewanme@gmail.com</li>
+    </div>
+</div><div class="panel panel-danger">
+<div class="panel-heading">Disclaimer</div>
+<div class="panel-body">이 저작물은 Oracle과 관계없이 개인으로서 개인의 시간을 할애하여 작성된 글 입니다. 본 글의 내용, 입장, 예측은 Oracle을 공식적으로 <font color="red"><bold>절대</bold></font> 대변하지 않습니다.</div>
+</div>
+<hr />
+
+
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/010.console/010.oci_console_login/"></div>
+
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 27/03/2020
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+
+
+
+  </div>
+  
+  
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-72835175-1', 'auto');
+        ga('send', 'pageview');
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=404519239985000&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+    
+
+    
+    
+
+    
+
+
+  </body>
+</html>

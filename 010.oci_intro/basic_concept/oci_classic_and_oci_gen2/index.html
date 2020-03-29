@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2020-03-29T23:19:57 KST">
+
+<meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
+<meta name="generator" content="Hugo 0.27.1" />
+<meta property="og:title" content="OCI Classic과 OCI Gen2" />
+<meta property="og:description" content="오라클 클라우드의 시작점에서 현재 OCI로 발전한 단계를 가볍게 소개합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" />
+
+
+
+<meta property="article:published_time" content="2020-03-26T09:11:05&#43;09:00"/>
+<meta property="article:modified_time" content="2020-03-26T09:11:05&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+
+
+<title>OCI Classic과 OCI Gen2 :: 오라클 클라우드 사용자 가이드</title>
+
+<link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "\/";
+</script>
+<meta name="description" content="오라클 클라우드의 시작점에서 현재 OCI로 발전한 단계를 가볍게 소개합니다.">
+
+
+<link href='/css/railload.css' rel="stylesheet"/>
+
+
+<link href="/css/twstyle.css" rel="stylesheet">
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?style=Sons-Of-Obsidian"></script>
+
+
+<style>
+    li.L0, li.L1, li.L2, li.L3,
+    li.L5, li.L6, li.L7, li.L8
+       { list-style-type: decimal !important }
+</style>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162015179-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162015179-1');
+</script>
+
+
+
+
+
+    
+  </head>
+  <body data-url="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="/">오라클 클라우드 사용자 가이드</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://cloud.oracle.com"  rel="noopener">
+                  <i class='fa fa-cloud'></i> <label>Oracle Cloud</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://docs.cloud.oracle.com/"  rel="noopener">
+                  <i class='fa fa-book'></i> <label>OCI Docs</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="http://taewan.kim/"  rel="noopener">
+                  <i class='fa fa-send'></i> <label>taewan.kim blog</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+    <li data-nav-id="/000.index/" class="dd-item
+        ">
+      <div>
+      <a href="/000.index/">오라클 클라우드 사용자 가이드</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/010.oci_intro/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_intro/">OCI(Oracle Cloud)-기초 입문</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/010.oci_intro/basic_concept/" class="dd-item parent alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_intro/basic_concept/">OCI 입문: 기본 개념</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_introduction/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_introduction/">
+            Oracle Cloud Infrasturcture
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/terminologies/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/terminologies/">
+            OCI 기초 용어 정리
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" class="dd-item active">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/">
+            OCI Classic과 OCI Gen2
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_resion_info/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_resion_info/">
+            OCI 리전 정보
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_services_in_regions/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_services_in_regions/">
+            OCI 리전별 서비스 현황 
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oci_free_trial/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oci_free_trial/">
+            OCI Free Tier
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/">
+            OCI 사용자 ID 관리 서비스
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/initial_oci_tenancy/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/initial_oci_tenancy/">
+            OCI Tenancy 생성
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/">
+            클라우드 서비스 용어 비교
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/010.oci_intro/hands-on-101/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_intro/hands-on-101/">OCI 입문: Hands-on 101 클래스</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/010.oci_intro/hands-on-101/000.oci_free_trial/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/000.oci_free_trial/">
+            OCI Free Tier 등록
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/010.oci_intro/hands-on-101/010.console/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/010.oci_intro/hands-on-101/010.console/">OCI Console</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/">
+            OCI Console 로그인
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/020.oci_vcn/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/020.oci_vcn/">
+            OCI VCN 생성
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/010.oci_console_login/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/010.oci_console_login/">
+            OCI Console 로그인
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section><hr />
+<div class="widget-categories widget">
+	<h4 class="widget__title">&nbsp;&nbsp;License</h4>
+	<div class="widget__content">
+		&nbsp;&nbsp;<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+	</div>
+	<div class="widget__content">
+        <div>
+        이 저작물은 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target=_blank>크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다.
+        </div>
+	</div>
+</div>
+<hr />
+<div>
+    <hr/>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8469722754608892"
+         data-ad-slot="5594090168"
+         data-ad-format="auto"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <hr/>  
+  </div>
+
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/000.index/" >
+   오라클 클라우드 사용자 가이드</option>
+    <option value="/010.oci_intro/" >
+   OCI(Oracle Cloud)-기초 입문</option> 
+    <option value="/010.oci_intro/basic_concept/" >
+  - 
+   OCI 입문: 기본 개념</option> 
+      <option value="/010.oci_intro/basic_concept/oci_introduction/" >-- Oracle Cloud Infrasturcture</option>
+      <option value="/010.oci_intro/basic_concept/terminologies/" >-- OCI 기초 용어 정리</option>
+      <option value="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/"  selected>-- OCI Classic과 OCI Gen2</option>
+      <option value="/010.oci_intro/basic_concept/oci_resion_info/" >-- OCI 리전 정보</option>
+      <option value="/010.oci_intro/basic_concept/oci_services_in_regions/" >-- OCI 리전별 서비스 현황 </option>
+      <option value="/010.oci_intro/basic_concept/oci_free_trial/" >-- OCI Free Tier</option>
+      <option value="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" >-- OCI 사용자 ID 관리 서비스</option>
+      <option value="/010.oci_intro/basic_concept/initial_oci_tenancy/" >-- OCI Tenancy 생성</option>
+      <option value="/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/" >-- 클라우드 서비스 용어 비교</option>
+  
+    <option value="/010.oci_intro/hands-on-101/" >
+  - 
+   OCI 입문: Hands-on 101 클래스</option> 
+  
+  
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    <h1>OCI Classic과 OCI Gen2</h1>
+    <p><img src="https://taewanmerepo.github.io/2018/04/ocivsociclassic/head.jpg" alt="OCI Classic과 OCI Gen2"></p>
+
+
+     
+      
+  
+    
+    
+    
+    
+
+<div class="notices tip" ><p><p>이 문서는 2018년 3월에 작성된 글을 일부 수정하여 올렸습니다. 이 글의 시점은 2018년 4월 시점입니다. 오라클 클라우드가 OPC에서 OCI Classic으로 그리고 OCI로 전환되는 흐름을 파악하는 입장에서 봐주셨으면 합니다.<br />
+- 원본: <a href="http://taewan.kim/cloud/oci_and_oci_classic" target="_blank">[2018-03-03]Oracle Cloud IaaS: OCI vs OCI Classic <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p>
+</p></div>
+
+
+<p>오라클 클라우드의 핵심 인프라스터럭처는 OCI Classic(Oracle Cloud Infrastructure Classic) 서비스로 시작하여 현재 OCI(Oracle Cloud Infrastructure)로 발전했습니다. OCI Classic의 흔적은 대부분 사라진 상태입니다. 그러나 여전히 여러 서비스에서 그 흔적이 남아 있습니다. 현재(2020년 3월 기준) 오라클 클라우드 사용자를 관리하는 방식은 Oracle IDCS 사용자와 OCI 사용자 두 관리 방식으로 관리됩니다. 오라클 클라우드를 처음 접할 때, 왜 두 가지 관리 체계가 존재하는지 혼란스러운 것이 사실입니다. 이 부분을 이해하기 위해서는 오라클 클라우드의 발전 과정을 알아야합니다. 이와 관련하여 OCI Classic과 OCI가 무엇이고 어떻게 발전해 왔는지 간략하게 살펴  보겠습니다.</p>
+
+<div class="notices warning" ><p><p>이 문서에서 다루는 내용은 전적으로 작성자 개인 의견입니다.  오라클의 공식적인 입장과 다를 수 있습니다. 오라클 클라우드를 이해하는 배경 지식으로만 활용해 주시기 바랍니다.</p>
+</p></div>
+
+
+<hr />
+
+<p>이번 문서는 다음과 같은 목차로 구성됩니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><nav id="TableOfContents">
+<ul>
+<li><a href="#오라클-클라우드-iaas-서비스">오라클 클라우드 IaaS 서비스</a></li>
+<li><a href="#oci와-oci-classic-무엇이-다른가">OCI와 OCI-Classic 무엇이 다른가?</a>
+<ul>
+<li><a href="#oci-classic">OCI Classic</a></li>
+<li><a href="#oci-oracle-cloud-infrastructure">OCI(Oracle Cloud Infrastructure)</a></li>
+<li><a href="#oci-oci-classic-비교">OCI &amp; OCI Classic 비교</a></li>
+<li><a href="#oci-classic-vs-c-c-cloud-at-customer">OCI Classic vs C@C(Cloud at Customer)</a></li>
+</ul></li>
+<li><a href="#요약">요약</a></li>
+<li><a href="#참고-문서">참고 문서</a></li>
+</ul>
+</nav>
+</div></div>
+
+
+<hr />
+
+<h1 id="오라클-클라우드-iaas-서비스">오라클 클라우드 IaaS 서비스</h1>
+
+<p>오라클은 2013년 3월에 Nimbula를 인수했습니다. Nimbula는 Private과 Hybrid 클라우드 인프라 관리 기술로 유명한 회사였습니다. 오라클은 Nimbula 기술을 근간으로 오라클 클라우드 IaaS 서비스를 개발했고, 2014년 OOW(Oracle Open World)에서 OPC(Oracle Public Cloud)라는 브랜드로 클라우드 서비스를 런칭했습니다.</p>
+
+<p>오라클은 2014년부터 OPC로 IaaS 서비스를 시작했습니다. 그와 동시에 Region, Availability Domain, Flat Network, 서버 및 랙 디자인을 클라우드 환경에 맞춘 클라우드 전용 데이터 센터 구축을 진행하였습니다. 이 클라우드 데이터 센터 구축 프로젝트를 2세대란 의미(Generation 2)에서 Gen2라고 불렀습니다. 이 Gen2에 올라간 IaaS 서비스를 BMCS(Bare Metal Cloud Service)라고 명명했습니다. 2017년 OOW에 맞춰서, 오라클은 오라클 클라우드 주요 서비스의 브랜드명을 조정하였습니다. 이 과정에서 BMCS는 OCI로 변경되었고, OPC는 OCI Classic으로 서비스명이 바꿨습니다.</p>
+
+<p>2017년과 2018년에 오라클 클라우드 서비스는 1세대 클라우드 서비스와 2세대 클라우드 서비스가 공존했습니다. 서비스 이름이 classic으로 끝나는 서비스는 Nimbula를 기반으로 개발된 서비스라고 분류했습니다. 예를 들어서 이 당시에 <strong>Storage 서비스</strong>와 <strong>Storage Classic 서비스</strong>가 함께 서비스되었습니다. <strong>Storage 서비스</strong>는 Gen2 기반의 스토리지 서비스였고, <strong>Storage Classic 서비스</strong>는 Nimbula 기반의 서비스였습니다.</p>
+
+<p>OCI가 등장하기 전까지 모든 오라클 PaaS는 OPC 즉 OCI Classic에서 서비스되었습니다. 2017년 OCI를 발표한 후, OCI Classic에서 동작하던 모든 PaaS를 OCI로 포팅하고 있습니다. 2020년 현재 거의 대부분의 서비스가 OCI로 전환된 상태입니다.</p>
+
+<h1 id="oci와-oci-classic-무엇이-다른가">OCI와 OCI-Classic 무엇이 다른가?</h1>
+
+<p>OCI와 OCI Classic에 대하여 간략히 정리해 보겠습니다.</p>
+
+<h2 id="oci-classic">OCI Classic</h2>
+
+<p>OCI Classic은 Nimbula를 기반으로 개발된 IaaS 서비스입니다. Nimbula Director를 기반으로하며 하이퍼바이저로 Xen을 사용합니다. OCI Classic은 VM만을 서비스하고 Bare Metal<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>은 제공하지 않습니다. 앞에서 소개한 것처럼, 2014년 OOW에서 OPC라는 이름으로 공개되었고, 2017년 OOW에서 OCI Classic으로 이름이 변경되었습니다.</p>
+
+<p>OCI Classic은 네트워크로는 Shared Network과 IP Networks를 지원합니다. Shard Network은 클라우드 계정 단위로 네트웍을 관리합니다. 방화벽 개념인 Security List로 VM 그룹을 만들고 보안 룰을 적용하여 VM들을 격리하는 방식을 사용합니다. 그리고 VM에 할당되는 Private IP는 클라우드 계정 단위로 관리 됩니다.</p>
+
+<p>IP Network를 이용하면 클라우드 계정 단위로 IP Address를 관리할 수 있고 서브넷(Subnet)을 구성하여 여러개의 네트워크 망을 관리할 수 있습니다. IP Network을 사용하면 여러개의 네트워크 망을 구성하여 VM을 격리할 수 있습니다. IP Network을 사용하면 Shared Network 보다 향상된 네트워크 구성 및 안전한 환경을 만들 수 있습니다.</p>
+
+<p>OCI Classic이 오라클 최초의 IaaS 서비스인 만큼 오라클의 모든 PaaS는 OCI Classic을 지원합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2018/04/ociclass/img090.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="oci-oracle-cloud-infrastructure">OCI(Oracle Cloud Infrastructure)</h2>
+
+<p>이름에서 알 수 있는 것처럼, 현재 오라클 클라우드 인프라스트럭처는 OCI입니다. 데이터 센터, 서버 및 랙 및 네트워크 디자인이 적용된 클라우드 최적화한 데이터센터에서 운영됩니다. 데이터 센터 디자인에 Region, Availability Domain이 적용되어 있으며 네트워크가 Flat Network 기반으로 구성되어 있어 뛰어난 가용성과 확장성을 제공합니다. VCN(Virtual Cloud Network)<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>를 지원하며 private network를 구성하고 설정할 수 있습니다. VCN은 서브넷, 라우트 테이블, 게이트웨이를 갖는 네트워크의 Software-defined Network 버전입니다.</p>
+
+<p>OCI는 VM과 Bare metal 서비스를 모두 제공합니다. 하이퍼바이저로 KVM을 사용합니다. Edge Service로 Email, DNS, Load Balancer를 제공합니다. 현재 HPC, AI 및 Machine Learning은 OCI에서만 이용 가능합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2018/04/ocivsociclassic/oci.png?classes=border,shadow" alt="" /></p>
+
+<p>OCI의 주요 구성 컴포넌트는 다음과 같습니다.</p>
+
+<ul>
+<li>Region</li>
+<li>Availability Domain</li>
+<li>Compartments</li>
+<li>IAM</li>
+<li>Virtual Cloud Network</li>
+<li>Edge Service</li>
+</ul>
+
+<p><img src="https://taewanmerepo.github.io/2018/04/ocivsociclassic/ocioverview.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="oci-oci-classic-비교">OCI &amp; OCI Classic 비교</h2>
+
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>OCI</th>
+<th>OCI Classic</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Type</td>
+<td>Virtual Machine, Bare Metal</td>
+<td>Virtual Machine</td>
+</tr>
+
+<tr>
+<td>Network</td>
+<td>Virtual Cloud Network</td>
+<td>Shared Network, IP Network</td>
+</tr>
+
+<tr>
+<td>Hypervisor</td>
+<td>KVM</td>
+<td>Xen (Nimbula Director)</td>
+</tr>
+
+<tr>
+<td>서비스 시작</td>
+<td>2017년</td>
+<td>2014년</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="oci-classic-vs-c-c-cloud-at-customer">OCI Classic vs C@C(Cloud at Customer)</h2>
+
+<p>오라클은 Public Cloud 이외에도 Private Cloud로 C@C(Cloud at customer)를 제공합니다. 오라클이 클라우드에서 제공하는 서버와 소프트웨어 구성을 고객사에 제공하고 해당 서비스를 오라클이 관리하는 서비스입니다. 위치를 기준으로 볼때 C@C는 고객사의 데이터 센터에 위치하기 때문에 Private Cloud입니다. 그러나 운영 형태로 보면 오라클이 직접 운영하는 Public Cloud 서비스입니다. 이 C@C 서비스는 OCI Classic과 같은 체계를 갖고 있습니다.</p>
+
+<p>OCI Classic의 토대가 되는 Nimbula는 볼래 Private Cloud와 Hybrid Cloud를 지양하는 클라우드 기술이었습니다. 이 기술은 이제 C@C 형태로 오라클의 Public Cloud와 고객사의 Private Cloud(C@C)를 연결하는 Hybrid Cloud 기술로 중요한 의미를 갖습니다. 현재 OCI Classic에 배포되는 모든 PaaS는 Oracle C@C에 배포될 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2018/04/ocivsociclassic/catc.png?classes=border,shadow" alt="" /></p>
+
+<h1 id="요약">요약</h1>
+
+<p>오라클 클라우드는 2017년과 2018년에 IaaS로 OCI Classic과 OCI를 동시에 제공했습니다. OCI Classic은 Nimbula를 기반으로 개발되었으며, 오라클 클라우드의 첫 번째 IaaS 서비스입니다. 초기에 모든 Oracle PaaS는 OCI Classic으로 개발되었습니다.</p>
+
+<p>OCI는 클라우드 전용 데이터 센터 아키텍처를 기반으로 디자인된 차세대 오라클 클라우드 인프라입니다. 현재 오라클의 주력 IaaS 서비스는 OCI입니다. OCI는 VM과 Bare Metal 서비스를 모두 지원하며, 고성능 컴퓨팅(AI, ML, HPC) 서비스를 제공합니다. 2017년과 2018년에 오라클 PaaS는 현재 대부분 OCI Classic과 OCI를 모두 지원했습니다. 현재 오라클 클라우드의 대부분 PaaS는 OCI로 포팅되었습니다.</p>
+
+<p>Oracle C@C(Cloud at Customer)는 고객사의 데이터센터에서 배포되어 운영되는 클라우드 서비스로 OCI Classic을 기반 기술로 개발되었습니다. 서버의 위치는 고객사 데이터 센터이며, 클라우드 시스템의 운영은 오라클이 담당합니다. 위치를 기준으로 Private Cloud이지만, 기반 기술 및 운영 주체를 기준으로 볼 때 Public Cloud입니다. OCI Classic에 배포 가능한 모든 PaaS는 현재 Oracle C@C에도 배포될 수 있습니다.</p>
+
+<h1 id="참고-문서">참고 문서</h1>
+
+<ul>
+<li><a href="http://taewan.kim/cloud/oci_and_oci_classic" target="_blank">Oracle Cloud IaaS: OCI vs OCI Classic <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Bare Metal이란 물리적인 호스트 컴퓨터를 제공하는 것을 의미합니다. 고객에게 가상화 컴퓨팅 자원이 아닌 물리적인 서버를 직접 제공하는 서비스를 의미합니다.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">VCN(Virtual Cloud Network)은 클라우드 내에서 사용자가 정의하는 가상 네트워크 망을 의미합니다. Private IP를 관리하는 단위가 됩니다. VCN 아래 Subnet을 구성할 수있습니다. VCN을 아마존에서는 VPC(Virtual Private Cloud)라고 표현합니다.
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+
+    
+    
+      <div class="alert alert-info" role="alter">
+  <li><strong>문서 생성:</strong> 2020-03-26 09:11 / <string>최종 문서 수정:</strong> 2020-03-26 09:11 </li>
+</div><div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/010.oci_intro/basic_concept/terminologies/" title="OCI 기초 용어 정리"> <i class="fa fa-chevron-left"></i><label>OCI 기초 용어 정리</label></a>
+    <a class="nav nav-next" href="/010.oci_intro/basic_concept/oci_resion_info/" title="OCI 리전 정보" style="margin-right: 0px;"><label>OCI 리전 정보</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+  <div class="chevrons">
+      <div class="row">
+    <div class="author left">
+        <img alt="김태완 avatar" src="https://taewanmerepo.github.io//taewan2.jpg" height="90" width="90">
+    </div>
+    <div class="author right">
+		<li><b>작성자: 김태완</b></li>
+        <li>사랑하는 민수와 데이터 관리, 데이터 분석 &amp; 클라우드에 집중하고 있습니다.</li>
+        <li>E-mail: taewanme@gmail.com</li>
+    </div>
+</div><div class="panel panel-danger">
+<div class="panel-heading">Disclaimer</div>
+<div class="panel-body">이 저작물은 Oracle과 관계없이 개인으로서 개인의 시간을 할애하여 작성된 글 입니다. 본 글의 내용, 입장, 예측은 Oracle을 공식적으로 <font color="red"><bold>절대</bold></font> 대변하지 않습니다.</div>
+</div>
+<hr />
+
+
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/"></div>
+
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 26/03/2020
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+
+
+
+  </div>
+  
+  
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-72835175-1', 'auto');
+        ga('send', 'pageview');
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=404519239985000&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+    
+
+    
+    
+
+    
+
+
+  </body>
+</html>
