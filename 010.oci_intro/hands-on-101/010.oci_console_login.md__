@@ -1,0 +1,41 @@
++++
+title = "OCI Console 로그인"
+alwaysopen = true
+author = "taewan.kim"
+description = "OCI 콘솔 로그인 방법을 소개합니다."
+date = "2020-03-27T09:11:05+09:00"
+weight = 1000
+thumbnailInPost = ""
++++
+
+__OCI Console__은 오라클 클라우드 웹 기반 관리 툴입니다. Oracle Cloud 계정을 만들고 처음 __OCI Console__에 로그인하는 절차를 소개합니다. 
+
+
+## 사전 준비
+
+이번 문서는 Oracle Cloud Free Tier 계정이 생성된 상황을 전제로 합니다. 아직 Oracle Cloud 계정이 없는 상태라면, 다음 문서를 참조하여 Oracle Cloud 계정을 만드시기 바랍니다. 
+
+- {{<extlink link="/010.oci_101/hands-on/000.oci_free_trial/" desc="OCI Free Tier 등록">}}
+
+## 계정 등록 정보 
+
+Oracle Cloud 계정을 다음과 같은 정보로 만들었다는 가정으로 진행하겠습니다.  
+
+|항목|설정값|
+|----|----|
+|Account Name|apacktst01|
+|E-mail|taewan.kim@oracle.com|
+|Password|**********|
+|Home Region|Ashburn|
+
+##
+
+//계정 만들어 테스트하기
+로그인하는 모습 보여준다.
+
+
+
+
+
+
+

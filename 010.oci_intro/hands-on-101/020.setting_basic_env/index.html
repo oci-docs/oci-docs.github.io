@@ -8,14 +8,14 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="OCI(Oracle Cloud)-기초 입문" />
-<meta property="og:description" content="OCI를 새롭게 접하시는 신규 사용자를 위한 내용을 정리합니다." />
+<meta property="og:title" content="OCI 사용자&amp;보안 설정" />
+<meta property="og:description" content="OCI 사용자 설정 핸즈-온입니다." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/010.oci_intro/" />
+<meta property="og:url" content="/010.oci_intro/hands-on-101/020.setting_basic_env/" />
 
 
 
-<meta property="og:updated_time" content="2020-03-26T09:11:05&#43;09:00"/>
+<meta property="og:updated_time" content="2020-03-30T09:11:05&#43;09:00"/>
 
 
 
@@ -31,7 +31,7 @@
 
 
 
-<title>OCI(Oracle Cloud)-기초 입문 :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI 사용자&amp;보안 설정 :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="OCI를 새롭게 접하시는 신규 사용자를 위한 내용을 정리합니다.">
+<meta name="description" content="OCI 사용자 설정 핸즈-온입니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -76,7 +76,7 @@
 
     
   </head>
-  <body data-url="/010.oci_intro/">
+  <body data-url="/010.oci_intro/hands-on-101/020.setting_basic_env/">
     
       <header>
   <div class="logo">
@@ -116,7 +116,7 @@
       <a href="/000.index/">오라클 클라우드 사용자 가이드</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/010.oci_intro/" class="dd-item parent active alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/">OCI(Oracle Cloud)-기초 입문</a>
@@ -195,7 +195,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/hands-on-101/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/">OCI 입문: Hands-on 101 클래스</a>
@@ -232,7 +232,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item alwaysopen
+    <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item parent active alwaysopen
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/">OCI 사용자&amp;보안 설정</a><i class="fa fa-circle-thin read-icon"></i>
@@ -284,7 +284,7 @@
           
     <option value="/000.index/" >
    오라클 클라우드 사용자 가이드</option>
-    <option value="/010.oci_intro/"  selected>
+    <option value="/010.oci_intro/" >
    OCI(Oracle Cloud)-기초 입문</option> 
     <option value="/010.oci_intro/basic_concept/" >
   - 
@@ -309,7 +309,7 @@
       <option value="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" >--- OCI Console 로그인</option>
       <option value="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" >--- OCI Console 사용법</option>
   
-    <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/" >
+    <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/"  selected>
   -- 
    OCI 사용자&amp;보안 설정</option> 
   
@@ -335,7 +335,8 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>OCI(Oracle Cloud)-기초 입문</h1>
+    <h1>OCI 사용자&amp;보안 설정</h1>
+    <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/020.jpg" alt="OCI 사용자&amp;보안 설정"></p>
 
 
      
@@ -345,23 +346,57 @@
     
     
 
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/994.jpg" alt="" /></p>
 
-<ul>
-<li>OCI 101: 기본 개념</li>
-<li>OCI 101: Basic Hands-on</li>
+
+<p>OCI는 계정 관리 서비스로 OCI IAM 서비스를 사용합니다. OCI IAM 서비스를 사용하여 OCI 사용자 및 권한 설정을 진행하는 핸즈-온 랩을 진행합니다.</p>
+
+<p>OCI IAM은 다음과 같은 컴포넌트로 구성됩니다.</p>
+
+<ol>
+<li>OCI User</li>
+<li>OCI Group</li>
+<li>Compartement</li>
+<li>Policy</li>
+</ol>
+
+<p>이 컴포넌트를 이용하여 관리자, 개발자, 감리자, QA 담당자를 대표하는 4개의 OCI User를 생성하고  사용자 그룹 정책 그리고 자원의 논리적인 묶음을 만들어 사용자의 접근 제어를 관리하는 환경을 구성해 보겠습니다.</p>
+
+<h2 id="핸드-온-랩-시나리오">핸드-온 랩 시나리오</h2>
+
+<p>이번 문서는 다음과 같은 시나리오를 실습할 것 입니다.</p>
+
+<h3 id="1-사용자와-사용자-그룹">1. 사용자와 사용자 그룹</h3>
+
+<p>관리자, 개발자, 감리자, QA 담당자를 대표하는 4개 OCI 사용자를 만들고 역할 별로 사용자를 묶는 OCI 사용자 그룹을 4개 만듭니다.</p>
+
+<h3 id="2-compartment">2. Compartment</h3>
+
+<p>OCI Compartment는 OCI 자원을 묶는 논리적 단위입니다. 개발 관련 클라우드 리소스, 테스트 관련 클라우드 리소스 및 운영 관련 클라우드 리소스를 위한 4개 Compartment를 만들 것 입니다.</p>
+
+<h3 id="3-policy">3. Policy</h3>
+
+<p>OCI Policy는 사용자 그룹과 Copartment를 맵핑하여 권한을 부여하는 설정 방식입니다. 4개 Policy 를 등록하여 그룹별 접근 제어를 설정할 것 입니다.</p>
+
+<h2 id="oci-사용자-보안-핸즈온-구성">OCI 사용자&amp;보안 핸즈온 구성</h2>
+
+<p><strong>OCI 사용자&amp;보안 설정</strong> 핸즈-온 랩은 다음과 같이 순서로 진행됩니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><ul class="children children-li">
 </ul>
+</div></div>
+
 
 
 
     
     
       <div class="alert alert-info" role="alter">
-  <li><strong>문서 생성:</strong> 2020-03-26 09:11 / <string>최종 문서 수정:</strong> 2020-03-26 09:11 </li>
+  <li><strong>문서 생성:</strong> 2020-03-30 09:11 / <string>최종 문서 수정:</strong> 2020-03-30 09:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/000.index/" title="오라클 클라우드 사용자 가이드"> <i class="fa fa-chevron-left"></i><label>오라클 클라우드 사용자 가이드</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/basic_concept/" title="OCI 입문: 기본 개념" style="margin-right: 0px;"><label>OCI 입문: 기본 개념</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" title="OCI Console 사용법"> <i class="fa fa-chevron-left"></i><label>OCI Console 사용법</label></a>
+    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/000.oci_free_trial/" title="OCI Free Tier 등록" style="margin-right: 0px;"><label>OCI Free Tier 등록</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
@@ -380,7 +415,7 @@
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/020.setting_basic_env/"></div>
 
   </div>
 
@@ -396,7 +431,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 26/03/2020
+        <i class='fa fa-calendar'></i> Last update on 30/03/2020
     </div>
     
   </div>

@@ -143,17 +143,5 @@ OCI Console 구성 OCI Console 구성에 대한 소개는 다음과 같은 목�
    분류 Oracle Cloud Infrastructure AWS Azure Google     Regions Availability Domain (AD) Availability Zone (AZ) Availability Zone (AZ) Zones   Networking &amp;amp; Content Delivery Oracle Cloud Infrastructure Virtual Cloud Network (VCN) Amazon Virtual Private Cloud (VPC) Virtual Network Virtual Private Cloud   Networking &amp;amp; Content Delivery Oracle Cloud Infrastructure Load Balancing Elastic Load Balancing Load Balancer; Application Gateway Cloud Load Balancing   Networking &amp;amp; Content Delivery Oracle Cloud Infrastructure FastConnect AWS Direct Connect Azure ExpressRoute Cloud Interconnect   Compute Oracle Cloud Infrastructure Compute - Virtual Machines Amazon EC2 Azure Virtual Machines Compute Engine   Compute Oracle Cloud Infrastructure Compute - Bare Metal Amazon EC2 - I3.</description>
     </item>
     
-    <item>
-      <title>OCI Console 로그인</title>
-      <link>/010.oci_intro/hands-on-101/010.oci_console_login/</link>
-      <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
-      
-      <guid>/010.oci_intro/hands-on-101/010.oci_console_login/</guid>
-      <description>OCI Console은 오라클 클라우드 웹 기반 관리 툴입니다. Oracle Cloud 계정을 만들고 처음 OCI Console에 로그인하는 절차를 소개합니다.
-사전 준비 이번 문서는 Oracle Cloud Free Tier 계정이 생성된 상황을 전제로 합니다. 아직 Oracle Cloud 계정이 없는 상태라면, 다음 문서를 참조하여 Oracle Cloud 계정을 만드시기 바랍니다.
- OCI Free Tier 등록     계정 등록 정보 Oracle Cloud 계정을 다음과 같은 정보로 만들었다는 가정으로 진행하겠습니다.
-   항목 설정값     Account Name apacktst01   E-mail taewan.</description>
-    </item>
-    
   </channel>
 </rss>

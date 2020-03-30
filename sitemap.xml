@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>/010.oci_intro/hands-on-101/010.console/</loc>
+    <lastmod>2020-03-28T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
@@ -38,8 +43,8 @@
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/010.console/</loc>
-    <lastmod>2020-03-28T09:11:05+09:00</lastmod>
+    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/</loc>
+    <lastmod>2020-03-30T09:11:05+09:00</lastmod>
   </url>
   
   <url>
@@ -90,11 +95,6 @@
   <url>
     <loc>/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/</loc>
     <lastmod>2020-03-26T09:11:05+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/010.oci_intro/hands-on-101/010.oci_console_login/</loc>
-    <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>

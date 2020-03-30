@@ -21,6 +21,13 @@
 	"content": " 오라클 클라우드 사용자 가이드 OCI(Oracle Cloud Infrastructure)는 오라클이 운영하는 클라우드 서비스입니다. oci-oracle.cloud는 OCI 신규 사용자를 위한 기술 문서 사이트입니다. oci-oracle.cloud는 OCI 신규 사용자를 위하여 다음과 같은 내용으로 채워질 예정입니다.\n   주제 설명     OCI 101/기본 개념 OCI 신규 입문자를 위한 OCI 기본 소개 및 개념 정리   OCI 101/핸드온 OCI 핸드온 랩 - 따라하기 형식 메뉴얼   서비스별 가이드 OCI 세부 서비스 별 가이드 문서   유용한 팁 OCI에 도움 되는 기술 문서    oci-oracle.cloud는 OCI Orcle Cloud 관련 문서를 신속하게 그리고 지속적으로 업데이트함을 목표로합니다. oci-oracle.cloud는 정보를 최신 상태로 유지하는 것을 목표로하지만 시점에 따라서 내용이 현재와 다를수 있습니다. 문서를 확인하실 때 문서 생성일과 최종 문서 수정일을 꼭 확인해 주시기 바랍니다.\ngitter.im 커뮤니티 페이지 gitter.im에 oci-oracle.cloud 채널을 운영 중입니다. 다음과 같은 이슈가 있을때 글을 남겨주시면 적극 반영하겠습니다. gitter.im 커뮤니티 페이지의 URL은 다음과 같습니다.\n gitter에 개설은 OCI Oracle Cloud 커뮤니티 채널: https://gitter.im/oci-oracle-cloud/community     2주간 변경 로그 최근 2주간 oci-oracle.cloud 변경 사항은 다음과 같습니다.\n   일자 패스 변경내역 링크     2020.03.08 /index.html oci-oracle.cloud 메인 페이지 추가 oci-oracle.cloud       "
 },
 {
+	"uri": "/010.oci_intro/hands-on-101/010.console/",
+	"title": "OCI Console",
+	"tags": [],
+	"description": "OCI Console 사용법을 다루는 핸드온입니다.",
+	"content": " OCI Console은 Oracle Cloud의 공식 웹 기반 관리 툴입니다. OCI Console에 로그인하고 사용하는 핸드온으로 구성됩니다.\n사전 준비 이번 핸드온은는 Oracle Cloud Free Tier 계정이 생성된 상황을 전제로 합니다. 아직 Oracle Cloud 계정이 없는 상태라면, 다음 문서를 참조하여 Oracle Cloud 계정을 만드시기 바랍니다.\n OCI Free Tier 등록     계정 등록 정보 Oracle Cloud 계정을 다음과 같은 정보로 만들었다는 가정으로 진행하겠습니다.\n   항목 설정값     Account Name ocidemo001   E-mail taewanme@gmail.com   Password Welcome123456!   Home Region Seoul    OCI Console 핸즈-온 구성 OCI Console 핸드온은 다음과 같이 순서로 진행됩니다.\n OCI Console 로그인     OCI Console 사용법    \n "
+},
+{
 	"uri": "/010.oci_intro/hands-on-101/010.console/010.oci_console_login/",
 	"title": "OCI Console 로그인",
 	"tags": [],
@@ -49,11 +56,11 @@
 	"content": " OCI(Oracle Cloud Infrastructure)는 Oracle 제공하는 클라우드 서비스입니다. 오라클은 2016년 하반기에 OCI 서비스를 시작했습니다. 이 문서에서는 OCI 서비스에 대한 주요 특징을 소개합니다.\n이번 문서는 다음과 같은 목차로 구성됩니다.\n 오라클 클라우드  OCI 고가용성 인프라 OCI 안전성 설계 고성능 클라우드 자원  참고 문서    오라클 클라우드 오라클 클라우드는 탄력적이고 유연한 자원 관리의 특징을 갖는 퍼블릭 클라우드와 온-프레미스 인프라의 정밀한 제어, 보안 및 시스템 예측 가능성을 결합한 클라우드 서비스를 지향합니다. 이런 디자인 원칙을 적용한 Gen2 데이터센터를 새로 설계하고 Gen2 디자인에 근거하여 새로운 데이터 센터를 만들어 왔습니다. 오라클 2세대 클라우드 서비스를 OCI(Oracle Cloud Infrastructure)입니다. 2020년 현재 Oracle Cloud의 공식 브랜드 명은 OCI(Oracle Cloud Infrastructure)입니다.\nOCI 서비스는 2016년 하반기에 시작했습니다. OCI에서 특정 지역에 구성된 단위 데이터 센터를 리전(Region)이라고 합니다. 2020년 3월 기준 OCI는 전 세계에 16개 리전을 서비스하고 있습니다. 2020년 말까지 총 36개 리전까지 확대할 예정입니다.\nOCI 고가용성 인프라 OCI는 리전(Region)과 AD(Availability Domains)로 운영됩니다. 리전은 데이터 센터가 운영되는 지리적인 영역이고 AD는 리전을 구성하고 실제 OCI 서비스가 운영되는 데이터 센터입니다. 각 OCI 리전은 1개에서 최대 3개 AD로 구성됩니다. 리전은 오라클 클라우드가 서비스되는 물리적 데이터 센터인 AD를 묶는 논리적 단위입니다. 따라서 서비스 지역의 물리적 AD를 추상화하는 서비스 거점이라는 의미를 갖습니다. 리전은 완전히 독립된 OCI 최상위 단위입니다. 각 리전은 네트워크로 연결될 뿐 모든 서비스와 자원은 완전히 격리됩니다.\n리전을 구성하는 각 AD는 어떤 물리 자원도 공유하지 않는 물리적으로 완전히 독립된 데이터 센터입니다. 따라서 특정 AD 장애가 다른 AD로 파급되지 않습니다. AD는 Region 고가용성을 위한 구성입니다.\n각 AD(Availability Domain)는 내부적으로 Fault Domain 이용하여 VM(Virtual Machine) 및 BM(Bare Metal) 컴퓨트 인스턴스의 가용성을 관리합니다. Fault Domain은 AD 내부 하드웨어와 인프라스트럭처 그룹입니다. 각 AD은 3개 Fault Domain을 갖습니다. Region를 구성하는 AD가 물리 자원을 공유하지 않듯이, AD 내부에 3개 Fault Domain은 물리 자원을 공유하지 않습니다. 한 Fault Domain에서 발생한 장애 및 유지보수 관련 서비스 중단은 다른 Fault Domain에 영향을 미치지 않습니다. 새 Compute 인스턴스를 생성할 때, 사용자는 Fault Domain을 선택할 수 있습니다. 사용자가 선택하지 않으면, 시스템이 자동으로 지정합니다. 현재 인스턴스에서 Fault Domain을 변경할 수 없습니다. Fault Domain 설정에 주의해야 합니다.\nOCI 자원을 생성할 때, 다음 그림과 같이 AD와 Fault Domain을 지정하여 만들 수 있습니다.\nOCI 안전성 설계 OCI 인프라스트럭처에는 \u0026ldquo;Off-box\u0026rdquo;/격리 네트워크 가상화가 적용되어 있습니다. 이 네트워크 및 IO 가상화 위에 서버 스택이 배치됩니다. 하이퍼바이저 오버헤드 및 주변 환경 간섭이 없는 클라우드 인프라를 사용할 수 있습니다. 다양한 서비스 자원(VM, 컨테이너, NoSQL, ExaData)이 OCI 배포될 때, Off-Box 네트워크 가상화를 통해서 상호간의 간섭을 방지하고 보안 관점에서 안정한 인프라를 활용할 수 있습니다.\n고성능 클라우드 자원 OCI는 최신 CPU, GPU, 오프 박스 네트워킹 및 NVMe SSD를 기반으로 서비스를 제공합니다. Bare-Metal 인스턴스는 초당 수백만 건의 읽기 및 쓰기 트랜잭션을 수행 할 수있는 51.2TB의 NVMe SSD를 제공합니다.\nOCI Networking 서비스는 Over-Subscribe 되지 않습니다. 따라서 OCI 사용자는 예측 가능하고 high-performance/low-latency 클라우드 인프라를 사용할 수 있습니다.\nOCI에서 CPU, GPU, 수백만 IPOS 스토리지를 사용할 수 있습니다.\n참고 문서  Oracle Cloud Infrastructure Platform Overview     "
 },
 {
-	"uri": "/010.oci_intro/hands-on-101/010.console/",
-	"title": "OCI Console",
+	"uri": "/010.oci_intro/hands-on-101/020.setting_basic_env/",
+	"title": "OCI 사용자&amp;보안 설정",
 	"tags": [],
-	"description": "OCI Console 사용법을 다루는 핸드온입니다.",
-	"content": " OCI Console은 Oracle Cloud의 공식 웹 기반 관리 툴입니다. OCI Console에 로그인하고 사용하는 핸드온으로 구성됩니다.\n사전 준비 이번 핸드온은는 Oracle Cloud Free Tier 계정이 생성된 상황을 전제로 합니다. 아직 Oracle Cloud 계정이 없는 상태라면, 다음 문서를 참조하여 Oracle Cloud 계정을 만드시기 바랍니다.\n OCI Free Tier 등록     계정 등록 정보 Oracle Cloud 계정을 다음과 같은 정보로 만들었다는 가정으로 진행하겠습니다.\n   항목 설정값     Account Name ocidemo001   E-mail taewanme@gmail.com   Password Welcome123456!   Home Region Seoul    OCI Console 핸즈-온 구성 OCI Console 핸드온은 다음과 같이 순서로 진행됩니다.\n OCI Console 로그인     OCI Console 사용법    \n "
+	"description": "OCI 사용자 설정 핸즈-온입니다.",
+	"content": " OCI는 계정 관리 서비스로 OCI IAM 서비스를 사용합니다. OCI IAM 서비스를 사용하여 OCI 사용자 및 권한 설정을 진행하는 핸즈-온 랩을 진행합니다.\nOCI IAM은 다음과 같은 컴포넌트로 구성됩니다.\n OCI User OCI Group Compartement Policy  이 컴포넌트를 이용하여 관리자, 개발자, 감리자, QA 담당자를 대표하는 4개의 OCI User를 생성하고 사용자 그룹 정책 그리고 자원의 논리적인 묶음을 만들어 사용자의 접근 제어를 관리하는 환경을 구성해 보겠습니다.\n핸드-온 랩 시나리오 이번 문서는 다음과 같은 시나리오를 실습할 것 입니다.\n1. 사용자와 사용자 그룹 관리자, 개발자, 감리자, QA 담당자를 대표하는 4개 OCI 사용자를 만들고 역할 별로 사용자를 묶는 OCI 사용자 그룹을 4개 만듭니다.\n2. Compartment OCI Compartment는 OCI 자원을 묶는 논리적 단위입니다. 개발 관련 클라우드 리소스, 테스트 관련 클라우드 리소스 및 운영 관련 클라우드 리소스를 위한 4개 Compartment를 만들 것 입니다.\n3. Policy OCI Policy는 사용자 그룹과 Copartment를 맵핑하여 권한을 부여하는 설정 방식입니다. 4개 Policy 를 등록하여 그룹별 접근 제어를 설정할 것 입니다.\nOCI 사용자\u0026amp;보안 핸즈온 구성 OCI 사용자\u0026amp;보안 설정 핸즈-온 랩은 다음과 같이 순서로 진행됩니다.\n  "
 },
 {
 	"uri": "/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/",
@@ -66,7 +73,7 @@
 	"uri": "/010.oci_intro/hands-on-101/",
 	"title": "OCI 입문: Hands-on 101 클래스",
 	"tags": [],
-	"description": "OCI 기초 핸즈온입니다.",
+	"description": "OCI 기초 핸즈-온입니다.",
 	"content": "//todo\n"
 },
 {
@@ -124,13 +131,6 @@
 	"tags": [],
 	"description": "주요 클라우드 서비스 프로바이더들이 사용하는 용어를 비교합니다.",
 	"content": " Oracle Cloud Infrastructure, AWS (Amazon Web Services), Microsoft Azure 및 Google Cloud Platform에서 유사한 클라우드 서비스를 제공합니다. 다음 표는 4 개의 클라우드 공급 업체에서 서비스를 매핑합니다.\n   분류 Oracle Cloud Infrastructure AWS Azure Google     Regions Availability Domain (AD) Availability Zone (AZ) Availability Zone (AZ) Zones   Networking \u0026amp; Content Delivery Oracle Cloud Infrastructure Virtual Cloud Network (VCN) Amazon Virtual Private Cloud (VPC) Virtual Network Virtual Private Cloud   Networking \u0026amp; Content Delivery Oracle Cloud Infrastructure Load Balancing Elastic Load Balancing Load Balancer; Application Gateway Cloud Load Balancing   Networking \u0026amp; Content Delivery Oracle Cloud Infrastructure FastConnect AWS Direct Connect Azure ExpressRoute Cloud Interconnect   Compute Oracle Cloud Infrastructure Compute - Virtual Machines Amazon EC2 Azure Virtual Machines Compute Engine   Compute Oracle Cloud Infrastructure Compute - Bare Metal Amazon EC2 - I3.metal     Compute Oracle Cloud Infrastructure Compute - GPU Amazon EC2 - P2, P3, G3 instances Azure N-Series Google GPU   Compute Oracle Cloud Infrastructure Container Engine for Kubernetes Amazon Elastic Compute Cloud Container Service Azure Kubernetes Service Kubernetes Engine   Compute Oracle Cloud Infrastructure Container Registry EC2 Container Registry Azure Container Registry Container Registry   Compute Oracle Functions AWS Lambda Azure Functions; Azure Event Grid Cloud Functions   Storage Oracle Cloud Infrastructure Block Volumes Amazon Elastic Block Store (EBS) Azure Storage Disk Compute Engine Persistent Disks   Storage Oracle Cloud Infrastructure File Storage Amazon Elastic File System Azure Files ZFS/Avere; Cloud Filestore (beta)   Storage Oracle Cloud Infrastructure Object Storage Amazon Simple Storage Service (S3) Azure Storage Cloud Storage; Cloud Storage Nearline   Storage Oracle Cloud Infrastructure Archive Storage Amazon Glacier Azure Storage - Standard Cloud Storage Coldline   Storage Oracle Cloud Infrastructure Data Transfer Service Import/Export Disk; Import/Export Snowball; Import/Export Snowmobile Import/Export; Azure Data Box Transfer Appliance; Transfer Service   Storage Oracle Cloud Infrastructure Storage Gateway Storage Gateway StorSimple ZFS/Avere   Security, Identity \u0026amp; Compliance Oracle Cloud Infrastructure Identity and Access Management AWS Identity and Access Management (IAM); AWS Organizations Azure Active Directory ; Azure Subscription and Service Management + Azure RBAC Cloud Identity \u0026amp; Access Management   Security, Identity \u0026amp; Compliance Oracle Cloud Infrastructure Key Management Service Key Management Service Key Vault Cloud Key Management Service   Security, Identity \u0026amp; Compliance Oracle Cloud Infrastructure Audit AWS CloudTrail Activity Logging Cloud Audit Logging   Database Oracle Database Cloud Service Amazon Relational Database Service (RDS) Azure SQL Database Cloud SQL(MySQL, Postgres); Cloud Spanner   Database Oracle Autonomous Transaction Processing Amazon Aurora Azure SQL Database; Azure Cosmos DB Cloud SQL; Cloud Spanner   Database Oracle Autonomous Data Warehouse Amazon Redshift Azure SQL Data Warehouse BigQuery   Database Oracle NoSQL Amazon DynamoDB Azure Cosmos DB Cloud Datastore, Cloud Bigtable   Edge Oracle Cloud Infrastructure DNS Amazon Route53 Azure DNS; Azure Traffic Manager Cloud DNS   Edge Oracle Cloud Infrastructure Email Delivery Amazon SES Marketplace - Email Partners   Edge Oracle Cloud Infrastructure Web Application Firewall Web Application Firewall Application Gateway Web Application Firewall Partners   Edge Oracle Cloud Infrastructure DDoS Protection AWS Shield Azure DDoS Protection Service Cloud Armor    참고 문서  [Oracle Cloud Home]Cloud Service Mapping     "
-},
-{
-	"uri": "/010.oci_intro/hands-on-101/010.oci_console_login/",
-	"title": "OCI Console 로그인",
-	"tags": [],
-	"description": "OCI 콘솔 로그인 방법을 소개합니다.",
-	"content": " OCI Console은 오라클 클라우드 웹 기반 관리 툴입니다. Oracle Cloud 계정을 만들고 처음 OCI Console에 로그인하는 절차를 소개합니다.\n사전 준비 이번 문서는 Oracle Cloud Free Tier 계정이 생성된 상황을 전제로 합니다. 아직 Oracle Cloud 계정이 없는 상태라면, 다음 문서를 참조하여 Oracle Cloud 계정을 만드시기 바랍니다.\n OCI Free Tier 등록     계정 등록 정보 Oracle Cloud 계정을 다음과 같은 정보로 만들었다는 가정으로 진행하겠습니다.\n   항목 설정값     Account Name apacktst01   E-mail taewan.kim@oracle.com   Password **********   Home Region Ashburn    ##\n//계정 만들어 테스트하기 로그인하는 모습 보여준다.\n"
 },
 {
 	"uri": "/categories/",
