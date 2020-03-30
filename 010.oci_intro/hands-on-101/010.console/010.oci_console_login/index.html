@@ -4,12 +4,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-29T23:19:57 KST">
+<meta name="revised" content="2020-03-30T12:03:33 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
 <meta property="og:title" content="OCI Console 로그인" />
-<meta property="og:description" content="OCI Console 로그인 핸드온" />
+<meta property="og:description" content="OCI Console 로그인 핸즈온입니다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" />
 
@@ -45,7 +45,7 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="OCI Console 로그인 핸드온">
+<meta name="description" content="OCI Console 로그인 핸즈온입니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -225,14 +225,14 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-        </ul>
-    </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.oci_vcn/" class="dd-item">
+      <li data-nav-id="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" class="dd-item">
         <div>
-          <a href="/010.oci_intro/hands-on-101/020.oci_vcn/">
-            OCI VCN 생성
+          <a href="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/">
+            OCI Console 사용법
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
+    </li>
+        </ul>
     </li>
       <li data-nav-id="/010.oci_intro/hands-on-101/010.oci_console_login/" class="dd-item">
         <div>
@@ -310,8 +310,8 @@
   -- 
    OCI Console</option> 
       <option value="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/"  selected>--- OCI Console 로그인</option>
+      <option value="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" >--- OCI Console 사용법</option>
   
-      <option value="/010.oci_intro/hands-on-101/020.oci_vcn/" >-- OCI VCN 생성</option>
       <option value="/010.oci_intro/hands-on-101/010.oci_console_login/" >-- OCI Console 로그인</option>
   
   
@@ -336,7 +336,7 @@
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
     <h1>OCI Console 로그인</h1>
-    <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/100.jpg" alt="OCI Console 로그인"></p>
+    <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/000.jpg" alt="OCI Console 로그인"></p>
 
 
      
@@ -368,12 +368,12 @@
 <tbody>
 <tr>
 <td>Account Name</td>
-<td>apacktst01</td>
+<td>ocidemo001</td>
 </tr>
 
 <tr>
 <td>E-mail</td>
-<td>taewan.kim@oracle.com</td>
+<td>taewamne@gmail.com</td>
 </tr>
 
 <tr>
@@ -390,16 +390,16 @@
 
 <p>위 설정값은 여러분의 실제 Oracle Cloud 계정 정보로 대체하고 진행하시기 바랍니다.</p>
 
-<h1 id="hands-on-oracle-cloud-로그인">Hands-on: Oracle Cloud 로그인</h1>
+<h1 id="oracle-cloud-로그인">Oracle Cloud 로그인</h1>
 
 <p>OCI Console 로그인 핸드온은 다음과 같은 목차로 진행합니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
 <ul>
-<li><a href="#hands-on-oracle-cloud-로그인">Hands-on: Oracle Cloud 로그인</a>
+<li><a href="#oracle-cloud-로그인">Oracle Cloud 로그인</a>
 <ul>
-<li><a href="#oracle-홈페이지-로그인">Oracle 홈페이지 로그인</a>
+<li><a href="#오라클-홈페이지에서-oci-console-로그인">오라클 홈페이지에서 OCI Console 로그인</a>
 <ul>
 <li><a href="#oci-console-로그인-oracle-idcs-옵션-선택">OCI Console 로그인: Oracle IDCS 옵션 선택</a></li>
 <li><a href="#oci-console-로그인-oci-iam-옵션-선택">OCI Console 로그인: OCI IAM 옵션 선택</a></li>
@@ -411,7 +411,7 @@
 </div></div>
 
 
-<h2 id="oracle-홈페이지-로그인">Oracle 홈페이지 로그인</h2>
+<h2 id="오라클-홈페이지에서-oci-console-로그인">오라클 홈페이지에서 OCI Console 로그인</h2>
 
 <p>Oracle 홈페이지에서 OCI Console은 <a href="https://oracle.comm" target="_blank">https://oracle.comm <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
@@ -533,6 +533,56 @@ https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
 </li>
 </ul>
 
+<p>아래 [접기/펼치기]를 클릭하면 2020년 3월까지 오픈한 리전 로그인 페이지 링크를 확인할 수 있습니다.</p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+        
+        [접기/펼치기] OCI 리전 로그인 페이지 목록
+        
+        </span>
+    </div>
+    <div class="expand-content" style="display: none;">
+<ul>
+<li><p>Amsterdam: <a href="https://console.eu-amsterdam-1.oraclecloud.com" target="_blank"><a href="https://console.eu-amsterdam-1.oraclecloud.com">https://console.eu-amsterdam-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Ashburn: <a href="https://console.us-ashburn-1.oraclecloud.com" target="_blank"><a href="https://console.us-ashburn-1.oraclecloud.com">https://console.us-ashburn-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Sao Paulo: <a href="https://console.sa-saopaulo-1.oraclecloud.com" target="_blank"><a href="https://console.sa-saopaulo-1.oraclecloud.com">https://console.sa-saopaulo-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Frankfurt: <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank"><a href="https://console.eu-frankfurt-1.oraclecloud.com">https://console.eu-frankfurt-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Jeddah: <a href="https://console.me-jeddah-1.oraclecloud.com" target="_blank"><a href="https://console.me-jeddah-1.oraclecloud.com">https://console.me-jeddah-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>London: <a href="https://console.uk-london-1.oraclecloud.com" target="_blank"><a href="https://console.uk-london-1.oraclecloud.com">https://console.uk-london-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Melbourne: <a href="https://console.ap-melbourne-1.oraclecloud.com" target="_blank"><a href="https://console.ap-melbourne-1.oraclecloud.com">https://console.ap-melbourne-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Montreal: <a href="https://console.ca-montreal-1.oraclecloud.com" target="_blank"><a href="https://console.ca-montreal-1.oraclecloud.com">https://console.ca-montreal-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Mumbai: <a href="https://console.ap-mumbai-1.oraclecloud.com" target="_blank"><a href="https://console.ap-mumbai-1.oraclecloud.com">https://console.ap-mumbai-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Osaka: <a href="https://console.ap-osaka-1.oraclecloud.com" target="_blank"><a href="https://console.ap-osaka-1.oraclecloud.com">https://console.ap-osaka-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Phoenix: <a href="https://console.us-phoenix-1.oraclecloud.com" target="_blank"><a href="https://console.us-phoenix-1.oraclecloud.com">https://console.us-phoenix-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Tokyo: <a href="https://console.ap-tokyo-1.oraclecloud.com" target="_blank"><a href="https://console.ap-tokyo-1.oraclecloud.com">https://console.ap-tokyo-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Toronto: <a href="https://console.ca-toronto-1.oraclecloud.com" target="_blank"><a href="https://console.ca-toronto-1.oraclecloud.com">https://console.ca-toronto-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Seoul: <a href="https://console.ap-seoul-1.oraclecloud.com" target="_blank"><a href="https://console.ap-seoul-1.oraclecloud.com">https://console.ap-seoul-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Sydney: <a href="https://console.ap-sydney-1.oraclecloud.com" target="_blank"><a href="https://console.ap-sydney-1.oraclecloud.com">https://console.ap-sydney-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+
+<li><p>Zurich: <a href="https://console.eu-zurich-1.oraclecloud.com" target="_blank"><a href="https://console.eu-zurich-1.oraclecloud.com">https://console.eu-zurich-1.oraclecloud.com</a> <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a></p></li>
+</ul>
+
+    </div>
+</div>
+
 <p>현재 Handson-Lab에서 사용하는 계정은 테넌트 명은 <strong>ocidemo001</strong>이고 서울 리전을 <strong>Home Region</strong>으로 사용합니다. OCI 서울리전 ID는 <strong>ap_seoul_1</strong>입니다. 따라서 OCI Console 로그인 페이지는 다음과 같습니다.</p>
 
 <pre><code>https://console.ap-seoul-1.oraclecloud.com/?tenant=ocidemo001
@@ -568,7 +618,7 @@ https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
 </div><div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/010.oci_intro/hands-on-101/010.console/" title="OCI Console"> <i class="fa fa-chevron-left"></i><label>OCI Console</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/020.oci_vcn/" title="OCI VCN 생성" style="margin-right: 0px;"><label>OCI VCN 생성</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" title="OCI Console 사용법" style="margin-right: 0px;"><label>OCI Console 사용법</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
