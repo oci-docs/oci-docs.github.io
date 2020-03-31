@@ -48,7 +48,17 @@
   </url>
   
   <url>
+    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</loc>
+    <lastmod>2020-03-27T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</loc>
+    <lastmod>2020-03-27T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   

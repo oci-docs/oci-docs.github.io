@@ -8,10 +8,10 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="OCI Console 사용법" />
-<meta property="og:description" content="OCI Console 사용법을 소개합니다." />
+<meta property="og:title" content="OCI User 생성" />
+<meta property="og:description" content="OCI Console에서 OCI User를 생성하는 방법을 소개합니다. " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" />
+<meta property="og:url" content="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" />
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-<title>OCI Console 사용법 :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI User 생성 :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="OCI Console 사용법을 소개합니다.">
+<meta name="description" content="OCI Console에서 OCI User를 생성하는 방법을 소개합니다. ">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -78,7 +78,7 @@
 
     
   </head>
-  <body data-url="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/">
+  <body data-url="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/">
     
       <header>
   <div class="logo">
@@ -211,7 +211,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/010.console/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/hands-on-101/010.console/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/010.console/">OCI Console</a>
@@ -225,7 +225,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" class="dd-item active">
+      <li data-nav-id="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/">
             OCI Console 사용법
@@ -234,7 +234,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/">OCI 사용자&amp;보안 설정</a>
@@ -248,7 +248,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" class="dd-item">
+      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" class="dd-item active">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/">
             OCI User 생성
@@ -326,13 +326,13 @@
   -- 
    OCI Console</option> 
       <option value="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" >--- OCI Console 로그인</option>
-      <option value="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/"  selected>--- OCI Console 사용법</option>
+      <option value="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" >--- OCI Console 사용법</option>
   
     <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/" >
   -- 
    OCI 사용자&amp;보안 설정</option> 
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" >--- OCI Admin 로그인 생성</option>
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" >--- OCI User 생성</option>
+      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/"  selected>--- OCI User 생성</option>
   
   
   
@@ -356,8 +356,7 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>OCI Console 사용법</h1>
-    <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/300.jpg" alt="OCI Console 사용법"></p>
+    <h1>OCI User 생성</h1>
 
 
      
@@ -368,139 +367,304 @@
     
     
 
-<p>이번 Hands-on Lab에서는 OCI Console 구성을 소개합니다.</p>
+<p>이번 Hands-on Lab에서는 OCI Console과 <strong>OCI CLI</strong>로 OCI User를 만드는 방법을 소개합니다. 이 핸즈온 랩은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.</p>
 
-<h1 id="oci-console-구성">OCI Console 구성</h1>
+<h1 id="hol-oci-user">HOL: OCI User</h1>
 
-<p>OCI Console 구성에 대한 소개는 다음과 같은 목차로 진행합니다.</p>
+<p>이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI User를 만들것 입니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>OCI User</th>
+<th>역할</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>demo.admin</td>
+<td>관리자</td>
+</tr>
+
+<tr>
+<td>demo.audit</td>
+<td>감리 담당자</td>
+</tr>
+
+<tr>
+<td>demo.tester</td>
+<td>QA 담당자</td>
+</tr>
+
+<tr>
+<td>demo.developer</td>
+<td>개발자</td>
+</tr>
+</tbody>
+</table>
+
+<p>핸즈온 랩 다음과 같은 순서로 진행합니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
 <ul>
-<li><a href="#oci-console-구성">OCI Console 구성</a>
+<li><a href="#hol-oci-user">HOL: OCI User</a>
 <ul>
-<li><a href="#oci-햄버그-메뉴">OCI 햄버그 메뉴</a></li>
-<li><a href="#리전-관리">리전 관리</a></li>
-<li><a href="#oci-cloud-shell">OCI Cloud Shell</a></li>
-<li><a href="#고급-검색">고급 검색</a></li>
-<li><a href="#사용자-프로파일">사용자 프로파일</a></li>
-<li><a href="#oci-알림">OCI 알림</a></li>
-<li><a href="#언어-변경">언어 변경</a></li>
-<li><a href="#실시간-채팅">실시간 채팅</a></li>
-<li><a href="#도움말">도움말</a></li>
+<li><a href="#oci-user-관리-oci-console">OCI User 관리: OCI Console</a></li>
+<li><a href="#oci-user-관리-oci-cli">OCI User 관리: OCI CLI</a>
+<ul>
+<li><a href="#cloud-shell-열기">Cloud Shell 열기</a></li>
+<li><a href="#oci-user-만들기">OCI User 만들기</a></li>
+</ul></li>
+<li><a href="#oci-user-등록-결과">OCI User 등록 결과</a></li>
 </ul></li>
 </ul>
 </nav></p>
 </div></div>
 
 
-<h2 id="oci-햄버그-메뉴">OCI 햄버그 메뉴</h2>
+<h2 id="oci-user-관리-oci-console">OCI User 관리: OCI Console</h2>
 
-<p>OCI Console에서 햄버그 메뉴 아이콘을 클릭하여 다음과 같은 메뉴에 접근할 수 있습니다.</p>
+<p>OCI Console에서 다음 데모 사용자를 2개 만들겠습니다.</p>
 
-<ul>
-<li>코어 인프라</li>
-<li>Database</li>
-<li>데이터 및 AI</li>
-<li>솔루션 및 플랫폼</li>
-<li>추가 Oracle Clodu 서비스</li>
-<li>거버넌스 및 관리</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>OCI User</th>
+<th>역할</th>
+</tr>
+</thead>
 
-<p>햄버그 메뉴에 출력되는 모든 메뉴는 OCI Console에 로그인한 사용자가 접근 가능한 서비스 목록입니다. Oracle IDCS와 OCI IAM이 접근 권한을 확인합니다.</p>
+<tbody>
+<tr>
+<td>demo.admin</td>
+<td>관리자</td>
+</tr>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/310.jpg?classes=border,shadow" alt="" /></p>
+<tr>
+<td>demo.audit</td>
+<td>감리 담당자</td>
+</tr>
+</tbody>
+</table>
 
-<h2 id="리전-관리">리전 관리</h2>
+<p>OCI Console에서 OCI 사용자 관리 페이지는 다음 메뉴 패스로 이동합니다.</p>
 
-<p>OCI는 현재(2020년 03월 28일 기준) 16개 글로벌 리전(Gov 리전 제외)을 운영하고 있습니다. OCI Console의 상단 메뉴에서 현재 어떤 리전을 사용하고 있는지 확인할 수 있습니다.</p>
 
-<p>아래 이미지에서 확인할 수 있는 것처럼, OCI Console의 상단 메뉴에 현재 계정이 사용하고 있는 리전 명이 출력됩니다. 현재 사용하고 있는 계정은 <strong>South Korea Central(Seoul)</strong> 리전을 사용하고 있는 것으로 표시된 상태입니다.</p>
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Users</strong></div></div>
 
-<p><strong>South Korea Central(Seoul)</strong>을 클릭하며 현재 사용하는 클라우드 계정(Tenante, ocidemo001)이 사용하는 현재 리전과 홈 리전이 출력됩니다. <strong>영역관리(Manage Regions)</strong> 메뉴를 클릭하면 리전 관리 페이지로 이동할 수 있습니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/350.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/110.jpg?classes=border,shadow" alt="" /></p>
 
-<p><strong>영역관리(Manage Regions)</strong> 메뉴를 클릭하면 리전 관리 페이지로 이동합니다. 리전 관리 페이지에서는 OCI의 전체 리전 목록이 출력되고, 현재 사용하는 클라우드 계정(ocidemo001)이 사용할 수 있는 리전(구독, Subcribed)을 확인할 수 있습니다. 새로운 리전을 사용해야 한다면, 이 페이지에서 <strong>구독</strong> 버튼을 클릭해야 합니다.</p>
+<hr />
 
-<p>지금 Hands-on에서 사용하는 계정은 Oracle Free Trial 계정입니다. Oracle Free Trial 계정은 홈 리전만을 사용하도록 자원 사용이 제한돼 있습니다. 따라서 신규 리전 구독을 시도하면 다음과 같은 에러 메시지가 출력됩니다.</p>
+<p>OCI 사용자 관리 페이지에서 <strong>Create User</strong> 버튼을 클릭합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/360.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/120.jpg?classes=border,shadow" alt="" /></p>
 
-<h2 id="oci-cloud-shell">OCI Cloud Shell</h2>
+<hr />
 
-<p>Cloud Shell은 OCI Console에서 브라우저로 접근하는 VM 인스턴스 터니널입니다. OCI Cloud Shell에는 오라클 클라우드를 사용하는데 필요한 다양한 툴이 설치 및 사전 설정돼 있습니다. Oracle Cloud 사용자는 별도로 클라우드 관리 환경을 구성하고 툴을 설정할 필요 없이 OCI Cloud Shell로 바로 클라우드 관리 작업을 시작할 수 있습니다.</p>
+<p><strong>Create User</strong> 버튼을 클릭하면 오른편 끝에서 사용자 등록 폼이 나타납니다. 사용자 등록 폼의 <strong>Name</strong>과 <strong>Description</strong> 항목에 다음 설정값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
 
-<p>아래 이미지와 같이 OCI Console에서 <strong>OCI CLI</strong>를 바로 사용할 수 있습니다. <strong>OCI CLI</strong> 오라클 클라우드 명령어 기반 관리 툴입니다. OCI Cloud Shell에는 <strong>OCI CLI</strong>의 완전한 환경 설정이 적용돼 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>입력 항목</th>
+<th>설정값</th>
+</tr>
+</thead>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/370.jpg?classes=border,shadow" alt="" /></p>
+<tbody>
+<tr>
+<td>Name</td>
+<td>demo.admin</td>
+</tr>
 
-<p>OCI Cloud Shell에 대한 자세한 내용은 다음 문서에서 확인할 수 있습니다.</p>
+<tr>
+<td>Description</td>
+<td>핸즈온 데모 관리자</td>
+</tr>
+</tbody>
+</table>
 
-<ul>
-<li><a href="http://taewan.kim/cloud/oci_cloud_shell/" target="_blank">OCI Cloud Shell: 브라우저 기반 가상 터미널 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/130.jpg?classes=border,shadow" alt="" /></p>
 
-</li>
-</ul>
+<hr />
 
-<h2 id="고급-검색">고급 검색</h2>
+<p>OCI 사용자 등록이 완료되면 다음과 같은 사용자 목록에 출력됩니다.</p>
 
-<p>OCI Console은 OCI 인프라스트럭처를 사용하는 모든 자원을 조회하는 SQL과 유사한 형태의 인터페이스를 제공합니다.</p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/150.jpg?classes=border,shadow" alt="" /></p>
 
-<p>다음 이미지는 OCI Console에서 생성한 모든 자원을 조회하는 쿼리를 실행하는 흐름입니다. 다음 이미지와 같이 OCI Console 상단의 검색 아이콘을 클릭하고 쿼리를 입력하면 관련 자원을 조회할 수 있습니다.</p>
+<hr />
 
-<pre><code>query all resources
+<p>이 작업을 반복하여 다음 사용자를 추가합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>입력 항목</th>
+<th>설정값</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Name</td>
+<td>demo.audit</td>
+</tr>
+
+<tr>
+<td>Desciption</td>
+<td>핸즈온 감리 담당자</td>
+</tr>
+</tbody>
+</table>
+
+<p>작업을 완료하면 OCI 사용자 목록은 다음과 같이 출력됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/160.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="oci-user-관리-oci-cli">OCI User 관리: OCI CLI</h2>
+
+<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. OCI Console은 Cloud Shell을 제공합니다. Cloud Shell은 브라우저 기반 리눅스 터미널입니다. Cloud Shell에는 사전 구성이 완료된 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI User를 등록해 보겠습니다.</p>
+
+<h3 id="cloud-shell-열기">Cloud Shell 열기</h3>
+
+<p>OCI Console의 터미널 아이큰을 클릭하면 Cloud Shell이 열립니다. Cloud Shell에 다음 명령을 입력합니다.</p>
+
+<pre><code>oci os ns get
 </code></pre>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/320.jpg?classes=border,shadow" alt="" /></p>
+<p>다음 이미지와 유사한 json이 출력된다면 <strong>oci cli</strong>가 정상적으로 작동하는 상태임을 확인할 수 있습니다.</p>
 
-<p>OCI Console은 고급 검색 예제 쿼리와 함께 고급 검색 쿼리를 실행하는 편집기를 제공합니다. 다음 이미지와 같이 고급 검색을 실행한 상태에서 &lsquo;<strong>고급 검색</strong>&rsquo; 버튼을 클릭하면 고급 검색 편집/실행 페이지로 이동합니다. 이 페이지에서는 다양한 예제 쿼리를 확인할 수 있습니다. OCI Console이 제공하는 예제를 응용하여 다양한 고급 검색 쿼리를 수행하여 OCI 자원 목록을 조회할 수 있습니다.</p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/170.jpg?classes=border,shadow" alt="" /></p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/330.jpg?classes=border,shadow" alt="" /></p>
+<h3 id="oci-user-만들기">OCI User 만들기</h3>
 
-<p>고급 검색 쿼리에 대한 문법 및 기능에 대해서는 다음 문서에서 최신 정보를 확인할 수 있습니다.</p>
+<p>cloud shell의 oci cli로 다음 2개 OCI User를 만들것 입니다.</p>
 
-<ul>
-<li><a href="https://docs.cloud.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm" target="_blank">[공식 OCI 문서 사이트]Search Language Syntax <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<table>
+<thead>
+<tr>
+<th>OCI User</th>
+<th>역할</th>
+</tr>
+</thead>
 
-</li>
-</ul>
+<tbody>
+<tr>
+<td>demo.tester</td>
+<td>QA 담당자</td>
+</tr>
 
-<h2 id="사용자-프로파일">사용자 프로파일</h2>
+<tr>
+<td>demo.developer</td>
+<td>개발자</td>
+</tr>
+</tbody>
+</table>
 
-<p>OCI Console의 사용자 아이콘에서 사용자 프로파일 정보와 사용자 프로파일 세부 관리 페이지로 이동할 수 있습니다.</p>
+<p>다음 명령 2개를 Cloud shell에 실행합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/430.jpg?classes=border,shadow" alt="" /></p>
+<pre><code>oci iam user create --name demo.tester --description &quot;데모 핸즈온 QA 담장자&quot;
+oci iam user create --name demo.developer --description &quot;데모 핸즈온 개발자&quot;
+</code></pre>
 
-<h2 id="oci-알림">OCI 알림</h2>
+<p>아래 [접기/펼치기]를 클릭하면 Cloud Shell에서 위 명령을 실행한 전체 로그를 확인할 수 있습니다.</p>
 
-<p>OCI Console은 해당 계정(ocidemo001)에 적용되는 시스템 관리 차원의 알람 기능을 제공합니다. 알람 아이콘을 클릭하면 세부 공지 내용을 확인할 수 있습니다. 핸즈-온에서 Oracle Free Trial 계정을 사용하거나 새로 만든 계정에서는 다음과 같이 어떤 내용도 출력되지 않을 수 있습니다.</p>
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
+        <span>
+        
+        
+        [접기/펼치기] Cloud Shell에서 OCI CLI로 OCI User 생성 전체 로그
+        
+        </span>
+    </div>
+    <div class="expand-content" style="display: none;">
+<pre class="prettyprint lang-bsh">
+Welcome to Oracle Cloud Shell.
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/390.jpg?classes=border,shadow" alt="" /></p>
+Your Cloud Shell machine comes with 5GB of storage for your home directory. Type `help` for more info.
+taewanme@cloudshell:~ (ap-seoul-1)$ oci os ns get
+{
+  "data": "cnntpzcnbjqo"
+}
+taewanme@cloudshell:~ (ap-seoul-1)$ oci iam user create --name demo.tester \
+> --description "데모 핸즈온 QA 담장자"
+{
+  "data": {
+    "capabilities": {
+      "can-use-api-keys": true,
+      "can-use-auth-tokens": true,
+      "can-use-console-password": true,
+      "can-use-customer-secret-keys": true,
+      "can-use-o-auth2-client-credentials": true,
+      "can-use-smtp-credentials": true
+    },
+    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
+    "defined-tags": {},
+    "description": "\ub370\ubaa8 \ud578\uc988\uc628 QA \ub2f4\uc7a5\uc790",
+    "email": null,
+    "external-identifier": null,
+    "freeform-tags": {},
+    "id": "ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq",
+    "identity-provider-id": null,
+    "inactive-status": null,
+    "is-mfa-activated": false,
+    "lifecycle-state": "ACTIVE",
+    "name": "demo.tester",
+    "time-created": "2020-03-30T23:35:00.750000+00:00"
+  },
+  "etag": "7692cb8b4396f51a56a5782c417bdeb7d84a1670"
+}
+taewanme@cloudshell:~ (ap-seoul-1)$ oci iam user create --name demo.developer \
+> --description "데모 핸즈온 개발자"
+{
+  "data": {
+    "capabilities": {
+      "can-use-api-keys": true,
+      "can-use-auth-tokens": true,
+      "can-use-console-password": true,
+      "can-use-customer-secret-keys": true,
+      "can-use-o-auth2-client-credentials": true,
+      "can-use-smtp-credentials": true
+    },
+    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
+    "defined-tags": {},
+    "description": "\ub370\ubaa8 \ud578\uc988\uc628 \uac1c\ubc1c\uc790",
+    "email": null,
+    "external-identifier": null,
+    "freeform-tags": {},
+    "id": "ocid1.user.oc1..aaaaaaaauofc5hgbkbyuikp3h5lktz6lnj755ib4nieuyzngkf74ikkgg3ea",
+    "identity-provider-id": null,
+    "inactive-status": null,
+    "is-mfa-activated": false,
+    "lifecycle-state": "ACTIVE",
+    "name": "demo.developer",
+    "time-created": "2020-03-30T23:36:12.238000+00:00"
+  },
+  "etag": "a159047c3797b89d9585d1e9bd3291b568cab055"
+}
+taewanme@cloudshell:~ (ap-seoul-1)$ 
+</pre>
 
-<p>실제로 운영 환경으로 사용하는 OCI 계정에서는 알림 메시지가 도착하면 아이콘에 초록색 점이 찍힙니다. 다음과 같은 알림 메시지를 확인할 수 있습니다. 메시지를 유형/기간으로 상세 검색할 수 있습니다.</p>
+    </div>
+</div>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/380.jpg?classes=border,shadow" alt="" /></p>
+<h2 id="oci-user-등록-결과">OCI User 등록 결과</h2>
 
-<h2 id="언어-변경">언어 변경</h2>
+<p>OCI User 목록을 확인하기 위해서, 다음 메뉴 패스로 OCI User 관리 페이지로 이동합니다.</p>
 
-<p>OCI Console은 30개 언어를 지원합니다. OCI Console의 기본 언어를 다음과 같이 변경할 수 있습니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/410.jpg?classes=border,shadow" alt="" /></p>
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Users</strong></div></div>
 
-<h2 id="실시간-채팅">실시간 채팅</h2>
 
-<p>OCI Console은 기술 지원을 용도로 실시간 채팅을 지원합니다.</p>
+<p>다음과 같이 4개 oci user가 만들어 진 것을 확인할 수 있습니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/420.jpg?classes=border,shadow" alt="" /></p>
-
-<h2 id="도움말">도움말</h2>
-
-<p>도움말 메뉴에서는 OCI 관련 주요 매뉴얼 페이지를 제공합니다. 이 메뉴는 <a href="https://docs.cloud.oracle.com/" target="_blank">https://docs.cloud.oracle.com/ <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
-
- 사이트에 연결됩니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/400.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/180.jpg?classes=border,shadow" alt="" /></p>
 
 
     
@@ -509,8 +673,8 @@
   <li><strong>문서 생성:</strong> 2020-03-27 09:11 / <string>최종 문서 수정:</strong> 2020-03-27 09:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" title="OCI Console 로그인"> <i class="fa fa-chevron-left"></i><label>OCI Console 로그인</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/020.setting_basic_env/" title="OCI 사용자&amp;보안 설정" style="margin-right: 0px;"><label>OCI 사용자&amp;보안 설정</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" title="OCI Admin 로그인 생성"> <i class="fa fa-chevron-left"></i><label>OCI Admin 로그인 생성</label></a>
+    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" title="OCI Admin 로그인 생성" style="margin-right: 0px;"><label>OCI Admin 로그인 생성</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
@@ -529,7 +693,7 @@
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/"></div>
 
   </div>
 

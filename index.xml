@@ -45,6 +45,17 @@
     </item>
     
     <item>
+      <title>OCI Admin 로그인 생성</title>
+      <link>/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</link>
+      <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
+      
+      <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</guid>
+      <description>OCI 사용자&amp;amp;보안 설정 핸즈-온 랩은 OCI Admin User로 로그인하여 진행합니다. 다음과 같은 OCI User를 OCI Admin User(OCI 관리자)라고 합니다.
+ Oracle IDCS의 OCI_ADMINISTATORS 그룹에 소속된 OCI User OCI IAM의 Administrators 그룹에 소속된 OCI User  OCI Account를 등록할 때 사용한 E-mail이 OCI Admin User(OCI 관리자)는 에 사용한 E-mail로 만들어진 OCI User(___를 사용합니다. 이 OCI User를 OCI IAM 옵션으로 로그인 하여 진행하겠습니다.
+HOL: OCI Admin Login OCI 리전 로그인 페이지 URL은 다음과 같은 패턴을 갖습니다.</description>
+    </item>
+    
+    <item>
       <title>OCI Console 사용법</title>
       <link>/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
@@ -55,6 +66,17 @@ OCI Console 구성 OCI Console 구성에 대한 소개는 다음과 같은 목�
  OCI Console 구성  OCI 햄버그 메뉴 리전 관리 OCI Cloud Shell 고급 검색 사용자 프로파일 OCI 알림 언어 변경 실시간 채팅 도움말   
  OCI 햄버그 메뉴 OCI Console에서 햄버그 메뉴 아이콘을 클릭하여 다음과 같은 메뉴에 접근할 수 있습니다.
  코어 인프라 Database 데이터 및 AI 솔루션 및 플랫폼 추가 Oracle Clodu 서비스 거버넌스 및 관리  햄버그 메뉴에 출력되는 모든 메뉴는 OCI Console에 로그인한 사용자가 접근 가능한 서비스 목록입니다.</description>
+    </item>
+    
+    <item>
+      <title>OCI User 생성</title>
+      <link>/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</link>
+      <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
+      
+      <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</guid>
+      <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI User를 만드는 방법을 소개합니다. 이 핸즈온 랩은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.
+HOL: OCI User 이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI User를 만들것 입니다.
+   OCI User 역할     demo.admin 관리자   demo.audit 감리 담당자   demo.tester QA 담당자   demo.developer 개발자    핸즈온 랩 다음과 같은 순서로 진행합니다.</description>
     </item>
     
     <item>
