@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T12:52:27 KST">
+<meta name="revised" content="2020-03-31T17:46:55 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -262,6 +262,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/">
+            OCI Compartment 만들기
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
         </ul>
@@ -341,6 +348,7 @@
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" >--- OCI Admin 로그인 생성</option>
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/"  selected>--- OCI User 생성</option>
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/" >--- OCI Group 생성</option>
+      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" >--- OCI Compartment 만들기</option>
   
   
   
@@ -426,6 +434,8 @@
 <li><a href="#oci-user-만들기">OCI User 만들기</a></li>
 </ul></li>
 <li><a href="#oci-user-등록-결과">OCI User 등록 결과</a></li>
+<li><a href="#oci-user-패스워드-초기화">OCI User 패스워드 초기화</a></li>
+<li><a href="#oci-user-패스워드-설정">OCI User 패스워드 설정</a></li>
 </ul></li>
 </ul>
 </nav></p>
@@ -673,6 +683,129 @@ taewanme@cloudshell:~ (ap-seoul-1)$
 <p>다음과 같이 4개 oci user가 만들어 진 것을 확인할 수 있습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/180.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="oci-user-패스워드-초기화">OCI User 패스워드 초기화</h2>
+
+<p>새로 생성한 OCI User의 패스워드를 초기화 작업을 진행합니다. 다음 메뉴 패스로 OCI User 관리 페이지로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Users</strong></div></div>
+
+
+<p>OCI User 관리 페이지에서 <strong>demo.admin</strong> 사용자를 클릭하여 상세 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/510.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>demo.admin</strong> 사용자 상세 페이지에서 <strong>Create/Reset password</strong> 버튼을 클릭합니다. 그리고 초기화된 패스워드를 <strong>Copy</strong>링크를 클릭하여 복사합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/520.jpg?classes=border,shadow" alt="" /></p>
+
+<p>이렇게 복사한 <strong>demo.admin</strong> 패스워드는 다음과 같습니다 .</p>
+
+<table>
+<thead>
+<tr>
+<th>OCI User</th>
+<th>초기화 패스워드</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>demo.admin</td>
+<td>hrhg_}-8&gt;1{HHr6(&lt;e0+</td>
+</tr>
+</tbody>
+</table>
+
+<p>이 작업을 <strong>demo.developer</strong>, <strong>demo.audit</strong>, <strong>demo.tester</strong>에 반복합니다. 모든 작업을 마치면 다음과 같은 초기화 패스워드가 수집됩니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>OCI User</th>
+<th>초기화 패스워드</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>demo.admin</td>
+<td>hrhg_}-8&gt;1{HHr6(&lt;e0+</td>
+</tr>
+
+<tr>
+<td>demo.audit</td>
+<td>&amp;}Ru4[dhot(jGxi(I3R&lt;</td>
+</tr>
+
+<tr>
+<td>demo.developer</td>
+<td>x.Ez}cnIw0ufG&lt;3DCf&lt;}</td>
+</tr>
+
+<tr>
+<td>demo.tester</td>
+<td>D{lUGC6MNwszKwFJ6}&amp;g</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="oci-user-패스워드-설정">OCI User 패스워드 설정</h2>
+
+<p>OCI Console에서 초기화된 패스워드는 OCI User가 최초로 로그인할 때, 패스워드 변경이 요청됩니다. OCI Home Region 로그인 페이지에서 OCI IAM 옵션으로 로그인합니다.</p>
+
+<pre><code>https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
+</code></pre>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/530.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>그리고 패스워드를 <strong>Welcome123456!</strong>로 설정 합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/540.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>다음은 demo.admin의 로그인 결과입니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/550.jpg?classes=border,shadow" alt="" /></p>
+
+<p>이 작업을 <strong>demo.developer</strong>, <strong>demo.audit</strong>, <strong>demo.tester</strong>에 반복합니다. 모든 작업을 마치면 다음과 같이 패스워드를 다음과 같이 설정합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>OCI User</th>
+<th>로그인 패스워드</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>demo.admin</td>
+<td>Welcome123456!</td>
+</tr>
+
+<tr>
+<td>demo.audit</td>
+<td>Welcome123456!</td>
+</tr>
+
+<tr>
+<td>demo.developer</td>
+<td>Welcome123456!</td>
+</tr>
+
+<tr>
+<td>demo.tester</td>
+<td>Welcome123456!</td>
+</tr>
+</tbody>
+</table>
 
 
     
