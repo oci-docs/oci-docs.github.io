@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T17:46:55 KST">
+<meta name="revised" content="2020-03-31T21:28:32 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -401,25 +401,25 @@
 <tbody>
 <tr>
 <td>sandbox</td>
-<td>데모를 위한 최상위 Compartment</td>
+<td>데모: 최상위 Compartment</td>
 <td>root</td>
 </tr>
 
 <tr>
-<td>hol-prod</td>
-<td>데모를 위한 운영 환경 Compartment</td>
+<td>hol-dev</td>
+<td>데모: 개발 환경 Compartment</td>
 <td>root/sandbox</td>
 </tr>
 
 <tr>
-<td>hol-dev</td>
-<td>데모를 위한 개발 환경 Compartment</td>
+<td>hol-prod</td>
+<td>데모: 운영 환경 Compartment</td>
 <td>root/sandbox</td>
 </tr>
 
 <tr>
 <td>hol-test</td>
-<td>데모를 위한 테스트 환경 Compartment</td>
+<td>데모: 테스트 환경 Compartment</td>
 <td>root/sandbox</td>
 </tr>
 </tbody>
@@ -434,16 +434,18 @@
 <ul>
 <li><a href="#oci-compartment-생성-oci-console">OCI Compartment 생성: OCI Console</a>
 <ul>
-<li><a href="#실습-oci-group-생성과-user-할당-oci-console">실습: OCI Group 생성과 User 할당(OCI Console)</a></li>
+<li><a href="#sandbox-compartment-생성">sandbox Compartment 생성</a></li>
+<li><a href="#hol-dev-compartment-생성">hol-dev Compartment 생성</a></li>
 </ul></li>
-<li><a href="#oci-group-생성-oci-cli">OCI Group 생성: OCI CLI</a>
+<li><a href="#oci-compartment-생성-oci-cli">OCI Compartment 생성: OCI CLI</a>
 <ul>
 <li><a href="#cloud-shell-열기">Cloud Shell 열기</a></li>
-<li><a href="#oci-group-만들기">OCI Group 만들기</a></li>
-<li><a href="#ocid-정보-확인">OCID 정보 확인</a></li>
-<li><a href="#oci-group에-oci-user-할당">OCI Group에 OCI User 할당</a></li>
-<li><a href="#oci-group에-oci-user-할당-결과-확인">OCI Group에 OCI User 할당 결과 확인</a></li>
-<li><a href="#실습-oci-group-생성과-user-할당-oci-cli">실습: OCI Group 생성과 User 할당(OCI CLI)</a></li>
+<li><a href="#oci-compartment-만들기-hol-prod">OCI Compartment 만들기: hol-prod</a>
+<ul>
+<li><a href="#sandbox-compartment의-ocid">sandbox Compartment의 OCID</a></li>
+<li><a href="#hol-prod-compartment-만들기">hol-prod Compartment 만들기</a></li>
+</ul></li>
+<li><a href="#oci-compartment-만들기-hol-test">OCI Compartment 만들기: hol-test</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -467,11 +469,19 @@
 <tbody>
 <tr>
 <td>sandbox</td>
-<td>데모를 위한 최상위 Compartment</td>
+<td>데모: 최상위 Compartment</td>
 <td>root</td>
+</tr>
+
+<tr>
+<td>hol-dev</td>
+<td>데모: 개발 환경 Compartment</td>
+<td>root/sandbox</td>
 </tr>
 </tbody>
 </table>
+
+<h3 id="sandbox-compartment-생성">sandbox Compartment 생성</h3>
 
 <p>OCI Console에서 OCI Group 관리 페이지는 다음 메뉴 패스로 이동합니다.</p>
 
@@ -479,102 +489,78 @@
 <div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Compartments</strong></div></div>
 
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/210.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/610.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p>OCI 그룹 관리 페이지에서 <strong>Create Group</strong> 버튼을 클릭합니다.</p>
+<p>OCI Compartment 관리 페이지에서 <strong>Create Compartment</strong> 버튼을 클릭합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/220.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/620.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p><strong>Create Group</strong> 버튼을 클릭하면 사용자 그룹 폼이 나타납니다. 사용자 그룹 등록 폼의 <strong>Name</strong>과 <strong>Description</strong> 항목에 다음 설정값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
+<p>Compartment 생성 폼에 다음 설정값을 입력하고 <strong>Create Compartment</strong> 버튼을 클릭합니다.</p>
+
+<p>|입력 항목|설정 값|
+|Name|sandbox|
+|Description|데모: 최상위 Compartment|
+|Parent Compartment|root|</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/630.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>sandbox</strong> Compartment가 만들어지면 다음과 같은 Compartment 목록이 출력됩니다. <strong>sandbox</strong> 링크를 클릭하고 <strong>sandbox</strong> 상세 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/640.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="hol-dev-compartment-생성">hol-dev Compartment 생성</h3>
+
+<p>이번에는 <strong>sandbox</strong> Compartment 아래에 <strong>hol-dev</strong> Compartment를 만들 차례입니다. <strong>sandbox</strong> Compartment 상세 페이지에서 <strong>Child Compartment</strong> 아래의 <strong>Create Compartment</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/650.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>Compartment 생성 폼에 다음 설정값을 입력하고 <strong>Create Compartment</strong> 버튼을 클릭합니다.</p>
 
 <table>
 <thead>
 <tr>
 <th>입력 항목</th>
-<th>설정값</th>
+<th>설정 값</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
 <td>Name</td>
-<td>hol.admins</td>
+<td>hol-dev</td>
 </tr>
 
 <tr>
 <td>Description</td>
-<td>데모 관리자 사용자 그룹</td>
+<td>데모: 개발 환경 Compartment</td>
+</tr>
+
+<tr>
+<td>Parent Compartment</td>
+<td>root/sandbox</td>
 </tr>
 </tbody>
 </table>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/230.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/660.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p>OCI 그룹 등록이 완료되면 다음과 같은 사용자 목록에 출력됩니다.</p>
+<p><strong>hol-dev</strong> Compartment가 생성되면 다음과 같은 화면이 출력됩니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/240.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/670.jpg?classes=border,shadow" alt="" /></p>
 
-<hr />
+<h2 id="oci-compartment-생성-oci-cli">OCI Compartment 생성: OCI CLI</h2>
 
-<p>OCI 그룹 등록이 완료되면 다음과 같이 Group 목록이 출력됩니다. 이제 hol.admins 그룹에 OCI User를 할당할 차례입니다. OCI User를 할당은 OCI Group 상세 페이지에서 진행됩니다. 그룹 목록에서 hol.admins 링크 클릭해서 hol.admins 상세 페이지로 이동합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/240.jpg?classes=border,shadow" alt="" /></p>
-
-<hr />
-
-<p>OCI 그룹 상세 페이지(hol.admins)에서 <strong>Add User to Group</strong> 버튼을 클릭합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/250.jpg?classes=border,shadow" alt="" /></p>
-
-<hr />
-
-<p><strong>Add User to Group</strong> 창에서 demo.admin을 선택하고 <strong>Add</strong> 버튼을 클릭합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/260.jpg?classes=border,shadow" alt="" /></p>
-
-<hr />
-
-<p>OCI 그룹에 OCI 사용자 등록이 완료되면 <strong>hol.admins</strong> 그룹 상세 페이지에서 <strong>demo.admin</strong>이 추가된 것을 확인할 수 있습니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/270.jpg?classes=border,shadow" alt="" /></p>
-
-<hr />
-
-<h3 id="실습-oci-group-생성과-user-할당-oci-console">실습: OCI Group 생성과 User 할당(OCI Console)</h3>
-
-<p>위 작업을 반복하여 다음 OCI Group을 만들고 OCI 사용자를 추가하시기 바랍니다.</p>
-
-<table>
-<thead>
-<tr>
-<th>OCI Group</th>
-<th>역할</th>
-<th>소속 OCI User</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>hol.audits</td>
-<td>데모 감리 담당자 그룹</td>
-<td>demo.audit</td>
-</tr>
-</tbody>
-</table>
-
-<p>작업을 완료하면 OCI 사용자 목록은 다음과 같이 출력됩니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/280.jpg?classes=border,shadow" alt="" /></p>
-
-<h2 id="oci-group-생성-oci-cli">OCI Group 생성: OCI CLI</h2>
-
-<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. OCI Console은 Cloud Shell은 브라우저 기반 리눅스 터미널을 제공합니다. Cloud Shell에는 사전 구성이 완료된 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI Group을 등록해 보겠습니다.</p>
+<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. OCI Console은 Cloud Shell은 브라우저 기반 리눅스 터미널을 제공합니다. Cloud Shell에는 사전 구성이 완료된 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI Compartment를 등록해 보겠습니다.</p>
 
 <h3 id="cloud-shell-열기">Cloud Shell 열기</h3>
 
@@ -583,203 +569,121 @@
 <pre><code>oci os ns get
 </code></pre>
 
-<p>다음 이미지와 유사한 json이 출력된다면 <strong>oci cli</strong>가 정상적으로 작동하는 상태임을 확인할 수 있습니다.</p>
+<p>다음 이미지와 유사한 json이 출력된다면 __OCI CLI_가 정상적으로 작동하는 상태임을 확인할 수 있습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/170.jpg?classes=border,shadow" alt="" /></p>
 
-<h3 id="oci-group-만들기">OCI Group 만들기</h3>
+<h3 id="oci-compartment-만들기-hol-prod">OCI Compartment 만들기: hol-prod</h3>
 
-<p>cloud shell의 oci cli로 다음 2개 OCI User를 만들것 입니다.</p>
+<p>cloud shell의 oci cli로 다음 Compartment를 만들것 입니다.</p>
 
 <table>
 <thead>
 <tr>
-<th>OCI Group</th>
+<th>OCI 컴파트먼트</th>
 <th>역할</th>
-<th>소속 OCI User</th>
+<th>부모 컴파트먼트</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>hol.testers</td>
-<td>데모 QA 담당자 그룹</td>
-<td>demo.tester, demo.admin</td>
+<td>hol-prod</td>
+<td>데모: 운영 환경 Compartment</td>
+<td>root/sandbox</td>
 </tr>
 </tbody>
 </table>
 
-<p>다음 명령을 복사하여 Cloud shell에서 실행합니다.</p>
+<h4 id="sandbox-compartment의-ocid">sandbox Compartment의 OCID</h4>
 
-<pre><code>oci iam group create --name hol.testers --description &quot;데모 QA 담당자 그룹&quot;
+<p>__OCI CLI_로 Compartment를 생성하기 위해서는 생성할 컴파트먼트를 포함할 부모 컴파트먼트의 OCID가 필요합니다. 새로 만들 컴파트먼트의 부모 컴파트먼트는 <strong>root/sandbox</strong>입니다. 다음 메뉴 패스로 OCI Compartment 관리 페이지로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Compartments</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/610.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>OCI Compartment 관리 페이지에서 sandbox 링크를 클릭하고 <strong>sandbox</strong> Compartment 상세 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/680.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>sandbox</strong> Compartment 상세 페이지의 OCID의 <strong>copy</strong>링크를 클락하면 <strong>sandbox</strong> Compartment의 OCID가 복사됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/690.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>위에서 복사한 <strong>sandbox</strong> Compartment의 OCID는 다음과 같습니다.</p>
+
+<pre><code>ocid1.compartment.oc1..aaaaaaaa23dm4ozaskh6oqi5rmkjm6rfni26gkn5fjvd2fb7c63zocusmq6a
 </code></pre>
 
-<p>아래 [접기/펼치기]를 클릭하면 Cloud Shell에서 위 명령을 실행한 전체 로그를 확인할 수 있습니다.</p>
+<h4 id="hol-prod-compartment-만들기">hol-prod Compartment 만들기</h4>
 
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
-        <span>
-        
-        
-        [접기/펼치기] Cloud Shell에서 OCI CLI로 OCI Group 생성 전체 로그
-        
-        </span>
-    </div>
-    <div class="expand-content" style="display: none;">
+<p>다음 명령을 복사하여 Cloud shell에서 실행합니다. 다음 명령에서 sandbox의 OCID는 여러분 환경의 sandbox OCID로 바꿔서 실행하시기 바랍니다.</p>
+
+<pre><code>oci iam compartment create --name hol-prod \
+--description &quot;데모: 운영 환경 Compartment&quot; \
+--compartment-id \
+ocid1.compartment.oc1..aaaaaaaa23dm4ozaskh6oqi5rmkjm6rfni26gkn5fjvd2fb7c63zocusmq6a
+</code></pre>
+
+<p>Cloud Shell에서 실행한 위 명령의 전체 실행 로그는 다음과 같습니다.</p>
+
 <pre class="prettyprint lang-bsh">
-taewanme@cloudshell:~ (ap-seoul-1)$ oci iam group create --name hol.testers --description "데모 QA 담당자 그룹"
+taewanme@cloudshell:~ (ap-seoul-1)$ oci iam compartment create --name hol-prod \
+> --description "데모: 운영 환경 Compartment" \
+> --compartment-id \
+> ocid1.compartment.oc1..aaaaaaaa23dm4ozaskh6oqi5rmkjm6rfni26gkn5fjvd2fb7c63zocusmq6a
 {
   "data": {
-    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
+    "compartment-id": "ocid1.compartment.oc1..aaaaaaaa23dm4ozaskh6oqi5rmkjm6rfni26gkn5fjvd2fb7c63zocusmq6a",
     "defined-tags": {},
-    "description": "\ub370\ubaa8 QA \ub2f4\ub2f9\uc790 \uadf8\ub8f9",
+    "description": "\ub370\ubaa8: \uc6b4\uc601 \ud658\uacbd Compartment",
     "freeform-tags": {},
-    "id": "ocid1.group.oc1..aaaaaaaad3okf6eqyydeawe3wluoeeb66jija4s27ul6hqeuweb6hcnbcqrq",
+    "id": "ocid1.compartment.oc1..aaaaaaaacxassmk57phb2wwqygerdssdt4jflvuud7vxanl5iwnr7457tnea",
     "inactive-status": null,
+    "is-accessible": true,
     "lifecycle-state": "ACTIVE",
-    "name": "hol.testers",
-    "time-created": "2020-03-31T01:57:02.135000+00:00"
+    "name": "hol-prod",
+    "time-created": "2020-03-31T12:20:46.555000+00:00"
   },
-  "etag": "702c95e87abdfca125303ff07aae46e831df7ba4"
+  "etag": "b800166b433feac765f20972919de7b30d142acd"
 }
 taewanme@cloudshell:~ (ap-seoul-1)$ 
 </pre>
 
-    </div>
-</div>
+<h3 id="oci-compartment-만들기-hol-test">OCI Compartment 만들기: hol-test</h3>
 
-<h3 id="ocid-정보-확인">OCID 정보 확인</h3>
-
-<p><strong>OCI CLI</strong>로 OCI Group에 OCI User를 추가하기 위해서는 해당 OCI Group(<strong>hol.testers</strong>)의 OCID와 대상 OCI User(demo.tester, demo.admin)의 OCID가 필요합니다.</p>
-
-<p>OCID란 OCI 자원을 구분하는 구분자입니다. 3개 자원(<strong>hol.testers</strong>, <strong>demo.tester</strong>, <strong>demo.admin</strong>)의 OCID는 다음과 같이 확인할 수 있습니다.</p>
-
-<p>다음 그림과 같이 OCI Group 관리 페이지에서 <strong>hol.testers</strong>의 OCID를 복사할 수 있습니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/290.jpg?classes=border,shadow" alt="" /></p>
-
-<p>위에서 복사한 <strong>hol.testers</strong>의 OCID는 다음과 같습니다.</p>
-
-<pre><code>ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq
-</code></pre>
-
-<p>이제 OCI User인 <strong>demo.tester</strong>의 OCID를 확인할 차례입니다. 다음과 같이 OCI User 관리 페이지로 이동합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/300.jpg?classes=border,shadow" alt="" /></p>
-
-<p>OCI User 관리 페이지에서 <strong>demo.tester</strong> 링크를 클릭하고 OCI User 상세 페이지로 이동합니다. 그리고 OCID의 <strong>copy</strong>링크를 클릭하여 OCID를 복사합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/310.jpg?classes=border,shadow" alt="" /></p>
-
-<p>복사한 <strong>demo.tester</strong>의 OCID는 다음과 같습니다.</p>
-
-<pre><code>ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq
-</code></pre>
-
-<p>이 과정을 반복하여 <strong>demo.admin</strong> OCID를 복사합니다. 복사한 <strong>demo.admin</strong>의 OCID는 다음과 같습니다.</p>
-
-<pre><code>ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq
-</code></pre>
-
-<h3 id="oci-group에-oci-user-할당">OCI Group에 OCI User 할당</h3>
-
-<p>다음과 같은 명령을 Cloud Shell의 OCI CLI에서 실행하여 OCI Group에 OCI User를 추가합니다.</p>
-
-<pre><code>oci iam group add-user \
---group-id  \
-{GROUP_OCID}  \
---user-id   \
-{USER_OCID}
-</code></pre>
-
-<p>{GROUP_OCID}와 {USER-OCID}는 여러분이 조사한 OCID로 대체하여 실행합니다.</p>
-
-<ul>
-<li>Case 1: <strong>hol.testers</strong> Group에 <strong>demo.tester</strong> 사용자 추가</li>
-</ul>
-
-<p>{GROUP_OCID}와 {USER-OCID}를 앞에서 조사한 OCID로 대체하고 실행한 결과는  다음과 같습니다.</p>
-
-<pre class="prettyprint lang-bsh">
-taewanme@cloudshell:~ (ap-seoul-1)$ oci iam group add-user \
-> --group-id  \
-> ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq  \
-> --user-id   \
-> ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq
-{
-  "data": {
-    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
-    "group-id": "ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq",
-    "id": "ocid1.groupmembership.oc1..aaaaaaaajpymo4kzc7l4jzrk2itevreeuipifqzzsyiw5hywrh7luyfqcgea",
-    "inactive-status": null,
-    "lifecycle-state": "ACTIVE",
-    "time-created": "2020-03-31T03:32:57.517000+00:00",
-    "user-id": "ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq"
-  },
-  "etag": "b6e686ccfe60a4c727f19cd5534b380efba2054f"
-}
-taewanme@cloudshell:~ (ap-seoul-1)$ 
-</pre>
-
-<ul>
-<li>Case 2: <strong>hol.testers</strong> Group에 <strong>demo.admin</strong> 사용자 추가</li>
-</ul>
-
-<p>{GROUP_OCID}와 {USER-OCID}를 앞에서 조사한 OCID로 대체하고 실행한 결과는  다음과 같습니다.</p>
-
-<pre class="prettyprint lang-bsh">
-taewanme@cloudshell:~ (ap-seoul-1)$ oci iam group add-user \
-> --group-id  \
-> ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq  \
-> --user-id   \
-> ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq
-{
-  "data": {
-    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
-    "group-id": "ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq",
-    "id": "ocid1.groupmembership.oc1..aaaaaaaaf6sqdju4k2snr24zvbhkglwhzjqzoawgfp3ty3zzawoxllfdn6nq",
-    "inactive-status": null,
-    "lifecycle-state": "ACTIVE",
-    "time-created": "2020-03-31T03:38:01.625000+00:00",
-    "user-id": "ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq"
-  },
-  "etag": "11d9057639e6812b5f1b06624714556e5a8f9165"
-}
-taewanme@cloudshell:~ (ap-seoul-1)$ 
-</pre>
-
-<h3 id="oci-group에-oci-user-할당-결과-확인">OCI Group에 OCI User 할당 결과 확인</h3>
-
-<p>이 작업이 완료되면 다음과 같이 <strong>hol.testers</strong> 그룹에 <strong>demo.admin</strong>와 <strong>demo.tester</strong>가 추가된것을 확인할 수 있습니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/320.jpg?classes=border,shadow" alt="" /></p>
-
-<h3 id="실습-oci-group-생성과-user-할당-oci-cli">실습: OCI Group 생성과 User 할당(OCI CLI)</h3>
-
-<p>위 작업을 다음 OCI 그룹과 OCI 사용자에 적용합니다.</p>
+<p>위 작업을 반복하여 <strong>OCI CLI</strong>로 다음 OCI Compartment를 만드시기 바랍니다.</p>
 
 <table>
 <thead>
 <tr>
-<th>OCI Group</th>
+<th>OCI 컴파트먼트</th>
 <th>역할</th>
-<th>소속 OCI User</th>
+<th>상위 컴파트먼트</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>hol.developers</td>
-<td>데모 개발자 그룹</td>
-<td>demo.developer</td>
+<td>hol-test</td>
+<td>데모: 테스트 환경 Compartment</td>
+<td>root/sandbox</td>
 </tr>
 </tbody>
 </table>
 
-<p>이 작업을 완료하면 다음과 같은 결과를 확인할 수 있습니다.</p>
+<p>이 작업을 완료한 다음에 <strong>sandbox</strong> Compartment 상세 페이지로 이동하면 다음과 같은 결과를 확인할 수 있습니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/330.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/700.jpg?classes=border,shadow" alt="" /></p>
 
 
     
