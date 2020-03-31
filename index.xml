@@ -80,6 +80,17 @@ HOL: OCI User 이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당�
     </item>
     
     <item>
+      <title>OCI Group 생성</title>
+      <link>/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</link>
+      <pubDate>Tue, 31 Mar 2020 09:11:05 +0900</pubDate>
+      
+      <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</guid>
+      <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI Group을 만들고 OCI User를 할당하는 방법을 소개합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.
+HOL: OCI Group 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI Group을 만들고 각 그룹에 OCI User를 할당합니다. 다음과 같은 OCI Group을 만들고 OCI User를 할당하겠습니다.
+|OCI Group|역할|소속 OCI User|역할| |&amp;mdash;-|&amp;mdash;-| |hol.admins|데모 관리자 사용자 그룹|demo.admin| |hol.audits|데모 감리 담당자 그룹|demo.</description>
+    </item>
+    
+    <item>
       <title>OCI 기초 용어 정리</title>
       <link>/010.oci_intro/basic_concept/terminologies/</link>
       <pubDate>Thu, 26 Mar 2020 09:11:05 +0900</pubDate>
