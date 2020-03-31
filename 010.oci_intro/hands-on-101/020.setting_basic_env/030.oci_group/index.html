@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-31T10:52:32 KST">
+<meta name="revised" content="2020-03-31T12:52:27 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -412,7 +412,7 @@
 <tr>
 <td>hol.developers</td>
 <td>데모 개발자 그룹</td>
-<td>demo.developer, demo.admin</td>
+<td>demo.developer</td>
 </tr>
 </tbody>
 </table>
@@ -424,13 +424,19 @@
 <ul>
 <li><a href="#hol-oci-group">HOL: OCI Group</a>
 <ul>
-<li><a href="#oci-group-생성-oci-console">OCI Group 생성: OCI Console</a></li>
+<li><a href="#oci-group-생성-oci-console">OCI Group 생성: OCI Console</a>
+<ul>
+<li><a href="#실습-oci-group-생성과-user-할당-oci-console">실습: OCI Group 생성과 User 할당(OCI Console)</a></li>
+</ul></li>
 <li><a href="#oci-group-생성-oci-cli">OCI Group 생성: OCI CLI</a>
 <ul>
 <li><a href="#cloud-shell-열기">Cloud Shell 열기</a></li>
 <li><a href="#oci-group-만들기">OCI Group 만들기</a></li>
+<li><a href="#ocid-정보-확인">OCID 정보 확인</a></li>
+<li><a href="#oci-group에-oci-user-할당">OCI Group에 OCI User 할당</a></li>
+<li><a href="#oci-group에-oci-user-할당-결과-확인">OCI Group에 OCI User 할당 결과 확인</a></li>
+<li><a href="#실습-oci-group-생성과-user-할당-oci-cli">실습: OCI Group 생성과 User 할당(OCI CLI)</a></li>
 </ul></li>
-<li><a href="#oci-user-등록-결과">OCI User 등록 결과</a></li>
 </ul></li>
 </ul>
 </nav></p>
@@ -532,7 +538,9 @@
 
 <hr />
 
-<p>이 작업을 반복하여 다음 OCI Group을 만들고 OCI 사용자를 추가하시기 바랍니다.</p>
+<h3 id="실습-oci-group-생성과-user-할당-oci-console">실습: OCI Group 생성과 User 할당(OCI Console)</h3>
+
+<p>위 작업을 반복하여 다음 OCI Group을 만들고 OCI 사용자를 추가하시기 바랍니다.</p>
 
 <table>
 <thead>
@@ -558,7 +566,7 @@
 
 <h2 id="oci-group-생성-oci-cli">OCI Group 생성: OCI CLI</h2>
 
-<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. OCI Console은 Cloud Shell을 제공합니다. Cloud Shell은 브라우저 기반 리눅스 터미널입니다. Cloud Shell에는 사전 구성이 완료된 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI User를 등록해 보겠습니다.</p>
+<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. OCI Console은 Cloud Shell은 브라우저 기반 리눅스 터미널을 제공합니다. Cloud Shell에는 사전 구성이 완료된 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI Group을 등록해 보겠습니다.</p>
 
 <h3 id="cloud-shell-열기">Cloud Shell 열기</h3>
 
@@ -575,14 +583,27 @@
 
 <p>cloud shell의 oci cli로 다음 2개 OCI User를 만들것 입니다.</p>
 
-<p>|OCI Group|역할|소속 OCI User|역할|
-|&mdash;-|&mdash;-|
-|hol.testers|데모 QA 담당자 그룹|demo.tester, demo.admin|</p>
+<table>
+<thead>
+<tr>
+<th>OCI Group</th>
+<th>역할</th>
+<th>소속 OCI User</th>
+</tr>
+</thead>
 
-<p>다음 명령 2개를 하나씩 복사하여 Cloud shell에서 실행합니다.</p>
+<tbody>
+<tr>
+<td>hol.testers</td>
+<td>데모 QA 담당자 그룹</td>
+<td>demo.tester, demo.admin</td>
+</tr>
+</tbody>
+</table>
 
-<pre><code>oci iam user create --name demo.tester --description &quot;데모 핸즈온 QA 담장자&quot;
-oci iam user create --name demo.developer --description &quot;데모 핸즈온 개발자&quot;
+<p>다음 명령을 복사하여 Cloud shell에서 실행합니다.</p>
+
+<pre><code>oci iam group create --name hol.testers --description &quot;데모 QA 담당자 그룹&quot;
 </code></pre>
 
 <p>아래 [접기/펼치기]를 클릭하면 Cloud Shell에서 위 명령을 실행한 전체 로그를 확인할 수 있습니다.</p>
@@ -593,74 +614,26 @@ oci iam user create --name demo.developer --description &quot;데모 핸즈온 �
         <span>
         
         
-        [접기/펼치기] Cloud Shell에서 OCI CLI로 OCI User 생성 전체 로그
+        [접기/펼치기] Cloud Shell에서 OCI CLI로 OCI Group 생성 전체 로그
         
         </span>
     </div>
     <div class="expand-content" style="display: none;">
 <pre class="prettyprint lang-bsh">
-Welcome to Oracle Cloud Shell.
-
-Your Cloud Shell machine comes with 5GB of storage for your home directory. Type `help` for more info.
-taewanme@cloudshell:~ (ap-seoul-1)$ oci os ns get
-{
-  "data": "cnntpzcnbjqo"
-}
-taewanme@cloudshell:~ (ap-seoul-1)$ oci iam user create --name demo.tester \
-> --description "데모 핸즈온 QA 담장자"
+taewanme@cloudshell:~ (ap-seoul-1)$ oci iam group create --name hol.testers --description "데모 QA 담당자 그룹"
 {
   "data": {
-    "capabilities": {
-      "can-use-api-keys": true,
-      "can-use-auth-tokens": true,
-      "can-use-console-password": true,
-      "can-use-customer-secret-keys": true,
-      "can-use-o-auth2-client-credentials": true,
-      "can-use-smtp-credentials": true
-    },
     "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
     "defined-tags": {},
-    "description": "\ub370\ubaa8 \ud578\uc988\uc628 QA \ub2f4\uc7a5\uc790",
-    "email": null,
-    "external-identifier": null,
+    "description": "\ub370\ubaa8 QA \ub2f4\ub2f9\uc790 \uadf8\ub8f9",
     "freeform-tags": {},
-    "id": "ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq",
-    "identity-provider-id": null,
+    "id": "ocid1.group.oc1..aaaaaaaad3okf6eqyydeawe3wluoeeb66jija4s27ul6hqeuweb6hcnbcqrq",
     "inactive-status": null,
-    "is-mfa-activated": false,
     "lifecycle-state": "ACTIVE",
-    "name": "demo.tester",
-    "time-created": "2020-03-30T23:35:00.750000+00:00"
+    "name": "hol.testers",
+    "time-created": "2020-03-31T01:57:02.135000+00:00"
   },
-  "etag": "7692cb8b4396f51a56a5782c417bdeb7d84a1670"
-}
-taewanme@cloudshell:~ (ap-seoul-1)$ oci iam user create --name demo.developer \
-> --description "데모 핸즈온 개발자"
-{
-  "data": {
-    "capabilities": {
-      "can-use-api-keys": true,
-      "can-use-auth-tokens": true,
-      "can-use-console-password": true,
-      "can-use-customer-secret-keys": true,
-      "can-use-o-auth2-client-credentials": true,
-      "can-use-smtp-credentials": true
-    },
-    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
-    "defined-tags": {},
-    "description": "\ub370\ubaa8 \ud578\uc988\uc628 \uac1c\ubc1c\uc790",
-    "email": null,
-    "external-identifier": null,
-    "freeform-tags": {},
-    "id": "ocid1.user.oc1..aaaaaaaauofc5hgbkbyuikp3h5lktz6lnj755ib4nieuyzngkf74ikkgg3ea",
-    "identity-provider-id": null,
-    "inactive-status": null,
-    "is-mfa-activated": false,
-    "lifecycle-state": "ACTIVE",
-    "name": "demo.developer",
-    "time-created": "2020-03-30T23:36:12.238000+00:00"
-  },
-  "etag": "a159047c3797b89d9585d1e9bd3291b568cab055"
+  "etag": "702c95e87abdfca125303ff07aae46e831df7ba4"
 }
 taewanme@cloudshell:~ (ap-seoul-1)$ 
 </pre>
@@ -668,17 +641,137 @@ taewanme@cloudshell:~ (ap-seoul-1)$
     </div>
 </div>
 
-<h2 id="oci-user-등록-결과">OCI User 등록 결과</h2>
+<h3 id="ocid-정보-확인">OCID 정보 확인</h3>
 
-<p>OCI User 목록을 확인하기 위해서, 다음 메뉴 패스로 OCI User 관리 페이지로 이동합니다.</p>
+<p><strong>OCI CLI</strong>로 OCI Group에 OCI User를 추가하기 위해서는 해당 OCI Group(<strong>hol.testers</strong>)의 OCID와 대상 OCI User(demo.tester, demo.admin)의 OCID가 필요합니다.</p>
 
+<p>OCID란 OCI 자원을 구분하는 구분자입니다. 3개 자원(<strong>hol.testers</strong>, <strong>demo.tester</strong>, <strong>demo.admin</strong>)의 OCID는 다음과 같이 확인할 수 있습니다.</p>
 
-<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Users</strong></div></div>
+<p>다음 그림과 같이 OCI Group 관리 페이지에서 <strong>hol.testers</strong>의 OCID를 복사할 수 있습니다.</p>
 
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/290.jpg?classes=border,shadow" alt="" /></p>
 
-<p>다음과 같이 4개 oci user가 만들어 진 것을 확인할 수 있습니다.</p>
+<p>위에서 복사한 <strong>hol.testers</strong>의 OCID는 다음과 같습니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/180.jpg?classes=border,shadow" alt="" /></p>
+<pre><code>ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq
+</code></pre>
+
+<p>이제 OCI User인 <strong>demo.tester</strong>의 OCID를 확인할 차례입니다. 다음과 같이 OCI User 관리 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/300.jpg?classes=border,shadow" alt="" /></p>
+
+<p>OCI User 관리 페이지에서 <strong>demo.tester</strong> 링크를 클릭하고 OCI User 상세 페이지로 이동합니다. 그리고 OCID의 <strong>copy</strong>링크를 클릭하여 OCID를 복사합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/310.jpg?classes=border,shadow" alt="" /></p>
+
+<p>복사한 <strong>demo.tester</strong>의 OCID는 다음과 같습니다.</p>
+
+<pre><code>ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq
+</code></pre>
+
+<p>이 과정을 반복하여 <strong>demo.admin</strong> OCID를 복사합니다. 복사한 <strong>demo.admin</strong>의 OCID는 다음과 같습니다.</p>
+
+<pre><code>ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq
+</code></pre>
+
+<h3 id="oci-group에-oci-user-할당">OCI Group에 OCI User 할당</h3>
+
+<p>다음과 같은 명령을 Cloud Shell의 OCI CLI에서 실행하여 OCI Group에 OCI User를 추가합니다.</p>
+
+<pre><code>oci iam group add-user \
+--group-id  \
+{GROUP_OCID}  \
+--user-id   \
+{USER_OCID}
+</code></pre>
+
+<p>{GROUP_OCID}와 {USER-OCID}는 여러분이 조사한 OCID로 대체하여 실행합니다.</p>
+
+<ul>
+<li>Case 1: <strong>hol.testers</strong> Group에 <strong>demo.tester</strong> 사용자 추가</li>
+</ul>
+
+<p>{GROUP_OCID}와 {USER-OCID}를 앞에서 조사한 OCID로 대체하고 실행한 결과는  다음과 같습니다.</p>
+
+<pre class="prettyprint lang-bsh">
+taewanme@cloudshell:~ (ap-seoul-1)$ oci iam group add-user \
+> --group-id  \
+> ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq  \
+> --user-id   \
+> ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq
+{
+  "data": {
+    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
+    "group-id": "ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq",
+    "id": "ocid1.groupmembership.oc1..aaaaaaaajpymo4kzc7l4jzrk2itevreeuipifqzzsyiw5hywrh7luyfqcgea",
+    "inactive-status": null,
+    "lifecycle-state": "ACTIVE",
+    "time-created": "2020-03-31T03:32:57.517000+00:00",
+    "user-id": "ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq"
+  },
+  "etag": "b6e686ccfe60a4c727f19cd5534b380efba2054f"
+}
+taewanme@cloudshell:~ (ap-seoul-1)$ 
+</pre>
+
+<ul>
+<li>Case 2: <strong>hol.testers</strong> Group에 <strong>demo.admin</strong> 사용자 추가</li>
+</ul>
+
+<p>{GROUP_OCID}와 {USER-OCID}를 앞에서 조사한 OCID로 대체하고 실행한 결과는  다음과 같습니다.</p>
+
+<pre class="prettyprint lang-bsh">
+taewanme@cloudshell:~ (ap-seoul-1)$ oci iam group add-user \
+> --group-id  \
+> ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq  \
+> --user-id   \
+> ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq
+{
+  "data": {
+    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
+    "group-id": "ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq",
+    "id": "ocid1.groupmembership.oc1..aaaaaaaaf6sqdju4k2snr24zvbhkglwhzjqzoawgfp3ty3zzawoxllfdn6nq",
+    "inactive-status": null,
+    "lifecycle-state": "ACTIVE",
+    "time-created": "2020-03-31T03:38:01.625000+00:00",
+    "user-id": "ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq"
+  },
+  "etag": "11d9057639e6812b5f1b06624714556e5a8f9165"
+}
+taewanme@cloudshell:~ (ap-seoul-1)$ 
+</pre>
+
+<h3 id="oci-group에-oci-user-할당-결과-확인">OCI Group에 OCI User 할당 결과 확인</h3>
+
+<p>이 작업이 완료되면 다음과 같이 <strong>hol.testers</strong> 그룹에 <strong>demo.admin</strong>와 <strong>demo.tester</strong>가 추가된것을 확인할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/320.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="실습-oci-group-생성과-user-할당-oci-cli">실습: OCI Group 생성과 User 할당(OCI CLI)</h3>
+
+<p>위 작업을 다음 OCI 그룹과 OCI 사용자에 적용합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>OCI Group</th>
+<th>역할</th>
+<th>소속 OCI User</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>hol.developers</td>
+<td>데모 개발자 그룹</td>
+<td>demo.developer</td>
+</tr>
+</tbody>
+</table>
+
+<p>이 작업을 완료하면 다음과 같은 결과를 확인할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/330.jpg?classes=border,shadow" alt="" /></p>
 
 
     
