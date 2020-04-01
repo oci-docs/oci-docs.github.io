@@ -113,6 +113,16 @@ HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. �
     </item>
     
     <item>
+      <title>OCI VCN</title>
+      <link>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</link>
+      <pubDate>Tue, 31 Mar 2020 12:11:05 +0900</pubDate>
+      
+      <guid>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</guid>
+      <description>OCI Compute 서비스를 사용하면 여러 VCN(Virtual Cloud Network)을 만들 수 있습니다. OCI 자원을 생성하고 배포하기 위해서는 다른 자원을 생성하기 전에 VCN 가장 먼저 만들어야 합니니다. VCN은 다음과 같은 네트워크 컴포넌트로 만들어집니다.
+ Subnet Route Table Security List Internet Gateway NAT Gateway Service Gateway Dynamic Routing Gateway Load Balancer Local/Remote Peering  HOL: OCI VCN 이번 Hands-on Lab에서는 OCI Console에서 제공하는 VCN(Virtual Cloud Network) 생성 간편 모드 기능을 사용하여 다음과 같은 VCN을 만들겠습니다.</description>
+    </item>
+    
+    <item>
       <title>OCI 기초 용어 정리</title>
       <link>/010.oci_intro/basic_concept/terminologies/</link>
       <pubDate>Thu, 26 Mar 2020 09:11:05 +0900</pubDate>

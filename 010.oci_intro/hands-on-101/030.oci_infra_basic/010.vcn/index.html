@@ -8,10 +8,10 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="OCI Policy: 권한 설정" />
+<meta property="og:title" content="OCI VCN" />
 <meta property="og:description" content="OCI Console로 자원 접근 제어를 위해서 Policy를 적용하는 절차를 소개합니다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" />
+<meta property="og:url" content="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" />
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-<title>OCI Policy: 권한 설정 :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI VCN :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -78,7 +78,7 @@
 
     
   </head>
-  <body data-url="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/">
+  <body data-url="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
     
       <header>
   <div class="logo">
@@ -234,7 +234,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/">OCI 사용자&amp;보안 설정</a>
@@ -269,7 +269,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" class="dd-item active">
+      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/">
             OCI Policy: 권한 설정
@@ -278,14 +278,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/">OCI Infra 기초</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item active">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
             OCI VCN
@@ -372,12 +372,12 @@
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" >--- OCI User 생성</option>
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/" >--- OCI Group 생성</option>
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" >--- OCI Compartment 만들기</option>
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/"  selected>--- OCI Policy: 권한 설정</option>
+      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" >--- OCI Policy: 권한 설정</option>
   
     <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/" >
   -- 
    OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- OCI VCN</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/"  selected>--- OCI VCN</option>
   
   
   
@@ -401,7 +401,8 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>OCI Policy: 권한 설정</h1>
+    <h1>OCI VCN</h1>
+    <p><img src="https://taewanmerepo.github.io/2020/03/vcn/010.jpg" alt="OCI VCN"></p>
 
 
      
@@ -412,9 +413,112 @@
     
     
 
-<p>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.</p>
+<p>OCI Compute 서비스를 사용하면 여러 VCN(Virtual Cloud Network)을 만들 수 있습니다. OCI 자원을 생성하고 배포하기 위해서는 다른 자원을 생성하기 전에 VCN 가장 먼저 만들어야 합니니다. VCN은 다음과 같은 네트워크 컴포넌트로 만들어집니다.</p>
 
-<h1 id="hol-oci-iam-policy">HOL: OCI IAM Policy</h1>
+<ul>
+<li>Subnet</li>
+<li>Route Table</li>
+<li>Security List</li>
+<li>Internet Gateway</li>
+<li>NAT Gateway</li>
+<li>Service Gateway</li>
+<li>Dynamic Routing Gateway</li>
+<li>Load Balancer</li>
+<li>Local/Remote Peering</li>
+</ul>
+
+<h1 id="hol-oci-vcn">HOL: OCI VCN</h1>
+
+<p>이번 <strong>Hands-on Lab</strong>에서는 OCI Console에서 제공하는 VCN(Virtual Cloud Network) 생성 간편 모드 기능을 사용하여 다음과 같은 VCN을 만들겠습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/vcn/000.jpg?classes=border,shadow" alt="" /></p>
+
+<p>이번 <strong>Hands-on Lab</strong>은 다음과 같은 순서로 진행합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
+<ul>
+<li><a href="#hol-oci-vcn">HOL: OCI VCN</a>
+<ul>
+<li><a href="#hands-on-lab-실습-환경">Hands-on Lab 실습 환경</a></li>
+<li><a href="#oci-vcn-프로비저닝-간편모드">OCI VCN 프로비저닝: 간편모드</a></li>
+<li><a href="#oci-iam-policy-개요">OCI IAM Policy 개요</a>
+<ul>
+<li><a href="#oci-iam-policy-패턴">OCI IAM Policy 패턴</a></li>
+<li><a href="#oci-iam-policy-verb">OCI IAM Policy: verb</a></li>
+<li><a href="#oci-iam-policy-resource-type">OCI IAM Policy: resource-type</a></li>
+<li><a href="#oci-iam-policy-하부-compartment">OCI IAM Policy: 하부 Compartment</a></li>
+<li><a href="#oci-iam-policy-예제">OCI IAM Policy: 예제</a></li>
+</ul></li>
+<li><a href="#hol-oci-policy-적용">HOL: OCI Policy 적용</a>
+<ul>
+<li><a href="#oci-policy-관리-페이지-이동">OCI Policy 관리 페이지 이동</a></li>
+<li><a href="#hol-admin-policy-생성">hol-admin-Policy 생성</a></li>
+<li><a href="#hol-audits-policy-생성">hol-audits-Policy 생성</a></li>
+<li><a href="#hol-tests-policy-생성">hol-tests-Policy 생성</a></li>
+<li><a href="#hol-developers-policy-생성">hol-developers-Policy 생성</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#참고문서">참고문서</a></li>
+</ul>
+</nav></p>
+</div></div>
+
+
+<h2 id="hands-on-lab-실습-환경">Hands-on Lab 실습 환경</h2>
+
+<p>이 <strong>Hands-on Lab</strong>은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다. 이번 <strong>Hands-on Lab</strong>에서 사용할 OCI User와 컴파트먼트는 다음과 같습니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>OCI User</th>
+<th>Password</th>
+<th>작업 Compartment</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>demo.user</td>
+<td>Welcome123456!</td>
+<td>root/sandbox/demo-prod</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="oci-vcn-프로비저닝-간편모드">OCI VCN 프로비저닝: 간편모드</h2>
+
+<p>OCI Console에 <strong>demo.user</strong> ID로 OCI IAM 옵션으로 로그인합니다. 그리고 VCN을 생성하기 위해서 다음과 같은 메뉴 패스로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Networking</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Virutla Cloud Network</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/vcn/020.jpg?classes=border,shadow" alt="" /></p>
+
+<p>OCI User 중에서</p>
+
+<ul>
+<li>VCN이름: demo-vcn</li>
+<li>Compartemnt: root/sandbox/demo-prod</li>
+<li>Subnet
+
+<ul>
+<li>Public Subnet-dem-vcn
+
+<ul>
+<li>CIDR Block: 10.0.0.0/24</li>
+</ul></li>
+<li>Private Subnet-demo-vcn
+
+<ul>
+<li>CIDR Block: 10.0.1.0/24</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1200.jpg?classes=border,shadow" alt="" /></p>
 
@@ -423,8 +527,10 @@
 
 <div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
 <ul>
-<li><a href="#hol-oci-iam-policy">HOL: OCI IAM Policy</a>
+<li><a href="#hol-oci-vcn">HOL: OCI VCN</a>
 <ul>
+<li><a href="#hands-on-lab-실습-환경">Hands-on Lab 실습 환경</a></li>
+<li><a href="#oci-vcn-프로비저닝-간편모드">OCI VCN 프로비저닝: 간편모드</a></li>
 <li><a href="#oci-iam-policy-개요">OCI IAM Policy 개요</a>
 <ul>
 <li><a href="#oci-iam-policy-패턴">OCI IAM Policy 패턴</a></li>
@@ -811,8 +917,8 @@ Allow any-user to inspect users in tenancy
   <li><strong>문서 생성:</strong> 2020-03-31 12:11 / <string>최종 문서 수정:</strong> 2020-03-31 12:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" title="OCI Compartment 만들기"> <i class="fa fa-chevron-left"></i><label>OCI Compartment 만들기</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/" title="OCI Infra 기초" style="margin-right: 0px;"><label>OCI Infra 기초</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/" title="OCI Infra 기초"> <i class="fa fa-chevron-left"></i><label>OCI Infra 기초</label></a>
+    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/000.oci_free_trial/" title="OCI Free Tier 등록" style="margin-right: 0px;"><label>OCI Free Tier 등록</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
@@ -831,7 +937,7 @@ Allow any-user to inspect users in tenancy
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/"></div>
 
   </div>
 
