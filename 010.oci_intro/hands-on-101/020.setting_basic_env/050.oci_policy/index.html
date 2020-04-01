@@ -8,15 +8,15 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="OCI Admin 로그인 생성" />
-<meta property="og:description" content="OCI Console에  OCI Admini으로 로그인하는 방법을 소개합니다.  OCI User를 생성하는 방법을 소개합니다. " />
+<meta property="og:title" content="OCI Policy: 권한 설정" />
+<meta property="og:description" content="OCI Console로 자원 접근 제어를 위해서 Policy를 적용하는 절차를 소개합니다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" />
+<meta property="og:url" content="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" />
 
 
 
-<meta property="article:published_time" content="2020-03-27T09:11:05&#43;09:00"/>
-<meta property="article:modified_time" content="2020-03-27T09:11:05&#43;09:00"/>
+<meta property="article:published_time" content="2020-03-31T12:11:05&#43;09:00"/>
+<meta property="article:modified_time" content="2020-03-31T12:11:05&#43;09:00"/>
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-<title>OCI Admin 로그인 생성 :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI Policy: 권한 설정 :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="OCI Console에  OCI Admini으로 로그인하는 방법을 소개합니다.  OCI User를 생성하는 방법을 소개합니다. ">
+<meta name="description" content="OCI Console로 자원 접근 제어를 위해서 Policy를 적용하는 절차를 소개합니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -78,7 +78,7 @@
 
     
   </head>
-  <body data-url="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/">
+  <body data-url="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/">
     
       <header>
   <div class="logo">
@@ -241,7 +241,7 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" class="dd-item active">
+      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/">
             OCI Admin 로그인 생성
@@ -269,7 +269,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" class="dd-item">
+      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" class="dd-item active">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/">
             OCI Policy: 권한 설정
@@ -352,11 +352,11 @@
     <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/" >
   -- 
    OCI 사용자&amp;보안 설정</option> 
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/"  selected>--- OCI Admin 로그인 생성</option>
+      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" >--- OCI Admin 로그인 생성</option>
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" >--- OCI User 생성</option>
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/" >--- OCI Group 생성</option>
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" >--- OCI Compartment 만들기</option>
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" >--- OCI Policy: 권한 설정</option>
+      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/"  selected>--- OCI Policy: 권한 설정</option>
   
   
   
@@ -380,7 +380,7 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>OCI Admin 로그인 생성</h1>
+    <h1>OCI Policy: 권한 설정</h1>
 
 
      
@@ -391,73 +391,394 @@
     
     
 
-<p><strong>OCI 사용자&amp;보안 설정</strong> 핸즈-온 랩은 <strong>OCI Admin User</strong>로 로그인하여 진행합니다. 다음과 같은 OCI User를 <strong>OCI Admin User(OCI 관리자)</strong>라고 합니다.</p>
+<p>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다.</p>
 
+<h1 id="hol-oci-iam-policy">HOL: OCI IAM Policy</h1>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1000.jpg?classes=border,shadow" alt="" /></p>
+
+<p>위 이미지와 같은 접근 제어를 구성합니다. 핸즈온 랩 다음과 같은 순서로 진행합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
 <ul>
-<li>Oracle IDCS의 OCI_ADMINISTATORS 그룹에 소속된 OCI User</li>
-<li>OCI IAM의 Administrators 그룹에 소속된 OCI User</li>
+<li><a href="#hol-oci-iam-policy">HOL: OCI IAM Policy</a>
+<ul>
+<li><a href="#oci-iam-policy-개요">OCI IAM Policy 개요</a>
+<ul>
+<li><a href="#oci-iam-policy-패턴">OCI IAM Policy 패턴</a></li>
+<li><a href="#oci-iam-policy-verb">OCI IAM Policy: verb</a></li>
+<li><a href="#oci-iam-policy-resource-type">OCI IAM Policy: resource-type</a></li>
+<li><a href="#oci-iam-policy-하부-compartment">OCI IAM Policy: 하부 Compartment</a></li>
+<li><a href="#oci-iam-policy-예제">OCI IAM Policy: 예제</a></li>
+</ul></li>
+<li><a href="#hol-oci-policy-적용">HOL: OCI Policy 적용</a>
+<ul>
+<li><a href="#oci-policy-관리-페이지-이동">OCI Policy 관리 페이지 이동</a></li>
+<li><a href="#hol-admin-policy-생성">hol-admin-Policy 생성</a></li>
+<li><a href="#hol-audits-policy-생성">hol-audits-Policy 생성</a></li>
+<li><a href="#hol-tests-policy-생성">hol-tests-Policy 생성</a></li>
+<li><a href="#hol-developers-policy-생성">hol-developers-Policy 생성</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#참고문서">참고문서</a></li>
 </ul>
+</nav></p>
+</div></div>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/030.jpg?classes=border,shadow" alt="" /></p>
 
-<p>OCI Account를 등록할 때 사용한 E-mail이 <strong>OCI Admin User(OCI 관리자)</strong>는 에 사용한 E-mail로 만들어진 OCI User(___를 사용합니다. 이 OCI User를 OCI IAM 옵션으로 로그인 하여 진행하겠습니다.</p>
+<h2 id="oci-iam-policy-개요">OCI IAM Policy 개요</h2>
 
-<h2 id="hol-oci-admin-login">HOL: OCI Admin Login</h2>
+<p>OCI IAM policy의 기본 문법은 다음과 같습니다.</p>
 
-<p>OCI 리전 로그인 페이지 URL은 다음과 같은 패턴을 갖습니다.</p>
-
-<pre><code>https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
+<pre><code>Allow &lt;subject&gt; to &lt;verb&gt; &lt;resource-type&gt; in &lt;location&gt; where &lt;conditions&gt;
 </code></pre>
 
-<p>다음과 같은 정보로 Oracle Cloud 계정을 생성했다고 가정합니다.</p>
+<h3 id="oci-iam-policy-패턴">OCI IAM Policy 패턴</h3>
+
+<p>OCI IAM Policy는 주로 OCI Group에 적용됩니다. 따라서 기본적인 사용법은 다음과 같습니다.</p>
+
+<ul>
+<li>Case 1: 특정 OCI Group을 특정 Compartment에 포함된 자원의 접근 제어 설정</li>
+</ul>
+
+<pre><code>Allow group &lt;group_name&gt; to &lt;verb&gt; &lt;resource-type&gt; in compartment &lt;compartment_name&gt;
+</code></pre>
+
+<ul>
+<li>Case 2: 특정 OCI Group이 Tenancy 전체 자원 접근 제어 설정</li>
+</ul>
+
+<pre><code>Allow group &lt;group_name&gt; to &lt;verb&gt; &lt;resource-type&gt; in tenancy
+</code></pre>
+
+<h3 id="oci-iam-policy-verb">OCI IAM Policy: verb</h3>
+
+<p>Policy에 적용하는 verb는 다음과 같습니다.</p>
 
 <table>
 <thead>
 <tr>
-<th>항목</th>
+<th>Verb</th>
+<th>설명</th>
+<th>대상 OCI User</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>inspect</td>
+<td>- 사용자 정의 메타데이터, 보안 정보를 제외한 자원을 리스트(조회)할 수 있는 권한</td>
+<td>조회가 필요한 제3자 사용자</td>
+</tr>
+
+<tr>
+<td>read</td>
+<td>- inspect에 추가하여 사용자 정의 메타데이터도 조회할 수 있는 권한 포함</td>
+<td>조회가 필요한 내부 사용자</td>
+</tr>
+
+<tr>
+<td>use</td>
+<td>- read의 모든 권한 포함</br> - 자원을 사용할 수 있는 권한 포함</br> - 자원 생성, 삭제에 대한 권한은 포함하지 않음 </br> 일반적인 업데이트 권한 포함</br></td>
+<td>일반 사용자</td>
+</tr>
+
+<tr>
+<td>manage</td>
+<td>해당 자원의 모든 권한 부여</td>
+<td>관리자</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="oci-iam-policy-resource-type">OCI IAM Policy: resource-type</h3>
+
+<p>IAM Policy에는 다음과 같은 resource-type을 설정할 수 있습니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>자원 타입</th>
+<th>유형</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>개별 자원 타입</td>
+<td>vcns, subnets, instances, volumes &hellip;.</td>
+</tr>
+
+<tr>
+<td>유사 자원 타입</td>
+<td>virtual-network-family, instance-family, volume-family &hellip;.</td>
+</tr>
+
+<tr>
+<td>모든 자원 지정</td>
+<td>all-resources</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="oci-iam-policy-하부-compartment">OCI IAM Policy: 하부 Compartment</h3>
+
+<p>Compartment가 계층 구조를 갖을 경우에 상위 Compartment에 부여된 Policy는 하위 Compartment에 적용됩니다.</p>
+
+<h3 id="oci-iam-policy-예제">OCI IAM Policy: 예제</h3>
+
+<p>OCI IAM Policy 예제입니다.</p>
+
+<ul>
+<li><p>예제1: admins 그룹에 테넌시 전체에 모든 자원 관리 권한 부여
+<pre class="prettyprint lang-bsh">
+Allow group admims to manage all-resources in tenancy
+</pre></p></li>
+
+<li><p>예제2: developers 그룹에 Project-A 컴파트먼트에 Compute 자원의 모든 권한 부여
+<pre class="prettyprint lang-bsh">
+Allow group developers to manage instance-family in compartment Project-A
+</pre></p></li>
+
+<li><p>예제3: admins 그룹에 Project-A 컴파트먼트에 volume 자원의 모든 권한 부여
+<pre class="prettyprint lang-bsh">
+Allow group admins to manage volume-family in compartment Project-A
+</pre></p></li>
+
+<li><p>예제4: developers 그룹에 Project-A 컴파트먼트에 VCN 자원의 사용 권한 부여
+<pre class="prettyprint lang-bsh">
+Allow group developers to manage virtual-network-family in compartment Project-A
+</pre></p></li>
+
+<li><p>예제 5: 모든 사용자에게 계정 전체 자원의 읽기 권한 부여
+<pre class="prettyprint lang-bsh">
+Allow any-user to inspect users in tenancy
+</pre></p></li>
+</ul>
+
+<h2 id="hol-oci-policy-적용">HOL: OCI Policy 적용</h2>
+
+<p>핸즈온 랩에서는 다음과 같은 시나리오를 적용합니다.</p>
+
+<ul>
+<li>HOL 시나리오
+
+<ul>
+<li>hol.admins 그룹에 포함된 사용자는 sandbox 컴파트먼트 아래 모든 컴파트먼트에 자원 생성, 사용, 제거 가능</li>
+<li>hol.audits 그룹은  hol.prod 컴파트먼트에 생성된 자원을 상태를 확인할 수만 있음, 제어 권한 없음</li>
+<li>hol.tests 그룹은 hol.test 컴파트먼트에 생성된 자원을 시작/정지만 가능, 자원 생성/제거 권한 없음</li>
+<li>hol.developers 그룹은 hol.dev 컴파트먼트에 생성된 자원을 시작/정지만 가능, 자원 생성 제거 권한 없음</li>
+</ul></li>
+</ul>
+
+<h3 id="oci-policy-관리-페이지-이동">OCI Policy 관리 페이지 이동</h3>
+
+<p>OCI Console에서 OCI Policy 관리 페이지는 다음 메뉴 패스로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Policies</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/815.jpg?classes=border,shadow" alt="" /></p>
+
+<p>위 메뉴 패스로 이동하면 OCI Policy 관리 페이지가 출력됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/817.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="hol-admin-policy-생성">hol-admin-Policy 생성</h3>
+
+<p>hol.admins 사용자 그룹에게 sandbox 컴파트먼트 아래에 모든 자원의 전체 권한을 부여하는 policy를 생성합니다. 이 Policy는 sandbox를 포함한 모든 하위 컴파트먼트에 적용됩니다. 따라서 hol.admins 사용자 그룹은 sandbox, hol-prod, hol-dev, hol-test 컴파트먼트의 모든 자원 관리 권한을 갖습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/820.jpg?classes=border,shadow" alt="" /></p>
+
+<p>sandbox 컴파트먼트는 root 컴파트먼트 아래에 위치합니다. 따라서 OCI Policy 관리 페이지에서 root 컴파트먼트를 선택하고 <strong>Create Policy</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/830.jpg?classes=border,shadow" alt="" /></p>
+
+<p>Policy 생성 폼에 다음과 같은 값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>설정 항목</th>
 <th>설정값</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>Account Name</td>
-<td>ocidemo001</td>
+<td>Name</td>
+<td>hol-admins-policy</td>
 </tr>
 
 <tr>
-<td>E-mail</td>
-<td>taewamne@gmail.com</td>
+<td>Description</td>
+<td>데모: 관리자 그룹을 위한 권한 설정</td>
 </tr>
 
 <tr>
-<td>Password</td>
-<td>Welcome123456!</td>
-</tr>
-
-<tr>
-<td>Home Region</td>
-<td>Seoul</td>
+<td>Policy Statements</td>
+<td>allow group hol.admins to manage all-resources in compartment sandbox</td>
 </tr>
 </tbody>
 </table>
 
-<p>이 경우에 OCI 리전 로그인 페이지 URL은 다음과 같습니다.</p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/840.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>hol-admins-policy</strong> policy가 만들어지면 다음과 같이 상세 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/850.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="hol-audits-policy-생성">hol-audits-Policy 생성</h3>
+
+<p>hol.audits 사용자 그룹에게 sandbox 컴파트먼트 아래의 hol-prod 컴파트먼트의 모든 자원의 조회 권한을 부여하는 policy를 생성합니다. 이 Policy 적용 대상 범위는 hol-prod 컴파트먼트에 한정됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/900.jpg?classes=border,shadow" alt="" /></p>
+
+<p>hol-prod 컴파트먼트는 sandbox 컴파트먼트 아래에 위치합니다. 따라서 OCI Policy 관리 페이지에서 sandbox 컴파트먼트를 선택하고 <strong>Create Policy</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/870.jpg?classes=border,shadow" alt="" /></p>
+
+<p>Policy 생성 폼에 다음과 같은 값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>설정 항목</th>
+<th>설정값</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Name</td>
+<td>hol-audits-policy</td>
+</tr>
+
+<tr>
+<td>Description</td>
+<td>데모: 감리 그룹을 위한 권한 설정</td>
+</tr>
+
+<tr>
+<td>Policy Statements</td>
+<td>allow group hol.audits to inspect all-resources in compartment hol-prod</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/880.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>hol-audits-policy</strong> policy가 만들어지면 다음과 같이 상세 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/890.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="hol-tests-policy-생성">hol-tests-Policy 생성</h3>
+
+<p>hol.tests 사용자 그룹에게 sandbox 컴파트먼트 아래의 hol-test 컴파트먼트의 모든 자원의 사용 권한을 부여하는 policy를 생성합니다. 이 Policy 적용 대상 범위는 hol-test 컴파트먼트에 한정됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/920.jpg?classes=border,shadow" alt="" /></p>
+
+<p>hol-test 컴파트먼트는 sandbox 컴파트먼트 아래에 위치합니다. 따라서 OCI Policy 관리 페이지에서 sandbox 컴파트먼트를 선택하고 <strong>Create Policy</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1010.jpg?classes=border,shadow" alt="" /></p>
+
+<p>Policy 생성 폼에 다음과 같은 값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>설정 항목</th>
+<th>설정값</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Name</td>
+<td>hol-tests-policy</td>
+</tr>
+
+<tr>
+<td>Description</td>
+<td>데모: QA 그룹을 위한 권한 설정</td>
+</tr>
+
+<tr>
+<td>Policy Statements</td>
+<td>allow group hol.testers to use all-resources in compartment hol-test</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1020.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>hol-tests-policy</strong> policy가 만들어지면 다음과 같이 상세 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1050.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="hol-developers-policy-생성">hol-developers-Policy 생성</h3>
+
+<p>hol.developers 사용자 그룹에게 sandbox 컴파트먼트 아래의 hol-dev 컴파트먼트의 모든 자원 사용 권한을 부여하는 policy를 생성합니다. 이 Policy 적용 대상 범위는 hol-dev 컴파트먼트에 한정됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1040.jpg?classes=border,shadow" alt="" /></p>
+
+<p>hol-dev 컴파트먼트는 sandbox 컴파트먼트 아래에 위치합니다. 따라서 OCI Policy 관리 페이지에서 sandbox 컴파트먼트를 선택하고 <strong>Create Policy</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1060.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>Policy 생성 폼에 다음과 같은 값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>설정 항목</th>
+<th>설정값</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Name</td>
+<td>hol-developers-policy</td>
+</tr>
+
+<tr>
+<td>Description</td>
+<td>데모: 개발자 그룹을 위한 권한 설정</td>
+</tr>
+
+<tr>
+<td>Policy Statements</td>
+<td>allow group hol.developers to use all-resources in compartment hol-dev</td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1070.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>hol-tests-policy</strong> policy가 만들어지면 다음과 같이 상세 페이지로 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1080.jpg?classes=border,shadow" alt="" /></p>
+
+<h1 id="참고문서">참고문서</h1>
 
 <ul>
-<li><a href="https://console.ap-seoul-1.oraclecloud.com/?tenant=ocidemo001" target="_blank">https://console.ap-seoul-1.oraclecloud.com/?tenant=ocidemo001 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<li><a href="https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/policysyntax.htm" target="_blank">[Official OCI Docs]Policy Syntax <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
 </li>
-</ul>
-
-<p>위 경로로 이동한 다음에 OCI 관리자 ID/패스워드로 <strong>taewanme@gmail.com</strong>과 <strong>Welcome123456!</strong>를 입력하고 OCI IAM 로그인 옵션으로 로그인합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/030.jpg?classes=border,shadow" alt="" /></p>
-
-<p>로그인에 어려움이 있으실 경우에 다음 문서를 참조하시기 바랍니다.</p>
-
-<ul>
-<li><a href="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" target="_blank">OCI Console 로그인 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<li><a href="https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/corepolicyreference.htm" target="_blank">[Official OCI Docs]Details for the Core Services <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
 </li>
 </ul>
@@ -466,11 +787,11 @@
     
     
       <div class="alert alert-info" role="alter">
-  <li><strong>문서 생성:</strong> 2020-03-27 09:11 / <string>최종 문서 수정:</strong> 2020-03-27 09:11 </li>
+  <li><strong>문서 생성:</strong> 2020-03-31 12:11 / <string>최종 문서 수정:</strong> 2020-03-31 12:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/020.setting_basic_env/" title="OCI 사용자&amp;보안 설정"> <i class="fa fa-chevron-left"></i><label>OCI 사용자&amp;보안 설정</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" title="OCI User 생성" style="margin-right: 0px;"><label>OCI User 생성</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" title="OCI Compartment 만들기"> <i class="fa fa-chevron-left"></i><label>OCI Compartment 만들기</label></a>
+    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" title="OCI Admin 로그인 생성" style="margin-right: 0px;"><label>OCI Admin 로그인 생성</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
@@ -489,7 +810,7 @@
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/"></div>
 
   </div>
 
@@ -505,7 +826,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 27/03/2020
+        <i class='fa fa-calendar'></i> Last update on 31/03/2020
     </div>
     
   </div>
