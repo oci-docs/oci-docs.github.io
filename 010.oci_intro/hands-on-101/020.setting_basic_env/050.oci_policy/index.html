@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-01T11:46:23 KST">
+<meta name="revised" content="2020-04-01T13:17:59 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -391,11 +391,11 @@
     
     
 
-<p>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다.</p>
+<p>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.</p>
 
 <h1 id="hol-oci-iam-policy">HOL: OCI IAM Policy</h1>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1000.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1200.jpg?classes=border,shadow" alt="" /></p>
 
 <p>위 이미지와 같은 접근 제어를 구성합니다. 핸즈온 랩 다음과 같은 순서로 진행합니다.</p>
 
@@ -634,13 +634,13 @@ Allow any-user to inspect users in tenancy
 
 <h3 id="hol-audits-policy-생성">hol-audits-Policy 생성</h3>
 
-<p>hol.audits 사용자 그룹에게 sandbox 컴파트먼트 아래의 hol-prod 컴파트먼트의 모든 자원의 조회 권한을 부여하는 policy를 생성합니다. 이 Policy 적용 대상 범위는 hol-prod 컴파트먼트에 한정됩니다.</p>
+<p>hol.audits 사용자 그룹에게 sandbox 컴파트먼트 아래에 모든 자원의 조회 권한을 부여하는 policy를 생성합니다. 이 Policy 적용 대상 범위는 hol-prod 컴파트먼트에 한정됩니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/900.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1210.jpg?classes=border,shadow" alt="" /></p>
 
-<p>hol-prod 컴파트먼트는 sandbox 컴파트먼트 아래에 위치합니다. 따라서 OCI Policy 관리 페이지에서 sandbox 컴파트먼트를 선택하고 <strong>Create Policy</strong> 버튼을 클릭합니다.</p>
+<p>hol-prod 컴파트먼트는 sandbox 컴파트먼트 아래에 위치합니다. 따라서 OCI Policy 관리 페이지에서 root 컴파트먼트를 선택하고 <strong>Create Policy</strong> 버튼을 클릭합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/870.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1230.jpg?classes=border,shadow" alt="" /></p>
 
 <p>Policy 생성 폼에 다음과 같은 값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
 
@@ -665,18 +665,18 @@ Allow any-user to inspect users in tenancy
 
 <tr>
 <td>Policy Statements</td>
-<td>allow group hol.audits to inspect all-resources in compartment hol-prod</td>
+<td>allow group hol.audits to read all-resources in compartment sandbox</td>
 </tr>
 </tbody>
 </table>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/880.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1240.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
 <p><strong>hol-audits-policy</strong> policy가 만들어지면 다음과 같이 상세 페이지로 이동합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/890.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/1250.jpg?classes=border,shadow" alt="" /></p>
 
 <h3 id="hol-tests-policy-생성">hol-tests-Policy 생성</h3>
 

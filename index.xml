@@ -107,7 +107,7 @@ HOL: OCI Compartment 이번 Hands-on Lab에서는 개발, 테스트, 및 운영 
       <pubDate>Tue, 31 Mar 2020 12:11:05 +0900</pubDate>
       
       <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</guid>
-      <description>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다.
+      <description>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.
 HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. 핸즈온 랩 다음과 같은 순서로 진행합니다.
  HOL: OCI IAM Policy  OCI IAM Policy 개요  OCI IAM Policy 패턴 OCI IAM Policy: verb OCI IAM Policy: resource-type OCI IAM Policy: 하부 Compartment OCI IAM Policy: 예제  HOL: OCI Policy 적용  OCI Policy 관리 페이지 이동 hol-admin-Policy 생성 hol-audits-Policy 생성 hol-tests-Policy 생성 hol-developers-Policy 생성   참고문서</description>
     </item>
