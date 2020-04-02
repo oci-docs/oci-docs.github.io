@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-01T23:13:42 KST">
+<meta name="revised" content="2020-04-03T08:44:54 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -288,7 +288,14 @@
       <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
-            OCI VCN
+            VCN 생성(OCI Console:간편모드)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/">
+            Compute Service(VM) 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -377,7 +384,8 @@
     <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/" >
   -- 
    OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- OCI VCN</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
   
   
   
@@ -412,18 +420,18 @@
     
     
 
-<p>이번 Hands-on Lab에서는 OCI Console과 <strong>OCI CLI</strong>로 OCI Group을 만들고 OCI User를 할당하는 방법을 소개합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.</p>
+<p>이번 Hands-on Lab에서는 OCI Console과 <strong>OCI CLI</strong>로 OCI 그룹을 만들고, OCI 그룹에 OCI 사용자를 추가하는 방법을 소개합니다. 이 <strong>Hands-on Lab</strong>은 <strong>OCI Admin User(OCI 관리자)</strong> ID로 OCI IAM 로그인하고 진행합니다.</p>
 
 <h1 id="hol-oci-group">HOL: OCI Group</h1>
 
-<p>이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI Group을 만들고 각 그룹에 OCI User를 할당합니다. 다음과 같은 OCI Group을 만들고 OCI User를 할당하겠습니다.</p>
+<p>이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI 그룹을 만들고, 각 그룹에 OCI 사용자를 등록합니다. 다음과 같이 OCI 그룹을 만들고 OCI 사용자를 추가하겠습니다.</p>
 
 <table>
 <thead>
 <tr>
 <th>OCI Group</th>
 <th>역할</th>
-<th>소속 OCI User</th>
+<th>소속 OCI 사용자</th>
 </tr>
 </thead>
 
@@ -443,7 +451,7 @@
 <tr>
 <td>hol.testers</td>
 <td>데모 QA 담당자 그룹</td>
-<td>demo.tester, demo.admin</td>
+<td>demo.tester</td>
 </tr>
 
 <tr>
@@ -471,7 +479,7 @@
 <li><a href="#oci-group-만들기">OCI Group 만들기</a></li>
 <li><a href="#ocid-정보-확인">OCID 정보 확인</a></li>
 <li><a href="#oci-group에-oci-user-할당">OCI Group에 OCI User 할당</a></li>
-<li><a href="#oci-group에-oci-user-할당-결과-확인">OCI Group에 OCI User 할당 결과 확인</a></li>
+<li><a href="#oci-그룹에-oci-사용자-추가-결과">OCI 그룹에 OCI 사용자 추가 결과</a></li>
 <li><a href="#실습-oci-group-생성과-user-할당-oci-cli">실습: OCI Group 생성과 User 할당(OCI CLI)</a></li>
 </ul></li>
 </ul></li>
@@ -502,7 +510,7 @@
 </tbody>
 </table>
 
-<p>OCI Console에서 OCI Group 관리 페이지는 다음 메뉴 패스로 이동합니다.</p>
+<p>OCI Console에서 OCI 그룹 관리 페이지는 다음 메뉴 패스로 이동합니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Grouops</strong></div></div>
@@ -518,7 +526,7 @@
 
 <hr />
 
-<p><strong>Create Group</strong> 버튼을 클릭하면 사용자 그룹 폼이 나타납니다. 사용자 그룹 등록 폼의 <strong>Name</strong>과 <strong>Description</strong> 항목에 다음 설정값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
+<p><strong>Create Group</strong> 버튼을 클릭하면 OCI 그룹 폼이 나타납니다. OCI 그룹 등록 폼의 <strong>Name</strong>과 <strong>Description</strong> 항목에 다음 설정값을 입력하고 <strong>Create</strong> 버튼을 클릭합니다.</p>
 
 <table>
 <thead>
@@ -545,13 +553,13 @@
 
 <hr />
 
-<p>OCI 그룹 등록이 완료되면 다음과 같은 사용자 목록에 출력됩니다.</p>
+<p>OCI 그룹 등록이 완료되면 다음과 같은 OCI 그룹 목록이 출력됩니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/240.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p>OCI 그룹 등록이 완료되면 다음과 같이 Group 목록이 출력됩니다. 이제 hol.admins 그룹에 OCI User를 할당할 차례입니다. OCI User를 할당은 OCI Group 상세 페이지에서 진행됩니다. 그룹 목록에서 hol.admins 링크 클릭해서 hol.admins 상세 페이지로 이동합니다.</p>
+<p>이제 hol.admins 그룹에 OCI User를 등록할 차례입니다. OCI 사용자 추가는 OCI Group 상세 페이지에서 진행됩니다. OCI 그룹 목록에서 hol.admins 링크 클릭하고 hol.admins 상세 페이지로 이동합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/240.jpg?classes=border,shadow" alt="" /></p>
 
@@ -569,7 +577,7 @@
 
 <hr />
 
-<p>OCI 그룹에 OCI 사용자 등록이 완료되면 <strong>hol.admins</strong> 그룹 상세 페이지에서 <strong>demo.admin</strong>이 추가된 것을 확인할 수 있습니다.</p>
+<p>OCI 그룹에 OCI 사용자를 추가하면, <strong>hol.admins</strong> 그룹 상세 페이지에서 <strong>demo.admin</strong>이 추가된 것을 확인할 수 있습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/270.jpg?classes=border,shadow" alt="" /></p>
 
@@ -577,7 +585,7 @@
 
 <h3 id="실습-oci-group-생성과-user-할당-oci-console">실습: OCI Group 생성과 User 할당(OCI Console)</h3>
 
-<p>위 작업을 반복하여 다음 OCI Group을 만들고 OCI 사용자를 추가하시기 바랍니다.</p>
+<p>위 작업을 반복하여 다음 정보로 OCI 그룹을 만들고 OCI 사용자를 추가하시기 바랍니다.</p>
 
 <table>
 <thead>
@@ -603,7 +611,7 @@
 
 <h2 id="oci-group-생성-oci-cli">OCI Group 생성: OCI CLI</h2>
 
-<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. OCI Console은 Cloud Shell은 브라우저 기반 리눅스 터미널을 제공합니다. Cloud Shell에는 사전 구성이 완료된 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI Group을 등록해 보겠습니다.</p>
+<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. OCI Console은 Cloud Shell(브라우저 기반 리눅스 터미널)을 제공합니다. Cloud Shell은 OCI 사용자 설정이 적용된 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI 그룹을 등록하고 OCI 사용자를 추가해 보겠습니다.</p>
 
 <h3 id="cloud-shell-열기">Cloud Shell 열기</h3>
 
@@ -612,13 +620,13 @@
 <pre><code>oci os ns get
 </code></pre>
 
-<p>다음 이미지와 유사한 json이 출력된다면 <strong>oci cli</strong>가 정상적으로 작동하는 상태임을 확인할 수 있습니다.</p>
+<p>다음 이미지와 유사한 json이 출력된다면 <strong>oci cli</strong>가 정상적으로 작동하는 상태입니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/170.jpg?classes=border,shadow" alt="" /></p>
 
 <h3 id="oci-group-만들기">OCI Group 만들기</h3>
 
-<p>cloud shell의 oci cli로 다음 2개 OCI User를 만들것 입니다.</p>
+<p>cloud shell의 oci cli로 다음 2개 OCI 그룹을 만들것 입니다.</p>
 
 <table>
 <thead>
@@ -633,7 +641,7 @@
 <tr>
 <td>hol.testers</td>
 <td>데모 QA 담당자 그룹</td>
-<td>demo.tester, demo.admin</td>
+<td>demo.tester</td>
 </tr>
 </tbody>
 </table>
@@ -680,9 +688,9 @@ taewanme@cloudshell:~ (ap-seoul-1)$
 
 <h3 id="ocid-정보-확인">OCID 정보 확인</h3>
 
-<p><strong>OCI CLI</strong>로 OCI Group에 OCI User를 추가하기 위해서는 해당 OCI Group(<strong>hol.testers</strong>)의 OCID와 대상 OCI User(demo.tester, demo.admin)의 OCID가 필요합니다.</p>
+<p><strong>OCI CLI</strong>로 OCI Group에 OCI User를 추가하기 위해서는 해당 OCI Group(<strong>hol.testers</strong>)의 OCID와 대상 OCI User(demo.tester)의 OCID가 필요합니다.</p>
 
-<p>OCID란 OCI 자원을 구분하는 구분자입니다. 3개 자원(<strong>hol.testers</strong>, <strong>demo.tester</strong>, <strong>demo.admin</strong>)의 OCID는 다음과 같이 확인할 수 있습니다.</p>
+<p>OCID란 OCI 자원을 구분하는 구분자입니다. 3개 자원(<strong>hol.testers</strong>, <strong>demo.tester</strong>)의 OCID는 다음과 같이 확인할 수 있습니다.</p>
 
 <p>다음 그림과 같이 OCI Group 관리 페이지에서 <strong>hol.testers</strong>의 OCID를 복사할 수 있습니다.</p>
 
@@ -706,14 +714,9 @@ taewanme@cloudshell:~ (ap-seoul-1)$
 <pre><code>ocid1.user.oc1..aaaaaaaafajh4qd43kb5da6xgmbaukvffdzybk7svkecrjwjllrlivzaixmq
 </code></pre>
 
-<p>이 과정을 반복하여 <strong>demo.admin</strong> OCID를 복사합니다. 복사한 <strong>demo.admin</strong>의 OCID는 다음과 같습니다.</p>
-
-<pre><code>ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq
-</code></pre>
-
 <h3 id="oci-group에-oci-user-할당">OCI Group에 OCI User 할당</h3>
 
-<p>다음과 같은 명령을 Cloud Shell의 OCI CLI에서 실행하여 OCI Group에 OCI User를 추가합니다.</p>
+<p>다음 패턴의 명령을 Cloud Shell에서 실행하면, OCI 그룹에 OCI 사용자를 추가합니다.</p>
 
 <pre><code>oci iam group add-user \
 --group-id  \
@@ -725,7 +728,7 @@ taewanme@cloudshell:~ (ap-seoul-1)$
 <p>{GROUP_OCID}와 {USER-OCID}는 여러분이 조사한 OCID로 대체하여 실행합니다.</p>
 
 <ul>
-<li>Case 1: <strong>hol.testers</strong> Group에 <strong>demo.tester</strong> 사용자 추가</li>
+<li><strong>hol.testers</strong> Group에 <strong>demo.tester</strong> 사용자 추가</li>
 </ul>
 
 <p>{GROUP_OCID}와 {USER-OCID}를 앞에서 조사한 OCID로 대체하고 실행한 결과는  다음과 같습니다.</p>
@@ -751,38 +754,11 @@ taewanme@cloudshell:~ (ap-seoul-1)$ oci iam group add-user \
 taewanme@cloudshell:~ (ap-seoul-1)$ 
 </pre>
 
-<ul>
-<li>Case 2: <strong>hol.testers</strong> Group에 <strong>demo.admin</strong> 사용자 추가</li>
-</ul>
+<h3 id="oci-그룹에-oci-사용자-추가-결과">OCI 그룹에 OCI 사용자 추가 결과</h3>
 
-<p>{GROUP_OCID}와 {USER-OCID}를 앞에서 조사한 OCID로 대체하고 실행한 결과는  다음과 같습니다.</p>
+<p>이 작업이 완료되면 다음과 같이 <strong>hol.testers</strong> 그룹에 <strong>demo.tester</strong>가 추가된것을 확인할 수 있습니다.</p>
 
-<pre class="prettyprint lang-bsh">
-taewanme@cloudshell:~ (ap-seoul-1)$ oci iam group add-user \
-> --group-id  \
-> ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq  \
-> --user-id   \
-> ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq
-{
-  "data": {
-    "compartment-id": "ocid1.tenancy.oc1..aaaaaaaa4bsxnpasbzmp2qtxcguhqdfaq3bgbfpill4v3misqq4hg7sheyza",
-    "group-id": "ocid1.group.oc1..aaaaaaaacuflh34u54rbjfk7v2dlcw34a5mgttizp2r2ns5zugxwyuorixxq",
-    "id": "ocid1.groupmembership.oc1..aaaaaaaaf6sqdju4k2snr24zvbhkglwhzjqzoawgfp3ty3zzawoxllfdn6nq",
-    "inactive-status": null,
-    "lifecycle-state": "ACTIVE",
-    "time-created": "2020-03-31T03:38:01.625000+00:00",
-    "user-id": "ocid1.user.oc1..aaaaaaaazyj3vefzdihrn62fyav5dgow3pi6uxe5tdagsz2tn4ip33z2exvq"
-  },
-  "etag": "11d9057639e6812b5f1b06624714556e5a8f9165"
-}
-taewanme@cloudshell:~ (ap-seoul-1)$ 
-</pre>
-
-<h3 id="oci-group에-oci-user-할당-결과-확인">OCI Group에 OCI User 할당 결과 확인</h3>
-
-<p>이 작업이 완료되면 다음과 같이 <strong>hol.testers</strong> 그룹에 <strong>demo.admin</strong>와 <strong>demo.tester</strong>가 추가된것을 확인할 수 있습니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/320.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/03/usersetting/340.jpg?classes=border,shadow" alt="" /></p>
 
 <h3 id="실습-oci-group-생성과-user-할당-oci-cli">실습: OCI Group 생성과 User 할당(OCI CLI)</h3>
 

@@ -23,14 +23,24 @@
     </item>
     
     <item>
+      <title>VCN 생성(OCI Console:간편모드)</title>
+      <link>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</link>
+      <pubDate>Wed, 01 Apr 2020 12:11:05 +0900</pubDate>
+      
+      <guid>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</guid>
+      <description>OCI Compute 서비스를 사용하면 여러 VCN(Virtual Cloud Network)을 만들 수 있습니다. OCI 자원을 생성하고 배포하기 위해서는 다른 자원을 생성하기 전에 VCN 가장 먼저 만들어야 합니니다. VCN은 다음과 같은 네트워크 컴포넌트로 만들어집니다.
+ Subnet Route Table Security List Internet Gateway NAT Gateway Service Gateway Dynamic Routing Gateway Load Balancer Local/Remote Peering  HOL: OCI VCN 이번 Hands-on Lab에서는 OCI Console에서 제공하는 VCN(Virtual Cloud Network) 생성 간편 모드 기능을 사용하여 다음과 같은 VCN을 만들겠습니다.</description>
+    </item>
+    
+    <item>
       <title>OCI Console 로그인</title>
       <link>/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
       <guid>/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</guid>
-      <description>Oracle Cloud에서 사용자 ID는 Oracle IDCS와 OCI IAM으로 관리됩니다. Oracle ID 관리 방식에 대하여 궁금하시다면 다음 문서를 참조하시기 바랍니다.
- OCI 사용자 ID 관리 서비스     이번 Hands-on Lab에서는 Oracle 계정을 등록한 다음에 Oracle Console에 로그인하는 방법을 소개합니다. 이번 Hands-on Lab에서 다음과 같은 정보로 Oracle Cloud 계정을 만들었다고 가정하고 진행하겠습니다.
-   항목 설정값     Account Name ocidemo001   E-mail taewamne@gmail.com   Password Welcome123456!</description>
+      <description>Oracle Cloud에서 사용자 ID는 Oracle IDCS와 OCI IAM으로 관리됩니다. Oracle IDCS와 OCI IAM의 관리 방식에 대하여 궁금하시다면 다음 문서를 참조하시기 바랍니다.
+ OCI 사용자 ID 관리 서비스     이번 Hands-on Lab에서는 Oracle 클라우드 계정을 등록한 다음에 OCI 관리자 ID로 Oracle Console에 로그인하는 방법을 소개합니다. 이번 Hands-on Lab에서 다음과 같은 정보로 Oracle Cloud 계정을 만들었다고 가정합니다.
+   항목 설정값 설명     Account Name ocidemo001 Oracle Cloud 계정명   E-mail taewamne@gmail.</description>
     </item>
     
     <item>
@@ -45,13 +55,24 @@
     </item>
     
     <item>
+      <title>Compute Service(VM) 생성</title>
+      <link>/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</link>
+      <pubDate>Thu, 02 Apr 2020 12:11:05 +0900</pubDate>
+      
+      <guid>/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</guid>
+      <description>OCI Compute 서비스를 이용하여 오라클 클라우드에 Compute(VM or 베이메탈) 서버를 만들고 관리할 수 있습니다. 이렇게 만든 서버를 Compute 인스턴스라고 합니다.
+HOL: OCI Compute 이번 Hands-on Lab에서는 OCI Console을 이용하여 OCI Linux VM 인스턴스를 생성하는 절차를 소개합니다. 이번 Hands-on Lab은 다음과 같은 작업으로 진행됩니다.
+ OCI 자원 사용량 체크 OCI Console을 이용하여 Oracle Linux VM 생성 VM 인스턴스에 ssh 로그인 Nginx 설치 OS 방화벽 오픈 VCN 보안 설정 추가 브라우저로 접근  이번 Hands-on Lab을 통해서 다음과 같은 VM 인스턴스를 만들 수 있습니다.</description>
+    </item>
+    
+    <item>
       <title>OCI Admin 로그인 생성</title>
       <link>/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
       <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</guid>
-      <description>OCI 사용자&amp;amp;보안 설정 핸즈-온 랩은 OCI Admin User로 로그인하여 진행합니다. 다음과 같은 OCI User를 OCI Admin User(OCI 관리자)라고 합니다.
- Oracle IDCS의 OCI_ADMINISTATORS 그룹에 소속된 OCI User OCI IAM의 Administrators 그룹에 소속된 OCI User  OCI Account를 등록할 때 사용한 E-mail이 OCI Admin User(OCI 관리자)는 에 사용한 E-mail로 만들어진 OCI User(___를 사용합니다. 이 OCI User를 OCI IAM 옵션으로 로그인 하여 진행하겠습니다.
+      <description>OCI 사용자&amp;amp;보안 설정 핸즈-온 랩은 Oracle Cloud 계정의 관리자 ID(taewanme@gmail.com)로 로그인하여 진행합니다. Oracle Cloud 계정의 관리자 ID를 OCI Admin User(OCI 관리자)라고 합니다. 다음과 같은 OCI 사용자를 OCI Admin User(OCI 관리자)라고 정의합니다.
+ Oracle IDCS의 OCI_ADMINISTATORS 그룹에 소속된 OCI 사용자 OCI IAM의 Administrators 그룹에 소속된 OCI 사용자  Oracle Cloud 계정을 등록할 때 사용한 E-mail이 해당 계정의 OCI Admin User(OCI 관리자)가 됩니다.
 HOL: OCI Admin Login OCI 리전 로그인 페이지 URL은 다음과 같은 패턴을 갖습니다.</description>
     </item>
     
@@ -61,11 +82,11 @@ HOL: OCI Admin Login OCI 리전 로그인 페이지 URL은 다음과 같은 패�
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
       <guid>/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</guid>
-      <description>이번 Hands-on Lab에서는 OCI Console 구성을 소개합니다.
+      <description>이번 Hands-on Lab에서는 OCI Console 구성과 기본 사용법을 소개합니다.
 OCI Console 구성 OCI Console 구성에 대한 소개는 다음과 같은 목차로 진행합니다.
  OCI Console 구성  OCI 햄버그 메뉴 리전 관리 OCI Cloud Shell 고급 검색 사용자 프로파일 OCI 알림 언어 변경 실시간 채팅 도움말   
  OCI 햄버그 메뉴 OCI Console에서 햄버그 메뉴 아이콘을 클릭하여 다음과 같은 메뉴에 접근할 수 있습니다.
- 코어 인프라 Database 데이터 및 AI 솔루션 및 플랫폼 추가 Oracle Clodu 서비스 거버넌스 및 관리  햄버그 메뉴에 출력되는 모든 메뉴는 OCI Console에 로그인한 사용자가 접근 가능한 서비스 목록입니다.</description>
+ 코어 인프라 Database 데이터 및 AI 솔루션 및 플랫폼 추가 Oracle Clodu 서비스 거버넌스 및 관리  햄버그 메뉴에 출력되는 모든 메뉴는 OCI Console에 로그인한 사용자가 접근 가능한 서비스입니다.</description>
     </item>
     
     <item>
@@ -85,9 +106,9 @@ HOL: OCI User 이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당�
       <pubDate>Tue, 31 Mar 2020 09:11:05 +0900</pubDate>
       
       <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</guid>
-      <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI Group을 만들고 OCI User를 할당하는 방법을 소개합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.
-HOL: OCI Group 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI Group을 만들고 각 그룹에 OCI User를 할당합니다. 다음과 같은 OCI Group을 만들고 OCI User를 할당하겠습니다.
-   OCI Group 역할 소속 OCI User     hol.</description>
+      <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI 그룹을 만들고, OCI 그룹에 OCI 사용자를 추가하는 방법을 소개합니다. 이 Hands-on Lab은 OCI Admin User(OCI 관리자) ID로 OCI IAM 로그인하고 진행합니다.
+HOL: OCI Group 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI 그룹을 만들고, 각 그룹에 OCI 사용자를 등록합니다. 다음과 같이 OCI 그룹을 만들고 OCI 사용자를 추가하겠습니다.
+   OCI Group 역할 소속 OCI 사용자     hol.</description>
     </item>
     
     <item>
@@ -96,8 +117,8 @@ HOL: OCI Group 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당�
       <pubDate>Tue, 31 Mar 2020 12:11:05 +0900</pubDate>
       
       <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</guid>
-      <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI Compartment를 만드는 절차를 소개합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.
-HOL: OCI Compartment 이번 Hands-on Lab에서는 개발, 테스트, 및 운영 환경 자원을 관리하는 OCI Compartment를 4개 만들어 보겠습니다. 다음과 같은 OCI Group을 만들어 보겠습니다.
+      <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI Compartment를 만드는 절차를 소개합니다. 이 Hands-on Lab은 OCI Admin User(OCI 관리자) ID로 OCI IAM 로그인하고 진행합니다.
+HOL: OCI Compartment 이번 Hands-on Lab에서는 개발, 테스트, 및 운영 환경 자원을 관리하는 OCI Compartment를 4개 만들어 보겠습니다. 다음과 같은 OCI Compartment를 만들겠습니다.
    OCI 컴파트먼트 역할 상위 컴파트먼트     sandbox 데모: 최상위 Compartment root   hol-dev 데모: 개발 환경 Compartment root/sandbox   hol-prod 데모: 운영 환경 Compartment root/sandbox   hol-test 데모: 테스트 환경 Compartment root/sandbox    핸즈온 랩 다음과 같은 순서로 진행합니다.</description>
     </item>
     
@@ -107,19 +128,9 @@ HOL: OCI Compartment 이번 Hands-on Lab에서는 개발, 테스트, 및 운영 
       <pubDate>Tue, 31 Mar 2020 12:11:05 +0900</pubDate>
       
       <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</guid>
-      <description>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.
+      <description>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다. 이 Hands-on Lab은 OCI Admin User(OCI 관리자) ID로 OCI IAM 로그인하고 진행합니다.
 HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. 핸즈온 랩 다음과 같은 순서로 진행합니다.
- HOL: OCI IAM Policy  OCI IAM Policy 개요  OCI IAM Policy 패턴 OCI IAM Policy: verb OCI IAM Policy: resource-type OCI IAM Policy: 하부 Compartment OCI IAM Policy: 예제  HOL: OCI Policy 적용  OCI Policy 관리 페이지 이동 hol-admin-Policy 생성 hol-audits-Policy 생성 hol-tests-Policy 생성 hol-developers-Policy 생성   참고문서</description>
-    </item>
-    
-    <item>
-      <title>OCI VCN</title>
-      <link>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</link>
-      <pubDate>Tue, 31 Mar 2020 12:11:05 +0900</pubDate>
-      
-      <guid>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</guid>
-      <description>OCI Compute 서비스를 사용하면 여러 VCN(Virtual Cloud Network)을 만들 수 있습니다. OCI 자원을 생성하고 배포하기 위해서는 다른 자원을 생성하기 전에 VCN 가장 먼저 만들어야 합니니다. VCN은 다음과 같은 네트워크 컴포넌트로 만들어집니다.
- Subnet Route Table Security List Internet Gateway NAT Gateway Service Gateway Dynamic Routing Gateway Load Balancer Local/Remote Peering  HOL: OCI VCN 이번 Hands-on Lab에서는 OCI Console에서 제공하는 VCN(Virtual Cloud Network) 생성 간편 모드 기능을 사용하여 다음과 같은 VCN을 만들겠습니다.</description>
+ HOL: OCI IAM Policy  OCI IAM Policy 개요  OCI IAM Policy 패턴 OCI IAM Policy: verb OCI IAM Policy: resource-type OCI IAM Policy: 하부 Compartment OCI IAM Policy: 예제  HOL: OCI Policy 적용  OCI Policy 관리 페이지 이동 hol-admin-Policy 생성 hol-audits-Policy 생성 hol-tests-Policy 생성 hol-developers-Policy 생성 hol-admin-Policy 업데이트   참고문서</description>
     </item>
     
     <item>

@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-01T23:13:42 KST">
+<meta name="revised" content="2020-04-03T08:44:54 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -288,7 +288,14 @@
       <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
-            OCI VCN
+            VCN 생성(OCI Console:간편모드)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/">
+            Compute Service(VM) 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -377,7 +384,8 @@
     <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/" >
   -- 
    OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- OCI VCN</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
   
   
   
@@ -412,22 +420,22 @@
     
     
 
-<p><strong>OCI 사용자&amp;보안 설정</strong> 핸즈-온 랩은 <strong>OCI Admin User</strong>로 로그인하여 진행합니다. 다음과 같은 OCI User를 <strong>OCI Admin User(OCI 관리자)</strong>라고 합니다.</p>
+<p><strong>OCI 사용자&amp;보안 설정</strong> 핸즈-온 랩은 Oracle Cloud 계정의 관리자 ID(taewanme@gmail.com)로 로그인하여 진행합니다. Oracle Cloud 계정의 관리자 ID를 <strong>OCI Admin User(OCI 관리자)</strong>라고 합니다. 다음과 같은 OCI 사용자를 <strong>OCI Admin User(OCI 관리자)</strong>라고 정의합니다.</p>
 
 <ul>
-<li>Oracle IDCS의 OCI_ADMINISTATORS 그룹에 소속된 OCI User</li>
-<li>OCI IAM의 Administrators 그룹에 소속된 OCI User</li>
+<li>Oracle IDCS의 OCI_ADMINISTATORS 그룹에 소속된 OCI 사용자</li>
+<li>OCI IAM의 Administrators 그룹에 소속된 OCI 사용자</li>
 </ul>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/030.jpg?classes=border,shadow" alt="" /></p>
 
-<p>OCI Account를 등록할 때 사용한 E-mail이 <strong>OCI Admin User(OCI 관리자)</strong>는 에 사용한 E-mail로 만들어진 OCI User(___를 사용합니다. 이 OCI User를 OCI IAM 옵션으로 로그인 하여 진행하겠습니다.</p>
+<p>Oracle Cloud 계정을 등록할 때 사용한 E-mail이 해당 계정의 <strong>OCI Admin User(OCI 관리자)</strong>가 됩니다.</p>
 
 <h2 id="hol-oci-admin-login">HOL: OCI Admin Login</h2>
 
 <p>OCI 리전 로그인 페이지 URL은 다음과 같은 패턴을 갖습니다.</p>
 
-<pre><code>https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
+<pre><code>https://console.{OCI_HOME_REGION_ID}.oraclecloud.com/?tenant=Tenant_Name}
 </code></pre>
 
 <p>다음과 같은 정보로 Oracle Cloud 계정을 생성했다고 가정합니다.</p>
@@ -437,6 +445,7 @@
 <tr>
 <th>항목</th>
 <th>설정값</th>
+<th>설명</th>
 </tr>
 </thead>
 
@@ -444,26 +453,30 @@
 <tr>
 <td>Account Name</td>
 <td>ocidemo001</td>
+<td>Oracle Cloud 계정명</td>
 </tr>
 
 <tr>
 <td>E-mail</td>
 <td>taewamne@gmail.com</td>
+<td>Oracle Cloud 계정의 관리자 ID</td>
 </tr>
 
 <tr>
 <td>Password</td>
 <td>Welcome123456!</td>
+<td>Oracle Cloud 계정의 관리자 ID의 패스워드</td>
 </tr>
 
 <tr>
 <td>Home Region</td>
 <td>Seoul</td>
+<td>Oracle Cloud 계정의 Home Region</td>
 </tr>
 </tbody>
 </table>
 
-<p>이 경우에 OCI 리전 로그인 페이지 URL은 다음과 같습니다.</p>
+<p>이 Oracle Cloud 계정의 OCI 리전 로그인 페이지 URL은 다음과 같습니다.</p>
 
 <ul>
 <li><a href="https://console.ap-seoul-1.oraclecloud.com/?tenant=ocidemo001" target="_blank">https://console.ap-seoul-1.oraclecloud.com/?tenant=ocidemo001 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
@@ -471,11 +484,11 @@
 </li>
 </ul>
 
-<p>위 경로로 이동한 다음에 OCI 관리자 ID/패스워드로 <strong>taewanme@gmail.com</strong>과 <strong>Welcome123456!</strong>를 입력하고 OCI IAM 로그인 옵션으로 로그인합니다.</p>
+<p>위 경로로 이동한 다음에 <strong>OCI Admin User(OCI 관리자)</strong> ID/패스워드인 <strong>taewanme@gmail.com</strong>과 <strong>Welcome123456!</strong>를 입력하고 OCI IAM 로그인합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/030.jpg?classes=border,shadow" alt="" /></p>
 
-<p>로그인에 어려움이 있으실 경우에 다음 문서를 참조하시기 바랍니다.</p>
+<p><strong>OCI Admin User(OCI 관리자)</strong> ID로 OCI IAM 로그인에 어려움이 있으시다면 다음 문서를 참조하시기 바랍니다.</p>
 
 <ul>
 <li><a href="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" target="_blank">OCI Console 로그인 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>

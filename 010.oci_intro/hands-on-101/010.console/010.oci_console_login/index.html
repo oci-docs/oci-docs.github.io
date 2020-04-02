@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-01T23:13:42 KST">
+<meta name="revised" content="2020-04-03T08:44:54 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -288,7 +288,14 @@
       <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
-            OCI VCN
+            VCN 생성(OCI Console:간편모드)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/">
+            Compute Service(VM) 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -377,7 +384,8 @@
     <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/" >
   -- 
    OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- OCI VCN</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
   
   
   
@@ -413,7 +421,7 @@
     
     
 
-<p><strong>Oracle Cloud</strong>에서 사용자 ID는 Oracle IDCS와 OCI IAM으로 관리됩니다. Oracle ID 관리 방식에 대하여 궁금하시다면 다음 문서를 참조하시기 바랍니다.</p>
+<p><strong>Oracle Cloud</strong>에서 사용자 ID는 Oracle IDCS와 OCI IAM으로 관리됩니다. Oracle IDCS와 OCI IAM의 관리 방식에 대하여 궁금하시다면 다음 문서를 참조하시기 바랍니다.</p>
 
 <ul>
 <li><a href="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" target="_blank">OCI 사용자 ID 관리 서비스 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
@@ -421,13 +429,14 @@
 </li>
 </ul>
 
-<p>이번 Hands-on Lab에서는 Oracle 계정을 등록한 다음에 Oracle Console에 로그인하는 방법을 소개합니다. 이번 Hands-on Lab에서 다음과 같은 정보로 Oracle Cloud 계정을 만들었다고 가정하고 진행하겠습니다.</p>
+<p>이번 <strong>Hands-on Lab</strong>에서는 Oracle 클라우드 계정을 등록한 다음에 OCI 관리자 ID로 Oracle Console에 로그인하는 방법을 소개합니다. 이번 <strong>Hands-on Lab</strong>에서 다음과 같은 정보로 Oracle Cloud 계정을 만들었다고 가정합니다.</p>
 
 <table>
 <thead>
 <tr>
 <th>항목</th>
 <th>설정값</th>
+<th>설명</th>
 </tr>
 </thead>
 
@@ -435,26 +444,30 @@
 <tr>
 <td>Account Name</td>
 <td>ocidemo001</td>
+<td>Oracle Cloud 계정명</td>
 </tr>
 
 <tr>
 <td>E-mail</td>
 <td>taewamne@gmail.com</td>
+<td>Oracle Cloud 계정의 관리자 ID</td>
 </tr>
 
 <tr>
 <td>Password</td>
 <td>Welcome123456!</td>
+<td>Oracle Cloud 계정의 관리자 ID 로그인 패스워드</td>
 </tr>
 
 <tr>
 <td>Home Region</td>
-<td>Ashburn</td>
+<td>Seoul</td>
+<td>Oracle Cloud 계정의 기본 데이터 센터</td>
 </tr>
 </tbody>
 </table>
 
-<p>위 설정값은 여러분의 실제 Oracle Cloud 계정 정보로 대체하고 진행하시기 바랍니다.</p>
+<p>위 설정값은 여러분의 Oracle Cloud 계정 정보로 대체하고 진행하시기 바랍니다.</p>
 
 <h1 id="oracle-cloud-로그인">Oracle Cloud 로그인</h1>
 
@@ -479,9 +492,9 @@
 
 <h2 id="오라클-홈페이지에서-oci-console-로그인">오라클 홈페이지에서 OCI Console 로그인</h2>
 
-<p>Oracle 홈페이지에서 OCI Console은 <a href="https://oracle.comm" target="_blank">https://oracle.comm <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<p>Oracle 홈페이지(<a href="https://oracle.comm" target="_blank">https://oracle.comm <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
-에서 로그인합니다. 오라클 홈페이지에서 로그인하는 방식은 <strong>Oracle IDCS</strong>를 사용하는 로그인 방식입니다. 오라클 홈페이지에서 다음과 같은 메뉴 패스로 오라클 클라우드 로그인 페이지로 이동합니다.</p>
+)에서 Oracle Cloud에 로그인할 수 있습니다. 오라클 홈페이지에서 Oracle Cloud에 로그인할 때 <font color="red"><strong>Oracle IDCS</strong></font> 로그인 방식을 사용합니다. 오라클 홈페이지에서 다음과 같은 메뉴 패스로 오라클 클라우드 로그인 페이지로 이동합니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><strong>View Accounts</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Sign in to Cloud</strong></div></div>
@@ -491,19 +504,19 @@
 
 <hr />
 
-<p><strong>Cloud Account Name</strong> 항목이 <strong>ocidemo001</strong>을 입력하고 <strong>Next</strong> 버튼을 클릭합니다.</p>
+<p><strong>Cloud Account Name</strong>에 Oralce Cloud 계정인 <strong>ocidemo001</strong>을 입력합니다. 그리고 <font color="red"><strong>Next</strong></font> 버튼을 클릭합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/120.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p><strong>사용자 이름</strong>과 <strong>비밀번호</strong>에 항목에 각각 <strong>teawanme@gmail.com</strong>과 <strong>Welcome123456!</strong>을 입력하고 로그인합니다.</p>
+<p><strong>사용자 이름</strong>과 <strong>비밀번호</strong>에 각각 Oracle Cloud 계정의 관리자 ID인 <strong>teawanme@gmail.com</strong>과 관리자 ID의 로그인 패스워드인 <strong>Welcome123456!</strong>를 입력하고 로그인합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/130.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p>로그인하면 OCI Classic 콘솔 페이지가 출력됩니다.</p>
+<p>관리자 ID 인증이 정상적으로 이뤄지면 OCI Classic 콘솔 페이지가 출력됩니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/140.jpg?classes=border,shadow" alt="" /></p>
 
@@ -519,17 +532,17 @@
 
 <h3 id="oci-console-로그인-oracle-idcs-옵션-선택">OCI Console 로그인: Oracle IDCS 옵션 선택</h3>
 
-<p>OCI Console 로그인 페이지에서는 Oracle IDCS와 OCI IAM 두 가지 옵션을 모두 제공합니다. Oracle IDCS 옵션을 선택할 경우 기존 Oracle Cloud의 SSO(싱글사인온)가 적용되고 OCI IAM을 선택할 경우 새로 ID/패스워드를 입력하고 인증합니다.</p>
+<p>OCI Console 로그인 페이지에서는 Oracle IDCS와 OCI IAM 두 가지 옵션을 모두 제공합니다. Oracle IDCS 옵션을 선택할 경우 기존 Oracle Cloud의 SSO(싱글사인온)가 적용되고 OCI IAM을 선택할 경우 ID/패스워드를 다시 입력하고 로그인합니다.</p>
 
-<p>현재는 Oracle IDCS 인증 방식을 선택합니다.</p>
+<p>우선 Oracle IDCS 인증 방식을 선택합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/190.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p>앞에서 Oracle IDCS를 선택할 경우에 Oracle IDCS는 현재 사용자가 이미 로그인 상태라는 것은 SSO로 확인합니다. 따라서 추가 인증 정보를 요구하지 않고 바로 OCI Console로 이동합니다.</p>
+<p>Oracle IDCS 인증을 선택할 경우에 Oracle IDCS는 현재 사용자가 이미 Oracle Cloud 관리자 ID로 로그인 상태라는 것을 SSO(싱글사인온)로 확인합니다. 이미 인증을 마친 상태기 때문에 추가 인증 정보를 요구하지 않고 바로 OCI Console로 이동합니다.</p>
 
-<p>현재 OCI Console에 로그인은 Oracle IDCS로 로그인했습니다. 따라서 OCI Console의 메뉴에는 Oracle Classic 기반 PaaS 서비스가 출력됩니다. 현재 이용가능한 OCI Classic PaaS 서비스는 다음 메뉴 패스로 확인할 수 있습니다.</p>
+<p>현재 OCI Console에 접속한 Oracle Cloud 계정의 관리자는 Oracle IDCS로 로그인한 상태입니다. 따라서 OCI Console의 메인 메뉴에는 Oracle Classic 기반 PaaS 서비스가 출력됩니다. 현재 이용 가능한 OCI Classic PaaS 서비스는 다음 메뉴 패스로 확인할 수 있습니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>플랫폼 서비스</strong></div></div>
@@ -553,13 +566,13 @@
 
 <h3 id="oci-console-로그인-oci-iam-옵션-선택">OCI Console 로그인: OCI IAM 옵션 선택</h3>
 
-<p>OCI Console 로그인 페이지에서 OCI IAM 인증을 위한 ID/패스워드를 입력하고 인증합니다.</p>
+<p>OCI Console 로그인 페이지에서 OCI IAM 인증을 위한 ID/패스워드를 새로 입력하고 로그인합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/200.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p>OCI IAM 인증을 하면 인증이 적용되는 범위는 OCI에 국한됩니다. 따라서 OCI Console 메뉴에서 OCI Classic 기반 PaaS 서비스 목록은 출력하지 않습니다.</p>
+<p>OCI IAM 로그인 방식의 인증 범위는 OCI에 국한됩니다. 따라서 OCI Console 메뉴에서 OCI Classic 기반 PaaS 서비스 목록은 출력하지 않습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/220.jpg?classes=border,shadow" alt="" /></p>
 
@@ -585,13 +598,13 @@
 <div class="panel panel-primary"><div class="panel-body"><strong>oracle.com 홈페이지</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>oracle cloud 로그인 페이지</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>OCI Classic Console</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <font color='red'><strong>OCI Console 로그인 페이지</strong></font> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>OCI Console</strong></div></div>
 
 
-<p>이 방식은 약간 번거롭게 느껴집니다. <strong>oracle.com 홈페이지</strong>를 거치지 않고 직접 OCI Console 로그인 페이지에 접근할 수 있습니다. OCI Console 로그인 페이지는 OCI Account(Tenente)가 사용하는 Home Region에 따라서 달라집니다. OCI Console 로그인 페이지 패턴은 다음과 같습니다.</p>
+<p>이 방식은 약간 번거롭게 느껴집니다. <strong>oracle.com 홈페이지</strong>를 거치지 않고 직접 OCI Console 로그인 페이지에 접근할 수 있습니다. OCI Console 로그인 페이지는 Oracle Clod 계정(Tenente)이 사용하는 Home Region에 따라서 달라집니다. OCI Console 로그인 페이지의 URL 패턴은 다음과 같습니다.</p>
 
-<pre><code>https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/
-https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
+<pre><code>https://console.&lt;OCI_HOME_REGION_ID&gt;.oraclecloud.com/
+https://console.&lt;OCI_HOME_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
 </code></pre>
 
-<p>OCI_REGION_ID는 다음 페이지에서 확인할 수 있습니다.</p>
+<p>OCI_HOME_REGION_ID는 다음 페이지에서 확인할 수 있습니다.</p>
 
 <ul>
 <li><a href="/010.oci_101/basic_concept/oci_resion_info/" target="_blank">OCI 리전 정보 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
@@ -649,7 +662,7 @@ https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
     </div>
 </div>
 
-<p>현재 Handson-Lab에서 사용하는 계정은 테넌트 명은 <strong>ocidemo001</strong>이고 서울 리전을 <strong>Home Region</strong>으로 사용합니다. OCI 서울리전 ID는 <strong>ap_seoul_1</strong>입니다. 따라서 OCI Console 로그인 페이지는 다음과 같습니다.</p>
+<p>현재 Handson-Lab에서 사용하는 Oracle Cloud 계정 이름은 <strong>ocidemo001</strong>이고 서울 리전을 <strong>Home Region</strong>으로 사용합니다. OCI 서울리전 ID는 <strong>ap_seoul_1</strong>입니다. 따라서 OCI Console 로그인 페이지는 다음과 같습니다.</p>
 
 <pre><code>https://console.ap-seoul-1.oraclecloud.com/?tenant=ocidemo001
 </code></pre>
@@ -658,15 +671,15 @@ https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/190.jpg?classes=border,shadow" alt="" /></p>
 
-<p>현재 Hands-on Lab에서 사용하는 ID는 <strong>ocidemo001</strong> 계정의 관리자 ID입니다. OCI Console 로그인 페이지에서 Oracle IDCS와 OCI IAM을 모두 선택하고 로그인할 수 있습니다.</p>
+<p>현재 Hands-on Lab에서 사용하는 Oracle Cloud 계정이름은 <strong>ocidemo001</strong>입니다. OCI Console 로그인 페이지에서 Oracle IDCS 로그인과 OCI IAM 로그인이 모두 가능합니다.</p>
 
-<p>OCI Console 로그인 페이지에서 Oracle IDCS 로그인 방식을 사용할 경우, 현재 SSO 로그인한 상태라면 바로 OCI Console 페이지로 이동합니다. 반대로 Oracle IDCS가 SSO 로그인 상태가 아니라면 ID/Passowd를 입력하는 페이지로 이동합니다.</p>
+<p>OCI Console 로그인 페이지에서 Oracle IDCS 로그인을 선택했고, 현재 SSO 로그인한 상태라면 바로 OCI Console 페이지로 이동합니다. 반대로 Oracle IDCS가 SSO 로그인 상태가 아니라면 ID/Passowd를 입력하는 페이지로 이동합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/130.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p>OCI Console 로그인 페이지에서 OCI IAM 로그인 방식을 사용할 경우, 해당 페이지에서 ID/Password를 입력하고 OCI Console 페이지로 이동합니다.</p>
+<p>OCI Console 로그인 페이지에서 OCI IAM 로그인 방식을 사용할 경우, 해당 페이지에서 OCI 사용자 ID/Password해야 합니다. 인증이 성공하면 OCI Console 페이지로 이동합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/200.jpg?classes=border,shadow" alt="" /></p>
 

@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</loc>
+    <lastmod>2020-04-01T12:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/010.oci_intro/hands-on-101/010.console/</loc>
     <lastmod>2020-03-28T09:11:05+09:00</lastmod>
   </url>
@@ -40,6 +45,11 @@
   <url>
     <loc>/010.oci_intro/basic_concept/oci_introduction/</loc>
     <lastmod>2020-03-25T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</loc>
+    <lastmod>2020-04-02T12:11:05+09:00</lastmod>
   </url>
   
   <url>
@@ -84,11 +94,6 @@
   
   <url>
     <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</loc>
-    <lastmod>2020-03-31T12:11:05+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</loc>
     <lastmod>2020-03-31T12:11:05+09:00</lastmod>
   </url>
   

@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-01T23:13:42 KST">
+<meta name="revised" content="2020-04-03T08:44:54 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -286,7 +286,14 @@
       <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
-            OCI VCN
+            VCN 생성(OCI Console:간편모드)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/">
+            Compute Service(VM) 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -375,7 +382,8 @@
     <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/" >
   -- 
    OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- OCI VCN</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
   
   
   
@@ -412,7 +420,7 @@
 
 
 
-<p>OCI는 계정 관리 서비스로 OCI IAM 서비스를 사용합니다. OCI IAM 서비스를 사용하여 OCI 사용자 및 권한 설정을 진행하는 핸즈-온 랩을 진행합니다.</p>
+<p>OCI는 계정 관리 서비스로 OCI IAM 서비스를 사용합니다. OCI IAM 서비스를 사용하여 OCI 사용자 및 권한 설정을 진행하는 <strong>Hands-on Lab</strong>을 진행합니다.</p>
 
 <p>OCI IAM은 다음과 같은 컴포넌트로 구성됩니다.</p>
 
@@ -423,7 +431,7 @@
 <li>Policy</li>
 </ol>
 
-<p>이 컴포넌트를 이용하여 관리자, 개발자, 감리자, QA 담당자를 대표하는 4개의 OCI User를 생성하고  사용자 그룹 정책 그리고 자원의 논리적인 묶음을 만들어 사용자의 접근 제어를 관리하는 환경을 구성해 보겠습니다.</p>
+<p>이 컴포넌트를 이용하여 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개의 OCI User를 만들고 사용자 그룹(Group), OCI 자원의 논리적인 묶음(Compartment) 및 접근 권한 정책(Policy)을 만들어 사용자 접근 제어를 관리하는 <strong>Hands-on Lab</strong>을 진행하겠습니다.</p>
 
 <h2 id="핸드-온-랩-시나리오">핸드-온 랩 시나리오</h2>
 
@@ -431,11 +439,11 @@
 
 <h3 id="1-사용자와-사용자-그룹">1. 사용자와 사용자 그룹</h3>
 
-<p>관리자, 개발자, 감리자, QA 담당자를 대표하는 4개 OCI 사용자를 만들고 역할 별로 사용자를 묶는 OCI 사용자 그룹을 4개 만듭니다.</p>
+<p>관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI 사용자를 만들고 역할 별로 사용자를 묶는 OCI 사용자 그룹을 4개 만듭니다.</p>
 
 <h3 id="2-compartment">2. Compartment</h3>
 
-<p>OCI Compartment는 OCI 자원을 묶는 논리적 단위입니다. 개발 관련 클라우드 리소스, 테스트 관련 클라우드 리소스 및 운영 관련 클라우드 리소스를 위한 4개 Compartment를 만들 것 입니다.</p>
+<p>OCI Compartment는 OCI 자원을 묶는 논리적 단위입니다. <strong>Hands-on Lab</strong>에서는 모든 자원을 묶는 컴파트먼트를 만듭니다. 이 컴파트먼트 아래에 개발 관련 클라우드 리소스, 테스트 관련 클라우드 리소스 및 운영 관련 클라우드 리소스를 위한 3개 Compartment를 만들 것 입니다.</p>
 
 <h3 id="3-policy">3. Policy</h3>
 

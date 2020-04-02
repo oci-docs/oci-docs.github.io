@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-01T23:13:42 KST">
+<meta name="revised" content="2020-04-03T08:44:54 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -288,7 +288,14 @@
       <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
-            OCI VCN
+            VCN 생성(OCI Console:간편모드)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/">
+            Compute Service(VM) 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -377,7 +384,8 @@
     <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/" >
   -- 
    OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- OCI VCN</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
   
   
   
@@ -412,11 +420,11 @@
     
     
 
-<p>이번 Hands-on Lab에서는 OCI Console과 <strong>OCI CLI</strong>로 OCI Compartment를 만드는 절차를 소개합니다. 이 Hands-on Lab은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.</p>
+<p>이번 Hands-on Lab에서는 OCI Console과 <strong>OCI CLI</strong>로 OCI Compartment를 만드는 절차를 소개합니다. 이 <strong>Hands-on Lab</strong>은 <strong>OCI Admin User(OCI 관리자)</strong> ID로 OCI IAM 로그인하고 진행합니다.</p>
 
 <h1 id="hol-oci-compartment">HOL: OCI Compartment</h1>
 
-<p>이번 Hands-on Lab에서는 개발, 테스트, 및 운영 환경 자원을 관리하는 OCI Compartment를 4개 만들어 보겠습니다. 다음과 같은 OCI Group을 만들어 보겠습니다.</p>
+<p>이번 Hands-on Lab에서는 개발, 테스트, 및 운영 환경 자원을 관리하는 OCI Compartment를 4개 만들어 보겠습니다. 다음과 같은 OCI Compartment를 만들겠습니다.</p>
 
 <table>
 <thead>
@@ -484,7 +492,7 @@
 
 <h2 id="oci-compartment-생성-oci-console">OCI Compartment 생성: OCI Console</h2>
 
-<p>OCI Console에서 다음과 같은 컴파트먼트를 만들겠습니다.</p>
+<p>OCI Console에서 다음과 같은 Compartment를 만들겠습니다.</p>
 
 <table>
 <thead>
@@ -512,7 +520,7 @@
 
 <h3 id="sandbox-compartment-생성">sandbox Compartment 생성</h3>
 
-<p>OCI Console에서 OCI Group 관리 페이지는 다음 메뉴 패스로 이동합니다.</p>
+<p>OCI Console에서 OCI Compartment 관리 페이지는 다음 메뉴 패스로 이동합니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Compartments</strong></div></div>
@@ -566,7 +574,7 @@
 
 <h3 id="hol-dev-compartment-생성">hol-dev Compartment 생성</h3>
 
-<p>이번에는 <strong>sandbox</strong> Compartment 아래에 <strong>hol-dev</strong> Compartment를 만들 차례입니다. <strong>sandbox</strong> Compartment 상세 페이지에서 <strong>Child Compartment</strong> 아래의 <strong>Create Compartment</strong> 버튼을 클릭합니다.</p>
+<p>이번에는 <strong>sandbox</strong> Compartment 아래에 <strong>hol-dev</strong> Compartment를 만들 차례입니다. <strong>sandbox</strong> Compartment 상세 페이지에서 <strong>Child Compartment</strong> 아래에 위치하는 <strong>Create Compartment</strong> 버튼을 클릭합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/650.jpg?classes=border,shadow" alt="" /></p>
 
@@ -610,7 +618,7 @@
 
 <h2 id="oci-compartment-생성-oci-cli">OCI Compartment 생성: OCI CLI</h2>
 
-<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. OCI Console은 Cloud Shell은 브라우저 기반 리눅스 터미널을 제공합니다. Cloud Shell에는 사전 구성이 완료된 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI Compartment를 등록해 보겠습니다.</p>
+<p>Oracle Cloud는 OCI 자원을 관리하는 툴로 웹 기반의 OCI Console과 CLI 기반 도구인 <strong>OCI CLI</strong>를 제공합니다. Cloud Shell은 OCI Console이 제공하는 브라우저 기반 리눅스 터미널입니다. Cloud Shell에서 완전한 환경 구성이 적용된 <strong>OCI CLI</strong>를 바로 사용할 수 있습니다. Cloud Shell의 <strong>OCI CLI</strong>를 사용하여 OCI Compartment를 생성해 보겠습니다.</p>
 
 <h3 id="cloud-shell-열기">Cloud Shell 열기</h3>
 
@@ -625,7 +633,7 @@
 
 <h3 id="oci-compartment-만들기-hol-prod">OCI Compartment 만들기: hol-prod</h3>
 
-<p>cloud shell의 oci cli로 다음 Compartment를 만들 것 입니다.</p>
+<p>cloud shell의 oci cli로 다음 Compartment를 생성할 것 입니다.</p>
 
 <table>
 <thead>
@@ -657,13 +665,13 @@
 
 <hr />
 
-<p>OCI Compartment 관리 페이지에서 sandbox 링크를 클릭하고 <strong>sandbox</strong> Compartment 상세 페이지로 이동합니다.</p>
+<p>OCI Compartment 관리 페이지에서 sandbox 링크를 클릭하고, <strong>sandbox</strong> Compartment 상세 페이지로 이동합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/680.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p><strong>sandbox</strong> Compartment 상세 페이지의 OCID의 <strong>copy</strong>링크를 클락하면 <strong>sandbox</strong> Compartment의 OCID가 복사됩니다.</p>
+<p><strong>sandbox</strong> Compartment 상세 페이지에서 OCID의 <strong>copy</strong>링크를 클락합니다. 이 링크를 클릭하면 <strong>sandbox</strong> Compartment의 OCID가 클립보드에 복사됩니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/690.jpg?classes=border,shadow" alt="" /></p>
 
@@ -731,7 +739,7 @@ taewanme@cloudshell:~ (ap-seoul-1)$
 </tbody>
 </table>
 
-<p>이 작업을 완료한 다음에 <strong>sandbox</strong> Compartment 상세 페이지로 이동하면 다음과 같은 결과를 확인할 수 있습니다.</p>
+<p>이 작업을 완료한 다음에 <strong>sandbox</strong> Compartment 상세 페이지로 이동하면, 다음과 같은 결과를 확인할 수 있습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/700.jpg?classes=border,shadow" alt="" /></p>
 

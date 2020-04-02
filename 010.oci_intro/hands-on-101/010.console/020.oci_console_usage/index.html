@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-01T23:13:42 KST">
+<meta name="revised" content="2020-04-03T08:44:54 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -288,7 +288,14 @@
       <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
-            OCI VCN
+            VCN 생성(OCI Console:간편모드)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/">
+            Compute Service(VM) 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -377,7 +384,8 @@
     <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/" >
   -- 
    OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- OCI VCN</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
   
   
   
@@ -413,7 +421,7 @@
     
     
 
-<p>이번 Hands-on Lab에서는 OCI Console 구성을 소개합니다.</p>
+<p>이번 Hands-on Lab에서는 OCI Console 구성과 기본 사용법을 소개합니다.</p>
 
 <h1 id="oci-console-구성">OCI Console 구성</h1>
 
@@ -452,7 +460,7 @@
 <li>거버넌스 및 관리</li>
 </ul>
 
-<p>햄버그 메뉴에 출력되는 모든 메뉴는 OCI Console에 로그인한 사용자가 접근 가능한 서비스 목록입니다. Oracle IDCS와 OCI IAM이 접근 권한을 확인합니다.</p>
+<p>햄버그 메뉴에 출력되는 모든 메뉴는 OCI Console에 로그인한 사용자가 접근 가능한 서비스입니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/310.jpg?classes=border,shadow" alt="" /></p>
 
@@ -460,15 +468,15 @@
 
 <p>OCI는 현재(2020년 03월 28일 기준) 16개 글로벌 리전(Gov 리전 제외)을 운영하고 있습니다. OCI Console의 상단 메뉴에서 현재 어떤 리전을 사용하고 있는지 확인할 수 있습니다.</p>
 
-<p>아래 이미지에서 확인할 수 있는 것처럼, OCI Console의 상단 메뉴에 현재 계정이 사용하고 있는 리전 명이 출력됩니다. 현재 사용하고 있는 계정은 <strong>South Korea Central(Seoul)</strong> 리전을 사용하고 있는 것으로 표시된 상태입니다.</p>
+<p>아래 이미지에서 확인할 수 있는 것처럼, OCI Console의 상단 메뉴에 현재 사용자가 접속한 OCI Region 이름이 출력됩니다. 다음 그림에서 Oracle Cloud 사용자는 <strong>South Korea Central(Seoul)</strong> 리전을 사용하고 있는 상태입니다.</p>
 
-<p><strong>South Korea Central(Seoul)</strong>을 클릭하며 현재 사용하는 클라우드 계정(Tenante, ocidemo001)이 사용하는 현재 리전과 홈 리전이 출력됩니다. <strong>영역관리(Manage Regions)</strong> 메뉴를 클릭하면 리전 관리 페이지로 이동할 수 있습니다.</p>
+<p>상단 메뉴에서 <strong>South Korea Central(Seoul)</strong>을 클릭하면, 현재 사용하는 클라우드 계정(Tenante, ocidemo001)의 홈 리전이 출력됩니다. 홈 리전 아래에 <strong>영역관리(Manage Regions)</strong> 메뉴를 클릭하면 OCI 리전을 구독하는 Region 관리 페이지로 이동합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/350.jpg?classes=border,shadow" alt="" /></p>
 
-<p><strong>영역관리(Manage Regions)</strong> 메뉴를 클릭하면 리전 관리 페이지로 이동합니다. 리전 관리 페이지에서는 OCI의 전체 리전 목록이 출력되고, 현재 사용하는 클라우드 계정(ocidemo001)이 사용할 수 있는 리전(구독, Subcribed)을 확인할 수 있습니다. 새로운 리전을 사용해야 한다면, 이 페이지에서 <strong>구독</strong> 버튼을 클릭해야 합니다.</p>
+<p>Region 관리 페이지에서는 OCI의 전체 리전 목록이 출력됩니다. 이 목록에서 <strong>가입됨(Subscribed)</strong>으로 표시된 Region은 현재 Oracle Cloud 계정(ocidemo001)이 접근 가능한 Region입니다. Oracle Cloud 계정(ocidemo001)이 새로운 Region에 접근해야 한다면, 이 페이지에서 해당 Region의 <strong>구독(Subscription)</strong> 버튼을 클릭합니다.</p>
 
-<p>지금 Hands-on에서 사용하는 계정은 Oracle Free Trial 계정입니다. Oracle Free Trial 계정은 홈 리전만을 사용하도록 자원 사용이 제한돼 있습니다. 따라서 신규 리전 구독을 시도하면 다음과 같은 에러 메시지가 출력됩니다.</p>
+<p>지금 Hands-on에서 사용하는 계정은 Oracle Free Trial 계정입니다. Oracle Free Trial 계정은 Home Reghon만을 사용하도록 자원 사용이 제한돼 있습니다. 따라서 신규 리전 구독을 시도하면 다음과 같은 에러 메시지가 출력됩니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/360.jpg?classes=border,shadow" alt="" /></p>
 
@@ -492,14 +500,14 @@
 
 <p>OCI Console은 OCI 인프라스트럭처를 사용하는 모든 자원을 조회하는 SQL과 유사한 형태의 인터페이스를 제공합니다.</p>
 
-<p>다음 이미지는 OCI Console에서 생성한 모든 자원을 조회하는 쿼리를 실행하는 흐름입니다. 다음 이미지와 같이 OCI Console 상단의 검색 아이콘을 클릭하고 쿼리를 입력하면 관련 자원을 조회할 수 있습니다.</p>
+<p>다음 이미지는 OCI Console에서 생성한 모든 자원을 조회하는 쿼리를 실행하는 흐름을 소개합니다. 다음 이미지와 같이 OCI Console 상단의 검색 아이콘을 클릭하고 쿼리를 입력하면 관련 자원을 조회할 수 있습니다.</p>
 
 <pre><code>query all resources
 </code></pre>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/320.jpg?classes=border,shadow" alt="" /></p>
 
-<p>OCI Console은 고급 검색 예제 쿼리와 함께 고급 검색 쿼리를 실행하는 편집기를 제공합니다. 다음 이미지와 같이 고급 검색을 실행한 상태에서 &lsquo;<strong>고급 검색</strong>&rsquo; 버튼을 클릭하면 고급 검색 편집/실행 페이지로 이동합니다. 이 페이지에서는 다양한 예제 쿼리를 확인할 수 있습니다. OCI Console이 제공하는 예제를 응용하여 다양한 고급 검색 쿼리를 수행하여 OCI 자원 목록을 조회할 수 있습니다.</p>
+<p>OCI Console은 고급 검색 예제 쿼리와 함께 고급 검색 쿼리를 실행하는 편집기를 제공합니다. 다음 이미지와 같이 고급 검색을 실행한 상태에서 &lsquo;<strong>고급 검색</strong>&rsquo; 버튼을 클릭하면 고급 검색 편집/실행 페이지로 이동합니다. 이 페이지에서는 다양한 예제 쿼리를 확인할 수 있습니다. OCI Console이 제공하는 예제 쿼리를 응용하여 다양한 고급 검색 쿼리를 만들고 필요한 OCI 자원 목록을 검색할 수 있습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/330.jpg?classes=border,shadow" alt="" /></p>
 
@@ -513,17 +521,17 @@
 
 <h2 id="사용자-프로파일">사용자 프로파일</h2>
 
-<p>OCI Console의 사용자 아이콘에서 사용자 프로파일 정보와 사용자 프로파일 세부 관리 페이지로 이동할 수 있습니다.</p>
+<p>OCI Console의 사용자 아이콘에서 사용자 정보를 확인하고 사용자 프로파일 세부 관리 페이지로 이동할 수 있습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/430.jpg?classes=border,shadow" alt="" /></p>
 
 <h2 id="oci-알림">OCI 알림</h2>
 
-<p>OCI Console은 해당 계정(ocidemo001)에 적용되는 시스템 관리 차원의 알람 기능을 제공합니다. 알람 아이콘을 클릭하면 세부 공지 내용을 확인할 수 있습니다. 핸즈-온에서 Oracle Free Trial 계정을 사용하거나 새로 만든 계정에서는 다음과 같이 어떤 내용도 출력되지 않을 수 있습니다.</p>
+<p>OCI Console에서 Oracle Cloud 계정(ocidemo001)에게 제공되는 시스템 관리 알람(Announcements)을 조회할 수 있습니다. OCI Console 상단 메뉴의 알람 아이콘을 클릭하면 알람 관리 페이지로 이동합니다. 알람 관리 페이지에서 세부 공지 내용을 확인할 수 있습니다. Oracle Free Trial 계정을 사용하거나 새로 만든 계정에서는 다음과 같이 알람이 출력되지 않을 것 입니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/390.jpg?classes=border,shadow" alt="" /></p>
 
-<p>실제로 운영 환경으로 사용하는 OCI 계정에서는 알림 메시지가 도착하면 아이콘에 초록색 점이 찍힙니다. 다음과 같은 알림 메시지를 확인할 수 있습니다. 메시지를 유형/기간으로 상세 검색할 수 있습니다.</p>
+<p>실제로 운영 환경으로 사용하는 OCI 계정에서 알람 메시지가 도착하면 아이콘에 초록색 점이 찍힙니다. 다음과 같은 알람 메시지를 확인할 수 있습니다. 알람 관리 페이지에서 알람 메시지 유형 및 기간으로 상세 검색할 수 있습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/ociconsole/380.jpg?classes=border,shadow" alt="" /></p>
 

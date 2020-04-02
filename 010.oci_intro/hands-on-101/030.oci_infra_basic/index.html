@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-01T23:13:42 KST">
+<meta name="revised" content="2020-04-03T08:44:54 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -286,7 +286,14 @@
       <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
-            OCI VCN
+            VCN 생성(OCI Console:간편모드)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
+        <div>
+          <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/">
+            Compute Service(VM) 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -375,7 +382,8 @@
     <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/"  selected>
   -- 
    OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- OCI VCN</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
   
   
   
@@ -438,7 +446,7 @@
 </li>
 </ul>
 
-<p>추가로 다음 문서의 <strong>Hands-on Lab</strong>을 완료했고 가이드에 따라 OCI User, Group, Compartment 및 Policy 작업을 마쳤다는 가정으로 진행합니다. 기본 환경 구성을 진행하지 못했다면 다음 <strong>Hands-on Lab</strong>을 완료해 주시기 바랍니다.</p>
+<p>추가로 다음 문서의 <strong>Hands-on Lab</strong>을 완료했다고 가정하고 진행합니다. 환경 구성 <strong>Hands-on Lab</strong>을 완료하지 못했다면 다음 문서를 참조하여 OCI 사용자, 그룹, Compartment 및 Policy 설정 작업을 완료하시기 바랍니다.</p>
 
 <ul>
 <li><a href="/010.oci_intro/hands-on-101/020.setting_basic_env/" target="_blank">OCI 사용자&amp;보안 설정 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
@@ -494,7 +502,7 @@
 
 <tbody>
 <tr>
-<td>demo.user</td>
+<td>demo.admin</td>
 <td>Welcome123456!</td>
 <td>root/sandbox/demo-prod</td>
 </tr>
@@ -511,14 +519,14 @@
 </li>
 </ul>
 
-<p>위 Region 로그인 URL은 다음과 같은 패턴으로 만들어집니다.</p>
+<p>위 Home Region 로그인 URL은 다음과 같은 패턴으로 만들어집니다.</p>
 
 <pre class="prettyprint lang-bsh">
 https://console.{HOME_RESION_ID}.oraclecloud.com/tenate={Account Name}
 </pre>
 
 <ul>
-<li>사용할 Oracle Account가 Home Region으로 Seoul 리전이 아닌 다른 리전을 사용하실 경우에는 <font color='red'><strong>{HOME_RESION_ID}</strong></font>를 사용하시는 Home Region ID로 교체하시기 바랍니다.
+<li>사용할 Oracle Account가 Home Region으로 Seoul 리전이 아닌 다른 리전을 사용하는 경우에는 <font color='red'><strong>{HOME_RESION_ID}</strong></font>를 여러분이 사용하시는 Home Region ID로 교체하시기 바랍니다.
 
 <ul>
 <li>Region ID 확인는 다음 문서 참조: <a href="/010.oci_intro/basic_concept/oci_resion_info/" target="_blank">OCI 리전 정보 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
@@ -536,11 +544,17 @@ https://console.{HOME_RESION_ID}.oraclecloud.com/tenate={Account Name}
 <div class="panel panel-primary"><div class="panel-body"><ul class="children children-li">
 
 <span><li>
-        <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >OCI VCN</a></li>
+        <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >VCN 생성(OCI Console:간편모드)</a></li>
 </span>
 <ul>
 </ul>
+
+<p><span><li>
+        <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >Compute Service(VM) 생성</a></li>
+</span>
+<ul>
 </ul>
+</ul></p>
 </div></div>
 
 
@@ -553,7 +567,7 @@ https://console.{HOME_RESION_ID}.oraclecloud.com/tenate={Account Name}
 </div><div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" title="OCI Policy: 권한 설정"> <i class="fa fa-chevron-left"></i><label>OCI Policy: 권한 설정</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" title="OCI VCN" style="margin-right: 0px;"><label>OCI VCN</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" title="VCN 생성(OCI Console:간편모드)" style="margin-right: 0px;"><label>VCN 생성(OCI Console:간편모드)</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
