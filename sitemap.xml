@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>/300.data_and_ai/010.big_data/</loc>
+    <lastmod>2020-04-04T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</loc>
     <lastmod>2020-04-01T12:11:05+09:00</lastmod>
   </url>
@@ -45,10 +50,6 @@
   <url>
     <loc>/010.oci_intro/basic_concept/oci_introduction/</loc>
     <lastmod>2020-03-25T09:11:05+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/300.data_and_ai/010.big_data/</loc>
   </url>
   
   <url>
@@ -148,6 +149,7 @@
   
   <url>
     <loc>/300.data_and_ai/</loc>
+    <lastmod>2020-04-04T09:11:05+09:00</lastmod>
   </url>
   
   <url>
