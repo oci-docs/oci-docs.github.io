@@ -3,162 +3,167 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/000.oci_free_trial/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/000.oci_free_trial/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/000.index/</loc>
+    <loc>http://cloud-docs.taewan.me/000.index/</loc>
     <lastmod>2020-03-01T01:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>http://cloud-docs.taewan.me/</loc>
     <lastmod>2020-03-01T01:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/300.data_and_ai/010.big_data/</loc>
+    <loc>http://cloud-docs.taewan.me/300.data_and_ai/010.big_data/</loc>
     <lastmod>2020-04-04T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</loc>
     <lastmod>2020-04-01T12:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/010.console/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/</loc>
     <lastmod>2020-03-28T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/</loc>
     <lastmod>2020-03-26T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/</loc>
     <lastmod>2020-03-26T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/oci_introduction/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_introduction/</loc>
     <lastmod>2020-03-25T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</loc>
     <lastmod>2020-04-02T12:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/</loc>
     <lastmod>2020-03-30T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/</loc>
     <lastmod>2020-03-26T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/</loc>
     <lastmod>2020-04-02T12:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/030.oci_infra_basic/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/</loc>
     <lastmod>2020-04-01T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</loc>
     <lastmod>2020-03-31T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/</loc>
+    <lastmod>2020-04-01T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</loc>
     <lastmod>2020-03-31T12:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</loc>
     <lastmod>2020-03-31T12:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/terminologies/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/terminologies/</loc>
     <lastmod>2020-03-26T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/</loc>
     <lastmod>2020-03-26T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/oci_resion_info/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_resion_info/</loc>
     <lastmod>2020-03-01T08:54:32+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/oci_services_in_regions/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_services_in_regions/</loc>
     <lastmod>2020-03-05T08:54:32+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/oci_free_trial/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_free_trial/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/initial_oci_tenancy/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/initial_oci_tenancy/</loc>
     <lastmod>2020-03-27T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/</loc>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/</loc>
     <lastmod>2020-03-26T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/300.data_and_ai/</loc>
+    <loc>http://cloud-docs.taewan.me/300.data_and_ai/</loc>
     <lastmod>2020-04-04T09:11:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>http://cloud-docs.taewan.me/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>http://cloud-docs.taewan.me/tags/</loc>
     <priority>0</priority>
   </url>
   

@@ -4,14 +4,14 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-05T11:26:02 KST">
+<meta name="revised" content="2020-04-05T12:53:19 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
 <meta property="og:title" content="cloud-init를 이용한 자동화 구성" />
 <meta property="og:description" content="OCI Compute 인스턴스를 생성할 때, Cloud Init로 설정 및 구성 자동화를 적용합니다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" />
+<meta property="og:url" content="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" />
 
 
 
@@ -43,7 +43,7 @@
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <script src="/js/jquery-2.x.min.js"></script>
 <script type="text/javascript">
-      var baseurl = "\/";
+      var baseurl = "http:\/\/cloud-docs.taewan.me\/";
 </script>
 <meta name="description" content="OCI Compute 인스턴스를 생성할 때, Cloud Init로 설정 및 구성 자동화를 적용합니다.">
 
@@ -85,7 +85,7 @@
     
 	
   
-    <a class="baselink" href="/">오라클 클라우드 사용자 가이드</a>
+    <a class="baselink" href="http://cloud-docs.taewan.me/">오라클 클라우드 사용자 가이드</a>
   
 
 
@@ -112,83 +112,83 @@
 <article>
   <aside>
     <ul class="menu">
-    <li data-nav-id="/000.index/" class="dd-item
+    <li data-nav-id="http://cloud-docs.taewan.me/000.index/" class="dd-item
         ">
       <div>
       <a href="/000.index/">오라클 클라우드 사용자 가이드</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/010.oci_intro/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/">OCI(Oracle Cloud)-기초 입문</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/010.oci_intro/basic_concept/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/basic_concept/">OCI 입문: 기본 개념</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_intro/basic_concept/oci_introduction/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_introduction/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/oci_introduction/">
             Oracle Cloud Infrasturcture
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/terminologies/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/terminologies/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/terminologies/">
             OCI 기초 용어 정리
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/">
             OCI Classic과 OCI Gen2
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/oci_resion_info/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_resion_info/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/oci_resion_info/">
             OCI 리전 정보
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/oci_services_in_regions/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_services_in_regions/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/oci_services_in_regions/">
             OCI 리전별 서비스 현황 
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/oci_free_trial/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_free_trial/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/oci_free_trial/">
             OCI Free Tier
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/">
             OCI 사용자 ID 관리 서비스
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/initial_oci_tenancy/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/initial_oci_tenancy/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/initial_oci_tenancy/">
             OCI Tenancy 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/">
             클라우드 서비스 용어 비교
@@ -197,35 +197,35 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/">OCI 입문: Hands-on 101 클래스</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_intro/hands-on-101/000.oci_free_trial/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/000.oci_free_trial/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/000.oci_free_trial/">
             OCI Free Tier 등록
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/010.console/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/010.console/">OCI Console</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/">
             OCI Console 로그인
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/">
             OCI Console 사용법
@@ -234,42 +234,42 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/">OCI 사용자&amp;보안 설정</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/">
             OCI Admin 로그인 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/">
             OCI User 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/">
             OCI Group 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/">
             OCI Compartment 만들기
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/">
             OCI Policy: 권한 설정
@@ -278,48 +278,54 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/">OCI Infra 기초</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/">
             VCN 생성(OCI Console:간편모드)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/">
             Compute Service(VM) 생성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" class="dd-item active">
+      <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" class="dd-item active">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/">
             cloud-init를 이용한 자동화 구성
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-        </ul>
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/" class="dd-item alwaysopen
+        ">
+      <div>
+      <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/">Cumstom Image 관리</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
     </li>
         </ul>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/300.data_and_ai/" class="dd-item alwaysopen haschildren
+        </ul>
+    </li>
+    <li data-nav-id="http://cloud-docs.taewan.me/300.data_and_ai/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/300.data_and_ai/">Data and AI </a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/300.data_and_ai/010.big_data/" class="dd-item alwaysopen
+    <li data-nav-id="http://cloud-docs.taewan.me/300.data_and_ai/010.big_data/" class="dd-item alwaysopen
         ">
       <div>
       <a href="/300.data_and_ai/010.big_data/">Big Data Serivce</a><i class="fa fa-circle-thin read-icon"></i>
@@ -409,6 +415,10 @@
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/"  selected>--- cloud-init를 이용한 자동화 구성</option>
+    <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/" >
+  --- 
+   Cumstom Image 관리</option> 
+  
   
   
   
@@ -434,7 +444,7 @@
         <link href="/css/auto-complete.css" rel="stylesheet">
         <script type="text/javascript">
           
-              var baseurl = "\/";
+              var baseurl = "http:\/\/cloud-docs.taewan.me\/";
           
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
@@ -489,6 +499,7 @@
 </ul></li>
 <li><a href="#oci-compute-인스턴스-생성">OCI Compute 인스턴스 생성</a></li>
 <li><a href="#공개-ip-브라우저-접근">공개 IP 브라우저 접근</a></li>
+<li><a href="#hands-on-lab-요약">Hands-on Lab 요약</a></li>
 </ul></li>
 <li><a href="#참고문서">참고문서</a></li>
 </ul>
@@ -736,7 +747,20 @@ sudo systemctl restart firewalld
 
 <p><img src="https://taewanmerepo.github.io/2020/03/compute/210.jpg?classes=border,shadow" alt="" /></p>
 
-<p><strong>demo-linux-vm-cloud-init</strong> 인스턴스가 만들어질 때, cloud-init에 등록된 스크립트가 실행되어 다음과 같은 작업이 진행됨을 확인할 수 있습니다.</p>
+<h2 id="hands-on-lab-요약">Hands-on Lab 요약</h2>
+
+<p><strong>demo-linux-vm-cloud-init</strong> 인스턴스가 만들어질 때, cloud-init에 다음과 같은 스크립트를 등록했습니다.</p>
+
+<pre><code>#!/bin/sh
+sudo yum install nginx -y
+sudo systemctl enable nginx
+sudo systemctl start nginx
+sudo firewall-offline-cmd --zone=public --add-service=http
+sudo systemctl enable firewalld 
+sudo systemctl restart firewalld
+</code></pre>
+
+<p><strong>demo-linux-vm-cloud-init</strong> 인스턴스가 만들어지고 프로비저닝을 완료하기 전에 위 스크립트가 실행되면서 다음과 같은 작업이 진행됩니다.</p>
 
 <ul>
 <li>nginx 설치</li>
@@ -744,6 +768,8 @@ sudo systemctl restart firewalld
 <li>방화벽 룰(80 포트) 등록</li>
 <li>방화벽 룰 적용</li>
 </ul>
+
+<p>cloud-init을 통해서 Compute 인스턴스 생성 후, 후속 조치를 자동화 할 수 있습니다.</p>
 
 <h1 id="참고문서">참고문서</h1>
 
@@ -761,7 +787,7 @@ sudo systemctl restart firewalld
 </div><div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" title="Compute Service(VM) 생성"> <i class="fa fa-chevron-left"></i><label>Compute Service(VM) 생성</label></a>
-    <a class="nav nav-next" href="/300.data_and_ai/" title="Data and AI " style="margin-right: 0px;"><label>Data and AI </label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/" title="Cumstom Image 관리" style="margin-right: 0px;"><label>Cumstom Image 관리</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
@@ -780,7 +806,7 @@ sudo systemctl restart firewalld
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kimhttp://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/"></div>
 
   </div>
 

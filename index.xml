@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>오라클 클라우드 사용자 가이드</title>
-    <link>/</link>
+    <link>http://cloud-docs.taewan.me/</link>
     <description>Recent content on 오라클 클라우드 사용자 가이드</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Mar 2020 01:11:05 +0900</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://cloud-docs.taewan.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OCI Free Tier 등록</title>
-      <link>/010.oci_intro/hands-on-101/000.oci_free_trial/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/000.oci_free_trial/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/000.oci_free_trial/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/000.oci_free_trial/</guid>
       <description>Oracle Cloud Free Tier는 OCI(Oracle Cloud Infrastructure)를 무료로 경험할 수 있도록 제공하는 프로그램입니다. Oracle Cloud Free Tier 계정을 신청하면 한 달 동안 사용할 수 있는 300달러 크래딧이 지급됩니다. 이 크래딧을 이용하여 OCI(Oracle Cloud Infrastructure)의 모든 서비스를 자유롭게 사용할 수 있습니다. 이 문서에서는 Oracle Cloud Free Tier에 대하여 소개하고 계정을 신청하는 절차에 대하여 알아보겠습니다.
 등록 사전 준비 Oracle Cloud Free Tier 계정을 신청하기 위해서는 다음과 같은 정보가 필요합니다.
  E-메일 (gmail, naver, daum 메일 가능) 전화 번호 신용 카드 번호  Oracle Cloud Free Tier 프로그램을 프로모션 사용자를 E-Mail, 전화번호, 신용 카드 번호 조합으로 사용자로 구분합니다.</description>
@@ -24,20 +24,20 @@
     
     <item>
       <title>VCN 생성(OCI Console:간편모드)</title>
-      <link>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</link>
       <pubDate>Wed, 01 Apr 2020 12:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</guid>
       <description>OCI Compute 서비스를 사용하면 여러 VCN(Virtual Cloud Network)을 만들 수 있습니다. OCI 자원을 생성/배포하기 위해서는 다른 자원을 생성하기 전에 VCN을 먼저 만들어야 합니니다. VCN은 다음과 같은 네트워크 컴포넌트로 만들어집니다.
  Subnet Route Table Security List Internet Gateway NAT Gateway Service Gateway Dynamic Routing Gateway Load Balancer Local/Remote Peering  HOL: OCI VCN 이번 Hands-on Lab에서는 OCI Console에서 제공하는 VCN(Virtual Cloud Network) 생성 간편 모드 기능을 사용하여 다음과 같은 VCN을 만들겠습니다.</description>
     </item>
     
     <item>
       <title>OCI Console 로그인</title>
-      <link>/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/010.oci_console_login/</guid>
       <description>Oracle Cloud에서 사용자 ID는 Oracle IDCS와 OCI IAM으로 관리됩니다. Oracle IDCS와 OCI IAM의 관리 방식에 대하여 궁금하시다면 다음 문서를 참조하시기 바랍니다.
  OCI 사용자 ID 관리 서비스     이번 Hands-on Lab에서는 Oracle 클라우드 계정을 등록한 다음에 OCI 관리자 ID로 Oracle Console에 로그인하는 방법을 소개합니다. 이번 Hands-on Lab에서 다음과 같은 정보로 Oracle Cloud 계정을 만들었다고 가정합니다.
    항목 설정값 설명     Account Name ocidemo001 Oracle Cloud 계정명   E-mail taewamne@gmail.</description>
@@ -45,10 +45,10 @@
     
     <item>
       <title>Oracle Cloud Infrasturcture</title>
-      <link>/010.oci_intro/basic_concept/oci_introduction/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_introduction/</link>
       <pubDate>Wed, 25 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/oci_introduction/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_introduction/</guid>
       <description>OCI(Oracle Cloud Infrastructure)는 Oracle 제공하는 클라우드 서비스입니다. 오라클은 2016년 하반기에 OCI 서비스를 시작했습니다. 이 문서에서는 OCI 서비스에 대한 주요 특징을 소개합니다.
 이번 문서는 다음과 같은 목차로 구성됩니다.
  오라클 클라우드  OCI 고가용성 인프라 OCI 안전성 설계 고성능 클라우드 자원  참고 문서    오라클 클라우드 오라클 클라우드는 탄력적이고 유연한 자원 관리의 특징을 갖는 퍼블릭 클라우드와 온-프레미스 인프라의 정밀한 제어, 보안 및 시스템 예측 가능성을 결합한 클라우드 서비스를 지향합니다.</description>
@@ -56,10 +56,10 @@
     
     <item>
       <title>Compute Service(VM) 생성</title>
-      <link>/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</link>
       <pubDate>Thu, 02 Apr 2020 12:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/</guid>
       <description>OCI Compute 서비스를 이용하여 오라클 클라우드에 Compute(VM or 베이메탈) 서버를 만들고 관리할 수 있습니다. 이렇게 만든 서버를 Compute 인스턴스라고 합니다.
 HOL: OCI Compute 이번 Hands-on Lab에서는 OCI Console을 이용하여 OCI Linux VM 인스턴스를 생성하는 절차를 소개합니다. 이번 Hands-on Lab은 다음과 같은 작업으로 진행됩니다.
  OCI 자원 사용량 체크 OCI Console을 이용하여 Oracle Linux VM 생성 VM 인스턴스에 ssh 로그인 Nginx 설치 OS 방화벽 오픈: 80 port VCN Subnet에 Security List 설정 추가 브라우저 접근  이번 Hands-on Lab을 통해서 다음과 같은 VM 인스턴스를 만들 수 있습니다.</description>
@@ -67,10 +67,10 @@ HOL: OCI Compute 이번 Hands-on Lab에서는 OCI Console을 이용하여 OCI Li
     
     <item>
       <title>OCI Admin 로그인 생성</title>
-      <link>/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/</guid>
       <description>OCI 사용자&amp;amp;보안 설정 핸즈-온 랩은 Oracle Cloud 계정의 관리자 ID(taewanme@gmail.com)로 로그인하여 진행합니다. Oracle Cloud 계정의 관리자 ID를 OCI Admin User(OCI 관리자)라고 합니다. 다음과 같은 OCI 사용자를 OCI Admin User(OCI 관리자)라고 정의합니다.
  Oracle IDCS의 OCI_ADMINISTATORS 그룹에 소속된 OCI 사용자 OCI IAM의 Administrators 그룹에 소속된 OCI 사용자  Oracle Cloud 계정을 등록할 때 사용한 E-mail이 해당 계정의 OCI Admin User(OCI 관리자)가 됩니다.
 HOL: OCI Admin Login OCI 리전 로그인 페이지 URL은 다음과 같은 패턴을 갖습니다.</description>
@@ -78,10 +78,10 @@ HOL: OCI Admin Login OCI 리전 로그인 페이지 URL은 다음과 같은 패�
     
     <item>
       <title>OCI Console 사용법</title>
-      <link>/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/</guid>
       <description>이번 Hands-on Lab에서는 OCI Console 구성과 기본 사용법을 소개합니다.
 OCI Console 구성 OCI Console 구성에 대한 소개는 다음과 같은 목차로 진행합니다.
  OCI Console 구성  OCI 햄버그 메뉴 리전 관리 OCI Cloud Shell 고급 검색 사용자 프로파일 OCI 알림 언어 변경 실시간 채팅 도움말   
@@ -91,10 +91,10 @@ OCI Console 구성 OCI Console 구성에 대한 소개는 다음과 같은 목�
     
     <item>
       <title>OCI User 생성</title>
-      <link>/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</guid>
       <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI User를 만드는 방법을 소개합니다. 이 핸즈온 랩은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.
 HOL: OCI User 이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI User를 만들것 입니다.
    OCI User 역할     demo.admin 관리자   demo.audit 감리 담당자   demo.tester QA 담당자   demo.developer 개발자    핸즈온 랩 다음과 같은 순서로 진행합니다.</description>
@@ -102,20 +102,20 @@ HOL: OCI User 이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당�
     
     <item>
       <title>cloud-init를 이용한 자동화 구성</title>
-      <link>/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/</link>
       <pubDate>Thu, 02 Apr 2020 12:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/</guid>
       <description>OCI Compute 서비스를 이용하여 오라클 클라우드에 Compute(VM or 베이메탈) 서버를 만들 때, cloud-init를 사용하여 Compute 인스턴스에 설치 및 여러 작업을 자동화할 수 있습니다. Compute 인스턴스에 cloud-init를 사용하는 방법을 소개합니다.
 HOL: cloud-init 이번 Hands-on Lab에서는 OCI Console을 이용하여 OCI Linux VM 인스턴스를 생성하는 과정에서 cloud-init를 사용하여 Compute 인스턴스 설정을 자동화하는 방법을 소개합니다. cloud-init를 사용하면 Compute 인스턴스를 만든 다음에, ssh로 인스턴스에 접근하여 처리하던 작업을 줄일 수 있습니다. 이번 Hands-on Lab은 다음과 같은 작업으로 진행됩니다.</description>
     </item>
     
     <item>
       <title>OCI Group 생성</title>
-      <link>/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</link>
       <pubDate>Tue, 31 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/</guid>
       <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI 그룹을 만들고, OCI 그룹에 OCI 사용자를 추가하는 방법을 소개합니다. 이 Hands-on Lab은 OCI Admin User(OCI 관리자) ID로 OCI IAM 로그인하고 진행합니다.
 HOL: OCI Group 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI 그룹을 만들고, 각 그룹에 OCI 사용자를 등록합니다. 다음과 같이 OCI 그룹을 만들고 OCI 사용자를 추가하겠습니다.
    OCI Group 역할 소속 OCI 사용자     hol.</description>
@@ -123,10 +123,10 @@ HOL: OCI Group 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당�
     
     <item>
       <title>OCI Compartment 만들기</title>
-      <link>/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</link>
       <pubDate>Tue, 31 Mar 2020 12:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</guid>
       <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI Compartment를 만드는 절차를 소개합니다. 이 Hands-on Lab은 OCI Admin User(OCI 관리자) ID로 OCI IAM 로그인하고 진행합니다.
 HOL: OCI Compartment 이번 Hands-on Lab에서는 개발, 테스트, 및 운영 환경 자원을 관리하는 OCI Compartment를 4개 만들어 보겠습니다. 다음과 같은 OCI Compartment를 만들겠습니다.
    OCI 컴파트먼트 역할 상위 컴파트먼트     sandbox 데모: 최상위 Compartment root   hol-dev 데모: 개발 환경 Compartment root/sandbox   hol-prod 데모: 운영 환경 Compartment root/sandbox   hol-test 데모: 테스트 환경 Compartment root/sandbox    핸즈온 랩 다음과 같은 순서로 진행합니다.</description>
@@ -134,10 +134,10 @@ HOL: OCI Compartment 이번 Hands-on Lab에서는 개발, 테스트, 및 운영 
     
     <item>
       <title>OCI Policy: 권한 설정</title>
-      <link>/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</link>
       <pubDate>Tue, 31 Mar 2020 12:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</guid>
       <description>이번 Hands-on Lab에서는 OCI 자원에 대한 접근 제어 설정을 다룹니다. OCI에서는 OCI IAM Policy로 OCI 자원에 대한 권한 설정을 합니다. 이 Hands-on Lab은 OCI Admin User(OCI 관리자) ID로 OCI IAM 로그인하고 진행합니다.
 HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. 핸즈온 랩 다음과 같은 순서로 진행합니다.
  HOL: OCI IAM Policy  OCI IAM Policy 개요  OCI IAM Policy 패턴 OCI IAM Policy: verb OCI IAM Policy: resource-type OCI IAM Policy: 하부 Compartment OCI IAM Policy: 예제  HOL: OCI Policy 적용  OCI Policy 관리 페이지 이동 hol-admin-Policy 생성 hol-audits-Policy 생성 hol-tests-Policy 생성 hol-developers-Policy 생성 hol-admin-Policy 업데이트   참고문서</description>
@@ -145,10 +145,10 @@ HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. �
     
     <item>
       <title>OCI 기초 용어 정리</title>
-      <link>/010.oci_intro/basic_concept/terminologies/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/terminologies/</link>
       <pubDate>Thu, 26 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/terminologies/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/terminologies/</guid>
       <description>Oracle Cloud를 새로 접하시는 분들을 위하여 Oracle Cloud에서 자주 사용하는 Oracle Cloud 핵심 용어를 정리합니다.
 이번 문서는 다음과 같은 목차로 구성됩니다.
  OCI 주요 용어  Oracle Cloud Infrastructure 리전(Region)과 AD(Availability Domains) OCI 콘솔(Console) Tenancy(테넌시) Compartment(컴파트먼트) Virtual Cloud Network(VCN) Bare Metal Host Instance(인스턴스) Image(이미지) Shape Key Pair 블록 볼륨(BLOCK VOLUME) Object Storage 버킷(BUCKET) OCID(ORACLE CLOUD IDENTIFIER)  참고 문서    OCI 주요 용어 Oracle Cloud Infrastructure Orale Cloud Infrasturcture는 2018년부터 사용하기 시작한 Oracle Cloud의 새로운 브랜드명입니다.</description>
@@ -156,10 +156,10 @@ HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. �
     
     <item>
       <title>OCI Classic과 OCI Gen2</title>
-      <link>/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/</link>
       <pubDate>Thu, 26 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/</guid>
       <description>이 문서는 2018년 3월에 작성된 글을 일부 수정하여 올렸습니다. 이 글의 시점은 2018년 4월 시점입니다. 오라클 클라우드가 OPC에서 OCI Classic으로 그리고 OCI로 전환되는 흐름을 파악하는 입장에서 봐주셨으면 합니다.
 - 원본: [2018-03-03]Oracle Cloud IaaS: OCI vs OCI Classic  
  오라클 클라우드의 핵심 인프라스터럭처는 OCI Classic(Oracle Cloud Infrastructure Classic) 서비스로 시작하여 현재 OCI(Oracle Cloud Infrastructure)로 발전했습니다. OCI Classic의 흔적은 대부분 사라진 상태입니다. 그러나 여전히 여러 서비스에서 그 흔적이 남아 있습니다.</description>
@@ -167,30 +167,30 @@ HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. �
     
     <item>
       <title>OCI 리전 정보</title>
-      <link>/010.oci_intro/basic_concept/oci_resion_info/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_resion_info/</link>
       <pubDate>Sun, 01 Mar 2020 08:54:32 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/oci_resion_info/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_resion_info/</guid>
       <description> OCI 리전의 기본 정보를 정리합니다.
    리전 이름 리전 ID 리전 위치 리전 Key Availability Domain 수     Amsterdam eu-amsterdam-1 네덜란드, 암스테르담 AMS 1   Ashburn us-ashburn-1 미국 버지니아, 애슈번 IAD 3   Sao Paulo sa-saopaulo-1 브라질, 상파올로 GRU 1   Frankfurt eu-frankfurt-1 독일, 프랑크푸르트 FRA 3   Jeddah me-jeddah-1 사우디 아라비아, 제다 JED 1   London uk-london-1 영국, 런던 LHR 3   Melbourne ap-melbourne-1 호주, 멜버른 MEL 1   Montreal ca-montreal-1 캐나다, 몬트리올 YUL 1   Mumbai ap-mumbai-1 인도, 뭄바이 BOM 1   Osaka ap-osaka-1 일본, 오사카 KIX 1   Phoenix us-phoenix-1 미국 애리조나, 피닉스 PHX 3   Tokyo ap-tokyo-1 일본, 도쿄 NRT 1   Toronto ca-toronto-1 캐나다, 토론토 YYZ 1   Seoul ap-seoul-1 대한민국, 서울 ICN 1   Sydney ap-sydney-1 호주, 시드니 SYD 1   Zurich eu-zurich-1 스위스, 취리히 ZRH 1    참고 문서  [Official OCI Docs]Regions and Availability Domains     </description>
     </item>
     
     <item>
       <title>OCI 리전별 서비스 현황 </title>
-      <link>/010.oci_intro/basic_concept/oci_services_in_regions/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_services_in_regions/</link>
       <pubDate>Thu, 05 Mar 2020 08:54:32 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/oci_services_in_regions/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_services_in_regions/</guid>
       <description>각 리전에서 제공하는 서비스는 다음 페이지에서 찾을 수 있습니다. 다음 페이지에서는 OCI 리전과 OCI Classic 리전의 지원 서비스 목록을 찾을 수 있습니다.
  Data Regions for Platform and Infrastructure Services     위 페이지에서 다음과 같은 형식으로 리전 지원 서비스를 제공합니다.</description>
     </item>
     
     <item>
       <title>OCI Free Tier</title>
-      <link>/010.oci_intro/basic_concept/oci_free_trial/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_free_trial/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/oci_free_trial/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_free_trial/</guid>
       <description>Oracle Cloud Free Tier는 OCI(Oracle Cloud Infrastructure)를 무료로 경험할 수 있도록 제공하는 프로그램입니다. Oracle Cloud Free Tier 계정을 신청하면 한 달 동안 사용할 수 있는 300달러 크래딧이 지급됩니다. 이 크래딧을 이용하여 OCI(Oracle Cloud Infrastructure)의 모든 서비스를 자유롭게 사용할 수 있습니다. 이 문서에서는 Oracle Cloud Free Tier에 대하여 소개하고 계정을 신청하는 절차에 대하여 알아보겠습니다.
 이번 문서는 다음과 같은 목차로 구성됩니다.
  OCI Free Tier 구성  1. Oracle Cloud Free Trial 2.</description>
@@ -198,10 +198,10 @@ HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. �
     
     <item>
       <title>OCI 사용자 ID 관리 서비스</title>
-      <link>/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oracle_cloud_identity_management_services/</guid>
       <description>오라클 클라우드에는 사용자 ID를 관리하는 Oracle IDCS(Identity Cloud Service)와 OCI IAM(Identity &amp;amp; Access Management) 두 개 서비스가 있습니다. OCI 계정(Tenante)을 등록하면 두 서비스는 각각 동일한 ID와 패스워드를 갖는 Admin 사용자가 만들어집니다. 두 ID 관리 서비스는 각각 ID 만들고, 이 ID가 로그인하는 방법을 제공합니다. 이 문서에서는 Oracle IDCS와 OCI IAM에 대하여 비교하고 두 서비스가 제공하는 로그인 방식에 대하여 정리합니다.
 이번 문서는 다음과 같은 목차로 구성됩니다.
  Oracle IDCS와 OCI IAM  OCI가 갖는 두 가지 의미 OCI IAM Oracle IDCS Oracle IDCS &amp;amp; OCI IAM 비교 오라클 클라우드 로그인 옵션  오라클 클라우드 기본 로그인 OCI 홈 리전 로그인   인증 체계 선택 참고문서    Oracle IDCS와 OCI IAM 오라클 클라우드에서 ID를 관리하는 Oracle IDCS와 OCI IAM 서비스에 대하여 간략히 알아보겠습니다.</description>
@@ -209,10 +209,10 @@ HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. �
     
     <item>
       <title>OCI Tenancy 생성</title>
-      <link>/010.oci_intro/basic_concept/initial_oci_tenancy/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/initial_oci_tenancy/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/initial_oci_tenancy/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/initial_oci_tenancy/</guid>
       <description>오라클 클라우드 계정을 등록하면 OCI Tenancy가 위 그림과 같이 만들어집니다. 오라클 클라우드 계정이 생성될 때, Oracle IDCS와 OCI IAM이 관리자를 만들고 관리자 권한을 부여하는 과정을 소개합니다.
 중심으로 사용자 계정과 권한이 설정되는 과정을 살펴보겠습니다.
 이번 문서는 다음과 같은 목차로 구성됩니다.
@@ -221,10 +221,10 @@ HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. �
     
     <item>
       <title>클라우드 서비스 용어 비교</title>
-      <link>/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/</link>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/</link>
       <pubDate>Thu, 26 Mar 2020 09:11:05 +0900</pubDate>
       
-      <guid>/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/</guid>
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/cloud_terminologie_mapping_between_vendors/</guid>
       <description>Oracle Cloud Infrastructure, AWS (Amazon Web Services), Microsoft Azure 및 Google Cloud Platform에서 유사한 클라우드 서비스를 제공합니다. 다음 표는 4 개의 클라우드 공급 업체에서 서비스를 매핑합니다.
    분류 Oracle Cloud Infrastructure AWS Azure Google     Regions Availability Domain (AD) Availability Zone (AZ) Availability Zone (AZ) Zones   Networking &amp;amp; Content Delivery Oracle Cloud Infrastructure Virtual Cloud Network (VCN) Amazon Virtual Private Cloud (VPC) Virtual Network Virtual Private Cloud   Networking &amp;amp; Content Delivery Oracle Cloud Infrastructure Load Balancing Elastic Load Balancing Load Balancer; Application Gateway Cloud Load Balancing   Networking &amp;amp; Content Delivery Oracle Cloud Infrastructure FastConnect AWS Direct Connect Azure ExpressRoute Cloud Interconnect   Compute Oracle Cloud Infrastructure Compute - Virtual Machines Amazon EC2 Azure Virtual Machines Compute Engine   Compute Oracle Cloud Infrastructure Compute - Bare Metal Amazon EC2 - I3.</description>
     </item>
