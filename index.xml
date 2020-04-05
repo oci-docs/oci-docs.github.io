@@ -23,6 +23,17 @@
     </item>
     
     <item>
+      <title>Custom Image 생성</title>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/010.custom_image/</link>
+      <pubDate>Sun, 05 Apr 2020 12:11:05 +0900</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/010.custom_image/</guid>
+      <description>프로비저닝된 Compute 인스턴스 상태를 템플릿으로 저장하고, 동일한 상태의 Compute 인스턴스를 여러 개 만들기 우 Boot Volume으로 부터 재사용 가능한 사용자 정의 Image를 만들 수 있습니다. 이렇게 만든 사용자 정이 Image를 OCI Custom Image라고 합니다.
+HOL: Custom Image 이번 문서는 기존 Compute Instnace로 부터 OCI Custom Image를 만드는 과정을 소개합니다. 이번 Hands-on Lab은 다음과 같은 순서로 진행합니다.
+ HOL: Custom Image  Custom Image 개요 선행 Hands-on Lab Hands-on Lab 실습 환경 Hands-on Lab 시나리오 Custom Image 만들기 Hands-on Lab 요약</description>
+    </item>
+    
+    <item>
       <title>VCN 생성(OCI Console:간편모드)</title>
       <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/</link>
       <pubDate>Wed, 01 Apr 2020 12:11:05 +0900</pubDate>
