@@ -8,15 +8,15 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="OCI 기초 용어 정리" />
-<meta property="og:description" content="OCI(Oracle Cloud Infrastructure)에서 주로 사용되는 용어를 정의합니다." />
+<meta property="og:title" content="cloud-init를 이용한 자동화 구성" />
+<meta property="og:description" content="OCI Compute 인스턴스를 생성할 때, Cloud Init로 설정 및 구성 자동화를 적용합니다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/010.oci_intro/basic_concept/terminologies/" />
+<meta property="og:url" content="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" />
 
 
 
-<meta property="article:published_time" content="2020-03-26T09:11:05&#43;09:00"/>
-<meta property="article:modified_time" content="2020-03-26T09:11:05&#43;09:00"/>
+<meta property="article:published_time" content="2020-04-02T12:11:05&#43;09:00"/>
+<meta property="article:modified_time" content="2020-04-02T12:11:05&#43;09:00"/>
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-<title>OCI 기초 용어 정리 :: 오라클 클라우드 사용자 가이드</title>
+<title>cloud-init를 이용한 자동화 구성 :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="OCI(Oracle Cloud Infrastructure)에서 주로 사용되는 용어를 정의합니다.">
+<meta name="description" content="OCI Compute 인스턴스를 생성할 때, Cloud Init로 설정 및 구성 자동화를 적용합니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -78,7 +78,7 @@
 
     
   </head>
-  <body data-url="/010.oci_intro/basic_concept/terminologies/">
+  <body data-url="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/">
     
       <header>
   <div class="logo">
@@ -125,7 +125,7 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/010.oci_intro/basic_concept/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/basic_concept/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/basic_concept/">OCI 입문: 기본 개념</a>
@@ -139,7 +139,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/basic_concept/terminologies/" class="dd-item active">
+      <li data-nav-id="/010.oci_intro/basic_concept/terminologies/" class="dd-item">
         <div>
           <a href="/010.oci_intro/basic_concept/terminologies/">
             OCI 기초 용어 정리
@@ -197,7 +197,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/hands-on-101/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/">OCI 입문: Hands-on 101 클래스</a>
@@ -278,7 +278,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/">OCI Infra 기초</a>
@@ -299,7 +299,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" class="dd-item">
+      <li data-nav-id="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" class="dd-item active">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/">
             cloud-init를 이용한 자동화 구성
@@ -375,7 +375,7 @@
   - 
    OCI 입문: 기본 개념</option> 
       <option value="/010.oci_intro/basic_concept/oci_introduction/" >-- Oracle Cloud Infrasturcture</option>
-      <option value="/010.oci_intro/basic_concept/terminologies/"  selected>-- OCI 기초 용어 정리</option>
+      <option value="/010.oci_intro/basic_concept/terminologies/" >-- OCI 기초 용어 정리</option>
       <option value="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" >-- OCI Classic과 OCI Gen2</option>
       <option value="/010.oci_intro/basic_concept/oci_resion_info/" >-- OCI 리전 정보</option>
       <option value="/010.oci_intro/basic_concept/oci_services_in_regions/" >-- OCI 리전별 서비스 현황 </option>
@@ -408,7 +408,7 @@
    OCI Infra 기초</option> 
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" >--- cloud-init를 이용한 자동화 구성</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/"  selected>--- cloud-init를 이용한 자동화 구성</option>
   
   
   
@@ -439,8 +439,7 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>OCI 기초 용어 정리</h1>
-    <p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/994.jpg" alt="OCI 기초 용어 정리"></p>
+    <h1>cloud-init를 이용한 자동화 구성</h1>
 
 
      
@@ -451,197 +450,318 @@
     
     
 
-<p>Oracle Cloud를 새로 접하시는 분들을 위하여 Oracle Cloud에서 자주 사용하는 Oracle Cloud 핵심 용어를 정리합니다.</p>
+<p>OCI Compute 서비스를 이용하여 오라클 클라우드에 Compute(VM or 베이메탈) 서버를 만들 때, cloud-init를 사용하여
+ Compute 인스턴스에 설치 및 여러 작업을 자동화할 수 있습니다. Compute 인스턴스에 <font color='red'><strong>cloud-init</strong></font>를 사용하는 방법을 소개합니다.</p>
 
-<hr />
+<h1 id="hol-cloud-init">HOL: cloud-init</h1>
 
-<p>이번 문서는 다음과 같은 목차로 구성됩니다.</p>
+<p>이번 <strong>Hands-on Lab</strong>에서는 OCI Console을 이용하여 OCI Linux VM 인스턴스를 생성하는 과정에서 cloud-init를 사용하여 Compute 인스턴스 설정을 자동화하는 방법을 소개합니다. cloud-init를 사용하면 Compute 인스턴스를 만든 다음에, ssh로 인스턴스에 접근하여 처리하던 작업을 줄일 수 있습니다. 이번 <strong>Hands-on Lab</strong>은 다음과 같은 작업으로 진행됩니다.</p>
 
-
-<div class="panel panel-primary"><div class="panel-body"><nav id="TableOfContents">
 <ul>
-<li><a href="#oci-주요-용어">OCI 주요 용어</a>
+<li>OCI Console을 이용하여 Oracle Linux VM 생성
+
 <ul>
-<li><a href="#oracle-cloud-infrastructure">Oracle Cloud Infrastructure</a></li>
-<li><a href="#리전-region-과-ad-availability-domains">리전(Region)과 AD(Availability Domains)</a></li>
-<li><a href="#oci-콘솔-console">OCI 콘솔(Console)</a></li>
-<li><a href="#tenancy-테넌시">Tenancy(테넌시)</a></li>
-<li><a href="#compartment-컴파트먼트">Compartment(컴파트먼트)</a></li>
-<li><a href="#virtual-cloud-network-vcn">Virtual Cloud Network(VCN)</a></li>
-<li><a href="#bare-metal-host">Bare Metal Host</a></li>
-<li><a href="#instance-인스턴스">Instance(인스턴스)</a></li>
-<li><a href="#image-이미지">Image(이미지)</a></li>
-<li><a href="#shape">Shape</a></li>
-<li><a href="#key-pair">Key Pair</a></li>
-<li><a href="#블록-볼륨-block-volume">블록 볼륨(BLOCK VOLUME)</a></li>
-<li><a href="#object-storage">Object Storage</a></li>
-<li><a href="#버킷-bucket">버킷(BUCKET)</a></li>
-<li><a href="#ocid-oracle-cloud-identifier">OCID(ORACLE CLOUD IDENTIFIER)</a></li>
+<li>cloud-init 설정</li>
+<li>Nginx 설치</li>
+<li>OS 방화벽 오픈: 80 port</li>
 </ul></li>
-<li><a href="#참고-문서">참고 문서</a></li>
+<li>VCN Subnet에 Security List 설정 확인 및 설정</li>
+<li>브라우저 접근</li>
 </ul>
-</nav>
+
+<p>이번 <strong>Hands-on Lab</strong>을 통해서 다음과 같은 VM 인스턴스를 만들 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/vm/300.jpg?classes=border,shadow" alt="" /></p>
+
+<p>이번 <strong>Hands-on Lab</strong>은 다음과 같은 목차로 구성됩니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
+<ul>
+<li><a href="#hol-cloud-init">HOL: cloud-init</a>
+<ul>
+<li><a href="#cloud-init-개요">cloud-init 개요</a></li>
+<li><a href="#선행-hand-on-lab">선행 Hand-on Lab</a></li>
+<li><a href="#hands-on-lab-실습-환경">Hands-on Lab 실습 환경</a></li>
+<li><a href="#사전-준비">사전 준비</a>
+<ul>
+<li><a href="#사용-가능한-자원-확인">사용 가능한 자원 확인</a></li>
+</ul></li>
+<li><a href="#oci-compute-인스턴스-생성">OCI Compute 인스턴스 생성</a></li>
+<li><a href="#공개-ip-브라우저-접근">공개 IP 브라우저 접근</a></li>
+</ul></li>
+<li><a href="#참고문서">참고문서</a></li>
+</ul>
+</nav></p>
 </div></div>
 
 
+<h2 id="cloud-init-개요">cloud-init 개요</h2>
+
+<p><font color='red'><strong>cloud-init</strong></font>는 가상 머신 초기화 설정을 자동화하는 도구입니다. <strong>cloud-init</strong>를 사용하여 호스트 이름, 네트워크 인터페이스, 그리고 인증키를 설정, 소프트웨어 설치 및 패치와 같은 작업이 가상 머신 생성 과정에 자동화 설정을 합니다.</p>
+
+<p>OCI Compute가 제공하는 Image에는 cloud-init가 설치되어 있습니다. cloud-init를 이용하여 인스턴스 프로비저닝 작업을 커스터마이징 할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/000.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="선행-hand-on-lab">선행 Hand-on Lab</h2>
+
+<p>다음과 같은 Hand-on Lab이 먼저 완료됐어야 합니다.</p>
+
+<ul>
+<li><a href="/010.oci_intro/hands-on-101/000.oci_free_trial/" target="_blank">OCI Free Tier 등록 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+<li><a href="/010.oci_intro/hands-on-101/020.setting_basic_env/" target="_blank">OCI 사용자&amp;보안 설정 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+<li><a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" target="_blank">VCN 생성(OCI Console:간편모드) <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+<li><a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/#security-list-%EC%84%A4%EC%A0%95" target="_blank">Security List 설정: 80 포트 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</li>
+</ul>
+
+<h2 id="hands-on-lab-실습-환경">Hands-on Lab 실습 환경</h2>
+
+<p>이 <strong>Hands-on Lab</strong>은 OCI 일반 사용자인 demo.admin 사용자로 OCI IAM 로그인하여 진행합니다. 이번 <strong>Hands-on Lab</strong>에서 사용할 OCI 사용자와 컴파트먼트는 다음과 같습니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>OCI User</th>
+<th>Password</th>
+<th>작업 Compartment</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>demo.admin</td>
+<td>Welcome123456!</td>
+<td>root/sandbox/demo-prod</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="사전-준비">사전 준비</h2>
+
+<p>OCI Compute 인스턴스를 만들기 위해서는 다음과 같은 준비 작업이 필요합니다.</p>
+
+<ul>
+<li>사용 가능한 자원 확인</li>
+</ul>
+
+<h3 id="사용-가능한-자원-확인">사용 가능한 자원 확인</h3>
+
+<p>OCI Compute 인스턴스를 어떤 자원(OCPU)로 만들지 결정해야 합니다. 가용한 자원을 확인하는 기능은 <strong>Limits, Quotas and Usage</strong> 페이지에서 확인할 수 있습니다. 추가 권한 설정을 하지 않은 경우에, OCI 관리자 ID만이 이 페이지에 접근할 수 있습니다. 가용한 자원을 확인하는 작업은 Oracle Cloud 계정의 관리자 ID(taewanme@gmail.com)으로 로그인하여 진행합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Governance</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Limits, Quotas and Usage</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/compute/030.jpg?classes=border,shadow" alt="" /></p>
+
+<p><strong>Limits, Quotas and Usage</strong> 페이지에서 <strong>Scope</strong> 항목에서 AD를 지정하면, 현재 사용 가능한 자원 규모가 출력됩니다. 아래 이미지는 Oracle Cloud Trial 계정에 기본 할당된 자원 규모입니다. 아래 결과를 확인하고 이번 <strong>Hands-on Lab</strong>에서는 <font color="red"><strong>VM.Standard.E2.2</strong></font>를 사용하기로 결정합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/010.jpg?classes=border,shadow" alt="" /></p>
+
+<div class="notices note" ><p><p>이제 <font color="red">OCI 관리자 ID를 로그아웃</font> 하고, OCI 일반 사용자인 <font color="red"><strong>demo.admin</strong></font> 사용자로 OCI IAM 로그인하여 다음 과정을 진행합니다.</p>
+</p></div>
+
+
+<h2 id="oci-compute-인스턴스-생성">OCI Compute 인스턴스 생성</h2>
+
+<p>OCI Console에 <strong>demo.admin</strong> ID로 OCI IAM 옵션으로 로그인합니다. 그리고 Compute 인스턴스를 생성하기 위해서 다음과 같은 메뉴 패스로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Compute</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Instances</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/compute/010.jpg?classes=border,shadow" alt="" /></p>
+
 <hr />
 
-<h1 id="oci-주요-용어">OCI 주요 용어</h1>
+<p>Compute 인스턴스 관리 페이지에서 Compartment를 <strong>root/sandbox</strong>로 설정하고 <font color='red'><strong>Create Instance</strong></font> 버튼을 클릭합니다.</p>
 
-<h2 id="oracle-cloud-infrastructure">Oracle Cloud Infrastructure</h2>
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/020.jpg?classes=border,shadow" alt="" /></p>
 
-<p><strong>Orale Cloud Infrasturcture</strong>는 2018년부터 사용하기 시작한 Oracle Cloud의 새로운 브랜드명입니다. 초기에 오라클은 Nimbula를 인수하여 클라우드 서비스를 개발하였고, 2014년 Oracle은 OPC(Oracle Public Cloud)라는 브랜드로 클라우드 서비스를 시작했습니다. 이 시점부터 오라클은 새로운 2세대 클라우드 아키텍처를 개발하기 시작했습니다. 오라클의 2세대 클라우드 아키텍처로 개발된 오라클 클라우드 서비스가 바로 Oracle Cloud Infrastructure(이하 OCI)입니다. 2018년 Oracle Cloud 인프라 구현 기술은 OCI로 전면 교체되었고, 동시에 오라클 클라우드 브랜드명도 OPC(Oracle Public Cloud)에서 OCI(Oracle Cloud Infrastructure)로 변경되었습니다.</p>
+<p><font color='red'><strong>Create Instance</strong></font> 버튼을 클릭하면 Compute 인스턴스 생성 폼이 출력됩니다. 다음과 같은 작업을 진행합니다.</p>
 
-<h2 id="리전-region-과-ad-availability-domains">리전(Region)과 AD(Availability Domains)</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>설정값</th>
+<th>설명</th>
+</tr>
+</thead>
 
-<p><strong>Oracle Cloud Infrastructure(OCI)</strong>는 리전(Region)과 AD(Availability Domains)에서 운영됩니다. 리전은 데이터 센터가 운영되는 지리적인 영역을 나타냅니다. 그리고 AD는 리전을 구성하고 실제 OCI 서비스가 운영되는 데이터 센터입니다. 각 OCI 리전은 1개에서 최대 3개 AD로 구성됩니다. 리전은 오라클 클라우드가 서비스되는 물리적 데이터 센터인 AD를 묶는 논리적 단위입니다. 따라서 서비스 지역의 물리적 AD를 추상화하는 서비스 거점의 의미가 있습니다. 리전은 완전히 독립된 OCI 최상위 단위입니다. 각 리전은 네트워크로 연결될 뿐 모든 서비스와 자원은 완전히 격리됩니다.</p>
+<tbody>
+<tr>
+<td>Name</td>
+<td>demo_linux_vm_cloud_init</td>
+<td>인스턴스 이름</td>
+</tr>
 
-<p>2020년 1월 12일 현재 Commercial Region을 12개를 운영하고 있습니다. 2020년 말까지 Commercial Region과 Government Region을 합쳐 총 36개까지 확대할 예정에 있습니다. 다음은 2020년 말 기준 OCI 리전 지도입니다.</p>
+<tr>
+<td>Image or operating system</td>
+<td>Oracle Linux 7.7</td>
+<td>- Change Image 버튼을 클릭하고 선택</br>-오라클 리눅스 7.X는 CentOs7.x/RedHat7.x와 완전한 호환성 제공</td>
+</tr>
+</tbody>
+</table>
 
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/030.jpg?classes=border,shadow" alt="" /></p>
+<p>두 항목을 입력하고, Compute 인스턴스 생성 폼에서 <strong>Show Shape, Network and Storage Options</strong> 링크를 클릭합니다.</p>
 
-<p>리전을 구성하는 각 AD는 어떤 자원도 공유하지 않는 물리적으로 완전히 독립된 데이터 센터입니다. 리전을 구성하는 AD은 파워와 네트워크 등 어떤 물리적 자원도 공유하지 않습니다. 따라서 특정 AD 장애가 다른 AD로 파급되지 않습니다. AD는 Region 고가용성을 위한 설계입니다.</p>
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/030.jpg?classes=border,shadow" alt="" /></p>
 
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/040.jpg?classes=border,shadow" alt="" /></p>
+<hr />
 
-<h2 id="oci-콘솔-console">OCI 콘솔(Console)</h2>
+<p>AD를 다음과 같이 선택합니다.</p>
 
-<p>OCI 자원을 관리하고 접근하기 위해서 제공하는 웹 기반 UI입니다.</p>
+<table>
+<thead>
+<tr>
+<th>설정 항목</th>
+<th>설정값</th>
+<th>비고</th>
+</tr>
+</thead>
 
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/500.jpg?classes=border,shadow" alt="" /></p>
+<tbody>
+<tr>
+<td>Availability Domain</td>
+<td>AD 1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
-<h2 id="tenancy-테넌시">Tenancy(테넌시)</h2>
+<p>그리고 <font color='red'><strong>Change Shape</strong></font> 버튼을 클릭합니다.</p>
 
-<p>OCI에 계정(Account)을 생성하면, 해당 계정(Account)을 위한 <strong>Tenancy</strong>가 생성됩니다. OCI에서 테넌시는 완전히 독립되고 격리된 사용자 기준의 최상위 단위입니다. OCI에 생성된 계정이 바로 Tenancy라고 말할 수 있습니다.</p>
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/040.jpg?classes=border,shadow" alt="" /></p>
 
-<h2 id="compartment-컴파트먼트">Compartment(컴파트먼트)</h2>
+<p>Shape을 선택하는 화면이 출력됩니다. Shape 선택에 다음과 같이 설정하고 <font color='red'><strong>Select Shape</strong></font> 버튼을 클릭합니다.</p>
 
-<p>컴파트먼트는 클라우드 자원을 구성하고 접근 제어하기 위한 논리적인 단위입니다. 컴파트먼트는 자원을 쉽게 관리할 수 있는 폴더 구조로 이해할 수 있습니다. OCI에서 만들어지는 대부분 자원은 특정 컴파트먼트에 할당됩니다. OCI 자원에는 VM 인스턴스, VCN(Virtual Cloud Networks), 블록 볼륨 등이 있습니다. 모든 OCI 자원은 특정 Compartment에 할당되고, Compartment 단위로 <strong>OCI User Group</strong>(사용자 그룹) 단위로 사용자 접근 정책이 설정 및 관리됩니다. 컴파트먼트는 물리적으로 실체가 있는 오브젝트가 아닌 논리적인 그룹입니다.</p>
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/060.jpg?classes=border,shadow" alt="" /></p>
 
-<p>OCI 계정이 생성될 때 Tenancy가 생성됩니다. 이 Tenancy가 루트 컴파트먼트(Root Compartment)입니다. 루트 컴파트먼트(Root Compartment)는 최상의 컴파트먼트입니다. 파일 시스템의 루트 디렉터리(/)와 비슷합니다. 디렉터리 구조와 같이 Root Compartment 아래에 새로운 Compartment를 추가할 수 있습니다. 모든 OCI 자원들은 특정 컴파트먼트에 속하게 되며 컴파트먼트 단위로 사용자 그룹의 접근 정책을 관리할 수 있습니다.</p>
+<hr />
 
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/510.jpg?classes=border,shadow" alt="" /></p>
+<p>Shape을 선택하면 <strong>VM.Standard.E2.2 (Virutal Machine)</strong>이 출력됩니다.</p>
 
-<h2 id="virtual-cloud-network-vcn">Virtual Cloud Network(VCN)</h2>
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/070.jpg?classes=border,shadow" alt="" /></p>
 
-<p>Virtual Cloud Network (VCN)은 서브넷, 라우트 테이블과 게이트웨이로 구성되는 전통적인 네트워크의 가상화 버전입니다. VCN은 리전 범위의 자원입니다. VCN은 특정 리전에 종속됩니다. VCN을 구성하는 서브넷(Subnet)을 만들 때, 리전 범위와 AD 범위를 선택할 수 있습니다. 리전 범위로 지정하면 리전을 구성하는 모든 AD에 걸쳐 서브넷이 구성됩니다. AD 범위를 지정하면 특정 AD에 위치합니다.</p>
+<hr />
 
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/530.jpg?classes=border,shadow" alt="" /></p>
+<p>다음과 같이 <strong>Networking</strong> 항목을 설정합니다.</p>
 
-<p>VCN는 다음과 같은 컴포넌트로 구성됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>설정 항목</th>
+<th>설정값</th>
+<th>설명</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Virtual Cloud Network Compartment</td>
+<td>hol-prod</td>
+<td>선택</td>
+</tr>
+
+<tr>
+<td>Virtual Cloud Network</td>
+<td>demo-vcn</td>
+<td>선택</td>
+</tr>
+
+<tr>
+<td>Subnet Compartment</td>
+<td>hol-prod</td>
+<td>선택</td>
+</tr>
+
+<tr>
+<td>Subnet</td>
+<td>Public Subnet-demo-vcn(Regional)</td>
+<td>선택</td>
+</tr>
+
+<tr>
+<td>Assign a public address</td>
+<td>체크</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/080.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>Boot Volume</strong>과 <strong>Add SSh Keys</strong> 항목은 별도 설정 없이 넘어갑니다. 이번 Hands-on Lab에서는 VM에 ssh 접근을 하지 않은 것 입니다. 따라서 ssh 공개 키를 등록할 필요가 없습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/090.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><font color='red'><strong>Show Advanced Options</strong></font>을 클릭하고 다음 cloud-init 스크립트를 등록합니다. 그리고 <font color='red'><strong>Create</strong></font> 버튼을 클릭합니다.</p>
+
+<pre><code>#!/bin/sh
+sudo yum install nginx -y
+sudo systemctl enable nginx
+sudo systemctl start nginx
+sudo firewall-offline-cmd --zone=public --add-service=http
+sudo systemctl enable firewalld 
+sudo systemctl restart firewalld
+</code></pre>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/100.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>Compute 인스턴스 생성 폼 입력을 마치고 <font color='red'><strong>Create</strong></font> 버튼을 클릭하면, <strong>demo-linux-vm-cloud-init</strong> 인스턴스의 상세 페이지로 이동합니다. 인스턴스 생성 중에 아이콘은 주황색이고 인스턴스 프로비저닝이 완료되면 아이콘은 초록색으로 변경됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/110.jpg?classes=border,shadow" alt="" /></p>
+
+<p><strong>demo-linux-vm-cloud-init</strong> 인스턴스의 상세 페이지에서 공개 IP가 <strong>140.238.18.120</strong>으로 설정됨을 확인할 수 있습니다.</p>
+
+<h2 id="공개-ip-브라우저-접근">공개 IP 브라우저 접근</h2>
+
+<p><strong>demo-linux-vm</strong> Compute 인스턴스의 공개 IP인 <strong>140.238.18.120</strong>에 브라우저로 접근합니다. 브라우저로 접근하면 다음과 같은 화면이 출력됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/03/compute/210.jpg?classes=border,shadow" alt="" /></p>
+
+<p><strong>demo-linux-vm-cloud-init</strong> 인스턴스가 만들어질 때, cloud-init에 등록된 스크립트가 실행되어 다음과 같은 작업이 진행됨을 확인할 수 있습니다.</p>
 
 <ul>
-<li>Subnet
-
-<ul>
-<li>public subnet: 서브넷에 포함되는 VM 인스턴스에 Public IP 설정 가능</li>
-<li>private subnet: 서브넷에 포함되는 VM 인스턴스가 Public IP를 갖지 못함</li>
-</ul></li>
-<li>Internet Gateway: 인터넷 연결 관문</li>
-<li>Route Table: VCN을 위한 가상의 라우트 테이블</li>
-<li>Security Lists: VCN의 가상 방화벽</li>
+<li>nginx 설치</li>
+<li>nginx 서비스 등록</li>
+<li>방화벽 룰(80 포트) 등록</li>
+<li>방화벽 룰 적용</li>
 </ul>
 
-<h2 id="bare-metal-host">Bare Metal Host</h2>
-
-<p>OCI가 제공하는 사용자가 직접 제어 가능한 물리적인 서버가 <strong>Bare Metal Host</strong>입니다. <strong>Bare Metal</strong>로 물리적인 서버를 단일 사용자에게 전용으로 사용할 수 있는 환경을 제공합니다. 이렇게 동작하는 서버를 <strong>Bare metal compute instances</strong>라고 합니다. OCI 사용자가 직접 물리적 CPU, 메모리, NIC(Network Interface Card)를 관리 할 수 있습니다. 이렇게 관리하는 자원은 다른 테넌트와 어떠한 자원도 공유하지 않습니다. 물리적인 서버의 자원을 직접사용하고, 전용으로 사용하기 때문에 서버자원을 성능을 100% 활용하여 높은 성능을 제공합니다.</p>
-
-<h2 id="instance-인스턴스">Instance(인스턴스)</h2>
-
-<p>OCI에서 동작하는 VM을 인스턴스라고 합니다. Virtual Machine은 물리적인 서버 위의 가상화를 통해 제공하는 컴퓨팅 환경입니다. Hypervisor에 의해 가상화된 레이어를 거치기 때문에 Bare Metal 보다는 상대적으로 낮은 성능을 제공합니다.</p>
-
-<h2 id="image-이미지">Image(이미지)</h2>
-
-<p>Image는 인스턴스를 위해서 운영체제와 여러 소프트웨어를 정의하는 가상 하드웨어 드라이브 템플릿입니다. OCI에서 인스턴스를 구동시킬 때, 이미지를 선택합니다. OCI는 다양한 이미지를 제공하며, OCI 사용자는 추가로 사용자 정의 이미지를 등록하고 사용할 수 있습니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/540.jpg?classes=border,shadow" alt="" /></p>
-
-<h2 id="shape">Shape</h2>
-
-<p>Shape은 인스턴스에 할당하는 컴퓨팅 자원(CPU, Memory 등) 템플릿입니다. 다음은 OCI가 제공하는 여러 Shape 중에서 <strong>Standard Shape</strong> 목록입니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/550.jpg?classes=border,shadow" alt="" /></p>
-
-<h2 id="key-pair">Key Pair</h2>
-
-<p>Key Pair(키 페어)는 OCI가 사용하는 인증 방식입니다. Key Pair(키 페어)는 개인 키(private key) 파일과 공개 키(public key) 파일로 구성됩니다. 공개 키는 OCI에 업로드됩니다. OCI 사용자는 개인 키를 패스워드처럼 비공개로 관리합니다.</p>
-
-<p>여러 스펙으로 Key Pair(키 페어)를 만들 수 있습니다. OCI는 목적에 따라 두 가지 유형의 Key Pair(키 페어)를 사용합니다.</p>
+<h1 id="참고문서">참고문서</h1>
 
 <ul>
-<li>인스턴스 SSH Key Pair(키 페어)
-
-<ul>
-<li>인스턴스 SSH Key Pair(키 페어)는 VM 인스턴스에 SSH 접속에 사용됨.</li>
-<li>인스턴스를 프로비저닝할 때, 공개 키(public key)를 등록.</li>
-<li>등록된 공개 키(public key)는 인스턴스의 기본 OS 계정의 authorized key 파일에 저장
-
-<ul>
-<li>인스턴스의 기본 OS 계정: 오라클 리눅스(oci), 우분투(ubuntu)</li>
-</ul></li>
-<li>ssh 접속 시, 사용자의 개인 키(Private Key)를 authorized key 파일에 저장된 공개 키로 검증.</li>
-</ul></li>
-<li>API signing key pair(API 서명 키 페어)
-
-<ul>
-<li>API signing key pair는 PEM 포멧을 사용.</li>
-<li>API 요청을 제출할 때 사용자 인증에 사용.</li>
-<li>REST API로 OCI를 접속하는 사용자가 사용.</li>
-</ul></li>
-</ul>
-
-<p>다음 그림은 OCI 사용자에 <strong>API 서명 키 페어</strong>를 등록하는 화면입니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/560.jpg?classes=border,shadow" alt="" /></p>
-
-<h2 id="블록-볼륨-block-volume">블록 볼륨(BLOCK VOLUME)</h2>
-
-<p>블록 볼륨은 OCI 인스턴스에 영구적인 저장 공간을 제공하는 가상 디스크입니다. 기존에 물리적 하드 디스크 드라이브를 사용했던 것 처럼, 클라우드 인스턴스에서는 블록 볼륨을 사용합니다. OCI 사용자는 데이터 유시 없이 인스턴스에 볼륨을 분리해서 다른 인스턴스에 붙일수 있습니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/570.png?classes=border,shadow" alt="" /></p>
-
-<h2 id="object-storage">Object Storage</h2>
-
-<p>오브젝트 스토리지(Object Storage)는 객체로 데이터를 저장하고 관리하는 스토리지 아키텍처입니다. 모든 데이터 타입을 저장할 수 있습니다. 최대 객체 사이즈는 10TB입니다. Object Storage에 저장되는 최대 파일 사이즈는 50GB입니다. 50GB보다 큰 객체는 여러 파일로 분할되어 저장됩니다. 오브젝트 스토리지에는 변경 빈도가 낮은 데이터가 저장됩니다. 다음과 같은 용도로 사용됩니다.</p>
-
-<ul>
-<li>데이터 백업</li>
-<li>파일 공유</li>
-<li>로그나 센서 데이터와 같은 비정형 데이터 저장</li>
-</ul>
-
-<h2 id="버킷-bucket">버킷(BUCKET)</h2>
-
-<p>버킷은 오브젝트 스토리지(Object Storage)에 저장되는 데이터와 파일을 묶는 논리적인 그룹입니다. 버킷에 저장되는 객체 수는 제한이 없습니다.</p>
-
-<h2 id="ocid-oracle-cloud-identifier">OCID(ORACLE CLOUD IDENTIFIER)</h2>
-
-<p>모든 OCI 자원은 유일한 ID를 갖습니다. 이 ID가 Oracle Cloud Identifier(OCID)입니다. 이 ID에는 자원 정보가 포함됩니다.</p>
-
-<h1 id="참고-문서">참고 문서</h1>
-
-<ul>
-<li><a href="https://docs.cloud.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm" target="_blank">[OCI Official Documentation 사이트] Key Concepts and Terminology <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<li><a href="https://access.redhat.com/documentation/ko-kr/red_hat_virtualization/4.1/html/virtual_machine_management_guide/sect-using_cloud-init_to_automate_the_configuration_of_virtual_machines" target="_blank">CLOUD-INIT을 사용하여 가상 머신 설정 자동화 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
 </li>
-<li><a href="https://k21academy.com/oracle-compute-cloud-services-iaas/oracle-cloud-infrastructure-oci-region-ad-tenancy-compartment-vcn-iam-storage-service/" target="_blank">[k21academy] Oracle Cloud Infrastructure (OCI) : Region, AD, FD, Tenancy, Compartment, VCN, IAM, Storage Service <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
-
-</li>
-<li><a href="https://www.oracle.com/a/ocom/docs/cloud/virtual-cloud-network-100.pdf" target="_blank">[OCI 100 Training] Virtual Cloud Network <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
-
-
-<a href="https://www.oracle.com/a/ocom/docs/cloud/virtual-cloud-network-100.pdf">https://www.oracle.com/a/ocom/docs/cloud/virtual-cloud-network-100.pdf</a></li>
 </ul>
 
 
     
     
       <div class="alert alert-info" role="alter">
-  <li><strong>문서 생성:</strong> 2020-03-26 09:11 / <string>최종 문서 수정:</strong> 2020-03-26 09:11 </li>
+  <li><strong>문서 생성:</strong> 2020-04-02 12:11 / <string>최종 문서 수정:</strong> 2020-04-02 12:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/010.oci_intro/basic_concept/oci_introduction/" title="Oracle Cloud Infrasturcture"> <i class="fa fa-chevron-left"></i><label>Oracle Cloud Infrasturcture</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/" title="OCI Classic과 OCI Gen2" style="margin-right: 0px;"><label>OCI Classic과 OCI Gen2</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" title="Compute Service(VM) 생성"> <i class="fa fa-chevron-left"></i><label>Compute Service(VM) 생성</label></a>
+    <a class="nav nav-next" href="/300.data_and_ai/" title="Data and AI " style="margin-right: 0px;"><label>Data and AI </label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
@@ -660,7 +780,7 @@
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/basic_concept/terminologies/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kim/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/"></div>
 
   </div>
 
@@ -676,7 +796,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 26/03/2020
+        <i class='fa fa-calendar'></i> Last update on 02/04/2020
     </div>
     
   </div>
