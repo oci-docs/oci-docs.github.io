@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-06T20:55:41 KST">
+<meta name="revised" content="2020-04-06T21:24:48 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -558,7 +558,7 @@
 
 <h2 id="cloud-shell-과금정책과-사용-권한">Cloud Shell 과금정책과 사용 권한</h2>
 
-<p>OCI Cloud Shell은 Free 서비스입니다. 서비스 비용이 발생하지 않습니다. OCI Cloud Shell은 현재 유료 Tenancy와 Free Trial(Always Free) 모두 이용 가능합니다. 추가로 OCI 사용자가 Cloud Shell을 사용하기 위해서는 OCI 사용자 그룹에 다음 Policy Statement가 설정돼야 합니다. OCI Cloud Shell 권한 부여 Policy Statement는 다음과 같습니다.</p>
+<p><font color='red'>OCI Cloud Shell</font>은 <font color='red'>Free 서비스</font>입니다. 서비스 비용이 발생하지 않습니다. OCI Cloud Shell은 현재 유료 Tenancy와 Free Trial(Always Free) 모두 이용 가능합니다. 추가로 OCI 사용자가 Cloud Shell을 사용하기 위해서는 OCI 사용자 그룹에 다음 Policy Statement가 설정돼야 합니다. OCI Cloud Shell 권한 부여 Policy Statement는 다음과 같습니다.</p>
 
 <pre><code>allow group &lt;GROUP-NAME&gt; to use cloud-shell in tenancy
 </code></pre>
@@ -588,13 +588,7 @@
 <p>2020년 3월 6일 현재 OCI Cloud Shell에는 다음과 같은 제약이 있습니다.</p>
 
 <ul>
-<li>현재 OCI Cloud는 GA 상태지만 유료 계정에서만 사용 가능한 기능
-
-<ul>
-<li>2020년 3월 현재 Always Free 계정에서는 사용할 수 없음</li>
-<li>향후 모든 계정에서 이용 가능하도록 확대할 예정.</li>
-</ul></li>
-<li>세션은 최대 24시간으로 제한</li>
+<li>세션 최대 24시간으로 제한</li>
 <li>OCI Cloud Shell을 20분간 사용하지 않으면 세션 종료</li>
 <li>OCI Cloud Shell에 할당된 5GB 스토리지를 반년 동안 사용하지 않으면 메일 통지되고 60일 이내에 스토리지가 제거됨
 

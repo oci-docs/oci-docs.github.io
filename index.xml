@@ -38,7 +38,7 @@ Cloud Shell 과금정책과 사용 권한 OCI Cloud Shell은 Free 서비스입�
       <pubDate>Sun, 05 Apr 2020 12:11:05 +0900</pubDate>
       
       <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/010.custom_image/</guid>
-      <description>프로비저닝된 Compute 인스턴스 상태를 템플릿으로 저장하고, 동일한 상태의 Compute 인스턴스를 여러 개 만들기 우 Boot Volume으로 부터 재사용 가능한 사용자 정의 Image를 만들 수 있습니다. 이렇게 만든 사용자 정이 Image를 OCI Custom Image라고 합니다.
+      <description>OCI는 배포된 Compute 인스턴스의 Boot Volume을 복사하여 템플릿으로 만들고, 이 템플릿을 이용하여 똑같은 형태의 Compute 인스턴스를 만드는 기능을 제공합니다. 구동중인 Compute 인스턴스의 Boot Volume을 재사용 가능한 템플릿으로 만든것을 Custom Image라고 합니다.
 HOL: Custom Image 이번 문서는 기존 Compute Instnace로 부터 OCI Custom Image를 만드는 과정을 소개합니다. 이번 Hands-on Lab은 다음과 같은 순서로 진행합니다.
  HOL: Custom Image  Custom Image 개요 선행 Hands-on Lab Hands-on Lab 실습 환경 Hands-on Lab 시나리오 Custom Image 만들기 Hands-on Lab 요약</description>
     </item>
