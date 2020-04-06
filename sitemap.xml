@@ -18,7 +18,22 @@
   </url>
   
   <url>
+    <loc>http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_intro/</loc>
+    <lastmod>2020-04-06T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/</loc>
+    <lastmod>2020-04-06T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/010.custom_image/</loc>
+    <lastmod>2020-04-05T12:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/050.load_balancer/010.basic_load_balancer/</loc>
     <lastmod>2020-04-05T12:11:05+09:00</lastmod>
   </url>
   
@@ -58,7 +73,22 @@
   </url>
   
   <url>
-    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image/</loc>
+    <loc>http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_features/</loc>
+    <lastmod>2020-04-06T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/</loc>
+    <lastmod>2020-04-05T12:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/050.load_balancer/020.provisioning_from_custom_image-copy/</loc>
+    <lastmod>2020-04-05T12:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/050.load_balancer/030.custom_image_import_and_export/</loc>
     <lastmod>2020-04-05T12:11:05+09:00</lastmod>
   </url>
   
@@ -118,6 +148,11 @@
   </url>
   
   <url>
+    <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/050.load_balancer/</loc>
+    <lastmod>2020-04-06T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/</loc>
     <lastmod>2020-03-31T12:11:05+09:00</lastmod>
   </url>
@@ -165,6 +200,11 @@
   <url>
     <loc>http://cloud-docs.taewan.me/300.data_and_ai/</loc>
     <lastmod>2020-04-04T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/700.oci_tools/</loc>
+    <lastmod>2020-04-06T01:11:05+09:00</lastmod>
   </url>
   
   <url>
