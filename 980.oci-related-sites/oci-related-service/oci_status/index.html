@@ -8,14 +8,19 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="오라클 클라우드 사용자 가이드" />
-<meta property="og:description" content="&#39;oci-oracle.cloud&#39;는 OCI(Oracle Cloud Infrastructure) 신규 사용자를 위한 기술 문서 사이트입니다." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://cloud-docs.taewan.me/000.index/" />
+<meta property="og:title" content="OCI 상태 알림 서비스" />
+<meta property="og:description" content="&lsquo;Oracle Cloud Infrastructure&#39;s Status   &rsquo;는 Oracle Cloud의 각 리전에서 운영하는 세부 서비스의 현재 운영 상태와 과거 장애 이력 정보를 제공하는 사이트입니다.
+다음 그림과 같이 각 리전 세부 서비스의 현재 상태 정보를 4개 분류(Normal Performance, Degraded Performance, Partial Outage, Major Outage)로 제공합니다.
+&lsquo;Oracle Cloud Infrastructure&#39;s Status   &rsquo; 페이지를 이용하여 다음과 같은 정보를 확인할 수 있습니다.
+ OCI 전체 리전 목록 각 리전에서 운영 중인 OCI 세부 서비스 세부 서비스 현재 운영 상태  또한 이 페이지는 과거 OCI 장애 이력 정보를 제공하는 &lsquo;Incident History   &rsquo;페이지 링크를 제공합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_status/" />
 
 
 
-<meta property="og:updated_time" content="2020-03-01T01:11:05&#43;09:00"/>
+
+
+
 
 
 
@@ -31,7 +36,7 @@
 
 
 
-<title>오라클 클라우드 사용자 가이드 :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI 상태 알림 서비스 :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -43,7 +48,7 @@
 <script type="text/javascript">
       var baseurl = "http:\/\/cloud-docs.taewan.me\/";
 </script>
-<meta name="description" content="&#39;oci-oracle.cloud&#39;는 OCI(Oracle Cloud Infrastructure) 신규 사용자를 위한 기술 문서 사이트입니다.">
+<meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -70,7 +75,7 @@
 
     
   </head>
-  <body data-url="/000.index/">
+  <body data-url="/980.oci-related-sites/oci-related-service/oci_status/">
     
       <header>
   <div class="logo">
@@ -104,7 +109,7 @@
 <article>
   <aside>
     <ul class="menu">
-    <li data-nav-id="http://cloud-docs.taewan.me/000.index/" class="dd-item parent active
+    <li data-nav-id="http://cloud-docs.taewan.me/000.index/" class="dd-item
         ">
       <div>
       <a href="/000.index/">오라클 클라우드 사용자 가이드</a><i class="fa fa-circle-thin read-icon"></i>
@@ -404,7 +409,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="http://cloud-docs.taewan.me/980.oci-related-sites/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/980.oci-related-sites/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/980.oci-related-sites/">OCI 관련 사이트 모음</a>
@@ -418,7 +423,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-    <li data-nav-id="http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/980.oci-related-sites/oci-related-service/">OCI 관련 유용한 서비스</a>
@@ -432,7 +437,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_status/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_status/" class="dd-item active">
         <div>
           <a href="/980.oci-related-sites/oci-related-service/oci_status/">
             OCI 상태 알림 서비스
@@ -497,9 +502,8 @@
       <center>Navigation : 
         <select onchange="javascript:location.href = this.value;">
           
-    <option value="/000.index/"  selected>
-   오라클 클라우드 사용자 가이드</option> 
-  
+    <option value="/000.index/" >
+   오라클 클라우드 사용자 가이드</option>
     <option value="/010.oci_intro/" >
    OCI(Oracle Cloud)-기초 입문</option> 
     <option value="/010.oci_intro/basic_concept/" >
@@ -518,42 +522,6 @@
     <option value="/010.oci_intro/hands-on-101/" >
   - 
    OCI 입문: Hands-on 101 클래스</option> 
-      <option value="/010.oci_intro/hands-on-101/000.oci_free_trial/" >-- OCI Free Tier 등록</option>
-    <option value="/010.oci_intro/hands-on-101/010.console/" >
-  -- 
-   OCI Console</option> 
-      <option value="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" >--- OCI Console 로그인</option>
-      <option value="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" >--- OCI Console 사용법</option>
-  
-    <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/" >
-  -- 
-   OCI 사용자&amp;보안 설정</option> 
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" >--- OCI Admin 로그인 생성</option>
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" >--- OCI User 생성</option>
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/" >--- OCI Group 생성</option>
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" >--- OCI Compartment 만들기</option>
-      <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" >--- OCI Policy: 권한 설정</option>
-  
-    <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/" >
-  -- 
-   OCI Infra 기초</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" >--- VCN 생성(OCI Console:간편모드)</option>
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/" >--- Compute Service(VM) 생성</option>
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/" >--- cloud-init를 이용한 자동화 구성</option>
-    <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/" >
-  --- 
-   Cumstom Image 관리</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/010.custom_image/" >---- Custom Image 생성</option>
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/" >---- Custom Image 임포트/익스포트</option>
-  
-    <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/050.load_balancer/" >
-  --- 
-   OCI Load Balancer</option> 
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/050.load_balancer/010.basic_load_balancer/" >---- Custom Image 생성</option>
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/050.load_balancer/020.provisioning_from_custom_image-copy/" >---- Custom Image 임포트/익스포트</option>
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/050.load_balancer/030.custom_image_import_and_export/" >---- Custom Image로 VM 생성</option>
-  
-  
   
   
     <option value="/300.data_and_ai/" >
@@ -579,7 +547,7 @@
   - 
    OCI 관련 유용한 서비스</option> 
       <option value="/980.oci-related-sites/oci-related-service/oci_cost_estimator/" >-- OCI 비용 시뮬레이터</option>
-      <option value="/980.oci-related-sites/oci-related-service/oci_status/" >-- OCI 상태 알림 서비스</option>
+      <option value="/980.oci-related-sites/oci-related-service/oci_status/"  selected>-- OCI 상태 알림 서비스</option>
       <option value="/980.oci-related-sites/oci-related-service/cloudharmony/" >-- CloudHarmondy: 네트웍 테스트</option>
       <option value="/980.oci-related-sites/oci-related-service/oci_archi_diagram/" >-- OCI 비쥬얼 다이어그램</option>
   
@@ -604,7 +572,7 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>오라클 클라우드 사용자 가이드</h1>
+    <h1>OCI 상태 알림 서비스</h1>
 
 
      
@@ -613,78 +581,64 @@
     
     
     
+    <p>&lsquo;<a href="https://ocistatus.oraclecloud.com/" target="_blank">Oracle Cloud Infrastructure&#39;s Status <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
+&rsquo;는 Oracle Cloud의 각 리전에서 운영하는 세부 서비스의 현재 운영 상태와 과거 장애 이력 정보를 제공하는 사이트입니다.</p>
 
+<p>다음 그림과 같이 각 리전 세부 서비스의 현재 상태 정보를 4개 분류(Normal Performance, Degraded Performance, Partial Outage, Major Outage)로 제공합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/994.jpg" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/995.jpg?classes=border,shadow" alt="" /></p>
 
-<p>OCI(Oracle Cloud Infrastructure)는 오라클 클라우드 서비스의 공식 브랜드 명입니다. <strong>cloud-docs.taewan.me</strong>는 OCI 신규 사용자를 위한 기술 문서 사이트입니다. <strong>cloud-docs.taewan.me</strong>는 OCI 신규 사용자를 위하여 다음과 같은 내용으로 지속적으로 채워갈 계획입니다.</p>
+<p>&lsquo;<a href="https://ocistatus.oraclecloud.com/" target="_blank">Oracle Cloud Infrastructure&#39;s Status <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
-<table>
-<thead>
-<tr>
-<th>주제</th>
-<th>설명</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>OCI 101/기본 개념</td>
-<td>OCI 신규 입문자를 위한 OCI 기본 소개 및 개념 정리</td>
-</tr>
-
-<tr>
-<td>OCI 101/핸드온</td>
-<td>OCI 핸드온 랩 - 따라하기 형식 메뉴얼</td>
-</tr>
-
-<tr>
-<td>서비스별 가이드</td>
-<td>OCI 세부 서비스 별 가이드 문서</td>
-</tr>
-
-<tr>
-<td>유용한 팁</td>
-<td>OCI에 도움 되는 기술 문서</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>cloud-docs.taewan.me</strong>는 OCI Orcle Cloud 관련 문서를 신속하게 그리고 지속적으로 업데이트함을 목표로합니다. <strong>cloud-docs.taewan.me</strong>는 최신 정보를 유지함을 목표로하지만 시점에 따라서 내용이 현재와 다를수 있습니다. 문서를 확인하실 때 문서 생성일과 최종 문서 수정일을 꼭 확인해 주시기 바랍니다.</p>
-
-<h2 id="gitter-im-커뮤니티-페이지">gitter.im 커뮤니티 페이지</h2>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/ocioraclecloud/000.jpg" alt="" /></p>
-
-<p>gitter.im에 <strong>cloud-docs.taewan.me</strong>채널을 운영 중입니다. 사이트 이용에 이슈가 있을때 글을 남겨주시면 적극 반영하겠습니다. gitter.im 커뮤니티 페이지의 URL은 다음과 같습니다.</p>
+&rsquo; 페이지를 이용하여 다음과 같은 정보를 확인할 수 있습니다.</p>
 
 <ul>
-<li><a href="https://gitter.im/oci-oracle-cloud/community" target="_blank">gitter에 개설된 OCI Oracle Cloud 커뮤니티 채널: https://gitter.im/oci-oracle-cloud/community <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
-
-</li>
+<li>OCI 전체 리전 목록</li>
+<li>각 리전에서 운영 중인 OCI 세부 서비스</li>
+<li>세부 서비스 현재 운영 상태</li>
 </ul>
 
+<p>또한 이 페이지는 과거 OCI 장애 이력 정보를 제공하는 &lsquo;<a href="https://ocistatus.oraclecloud.com/history" target="_blank">Incident History <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+&rsquo;페이지 링크를 제공합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/996.jpg?classes=border,shadow" alt="" /></p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/997.jpg?classes=border,shadow" alt="" /></p>
+
+<p>여기에서 제공하는 OCI 장애 기록을 클릭하면, 각 OCI 장애에 대한 상제 정보 페이지가 오픈됩니다. 이 페이지에서 장애 발생 시간, 처리 완료 시간, 장애 유형과 원인, 사용자 영향도와 같은 상세 정보를 확인할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/teminology/998.jpg?classes=border,shadow" alt="" /></p>
 
 
     
     
       <div class="alert alert-info" role="alter">
-  <li><strong>문서 생성:</strong> 2020-03-01 01:11 / <string>최종 문서 수정:</strong> 2020-03-01 01:11 </li>
+  <li><strong>문서 생성:</strong> 0001-01-01 00:00 / <string>최종 문서 수정:</strong> 0001-01-01 00:00 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/" title="오라클 클라우드 사용자 가이드"> <i class="fa fa-chevron-left"></i><label>오라클 클라우드 사용자 가이드</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/" title="OCI(Oracle Cloud)-기초 입문" style="margin-right: 0px;"><label>OCI(Oracle Cloud)-기초 입문</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/980.oci-related-sites/oci-related-service/oci_cost_estimator/" title="OCI 비용 시뮬레이터"> <i class="fa fa-chevron-left"></i><label>OCI 비용 시뮬레이터</label></a>
+    <a class="nav nav-next" href="/980.oci-related-sites/oci-related-service/cloudharmony/" title="CloudHarmondy: 네트웍 테스트" style="margin-right: 0px;"><label>CloudHarmondy: 네트웍 테스트</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
-      <div class="panel panel-danger">
+      <div class="row">
+    <div class="author left">
+        <img alt="김태완 avatar" src="https://taewanmerepo.github.io//taewan2.jpg" height="90" width="90">
+    </div>
+    <div class="author right">
+		<li><b>작성자: 김태완</b></li>
+        <li>사랑하는 민수와 데이터 관리, 데이터 분석 &amp; 클라우드에 집중하고 있습니다.</li>
+        <li>E-mail: taewan.me@gmail.com</li>
+    </div>
+</div><div class="panel panel-danger">
 <div class="panel-heading">Disclaimer</div>
 <div class="panel-body">이 저작물은 Oracle과 관계없이 개인으로서 개인의 시간을 할애하여 작성된 글 입니다. 본 글의 내용, 입장, 예측은 Oracle을 공식적으로 <font color="red"><bold>절대</bold></font> 대변하지 않습니다.</div>
 </div>
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kimhttp://cloud-docs.taewan.me/000.index/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kimhttp://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_status/"></div>
 
   </div>
 
@@ -698,10 +652,6 @@
 
     
 
-    
-    <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 01/03/2020
-    </div>
     
   </div>
 

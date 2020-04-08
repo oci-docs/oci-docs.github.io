@@ -23,6 +23,17 @@
     </item>
     
     <item>
+      <title>OCI 관련 사이트 모음</title>
+      <link>http://cloud-docs.taewan.me/980.oci-related-sites/oci-sites/</link>
+      <pubDate>Wed, 08 Apr 2020 09:11:05 +0900</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/980.oci-related-sites/oci-sites/</guid>
+      <description>이번 문서에서는 오라클 클라우드를 주제로하는 국내와 주요 사이트와 블로그를 정리합니다.
+이번 문서는 다음과 같은 목차로 구성됩니다.
+ 한글 OCI 웹사이트 Oracle 공식 사이트 해외 OCI 관련 사이트    한글 OCI 웹사이트    유형 사이트 명 키워드 설명/특징     커뮤니티 오라클 클라우드 사용자 그룹 (Oracle Cloud KR User Group)    User Group Facebook에서 운영하는 오라클 클라우드 사용자 그룹 커뮤니티 사이트입니다.   블로그 Taewan.</description>
+    </item>
+    
+    <item>
       <title>Cloud Shell 개요</title>
       <link>http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_intro/</link>
       <pubDate>Mon, 06 Apr 2020 09:11:05 +0900</pubDate>
@@ -84,6 +95,16 @@ HOL: Custom Image 이번 문서는 기존 Compute Instnace로 부터 OCI Custom 
       <description>OCI(Oracle Cloud Infrastructure)는 Oracle 제공하는 클라우드 서비스입니다. 오라클은 2016년 하반기에 OCI 서비스를 시작했습니다. 이 문서에서는 OCI 서비스에 대한 주요 특징을 소개합니다.
 이번 문서는 다음과 같은 목차로 구성됩니다.
  오라클 클라우드  OCI 고가용성 인프라 OCI 안전성 설계 고성능 클라우드 자원  참고 문서    오라클 클라우드 오라클 클라우드는 탄력적이고 유연한 자원 관리의 특징을 갖는 퍼블릭 클라우드와 온-프레미스 인프라의 정밀한 제어, 보안 및 시스템 예측 가능성을 결합한 클라우드 서비스를 지향합니다.</description>
+    </item>
+    
+    <item>
+      <title>OCI 비용 시뮬레이터</title>
+      <link>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_cost_estimator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_cost_estimator/</guid>
+      <description>오라클 홈페이지에서는 Oracle Cloud Infrastructure(OCI) 서비스 비용 계산 툴을 제공합니다. 이 서비스를 이용하여 OCI 서비스 사용 금액을 계산해 볼수 있습니다. OCI 서비스 별로 주요 과금 기준과 입력 항목을 제공하기 때문에 서비스 별로 고려해야 하는 항목을 간편하고 고려할 수 있습니다.
+ OCI 비용 계산기: https://www.oracle.com/cloud/cost-estimator.html     관련 OCI 서비스를 선택하면, 해당 서비스의 사용 금액을 결정짓는 주요 인자가 출력됩니다. 이 주요 인자 조정을 통해서 실제 서비스 이용 금액을 예측할 수 있습니다.</description>
     </item>
     
     <item>
@@ -176,6 +197,18 @@ HOL: OCI User 이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당�
     </item>
     
     <item>
+      <title>OCI 상태 알림 서비스</title>
+      <link>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_status/</guid>
+      <description>&amp;lsquo;Oracle Cloud Infrastructure&amp;#39;s Status   &amp;rsquo;는 Oracle Cloud의 각 리전에서 운영하는 세부 서비스의 현재 운영 상태와 과거 장애 이력 정보를 제공하는 사이트입니다.
+다음 그림과 같이 각 리전 세부 서비스의 현재 상태 정보를 4개 분류(Normal Performance, Degraded Performance, Partial Outage, Major Outage)로 제공합니다.
+&amp;lsquo;Oracle Cloud Infrastructure&amp;#39;s Status   &amp;rsquo; 페이지를 이용하여 다음과 같은 정보를 확인할 수 있습니다.
+ OCI 전체 리전 목록 각 리전에서 운영 중인 OCI 세부 서비스 세부 서비스 현재 운영 상태  또한 이 페이지는 과거 OCI 장애 이력 정보를 제공하는 &amp;lsquo;Incident History   &amp;rsquo;페이지 링크를 제공합니다.</description>
+    </item>
+    
+    <item>
       <title>cloud-init를 이용한 자동화 구성</title>
       <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/</link>
       <pubDate>Thu, 02 Apr 2020 12:11:05 +0900</pubDate>
@@ -197,6 +230,17 @@ HOL: OCI Group 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당�
     </item>
     
     <item>
+      <title>CloudHarmondy: 네트웍 테스트</title>
+      <link>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/cloudharmony/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/cloudharmony/</guid>
+      <description>&amp;lsquo;CloudHarmony 서비스(https://cloudharmony.com)   &amp;rsquo;는 클라우드 서비스이 네트워크 속도 테스트 서비스를 제공합니다. 사용자 브라우저에서 지정한 클라우드 데이터센터까지 지정한 서비스의 업 링크, 다운로드 링크 속도를 측정할 수 있습니다.
+CloudHarmony 서비스는 사용자 브라우저에서 지정한 클러우드 데이터센터까지 구간 속도를 측정합니다. CloudHarmony 서비스 결과는 사용자가 사용하는 컴퓨터와 네트워크 상태에 영향을 받습니다. 아래 그림은 핸드폰 테더링을 연결한 노트북에서 측정한 결과입니다.
+ 다음 그림은 CloudHarmony 서비스   에서 Oracle Cloud Infrastructure의 31개 서비스 테스트를 진행한 결과입니다.</description>
+    </item>
+    
+    <item>
       <title>OCI Compartment 만들기</title>
       <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</link>
       <pubDate>Tue, 31 Mar 2020 12:11:05 +0900</pubDate>
@@ -205,6 +249,17 @@ HOL: OCI Group 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당�
       <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI Compartment를 만드는 절차를 소개합니다. 이 Hands-on Lab은 OCI Admin User(OCI 관리자) ID로 OCI IAM 로그인하고 진행합니다.
 HOL: OCI Compartment 이번 Hands-on Lab에서는 개발, 테스트, 및 운영 환경 자원을 관리하는 OCI Compartment를 4개 만들어 보겠습니다. 다음과 같은 OCI Compartment를 만들겠습니다.
    OCI 컴파트먼트 역할 상위 컴파트먼트     sandbox 데모: 최상위 Compartment root   hol-dev 데모: 개발 환경 Compartment root/sandbox   hol-prod 데모: 운영 환경 Compartment root/sandbox   hol-test 데모: 테스트 환경 Compartment root/sandbox    핸즈온 랩 다음과 같은 순서로 진행합니다.</description>
+    </item>
+    
+    <item>
+      <title>OCI 비쥬얼 다이어그램</title>
+      <link>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_archi_diagram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_archi_diagram/</guid>
+      <description>&amp;lsquo;https://online.visual-paradigm.com/   &amp;rsquo;는 다양한 다이아그램을 그리고 시각화하는 온라인 서비스입니다. &amp;ldquo;visual-paradigm.com&amp;ldquo;에서는 OCI 다이아그램으로 8개 템플릿을 지원합니다.
+다음과 같이 편집 기능을 제공합니다.
+&amp;ldquo;visual-paradigm.com&amp;ldquo;는 유료 서비스이지만 Free 라이센스로 사용할 수 있습니다.</description>
     </item>
     
     <item>

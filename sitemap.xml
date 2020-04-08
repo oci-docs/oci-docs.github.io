@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>http://cloud-docs.taewan.me/980.oci-related-sites/oci-sites/</loc>
+    <lastmod>2020-04-08T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_intro/</loc>
     <lastmod>2020-04-06T09:11:05+09:00</lastmod>
   </url>
@@ -73,6 +78,15 @@
   </url>
   
   <url>
+    <loc>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_cost_estimator/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/</loc>
+    <lastmod>2020-04-07T01:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_features/</loc>
     <lastmod>2020-04-06T09:11:05+09:00</lastmod>
   </url>
@@ -123,6 +137,10 @@
   </url>
   
   <url>
+    <loc>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_status/</loc>
+  </url>
+  
+  <url>
     <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/030.cloud-init/</loc>
     <lastmod>2020-04-02T12:11:05+09:00</lastmod>
   </url>
@@ -138,6 +156,10 @@
   </url>
   
   <url>
+    <loc>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/cloudharmony/</loc>
+  </url>
+  
+  <url>
     <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/</loc>
     <lastmod>2020-04-01T09:11:05+09:00</lastmod>
   </url>
@@ -145,6 +167,10 @@
   <url>
     <loc>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/</loc>
     <lastmod>2020-03-31T12:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_archi_diagram/</loc>
   </url>
   
   <url>
@@ -205,6 +231,11 @@
   <url>
     <loc>http://cloud-docs.taewan.me/700.oci_tools/</loc>
     <lastmod>2020-04-06T01:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/980.oci-related-sites/</loc>
+    <lastmod>2020-04-07T01:11:05+09:00</lastmod>
   </url>
   
   <url>
