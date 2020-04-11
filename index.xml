@@ -107,14 +107,15 @@ HOL: Custom Image 이번 문서는 기존 Compute Instnace로 부터 OCI Custom 
     </item>
     
     <item>
-      <title>Custom Image 임포트/익스포트</title>
+      <title>Custom Image 프로비저닝</title>
       <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/</link>
       <pubDate>Sun, 05 Apr 2020 12:11:05 +0900</pubDate>
       
       <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/</guid>
-      <description>프로비저닝된 Compute 인스턴스 상태를 템플릿으로 저장하고, 동일한 상태의 Compute 인스턴스를 여러 개 만들기 우 Boot Volume으로부터 재사용 가능한 사용자 정의 Image를 만들 수 있습니다. 이렇게 만든 사용자 정이 Image를 OCI Custom Image라고 합니다.
+      <description>프로비저닝된 Compute 인스턴스 상태를 템플릿으로 저장하고, 동일한 상태의 Compute 인스턴스를 여러 개 만들 수 있습니다. 이렇게 만든 사용자 정즤 Image를 OCI Custom Image라고 합니다.
 HOL: Custom Image 이번 문서는 Custom Image로부터 Compute 인스턴스를 만드는 과정을 소개합니다. 이번 Hands-on Lab은 다음과 같은 순서로 진행합니다.
- HOL: Custom Image  선행 Hands-on Lab Hands-on Lab 실습 환경 Hands-on Lab 시나리오 Custom Image로 VM 생성 Hands-on Lab 요약</description>
+ HOL: Custom Image  선행 Hands-on Lab Hands-on Lab 실습 환경 Hands-on Lab 시나리오 Custom Image로 VM 생성 Hands-on Lab 요약   
+ 선행 Hands-on Lab 이번 Hands-on Lab을 진행하기 위해서는, 다음과 같은 Hands-on Lab이 선행되어야 합니다.</description>
     </item>
     
     <item>
@@ -236,8 +237,9 @@ HOL: OCI Compartment 이번 Hands-on Lab에서는 개발, 테스트, 및 운영 
       
       <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/050.reserved_public_ip/</guid>
       <description>OCI Compute 인스턴스(VM 혹은 Baremetal)를 만들고, Compute 인스턴스에 고정 공개 IP를 설정할 수 있습니다.Compute 인스턴스에 고정 공개 IP를 적용하는 방법을 소개합니다.
-HOL: Reserved Public IP 이번 Hands-on Lab에서는 OCI Console을 이용하여 Custom Image인 인스턴스를 만들고, Compute 인스턴스에 고정 공개 IP를 적용하는 방법을 소개합니다. 이번 Hands-on Lab은 다음과 같은 순서로 진행됩니다.
- Public IP 생성 Custom Image로 Compute Instance 프로비저닝: VM01 VM01에 Public IP 설정 브라우저 접근 Custom Image 삭제: VM01 Custom Image로 Compute Instance 프로비저닝: VM02 VM02에 Public IP 설정 브라우저 접근 자원 정리  이번 Hands-on Lab은 다음과 같은 목차로 구성됩니다.</description>
+HOL: Reserved Public IP 이번 Hands-on Lab에서는 OCI Console을 이용하여 Custom Image인 인스턴스를 만들고, Compute 인스턴스에 고정 공개 IP를 적용하는 방법을 소개합니다.
+이번 Hands-on Lab은 다음과 같은 목차로 구성됩니다.
+ HOL: Reserved Public IP  Hand-on Lab 준비  실습 환경 사용 자원 확인  Hands-on Lab  Public IP 생성 Compute 인스턴스 생성 공개 IP 브라우저 접근 고정 공개 IP 설정 공개 IP 브라우저 접근 자원 정리  요약</description>
     </item>
     
     <item>

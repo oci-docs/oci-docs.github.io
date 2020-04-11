@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-10T12:05:28 KST">
+<meta name="revised" content="2020-04-11T13:59:01 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -317,7 +317,7 @@
       <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/" class="dd-item">
         <div>
           <a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/">
-            Custom Image 임포트/익스포트
+            Custom Image 프로비저닝
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -522,7 +522,7 @@
   --- 
    Cumstom Image 관리</option> 
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/010.custom_image/" >---- Custom Image 생성</option>
-      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/" >---- Custom Image 임포트/익스포트</option>
+      <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/" >---- Custom Image 프로비저닝</option>
   
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/050.reserved_public_ip/"  selected>--- OCI VM 고정 IP 설정</option>
   
@@ -592,19 +592,7 @@
 
 <h1 id="hol-reserved-public-ip">HOL: Reserved Public IP</h1>
 
-<p>이번 <strong>Hands-on Lab</strong>에서는 OCI Console을 이용하여 Custom Image인  인스턴스를 만들고, Compute 인스턴스에 <font color='red'><strong>고정 공개 IP</strong></font>를 적용하는 방법을 소개합니다. 이번 <strong>Hands-on Lab</strong>은 다음과 같은 순서로 진행됩니다.</p>
-
-<ul>
-<li>Public IP 생성</li>
-<li>Custom Image로 Compute Instance 프로비저닝: VM01</li>
-<li>VM01에 Public IP 설정</li>
-<li>브라우저 접근</li>
-<li>Custom Image 삭제: VM01</li>
-<li>Custom Image로 Compute Instance 프로비저닝: VM02</li>
-<li>VM02에 Public IP 설정</li>
-<li>브라우저 접근</li>
-<li>자원 정리</li>
-</ul>
+<p>이번 <strong>Hands-on Lab</strong>에서는 OCI Console을 이용하여 Custom Image인  인스턴스를 만들고, Compute 인스턴스에 <font color='red'><strong>고정 공개 IP</strong></font>를 적용하는 방법을 소개합니다.</p>
 
 <p>이번 <strong>Hands-on Lab</strong>은 다음과 같은 목차로 구성됩니다.</p>
 
@@ -613,51 +601,71 @@
 <ul>
 <li><a href="#hol-reserved-public-ip">HOL: Reserved Public IP</a>
 <ul>
-<li><a href="#cloud-init-개요">cloud-init 개요</a></li>
-<li><a href="#선행-hand-on-lab">선행 Hand-on Lab</a></li>
-<li><a href="#hands-on-lab-실습-환경">Hands-on Lab 실습 환경</a></li>
-<li><a href="#사전-준비">사전 준비</a>
+<li><a href="#hand-on-lab-준비">Hand-on Lab 준비</a>
 <ul>
-<li><a href="#사용-가능한-자원-확인">사용 가능한 자원 확인</a></li>
+<li><a href="#실습-환경">실습 환경</a></li>
+<li><a href="#사용-자원-확인">사용 자원 확인</a></li>
 </ul></li>
-<li><a href="#oci-compute-인스턴스-생성">OCI Compute 인스턴스 생성</a></li>
+<li><a href="#hands-on-lab">Hands-on Lab</a>
+<ul>
+<li><a href="#public-ip-생성">Public IP 생성</a></li>
+<li><a href="#compute-인스턴스-생성">Compute 인스턴스 생성</a></li>
 <li><a href="#공개-ip-브라우저-접근">공개 IP 브라우저 접근</a></li>
-<li><a href="#hands-on-lab-요약">Hands-on Lab 요약</a></li>
+<li><a href="#고정-공개-ip-설정">고정 공개 IP 설정</a></li>
+<li><a href="#공개-ip-브라우저-접근-1">공개 IP 브라우저 접근</a></li>
+<li><a href="#자원-정리">자원 정리</a></li>
 </ul></li>
-<li><a href="#참고문서">참고문서</a></li>
+<li><a href="#요약">요약</a></li>
+</ul></li>
 </ul>
 </nav></p>
 </div></div>
 
 
-<h2 id="cloud-init-개요">cloud-init 개요</h2>
-
-<p><font color='red'><strong>cloud-init</strong></font>는 가상 머신 초기화 설정을 자동화하는 도구입니다. <strong>cloud-init</strong>를 이용하면  호스트 이름, 네트워크 인터페이스, 그리고 인증키를 설정, 소프트웨어 설치 및 패치와 같은 작업을 가상 머신 생성 과정에 포함 시킬 수 있습니다.</p>
-
-<p>OCI Compute가 제공하는 Image에는 cloud-init가 적용돼 있습니다. 따라서 cloud-init에 쉘 스크립트를 설정하여 인스턴스를  커스터마이징할 수 있습니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/000.jpg?classes=border,shadow" alt="" /></p>
-
-<h2 id="선행-hand-on-lab">선행 Hand-on Lab</h2>
+<h2 id="hand-on-lab-준비">Hand-on Lab 준비</h2>
 
 <p>이번 Hands-on Lab을 진행하기 전에 다음 Hand-on Lab이 선행되어야 합니다.</p>
 
-<ul>
-<li><a href="/010.oci_intro/hands-on-101/000.oci_free_trial/" target="_blank">OCI Free Tier 등록 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<table>
+<thead>
+<tr>
+<th>선행 Hands-on Lab</th>
+<th>설명</th>
+</tr>
+</thead>
 
-</li>
-<li><a href="/010.oci_intro/hands-on-101/020.setting_basic_env/" target="_blank">OCI 사용자&amp;보안 설정 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<tbody>
+<tr>
+<td><a href="/010.oci_intro/hands-on-101/000.oci_free_trial/" target="_blank">OCI Free Tier 등록 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
-</li>
-<li><a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" target="_blank">VCN 생성(OCI Console:간편모드) <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+</td>
+<td>데모에 사용할 Oracle Cloud 계정 등록</td>
+</tr>
 
-</li>
-<li><a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/020.compute_instance/#security-list-%EC%84%A4%EC%A0%95" target="_blank">Security List 설정: 80 포트 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+<tr>
+<td><a href="/010.oci_intro/hands-on-101/020.setting_basic_env/" target="_blank">OCI 사용자&amp;보안 설정 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
 
-</li>
-</ul>
+</td>
+<td>OCI 사용자 등록, Compartment 할당 및 보안 설정</td>
+</tr>
 
-<h2 id="hands-on-lab-실습-환경">Hands-on Lab 실습 환경</h2>
+<tr>
+<td><a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/010.vcn/" target="_blank">VCN 생성(OCI Console:간편모드) <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</td>
+<td>Virtul Cloud Network 프로비저닝</td>
+</tr>
+
+<tr>
+<td><a href="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/010.custom_image/" target="_blank">Custom Image 생성 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</td>
+<td>Oracle Linux 이미지를 Custom 이미지 만들기</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="실습-환경">실습 환경</h3>
 
 <p>이 <strong>Hands-on Lab</strong>은 OCI 일반 사용자인 demo.admin 사용자로 OCI IAM 로그인하여 진행합니다. 이번 <strong>Hands-on Lab</strong>에서 사용할 OCI 사용자와 컴파트먼트는 다음과 같습니다.</p>
 
@@ -677,15 +685,7 @@
 </tbody>
 </table>
 
-<h2 id="사전-준비">사전 준비</h2>
-
-<p>OCI Compute 인스턴스를 만들기 위해서는 다음과 같은 준비 작업이 필요합니다.</p>
-
-<ul>
-<li>사용 가능한 자원 확인</li>
-</ul>
-
-<h3 id="사용-가능한-자원-확인">사용 가능한 자원 확인</h3>
+<h3 id="사용-자원-확인">사용 자원 확인</h3>
 
 <p>OCI Compute 인스턴스를 어떤 자원(OCPU)로 만들지 결정해야 합니다. 가용한 자원을 확인하는 기능은 <strong>Limits, Quotas and Usage</strong> 페이지에서 확인할 수 있습니다. 추가 권한 설정을 하지 않은 경우에, OCI 관리자 ID만이 이 페이지에 접근할 수 있습니다. 가용한 자원을 확인하는 작업은 Oracle Cloud 계정의 관리자 ID(taewanme@gmail.com)으로 로그인하여 진행합니다.</p>
 
@@ -695,17 +695,84 @@
 
 <p><img src="https://taewanmerepo.github.io/2020/03/compute/030.jpg?classes=border,shadow" alt="" /></p>
 
-<p><strong>Limits, Quotas and Usage</strong> 페이지에서 <strong>Scope</strong> 항목에서 AD를 지정하면, 현재 사용 가능한 자원 규모가 출력됩니다. 아래 이미지는 Oracle Cloud Trial 계정에 기본 할당된 자원 규모입니다. 아래 결과를 확인하고 이번 <strong>Hands-on Lab</strong>에서는 <font color="red"><strong>VM.Standard.E2.2</strong></font>를 사용하기로 결정합니다.</p>
+<p><strong>Limits, Quotas and Usage</strong> 페이지에서 <strong>Scope</strong> 항목에서 AD를 지정하면, 현재 사용 가능한 자원 규모가 출력됩니다. 아래 이미지는 Oracle Cloud Trial 계정에 기본 할당된 자원 규모입니다. 아래 결과를 확인하고 이번 <strong>Hands-on Lab</strong>에서는 <font color="red"><strong>VM.Standard2.1</strong></font>를 사용하기로 결정합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/010.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0010.jpg?classes=border,shadow" alt="" /></p>
 
-<div class="notices note" ><p><p>이제 <font color="red">OCI 관리자 ID를 로그아웃</font> 하고, OCI 일반 사용자인 <font color="red"><strong>demo.admin</strong></font> 사용자로 OCI IAM 로그인하여 다음 과정을 진행합니다.</p>
+<div class="notices note" ><p><p>이제 <font color="red">OCI 관리자 ID를 로그아웃</font>하고, OCI 일반 사용자인 <font color="red"><strong>demo.admin</strong></font> 사용자로 OCI IAM 로그인하여 다음 과정을 진행합니다.</p>
 </p></div>
 
 
-<h2 id="oci-compute-인스턴스-생성">OCI Compute 인스턴스 생성</h2>
+<h2 id="hands-on-lab">Hands-on Lab</h2>
 
-<p>OCI Console에 <strong>demo.admin</strong> ID로 OCI IAM 옵션으로 로그인합니다. 그리고 Compute 인스턴스를 생성하기 위해서 다음과 같은 메뉴 패스로 이동합니다.</p>
+<p>이번 <strong>Hands-on Lab</strong>은 다음과 같은 순서로 진행됩니다.</p>
+
+<ul>
+<li>Public IP 생성</li>
+<li>Custom Image로 Compute Instance 프로비저닝: reserved_ip_vm01</li>
+<li>Compute 인스턴스에 Public IP 설정</li>
+<li>브라우저 접근</li>
+<li>자원 정리</li>
+</ul>
+
+<h3 id="public-ip-생성">Public IP 생성</h3>
+
+<p><strong>예약 Public IP</strong> 관리 페이지는 다음 메뉴 패스로  이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Networking</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Public IPs</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/reservedip/020.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>위 메뉴 패스로 <strong>예약 Public IP 관리 페이지</strong>에 이동합니다. 공개 고정 IP를 만들기 위해서 <strong>예약 Public IP 관리 페이지</strong>에서 <font color='red'><strong>Create Reserved Public IP</strong></font> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0110.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><strong>Create Reserved Public IP</strong> 폼에 다음 설정을 입력합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>설정 항목</th>
+<th>설정값</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Name</td>
+<td>demo_public_ip</td>
+</tr>
+
+<tr>
+<td>Create in Compartment</td>
+<td>root/sandbox/hol-prod</td>
+</tr>
+</tbody>
+</table>
+
+<p>위 설정값을 입력하고 <font color='red'><strong>Create Reserved Public IP</strong></font> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0120.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>예약 공개 IP는 다음과 같이 만들어집니다. 현재 만들어진 공개 IP는 다음과 같습니다.</p>
+
+<ul>
+<li>Public IP: 140.238.26.223</li>
+</ul>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0130.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="compute-인스턴스-생성">Compute 인스턴스 생성</h3>
+
+<p>Compute 인스턴스를 Custom Image인 <font color='red'><strong>demo-custom-image</strong></font>로 만들 것입니다. <font color='red'><strong>demo-custom-image</strong></font>에는 nginx 설치와 방화벽 오픈이 적용되어 있습니다. 따라서 Compute 인스턴스를 만든 다음에 추가 작업이 없습니다. Custom Image로 Compute 인스턴스를 생성하기 위해서 다음과 같은 메뉴 패스로 이동합니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Compute</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Instances</strong></div></div>
@@ -715,7 +782,7 @@
 
 <hr />
 
-<p>Compute 인스턴스 관리 페이지에서 Compartment를 <strong>root/sandbox</strong>로 설정하고 <font color='red'><strong>Create Instance</strong></font> 버튼을 클릭합니다.</p>
+<p>Compute 인스턴스 관리 페이지에서 Compartment를 <strong>root/sandbox/hol-prod</strong>로 설정하고 <font color='red'><strong>Create Instance</strong></font> 버튼을 클릭합니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/020.jpg?classes=border,shadow" alt="" /></p>
 
@@ -733,171 +800,225 @@
 <tbody>
 <tr>
 <td>Name</td>
-<td>demo_linux_vm_cloud_init</td>
+<td>reserved_ip_vm01</td>
 <td>인스턴스 이름</td>
 </tr>
 
 <tr>
 <td>Image or operating system</td>
-<td>Oracle Linux 7.7</td>
-<td>- Change Image 버튼을 클릭하고 선택</br>-오라클 리눅스 7.X는 CentOs7.x/RedHat7.x와 완전한 호환성 제공</td>
+<td>demo-custom-image</td>
+<td>- <font color="red"><strong>Change Image</strong></font> 버튼을 클릭</br>- Custom Images 탭 선택</br>- Custom Image Compartment: hol-prod</br>- demo-custom-image 체크 </br>- Select Image 버튼 클릭</td>
 </tr>
-</tbody>
-</table>
 
-<p>두 항목을 입력하고, Compute 인스턴스 생성 폼에서 <strong>Show Shape, Network and Storage Options</strong> 링크를 클릭합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/030.jpg?classes=border,shadow" alt="" /></p>
-
-<hr />
-
-<p>AD를 다음과 같이 선택합니다.</p>
-
-<table>
-<thead>
 <tr>
-<th>설정 항목</th>
-<th>설정값</th>
-<th>비고</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Availability Domain</td>
+<td>Availability domain</td>
 <td>AD 1</td>
+<td>- <font color="red"><strong>Show Shape, Network and Storage Options</strong></font> 링크 클릭 후 설정</td>
+</tr>
+
+<tr>
+<td>Shape</td>
+<td>VM.Standard2.1</td>
+<td>- <font color="red"><strong>Change Image</strong></font> 버튼 클릭</br>- Instance Type: Virtual Machine 선택</br>- Shape Type: Standard</br>- Shape Name: VM.Standard2.1</br>- Select Image 버튼</td>
+</tr>
+
+<tr>
+<td>VIRTUAL CLOUD NETWORK COMPARTMENT</td>
+<td>hol-prod</td>
+<td>VCN 소속 컴파트먼트</td>
+</tr>
+
+<tr>
+<td>VIRTUAL CLOUD NETWORK</td>
+<td>demo-vcn</td>
 <td></td>
 </tr>
-</tbody>
-</table>
 
-<p>그리고 <font color='red'><strong>Change Shape</strong></font> 버튼을 클릭합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/040.jpg?classes=border,shadow" alt="" /></p>
-
-<p>Shape을 선택하는 화면이 출력됩니다. Shape 선택에 다음과 같이 설정하고 <font color='red'><strong>Select Shape</strong></font> 버튼을 클릭합니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/060.jpg?classes=border,shadow" alt="" /></p>
-
-<hr />
-
-<p>Shape을 선택하면 <strong>VM.Standard.E2.2 (Virutal Machine)</strong>이 출력됩니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/070.jpg?classes=border,shadow" alt="" /></p>
-
-<hr />
-
-<p>다음과 같이 <strong>Networking</strong> 항목을 설정합니다.</p>
-
-<table>
-<thead>
 <tr>
-<th>설정 항목</th>
-<th>설정값</th>
-<th>설명</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Virtual Cloud Network Compartment</td>
+<td>SUBNET COMPARTMENT</td>
 <td>hol-prod</td>
-<td>선택</td>
+<td>- 서브넷 소속 컴파트먼트</td>
 </tr>
 
 <tr>
-<td>Virtual Cloud Network</td>
-<td>demo-vcn</td>
-<td>선택</td>
-</tr>
-
-<tr>
-<td>Subnet Compartment</td>
-<td>hol-prod</td>
-<td>선택</td>
-</tr>
-
-<tr>
-<td>Subnet</td>
+<td>SUBNET</td>
 <td>Public Subnet-demo-vcn(Regional)</td>
-<td>선택</td>
+<td></td>
 </tr>
 
 <tr>
-<td>Assign a public address</td>
+<td>Assign a Public IP Address</td>
 <td>체크</td>
 <td></td>
 </tr>
+
+<tr>
+<td>Add SSH Keys</td>
+<td><font color="red"><strong>설정하지 않음</strong></font></td>
+<td>Hands-on Lab에서 ssh 접속을 하지 않기에 설정하지 않습니다.</td>
+</tr>
 </tbody>
 </table>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/080.jpg?classes=border,shadow" alt="" /></p>
+<p><strong>Boot Volume</strong>과 <strong>Add SSh Keys</strong> 항목은 별도 설정 없이 넘어갑니다. 이번 Hands-on Lab에서는 VM에 ssh 접근을 하지 않은 것 입니다. 따라서 ssh 공개 키를 등록할 필요가 없습니다. 위 설정을 입력하면 <strong>Compute 인스턴스 생성 폼</strong>은 다음과 같은 모습이 됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0140.jpg?classes=border,shadow" alt="" /></p>
+
+<p>Compute 인스턴스 생성 폼 입력을 마치고 <font color='red'><strong>Create</strong></font> 버튼을 클릭하면, <strong>reserved_ip_vm01</strong> 인스턴스 상세 페이지로 이동합니다. 인스턴스 생성 중에 아이콘은 주황색이고 인스턴스 프로비저닝이 완료되면 아이콘은 초록색으로 변경됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0150.jpg?classes=border,shadow" alt="" /></p>
+
+<p><strong>reserved_ip_vm01t</strong> 인스턴스의 상세 페이지에서 공개 IP가 <strong>140.238.2.2</strong>로 설정됨을 확인할 수 있습니다.</p>
+
+<h3 id="공개-ip-브라우저-접근">공개 IP 브라우저 접근</h3>
+
+<p><strong>reserved_ip_vm01</strong> Compute 인스턴스의 공개 IP인 <strong>140.238.2.2</strong>를 브라우저로 접근합니다. 브라우저로 접근하면 다음과 같은 화면이 출력됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0160.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="고정-공개-ip-설정">고정 공개 IP 설정</h3>
+
+<p>다음 메뉴 패스로 OCI Compute 인스턴스 관리 페이지로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Compute</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Instances</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/compute/010.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p><strong>Boot Volume</strong>과 <strong>Add SSh Keys</strong> 항목은 별도 설정 없이 넘어갑니다. 이번 Hands-on Lab에서는 VM에 ssh 접근을 하지 않은 것 입니다. 따라서 ssh 공개 키를 등록할 필요가 없습니다.</p>
+<p>OCI Compute 인스턴스 관리 페이지에서 Compartment를 <font color='red'><strong>root/sandbox/hol-prod</strong></font>를 선택하고 출력되는 인스턴스 목록 중에서 <strong>reserved_ip_vm01</strong> 링크를 클릭합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/090.jpg?classes=border,shadow" alt="" /></p>
-
-<hr />
-
-<p><font color='red'><strong>Show Advanced Options</strong></font>을 클릭하고 다음 cloud-init 스크립트를 등록합니다. 그리고 <font color='red'><strong>Create</strong></font> 버튼을 클릭합니다.</p>
-
-<pre><code>#!/bin/sh
-sudo yum install nginx -y
-sudo systemctl enable nginx
-sudo systemctl start nginx
-sudo firewall-offline-cmd --zone=public --add-service=http
-sudo systemctl enable firewalld 
-sudo systemctl restart firewalld
-</code></pre>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/100.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0210.jpg?classes=border,shadow" alt="" /></p>
 
 <hr />
 
-<p>Compute 인스턴스 생성 폼 입력을 마치고 <font color='red'><strong>Create</strong></font> 버튼을 클릭하면, <strong>demo-linux-vm-cloud-init</strong> 인스턴스의 상세 페이지로 이동합니다. 인스턴스 생성 중에 아이콘은 주황색이고 인스턴스 프로비저닝이 완료되면 아이콘은 초록색으로 변경됩니다.</p>
+<p><font color='red'><strong>reserved_ip_vm01</strong></font> 상세 페이지에서 왼쪽 Resource 항목에서 <font color='red'><strong>Attached VNICs</strong></font> 메뉴를 클릭합니다.</p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudinit/110.jpg?classes=border,shadow" alt="" /></p>
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0220.jpg?classes=border,shadow" alt="" /></p>
 
-<p><strong>demo-linux-vm-cloud-init</strong> 인스턴스의 상세 페이지에서 공개 IP가 <strong>140.238.18.120</strong>으로 설정됨을 확인할 수 있습니다.</p>
+<hr />
 
-<h2 id="공개-ip-브라우저-접근">공개 IP 브라우저 접근</h2>
+<p><strong>reserved_ip_vm01</strong>의 VNIC 목록을 조회하고 <font color='red'><strong>Primary VNICs</strong></font>를 클릭합니다.</p>
 
-<p><strong>demo-linux-vm</strong> Compute 인스턴스의 공개 IP인 <strong>140.238.18.120</strong>에 브라우저로 접근합니다. 브라우저로 접근하면 다음과 같은 화면이 출력됩니다.</p>
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0230.jpg?classes=border,shadow" alt="" /></p>
 
-<p><img src="https://taewanmerepo.github.io/2020/03/compute/210.jpg?classes=border,shadow" alt="" /></p>
+<hr />
 
-<h2 id="hands-on-lab-요약">Hands-on Lab 요약</h2>
+<p><strong>Primary VNICs</strong> 상세 페이지에서 왼쪽 메뉴의 <font color='red'><strong>IP Addresses</strong></font>를 클릭하여 할당된 IP Address를 확인합니다. 현재 1개 IP Address가 할당되어 있고, 이 IP Address에 공개 IP Address가 할당되어 있습니다. 이 IP Address의 오른쪽 메뉴에서 <strong>Edit</strong> 메뉴를 클릭합니다.</p>
 
-<p><strong>demo-linux-vm-cloud-init</strong> 인스턴스가 만들어질 때, cloud-init에 다음과 같은 스크립트를 등록했습니다.</p>
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0240.jpg?classes=border,shadow" alt="" /></p>
 
-<pre><code>#!/bin/sh
-sudo yum install nginx -y
-sudo systemctl enable nginx
-sudo systemctl start nginx
-sudo firewall-offline-cmd --zone=public --add-service=http
-sudo systemctl enable firewalld 
-sudo systemctl restart firewalld
-</code></pre>
+<hr />
 
-<p><strong>demo-linux-vm-cloud-init</strong> 인스턴스가 만들어지고 프로비저닝을 완료하기 전에 위 스크립트가 실행되면서 다음과 같은 작업이 진행됩니다.</p>
+<p>IP Address 수정 팝업창에서 <strong>Public IP Address</strong> 항목에서 <font color='red'><strong>No Public IP</strong></font>을 선택하고 <strong>Update</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0250.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><font color='red'><strong>IP Address</strong></font>에서 공개 IP Address가 사라진 것을 확인할 수 있습니다. 공개 IP Address에 앞에서 생성한 예약 공개 IP를 설정하기 위해서, 이 IP Address의 오른쪽 메뉴에서 <strong>Edit</strong> 메뉴를 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0260.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>IP Address 수정 팝업창에서  <font color='red'><strong>Reserved Public IP</strong></font>을 선택하고 다음과 같이 설정합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>설정값</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Compartment</td>
+<td>root/sandbox/hol-prod</td>
+</tr>
+
+<tr>
+<td>Reserved Public IP</td>
+<td>demo-public-ip</td>
+</tr>
+</tbody>
+</table>
+
+<p>다음 이미지와 같이 위 설정을 입력하고 <strong>Update</strong> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0270.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>IP Address의 <strong>Public IP Address</strong> 항목에 다음 이미지와 같이 <font color='red'><strong>140.238.7.207(Reserved)</strong></font>로 설정된 것을 확인할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0280.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>다음 메뉴 패스로 <font color='red'><strong>예약 Public IP</strong></font> 관리 페이지로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Networking</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Public IPs</strong></div></div>
+
+
+<p>Comportment를 <strong>root/sandbox/hol-prod</strong>로 설정하면 <strong>demo_public_ip</strong>이 출력됩니다. 이 <strong>demo_public_ip</strong>에 VNIC이 <font color='red'><strong>reserved_ip_vm01</strong></font>으로 설정된 것을 확인할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0300.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="공개-ip-브라우저-접근-1">공개 IP 브라우저 접근</h3>
+
+<p>설정된 공개 IP <font color='red'><strong>140.238.7.207</strong></font>에 브라우저를 통해서 접근하면, 다음 이미지와 같은 화면이 출력됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0290.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="자원-정리">자원 정리</h3>
+
+<p>마지막으로 앞에서 프로비저닝한 <strong>reserved_ip_vm01</strong> 인스턴스를 자원 정리하겠습니다. 다음과 같은 메뉴 패스로 <font color='red'><strong>Compute Instance 관리 페이지</strong></font>로 이동합니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Compute</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Instances</strong></div></div>
+
+
+<p><img src="https://taewanmerepo.github.io/2020/03/compute/010.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p><font color='red'><strong>Compute Instance 관리 페이지</strong></font>에서 Compartment를 <strong>root/sandbox/hol-prod</strong>로 설정합니다. <strong>root/sandbox/hol-prod</strong> 컴파트먼트의 인스턴스 목록 중에서 <strong>reserved_ip_vm01</strong> 인스턴스의 메뉴를 클릭하고 <font color='red'><strong>Terminate</strong></font> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0310.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>인스턴스 제거에 대한 확인 팝업창이 출력됩니다. 영구 삭제를 체크하고 <font color='red'><strong>Terminate Instance</strong></font> 버튼을 클릭합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0320.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>인스턴스 제거 명령이 실행되면, <strong>reserved_ip_vm01</strong> 인스턴스 상태가 <strong>Terminating</strong>이 됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0330.jpg?classes=border,shadow" alt="" /></p>
+
+<hr />
+
+<p>인스턴스가 종료되면 다음 이미지와 같은 상태가 됩니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/04/publicip/0340.jpg?classes=border,shadow" alt="" /></p>
+
+<h2 id="요약">요약</h2>
+
+<p>Compute Instance에 고정 공개 IP를 설정하는 핸즈온 랩을 진행했습니다. 이번 핸즈온 랩은 다음과 같은 순서로 진행되었습니다.</p>
 
 <ul>
-<li>nginx 설치</li>
-<li>nginx 서비스 등록</li>
-<li>방화벽 룰(80 포트) 등록</li>
-<li>방화벽 룰 적용</li>
-</ul>
-
-<p>cloud-init을 통해서 Compute 인스턴스 생성 후, 후속 조치를 자동화 할 수 있습니다.</p>
-
-<h1 id="참고문서">참고문서</h1>
-
-<ul>
-<li><a href="https://access.redhat.com/documentation/ko-kr/red_hat_virtualization/4.1/html/virtual_machine_management_guide/sect-using_cloud-init_to_automate_the_configuration_of_virtual_machines" target="_blank">CLOUD-INIT을 사용하여 가상 머신 설정 자동화 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
-
-</li>
+<li>Reserved Public IP 생성</li>
+<li>Custom Image로 Compute Instance 프로비저닝: reserved_ip_vm01</li>
+<li>Compute 인스턴스에 Public IP 설정</li>
+<li>브라우저 접근</li>
+<li>자원 정리</li>
 </ul>
 
 
@@ -907,7 +1028,7 @@ sudo systemctl restart firewalld
   <li><strong>문서 생성:</strong> 2020-04-10 08:11 / <string>최종 문서 수정:</strong> 2020-04-10 08:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/" title="Custom Image 임포트/익스포트"> <i class="fa fa-chevron-left"></i><label>Custom Image 임포트/익스포트</label></a>
+<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/030.oci_infra_basic/040.custom_image/020.provisioning_from_custom_image-copy/" title="Custom Image 프로비저닝"> <i class="fa fa-chevron-left"></i><label>Custom Image 프로비저닝</label></a>
     <a class="nav nav-next" href="/300.data_and_ai/" title="Data and AI " style="margin-right: 0px;"><label>Data and AI </label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
