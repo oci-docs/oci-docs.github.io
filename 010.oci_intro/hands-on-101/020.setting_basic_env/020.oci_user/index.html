@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-12T16:49:29 KST">
+<meta name="revised" content="2020-04-12T21:21:52 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -383,6 +383,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/700.oci_tools/020.oci_cli/">OCI CLI (Command Line Interface)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" class="dd-item">
+        <div>
+          <a href="/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/">
+            [OCI CLI 설치] Linux &amp; Mac OS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/manual_installation/" class="dd-item">
+        <div>
+          <a href="/700.oci_tools/020.oci_cli/manual_installation/">
+            [OCI CLI 설치] 메뉴얼 설치
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="http://cloud-docs.taewan.me/980.oci-related-sites/" class="dd-item alwaysopen haschildren
@@ -559,11 +581,11 @@
     
     
 
-<p>이번 Hands-on Lab에서는 OCI Console과 <strong>OCI CLI</strong>로 OCI User를 만드는 방법을 소개합니다. 이 핸즈온 랩은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.</p>
+<p>이번 Hands-on Lab에서는 OCI Console과 <strong>OCI CLI</strong>로 OCI User를 만드는 방법을 소개합니다. 이 <strong>Hands-on Lab</strong>은 <strong>OCI Admin User(OCI 관리자)</strong> ID로 OCI IAM 로그인하고 진행합니다.</p>
 
 <h1 id="hol-oci-user">HOL: OCI User</h1>
 
-<p>이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI User를 만들것 입니다.</p>
+<p>이번 <strong>Hands-on Lab</strong>에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI 사용자를 만들것 입니다.</p>
 
 <table>
 <thead>
@@ -931,9 +953,9 @@ taewanme@cloudshell:~ (ap-seoul-1)$
 
 <h2 id="oci-user-패스워드-설정">OCI User 패스워드 설정</h2>
 
-<p>OCI Console에서 초기화된 패스워드는 OCI User가 최초로 로그인할 때, 패스워드 변경이 요청됩니다. OCI Home Region 로그인 페이지에서 OCI IAM 옵션으로 로그인합니다.</p>
+<p>OCI Console에서 초기화된 패스워드로 OCI 사용자가 처음 로그인할 때, 패스워드 변경이 요청됩니다. OCI Home Region 로그인 페이지에서 OCI IAM 옵션으로 로그인합니다.</p>
 
-<pre><code>https://console.&lt;OCI_REGION_ID&gt;.oraclecloud.com/?tenant={Tenant_Name}
+<pre><code>https://console.{OCI_HOME_REGION_ID}.oraclecloud.com/?tenant={Tenant_Name}
 </code></pre>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/530.jpg?classes=border,shadow" alt="" /></p>
@@ -950,12 +972,12 @@ taewanme@cloudshell:~ (ap-seoul-1)$
 
 <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/550.jpg?classes=border,shadow" alt="" /></p>
 
-<p>이 작업을 <strong>demo.developer</strong>, <strong>demo.audit</strong>, <strong>demo.tester</strong>에 반복합니다. 모든 작업을 마치면 다음과 같이 패스워드를 다음과 같이 설정합니다.</p>
+<p>이 작업을 <strong>demo.developer</strong>, <strong>demo.audit</strong>, <strong>demo.tester</strong>에 반복합니다. 모든 작업을 마치면 4개 OCI 사용자는 다음과 같은 패스워드로 설정됩니다.</p>
 
 <table>
 <thead>
 <tr>
-<th>OCI User</th>
+<th>OCI 사용자</th>
 <th>로그인 패스워드</th>
 </tr>
 </thead>

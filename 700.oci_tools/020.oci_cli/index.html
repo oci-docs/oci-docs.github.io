@@ -8,14 +8,14 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="OCI 사용자&amp;보안 설정" />
-<meta property="og:description" content="OCI 사용자 설정 핸즈-온입니다." />
+<meta property="og:title" content="OCI CLI (Command Line Interface)" />
+<meta property="og:description" content="OCI CLI 툴을 소개합니다." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/" />
+<meta property="og:url" content="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/" />
 
 
 
-<meta property="og:updated_time" content="2020-03-30T09:11:05&#43;09:00"/>
+<meta property="og:updated_time" content="2020-04-12T09:11:05&#43;09:00"/>
 
 
 
@@ -31,7 +31,7 @@
 
 
 
-<title>OCI 사용자&amp;보안 설정 :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI CLI (Command Line Interface) :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 <script type="text/javascript">
       var baseurl = "http:\/\/cloud-docs.taewan.me\/";
 </script>
-<meta name="description" content="OCI 사용자 설정 핸즈-온입니다.">
+<meta name="description" content="OCI CLI 툴을 소개합니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -70,7 +70,7 @@
 
     
   </head>
-  <body data-url="/010.oci_intro/hands-on-101/020.setting_basic_env/">
+  <body data-url="/700.oci_tools/020.oci_cli/">
     
       <header>
   <div class="logo">
@@ -110,7 +110,7 @@
       <a href="/000.index/">오라클 클라우드 사용자 가이드</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/">OCI(Oracle Cloud)-기초 입문</a>
@@ -188,7 +188,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/">OCI 입문: Hands-on 101 클래스</a>
@@ -225,7 +225,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item parent active alwaysopen haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/">OCI 사용자&amp;보안 설정</a>
@@ -353,10 +353,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/" class="dd-item haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/700.oci_tools/">OCI 지원 도구</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/700.oci_tools/">OCI 지원 도구</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/" class="dd-item haschildren
@@ -381,10 +382,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/" class="dd-item haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/700.oci_tools/020.oci_cli/">OCI CLI (Command Line Interface)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/700.oci_tools/020.oci_cli/">OCI CLI (Command Line Interface)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" class="dd-item">
@@ -514,7 +516,7 @@
       <option value="/010.oci_intro/hands-on-101/010.console/010.oci_console_login/" >--- OCI Console 로그인</option>
       <option value="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" >--- OCI Console 사용법</option>
   
-    <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/"  selected>
+    <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/" >
   -- 
    OCI 사용자&amp;보안 설정</option> 
       <option value="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" >--- OCI Admin 로그인 생성</option>
@@ -540,7 +542,17 @@
     <option value="/300.data_and_ai/" >
    Data and AI </option>
     <option value="/700.oci_tools/" >
-   OCI 지원 도구</option>
+   OCI 지원 도구</option> 
+    <option value="/700.oci_tools/010.cloud_shell/" >
+  - 
+   OCI Cloud Shell</option>
+    <option value="/700.oci_tools/020.oci_cli/"  selected>
+  - 
+   OCI CLI (Command Line Interface)</option> 
+      <option value="/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" >-- [OCI CLI 설치] Linux &amp; Mac OS</option>
+      <option value="/700.oci_tools/020.oci_cli/manual_installation/" >-- [OCI CLI 설치] 메뉴얼 설치</option>
+  
+  
     <option value="/980.oci-related-sites/" >
    OCI 관련 사이트 모음</option> 
       <option value="/980.oci-related-sites/oci-sites/" >- OCI 관련 사이트 모음</option>
@@ -568,8 +580,8 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>OCI 사용자&amp;보안 설정</h1>
-    <p><img src="https://taewanmerepo.github.io/2020/03/usersetting/020.jpg" alt="OCI 사용자&amp;보안 설정"></p>
+    <h1>OCI CLI (Command Line Interface)</h1>
+    <p><img src="https://taewanmerepo.github.io/2020/ocidocs/cli/020.jpg" alt="OCI CLI (Command Line Interface)"></p>
 
 
      
@@ -579,70 +591,37 @@
     
     
 
+<p><strong>OCI CLI</strong>는 OCI(Oracle Cloud Infrastructure)에서 주요 인프라 관리 기능을 수행하는 CLI(Command Line Interface) 툴입니다. <strong>OCI CLI</strong>를 이용하여 OCI Console과 같은 기능을 수행할 수 있습니다. <strong>OCI CLI</strong>를 스크립트와 함께 사용할 경우 OCI 인프라 관리 기능을 자동화하고 편리한 운영 환경을 구성할 수 있습니다. OCI를 더 효율적으로 사용하기 위해서 Command Line Interface(이하 CLI) 사용이 필수입니다.</p>
+
+<p>OCI REST API를 랩핑하는 개발 언어별 OCI SDK를 <a href="https://github.com/oracle" target="_blank">오라클 github 레파지토리 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+에서 오픈소스 형태로 개발하고 있습니다. OCI SDK가 지원하는 언어는 Python, Go, Java와 Ruby입니다. <strong>oci cli</strong>는 <a href="https://github.com/oracle/oci-python-sdk" target="_blank">oracle/oci-python-sdk <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+ 프로젝트를 기반으로 만들어 졌습니다.</p>
+
+<div class="notices note" ><p><ul>
+<li><strong>OCI CLI</strong>는 Python 3.5 버전 이상을 지원합니다.</li>
+<li><strong>OCI CLI</strong> 설치 스크립트는 현재 컴퓨터에 <strong>OCI CLI</strong>가 지원하는 Python을 확인합니다.</li>
+<li>설치 대상 컴퓨터에 <strong>OCI CLI</strong> 지원 Python 버전이 없으면 Python을 직접 설치합니다.</li>
+<li>설치 스크립트가 설치하는 Python 버전을 지정할 수는 없습니다.</li>
+<li>따라서 <strong>OCI CLI</strong>를 설치하기 전에 Python 3.5 버전 이상을 미리 설치하는 것을 추천합니다.</li>
+</ul>
+</p></div>
 
 
-<p>OCI는 계정 관리 서비스로 OCI IAM 서비스를 사용합니다. OCI IAM 서비스를 사용하여 OCI 사용자 및 권한 설정을 진행하는 <strong>Hands-on Lab</strong>을 진행합니다.</p>
-
-<p>OCI IAM은 다음과 같은 컴포넌트로 구성됩니다.</p>
-
-<ol>
-<li>OCI User</li>
-<li>OCI Group</li>
-<li>Compartement</li>
-<li>Policy</li>
-</ol>
-
-<p>이 컴포넌트를 이용하여 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개의 OCI User를 만들고 사용자 그룹(Group), OCI 자원의 논리적인 묶음(Compartment) 및 접근 권한 정책(Policy)을 만들어 사용자 접근 제어를 관리하는 <strong>Hands-on Lab</strong>을 진행하겠습니다.</p>
-
-<h2 id="핸드-온-랩-시나리오">핸드-온 랩 시나리오</h2>
-
-<p>이번 문서는 다음과 같은 시나리오를 실습할 것 입니다.</p>
-
-<h3 id="1-사용자와-사용자-그룹">1. 사용자와 사용자 그룹</h3>
-
-<p>관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI 사용자를 만들고 역할 별로 사용자를 묶는 OCI 사용자 그룹을 4개 만듭니다.</p>
-
-<h3 id="2-compartment">2. Compartment</h3>
-
-<p>OCI Compartment는 OCI 자원을 묶는 논리적 단위입니다. <strong>Hands-on Lab</strong>에서는 모든 자원을 묶는 컴파트먼트를 만듭니다. 이 컴파트먼트 아래에 개발 관련 클라우드 리소스, 테스트 관련 클라우드 리소스 및 운영 관련 클라우드 리소스를 위한 3개 Compartment를 만들 것 입니다.</p>
-
-<h3 id="3-policy">3. Policy</h3>
-
-<p>OCI Policy는 사용자 그룹과 Copartment를 맵핑하여 권한을 부여하는 설정 방식입니다. 4개 Policy 를 등록하여 그룹별 접근 제어를 설정할 것 입니다.</p>
-
-<h2 id="oci-사용자-보안-핸즈온-구성">OCI 사용자&amp;보안 핸즈온 구성</h2>
-
-<p><strong>OCI 사용자&amp;보안 설정</strong> 핸즈-온 랩은 다음과 같이 순서로 진행됩니다.</p>
+<p><strong>OCI CLI</strong> 설치 방법과 설정 방법을 다음과 같은 순서로 소개합니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><ul class="children children-li">
 
 <span><li>
-        <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" >OCI Admin 로그인 생성</a></li>
+        <a href="/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" >[OCI CLI 설치] Linux &amp; Mac OS</a></li>
 </span>
 <ul>
 </ul>
 
 <p><span><li>
-        <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/" >OCI User 생성</a></li>
-</span>
-<ul>
-</ul></p>
-
-<p><span><li>
-        <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/030.oci_group/" >OCI Group 생성</a></li>
-</span>
-<ul>
-</ul></p>
-
-<p><span><li>
-        <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/040.oci_compartment/" >OCI Compartment 만들기</a></li>
-</span>
-<ul>
-</ul></p>
-
-<p><span><li>
-        <a href="/010.oci_intro/hands-on-101/020.setting_basic_env/050.oci_policy/" >OCI Policy: 권한 설정</a></li>
+        <a href="/700.oci_tools/020.oci_cli/manual_installation/" >[OCI CLI 설치] 메뉴얼 설치</a></li>
 </span>
 <ul>
 </ul>
@@ -655,30 +634,21 @@
     
     
       <div class="alert alert-info" role="alter">
-  <li><strong>문서 생성:</strong> 2020-03-30 09:11 / <string>최종 문서 수정:</strong> 2020-03-30 09:11 </li>
+  <li><strong>문서 생성:</strong> 2020-04-12 09:11 / <string>최종 문서 수정:</strong> 2020-04-12 09:11 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/010.oci_intro/hands-on-101/010.console/020.oci_console_usage/" title="OCI Console 사용법"> <i class="fa fa-chevron-left"></i><label>OCI Console 사용법</label></a>
-    <a class="nav nav-next" href="/010.oci_intro/hands-on-101/020.setting_basic_env/010.oci_admin_login/" title="OCI Admin 로그인 생성" style="margin-right: 0px;"><label>OCI Admin 로그인 생성</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/700.oci_tools/010.cloud_shell/cloud_shell_features/" title="Cloud Shell 둘러보기"> <i class="fa fa-chevron-left"></i><label>Cloud Shell 둘러보기</label></a>
+    <a class="nav nav-next" href="/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" title="[OCI CLI 설치] Linux &amp; Mac OS" style="margin-right: 0px;"><label>[OCI CLI 설치] Linux &amp; Mac OS</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
-      <div class="row">
-    <div class="author left">
-        <img alt="김태완 avatar" src="https://taewanmerepo.github.io//taewan2.jpg" height="90" width="90">
-    </div>
-    <div class="author right">
-		<li><b>작성자: 김태완</b></li>
-        <li>사랑하는 민수와 데이터 관리, 데이터 분석 &amp; 클라우드에 집중하고 있습니다.</li>
-        <li>E-mail: taewan.me@gmail.com</li>
-    </div>
-</div><div class="panel panel-danger">
+      <div class="panel panel-danger">
 <div class="panel-heading">Disclaimer</div>
 <div class="panel-body">이 저작물은 Oracle과 관계없이 개인으로서 개인의 시간을 할애하여 작성된 글 입니다. 본 글의 내용, 입장, 예측은 Oracle을 공식적으로 <font color="red"><bold>절대</bold></font> 대변하지 않습니다.</div>
 </div>
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kimhttp://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kimhttp://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/"></div>
 
   </div>
 
@@ -694,7 +664,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 30/03/2020
+        <i class='fa fa-calendar'></i> Last update on 12/04/2020
     </div>
     
   </div>

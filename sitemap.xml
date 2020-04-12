@@ -77,6 +77,16 @@
   </url>
   
   <url>
+    <loc>http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/</loc>
+    <lastmod>2020-04-12T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/</loc>
+    <lastmod>2020-04-12T09:11:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/</loc>
     <lastmod>2020-04-07T01:11:05+09:00</lastmod>
   </url>
@@ -123,6 +133,11 @@
   
   <url>
     <loc>http://cloud-docs.taewan.me/980.oci-related-sites/oci-related-service/oci_status/</loc>
+  </url>
+  
+  <url>
+    <loc>http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/manual_installation/</loc>
+    <lastmod>2020-04-12T09:11:05+09:00</lastmod>
   </url>
   
   <url>

@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-12T16:49:29 KST">
+<meta name="revised" content="2020-04-12T21:21:52 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -385,6 +385,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/700.oci_tools/020.oci_cli/">OCI CLI (Command Line Interface)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" class="dd-item">
+        <div>
+          <a href="/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/">
+            [OCI CLI 설치] Linux &amp; Mac OS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/manual_installation/" class="dd-item">
+        <div>
+          <a href="/700.oci_tools/020.oci_cli/manual_installation/">
+            [OCI CLI 설치] 메뉴얼 설치
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="http://cloud-docs.taewan.me/980.oci-related-sites/" class="dd-item alwaysopen haschildren
@@ -529,6 +551,9 @@
       <option value="/700.oci_tools/010.cloud_shell/cloud_shell_intro/" >-- Cloud Shell 개요</option>
       <option value="/700.oci_tools/010.cloud_shell/cloud_shell_features/"  selected>-- Cloud Shell 둘러보기</option>
   
+    <option value="/700.oci_tools/020.oci_cli/" >
+  - 
+   OCI CLI (Command Line Interface)</option>
   
     <option value="/980.oci-related-sites/" >
    OCI 관련 사이트 모음</option> 
@@ -571,7 +596,7 @@
 
 <h1 id="oci-주요-특징">OCI 주요 특징</h1>
 
-<p>OCI Cloud Shell을 주요 특징을 살펴보겠습니다. 이번 문서는 다음과 같은 목차로 진행합니다.</p>
+<p><font color='red'>OCI Cloud Shell</font>을 주요 특징을 살펴보겠습니다. 이번 문서는 다음과 같은 목차로 진행합니다.</p>
 
 
 <div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
@@ -599,7 +624,7 @@
 
 <h2 id="1-oci-cloud-shell-시작">1. OCI Cloud Shell 시작</h2>
 
-<p>OCI Console에서 Cloud Shell 아이콘을 클릭하면 현재 사용 중인 Region이 활성화된 Cloud Shell이 브라우저에 열립니다. Cloud Shell의 입력 프롬프트를 보면 현재 리전이 활성화된 것을 확인할 수 있습니다.</p>
+<p>OCI Console에서 Cloud Shell 아이콘을 클릭하면 현재 사용 중인 Region이 활성화된 Cloud Shell이 브라우저에 열립니다. Cloud Shell의 입력 프롬프트를 보면 현재 Region이 활성화된 것을 확인할 수 있습니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/cloudshell/050.jpg" alt="" /></p>
 
@@ -693,7 +718,7 @@
 
 <h2 id="3-cloud-shell-리전-활성화">3. Cloud Shell 리전 활성화</h2>
 
-<p>Cloud Shell은 터미널이 열리는 시점에 OCI Console이 사용하는 Region을 활성화합니다. 다음 이미지는 OCI Console에서 Phoenix, Seoul 및 Ashburn Region을 사용하도록 차례로 변경하면서, 각 리전에서 Cloud Shell을 접속한 이미지입니다. 현재 OCI Console이 사용하는 Region은 OCI Cloud Shell이 시작될 때 환경 변수 <strong>OCI_CLI_PROFILE</strong>에 설정됩니다.</p>
+<p>Cloud Shell은 터미널이 열리는 시점에 OCI Console이 사용하는 Region을 활성화합니다. 다음 이미지는 OCI Console이 Phoenix, Seoul 및 Ashburn Region을 사용하도록 차례로 변경하면서, 각 리전에서 Cloud Shell을 접속한 이미지입니다. 현재 OCI Console이 사용하는 Region은 OCI Cloud Shell이 시작될 때 환경 변수 <font color='red'>OCI_CLI_PROFILE</font>에 설정됩니다.</p>
 
 <p><img src="https://taewanmerepo.github.io/2020/03/cloudshell/070.jpg" alt="" /></p>
 
@@ -936,7 +961,7 @@ taewan_kim@cloudshell:~ (us-ashburn-1)$
 </div><div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/700.oci_tools/010.cloud_shell/cloud_shell_intro/" title="Cloud Shell 개요"> <i class="fa fa-chevron-left"></i><label>Cloud Shell 개요</label></a>
-    <a class="nav nav-next" href="/980.oci-related-sites/" title="OCI 관련 사이트 모음" style="margin-right: 0px;"><label>OCI 관련 사이트 모음</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/700.oci_tools/020.oci_cli/" title="OCI CLI (Command Line Interface)" style="margin-right: 0px;"><label>OCI CLI (Command Line Interface)</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">

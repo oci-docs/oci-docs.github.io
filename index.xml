@@ -97,6 +97,17 @@ HOL: Custom Image 이번 문서는 기존 Compute Instnace로 부터 OCI Custom 
     </item>
     
     <item>
+      <title>[OCI CLI 설치] Linux &amp; Mac OS</title>
+      <link>http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/</link>
+      <pubDate>Sun, 12 Apr 2020 09:11:05 +0900</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/</guid>
+      <description>이 문서는 리눅스 계열 OS와 Mac OS에 OCI CLI를 설치하고 제거하는 과정을 소개합니다. 다음과 같은 목차로 구성됩니다.
+ OCI CLI 설치 OCI CLI 제거    OCI CLI 설치 OCI CLI 프로젝트에서는 리눅스 계열 OS와 Mac OS를 위한 쉡 스크립트를 제공합니다. 터미널상에서 다음 스크립트를 실행하여 간편하게 OCI CLI를 설치할 수 있습니다.
+bash -c \ &amp;gt; &amp;quot;$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)&amp;quot;  위 스크립트를 실행하면 다음과 같은 항목에 대한 입력이 요청됩니다. 모든 항목에 대하여 기본 값을 선택할 것을 추천합니다.</description>
+    </item>
+    
+    <item>
       <title>Cloud Shell 둘러보기</title>
       <link>http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_features/</link>
       <pubDate>Mon, 06 Apr 2020 09:11:05 +0900</pubDate>
@@ -159,8 +170,8 @@ OCI Console 구성 OCI Console 구성에 대한 소개는 다음과 같은 목�
       <pubDate>Fri, 27 Mar 2020 09:11:05 +0900</pubDate>
       
       <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/020.setting_basic_env/020.oci_user/</guid>
-      <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI User를 만드는 방법을 소개합니다. 이 핸즈온 랩은 OCI Admin 사용자로 OCI IAM 옵션으로 로그인한 상태에서 진행합니다.
-HOL: OCI User 이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI User를 만들것 입니다.
+      <description>이번 Hands-on Lab에서는 OCI Console과 OCI CLI로 OCI User를 만드는 방법을 소개합니다. 이 Hands-on Lab은 OCI Admin User(OCI 관리자) ID로 OCI IAM 로그인하고 진행합니다.
+HOL: OCI User 이번 Hands-on Lab에서는 관리자, 개발자, 감리 담당자, QA 담당자를 대표하는 4개 OCI 사용자를 만들것 입니다.
    OCI User 역할     demo.admin 관리자   demo.audit 감리 담당자   demo.tester QA 담당자   demo.developer 개발자    핸즈온 랩 다음과 같은 순서로 진행합니다.</description>
     </item>
     
@@ -174,6 +185,16 @@ HOL: OCI User 이번 핸즈온 랩에서는 관리자, 개발자, 감리 담당�
 다음 그림과 같이 각 리전 세부 서비스의 현재 상태 정보를 4개 분류(Normal Performance, Degraded Performance, Partial Outage, Major Outage)로 제공합니다.
 &amp;lsquo;Oracle Cloud Infrastructure&amp;#39;s Status   &amp;rsquo; 페이지를 이용하여 다음과 같은 정보를 확인할 수 있습니다.
  OCI 전체 리전 목록 각 리전에서 운영 중인 OCI 세부 서비스 세부 서비스 현재 운영 상태  또한 이 페이지는 과거 OCI 장애 이력 정보를 제공하는 &amp;lsquo;Incident History   &amp;rsquo;페이지 링크를 제공합니다.</description>
+    </item>
+    
+    <item>
+      <title>[OCI CLI 설치] 메뉴얼 설치</title>
+      <link>http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/manual_installation/</link>
+      <pubDate>Sun, 12 Apr 2020 09:11:05 +0900</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/manual_installation/</guid>
+      <description>OCI CLI 코드 설치 이 문서는 윈도우, 리눅스 계열 OS와 Mac OS에서 OCI CLI를 PyPI(Python Package Index)와 Github OCI CLI 소스로 설치하하는 과정을 소개합니다. 다음과 같은 목차로 구성됩니다.
+ OCI CLI 코드 설치  운영 체제별 사전 준비 항목  Window 사전 준비 사항 Oracle Linux 7.X 사전 준비 사항 Oracle Linux 6 사전 준비 사항 CentOS 6 &amp;amp; 7 사전 준비 사항 Ubuntu 16.04  OCI CLI 메뉴얼 설치  Github 릴리즈 파일를 이용한 설치 PyPI를 이용한 설치  설치 상태 확인     운영 체제별 사전 준비 항목 운영 체제 별로 다음 항목을 미리 준비해야 합니다.</description>
     </item>
     
     <item>
