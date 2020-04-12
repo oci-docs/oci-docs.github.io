@@ -265,6 +265,18 @@ HOL: OCI IAM Policy 위 이미지와 같은 접근 제어를 구성합니다. �
     </item>
     
     <item>
+      <title>DNS 설정</title>
+      <link>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/060.mapping_public_ip_to_domain/</link>
+      <pubDate>Fri, 10 Apr 2020 08:11:05 +0900</pubDate>
+      
+      <guid>http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/030.oci_infra_basic/060.mapping_public_ip_to_domain/</guid>
+      <description>OCI Compute 인스턴스(VM 혹은 Baremetal)를 만들고, Public IP에 Domain Name을 설정하는 절차를 소개합니다.
+HOL: DNS 설정 이번 Hands-on Lab에서는 Compute 인스턴스의 Public IP에 도메인을 설정하는 방법을 정리합니다. DNS 설정 핸즈온 랩을 진행하기 위해서는 Domain이 필요합니다. 이번 핸드온 랩에서는 hosting.kr에서 관리되고 있는 demoapp.kr 도메인을 이용하겠습니다.
+이번 Hands-on Lab은 다음과 같은 목차로 구성됩니다.
+ HOL: DNS 설정  Hand-on Lab 준비  실습 환경 사용 자원 확인  Hands-on Lab  Compute 인스턴스 생성 공개 IP 브라우저 접근 OCI Domain Name 설정 Domain Name 네임 서버 설정 브라우저 확인  요약</description>
+    </item>
+    
+    <item>
       <title>OCI Classic과 OCI Gen2</title>
       <link>http://cloud-docs.taewan.me/010.oci_intro/basic_concept/oci_classic_and_oci_gen2/</link>
       <pubDate>Thu, 26 Mar 2020 09:11:05 +0900</pubDate>
