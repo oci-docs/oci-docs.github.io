@@ -8,15 +8,17 @@
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
-<meta property="og:title" content="Cloud Shell 개요" />
-<meta property="og:description" content="OCI Cloud Shell을 소개합니다." />
+<meta property="og:title" content="OCI CLI 정보확인 및 설정" />
+<meta property="og:description" content="설치한 OCI ClI에 접속 정보를 설정하는 방법을 소개합니다.
+OCI CLI 설정 이번 문서에서는 OCI ClI에 설정에 필요한 정보를 조회하고 OCI CLI 접속 설정 정보를 구성하는 방법을 소개합니다. 이 문서는 다음과 같은 목차로 구성됩니다.
+ OCI CLI 설정  사전 준비 사항 OCI CLI 설정 정보 수집  User OCID Tenancy 명과 Tenancy OCID Region ID  OCI CLI 기본 설정 및 확인  기본 설정 RSA 공개키 등록 OCI CLI 설정 테스트  OCI CLI 추가 프로파일 등록  RSA 공개키 등록 OCI CLI 프로파일 설정 테스트" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_intro/" />
+<meta property="og:url" content="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/config_of_ocicli/" />
 
 
 
-<meta property="article:published_time" content="2020-04-06T09:11:05&#43;09:00"/>
-<meta property="article:modified_time" content="2020-04-06T09:11:05&#43;09:00"/>
+<meta property="article:published_time" content="2020-03-03T08:20:25&#43;09:00"/>
+<meta property="article:modified_time" content="2020-03-03T08:20:25&#43;09:00"/>
 
 
 
@@ -33,7 +35,7 @@
 
 
 
-<title>Cloud Shell 개요 :: 오라클 클라우드 사용자 가이드</title>
+<title>OCI CLI 정보확인 및 설정 :: 오라클 클라우드 사용자 가이드</title>
 
 <link rel="shortcut icon" href="http://taewan.kim/img/icon/oracle.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -45,7 +47,7 @@
 <script type="text/javascript">
       var baseurl = "http:\/\/cloud-docs.taewan.me\/";
 </script>
-<meta name="description" content="OCI Cloud Shell을 소개합니다.">
+<meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 
 
 <link href='/css/railload.css' rel="stylesheet"/>
@@ -72,7 +74,7 @@
 
     
   </head>
-  <body data-url="/700.oci_tools/010.cloud_shell/cloud_shell_intro/">
+  <body data-url="/700.oci_tools/020.oci_cli/config_of_ocicli/">
     
       <header>
   <div class="logo">
@@ -362,14 +364,13 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/" class="dd-item parent haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/" class="dd-item haschildren
         ">
       <div>
-      <a href="/700.oci_tools/010.cloud_shell/">OCI Cloud Shell</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/700.oci_tools/010.cloud_shell/">OCI Cloud Shell</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_intro/" class="dd-item active">
+      <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_intro/" class="dd-item">
         <div>
           <a href="/700.oci_tools/010.cloud_shell/cloud_shell_intro/">
             Cloud Shell 개요
@@ -385,10 +386,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/" class="dd-item haschildren
+    <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/700.oci_tools/020.oci_cli/">OCI CLI (Command Line Interface)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/700.oci_tools/020.oci_cli/">OCI CLI (Command Line Interface)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" class="dd-item">
@@ -405,7 +407,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/config_of_ocicli/" class="dd-item">
+      <li data-nav-id="http://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/config_of_ocicli/" class="dd-item active">
         <div>
           <a href="/700.oci_tools/020.oci_cli/config_of_ocicli/">
             OCI CLI 정보확인 및 설정
@@ -554,13 +556,14 @@
    OCI 지원 도구</option> 
     <option value="/700.oci_tools/010.cloud_shell/" >
   - 
-   OCI Cloud Shell</option> 
-      <option value="/700.oci_tools/010.cloud_shell/cloud_shell_intro/"  selected>-- Cloud Shell 개요</option>
-      <option value="/700.oci_tools/010.cloud_shell/cloud_shell_features/" >-- Cloud Shell 둘러보기</option>
-  
+   OCI Cloud Shell</option>
     <option value="/700.oci_tools/020.oci_cli/" >
   - 
-   OCI CLI (Command Line Interface)</option>
+   OCI CLI (Command Line Interface)</option> 
+      <option value="/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" >-- [OCI CLI 설치] Linux &amp; Mac OS</option>
+      <option value="/700.oci_tools/020.oci_cli/manual_installation/" >-- [OCI CLI 설치] 메뉴얼 설치</option>
+      <option value="/700.oci_tools/020.oci_cli/config_of_ocicli/"  selected>-- OCI CLI 정보확인 및 설정</option>
+  
   
     <option value="/980.oci-related-sites/" >
    OCI 관련 사이트 모음</option> 
@@ -589,8 +592,8 @@
         </script>
         <script type="text/javascript" src="/js/search.js"></script>
       </div>
-    <h1>Cloud Shell 개요</h1>
-    <p><img src="https://taewanmerepo.github.io/2020/03/cloudshell/post.jpg" alt="Cloud Shell 개요"></p>
+    <h1>OCI CLI 정보확인 및 설정</h1>
+    <p><img src="https://taewanmerepo.github.io/2020/ocidocs/cli/020.jpg" alt="OCI CLI 정보확인 및 설정"></p>
 
 
      
@@ -601,80 +604,545 @@
     
     
 
-<h1 id="브라우저-리눅스-터미널">브라우저 리눅스 터미널</h1>
+<p>설치한 OCI ClI에 접속 정보를 설정하는 방법을 소개합니다.</p>
 
-<p>Cloud Shell은 OCI Console(OCI 관리 웹 콘솔)에서 실행되는 <font color='red'>브라우저 기반 가상 리눅스 터미널</font>입니다. OCI Cloud Shell은 GCP의 Google Cloud Shell, Azure의 Cloud Shell 및 AWS의 Session Manager와 유사한 서비스입니다. OCI Cloud Shell를 이용하면 PuTTY를 사용하지 않고 OCI VM 인스턴스에 접속하거나 별도의 소프트웨어와 계정 설정 작업 없이 즉시 OCI CLI 등 OCI 지원 툴을 사용할 수 있습니다.</p>
+<h1 id="oci-cli-설정">OCI CLI 설정</h1>
 
-<h2 id="cloud-shell-과금정책과-사용-권한">Cloud Shell 과금정책과 사용 권한</h2>
+<p>이번 문서에서는 OCI ClI에 설정에 필요한 정보를 조회하고 OCI CLI 접속 설정 정보를 구성하는 방법을 소개합니다. 이 문서는 다음과 같은 목차로 구성됩니다.</p>
 
-<p><font color='red'>OCI Cloud Shell</font>은 <font color='red'>Free 서비스</font>입니다. 서비스 비용이 발생하지 않습니다. OCI Cloud Shell은 현재 유료 Tenancy와 Free Trial(Always Free) 모두 이용 가능합니다. 추가로 OCI 사용자가 Cloud Shell을 사용하기 위해서는 OCI 사용자 그룹에 다음 Policy Statement가 설정돼야 합니다. OCI Cloud Shell 권한 부여 Policy Statement는 다음과 같습니다.</p>
 
-<pre><code>allow group &lt;GROUP-NAME&gt; to use cloud-shell in tenancy
-</code></pre>
-
-<p>위 Policy Statment가 적용된 OCI 사용자 그룹의 OCI 사용자는 OCI Cloud Shell을 사용할 수 있습니다. 이 권한을 갖는 OCI 사용자가 OCI Console에 로그인하면, Console 오른쪽 위 메뉴에 Cloud Shell 아이콘이 나타납니다. 이 Cloud Shell 아이콘을 클릭하면 OCI Consle 아래쪽에 Cloud Shell이 열립니다.</p>
-
-<p>Cloud Shell은 브라우저 기반 리눅스 접속 터미널입니다. Cloud Shell은 OCI가 OCI 사용자에게 제공하는 리눅스 VM에 접속합니다. Cloud Shell이 접속한 리눅스 VM은 현재 OCI Console이 사용하고 있는 Region을 터미널 세션 환경 변수로 설정합니다. OCI CLI와 같은 툴이 실행될 때, 이 환경 변수를 사용합니다. 그리고 별도 설정 없이 바로 OCI CLI를 실행할 수 있습니다.</p>
-
-<p>Cloud Shell 창 크기는 브라우저 전체로 확대할 할 수 있습니다.</p>
-
-<p><img src="https://taewanmerepo.github.io/2020/03/cloudshell/010.jpg" alt="" /></p>
-
-<h2 id="cloud-shell-특징과-제약">Cloud Shell 특징과 제약</h2>
-
-<p>OCI Cloud Shell의 주요 특징은 다음과 같습니다.</p>
-
+<div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
 <ul>
-<li>리눅스 배포판: Oracle Linux Server release 7.7</li>
-<li>OCI Cloud Shell은 VM 형태로 제공<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup></li>
-<li>CPU 타입 (#Core): AMD EPYC 7551 32-Core Processor (1 Core)로 추정<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup></li>
-<li>OCI Tenancy(계정)의 사용자는 OCI Console(OCI 관리 콘솔)에 로그인</li>
-<li>OCI CLI 및 Terraform, SQL*Plus와 같은 개발자 도구가 설치되어 있음</li>
-<li>사용자 별로 5GB의 영구 저장소를 사용할 수 있고, 이 곳에 파일을 저장 가능.</li>
-<li>Cloud Shell에서 인터넷에 접속할 수 있음(Public IP를 가진 OCI Compute에 ssh)</li>
-</ul>
-
-<p>2020년 3월 6일 현재 OCI Cloud Shell에는 다음과 같은 제약이 있습니다.</p>
-
+<li><a href="#oci-cli-설정">OCI CLI 설정</a>
 <ul>
-<li>세션 최대 24시간으로 제한</li>
-<li>OCI Cloud Shell을 20분간 사용하지 않으면 세션 종료</li>
-<li>OCI Cloud Shell에 할당된 5GB 스토리지를 반년 동안 사용하지 않으면 메일 통지되고 60일 이내에 스토리지가 제거됨
-
+<li><a href="#사전-준비-사항">사전 준비 사항</a></li>
+<li><a href="#oci-cli-설정-정보-수집">OCI CLI 설정 정보 수집</a>
 <ul>
-<li>최대 8개월간 사용되지 않으면 5GB 스토리지에 저장된 데이터는 유실될 수 있음</li>
+<li><a href="#user-ocid">User OCID</a></li>
+<li><a href="#tenancy-명과-tenancy-ocid">Tenancy 명과 Tenancy OCID</a></li>
+<li><a href="#region-id">Region ID</a></li>
 </ul></li>
-<li>외부에서 Cloud Shell에 ssh 접속할 수 없음</li>
-</ul>
-
-<h2 id="참고자료">참고자료</h2>
-
+<li><a href="#oci-cli-기본-설정-및-확인">OCI CLI 기본 설정 및 확인</a>
 <ul>
-<li><a href="https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/gosdk.htm" target="_blank">[OCI Official Docs]Cloud Shell <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
-
-</li>
+<li><a href="#기본-설정">기본 설정</a></li>
+<li><a href="#rsa-공개키-등록">RSA 공개키 등록</a></li>
+<li><a href="#oci-cli-설정-테스트">OCI CLI 설정 테스트</a></li>
+</ul></li>
+<li><a href="#oci-cli-추가-프로파일-등록">OCI CLI 추가 프로파일 등록</a>
+<ul>
+<li><a href="#rsa-공개키-등록-1">RSA 공개키 등록</a></li>
+<li><a href="#oci-cli-프로파일-설정-테스트">OCI CLI 프로파일 설정 테스트</a></li>
+</ul></li>
+</ul></li>
 </ul>
-<div class="footnotes">
+</nav></p>
+</div></div>
+
+
+<h2 id="사전-준비-사항">사전 준비 사항</h2>
+
+<p>이번 Hands-on Lab을 진행하기 전에 다음 작업이 선행되어야 합니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>선행 Hands-on Lab</th>
+<th>설명</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="/010.oci_intro/hands-on-101/000.oci_free_trial/" target="_blank">OCI Free Tier 등록 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</td>
+<td>데모에 사용할 Oracle Cloud 계정 등록</td>
+</tr>
+
+<tr>
+<td><a href="/010.oci_intro/hands-on-101/020.setting_basic_env/" target="_blank">OCI 사용자&amp;보안 설정 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</td>
+<td>OCI 사용자 등록, Compartment 할당 및 보안 설정</td>
+</tr>
+
+<tr>
+<td><a href="/700.oci_tools/020.oci_cli/installation_on_linux_and_mac/" target="_blank">[OCI CLI 설치] Linux &amp; Mac OS <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</td>
+<td>OCI CLI 설치</td>
+</tr>
+
+<tr>
+<td><a href="/700.oci_tools/020.oci_cli/manual_installation/" target="_blank">[OCI CLI 설치] 메뉴얼 설치 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+</td>
+<td>OCI CLI 코드 기반 설치</td>
+</tr>
+</tbody>
+</table>
 
 <hr />
 
-<ol>
-<li id="fn:1">OCI Cloud Shell에서 <code>cat /sys/class/dmi/id/product_name</code>을 실행하면 <code>Standard PC (i440FX + PIIX, 1996)</code>이 출력됩니다. 이것은 KVM/QEMU의 VM임을 의미합니다.
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
-<li id="fn:2">공식 자료에서 확인한 것은 아닙니다. 제가 사용하는 Cloud Shell에서 <code>cat /proc/cpuinfo</code> 명령으로 확인한 사항입니다.
- <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
-</ol>
-</div>
+<p>설치된 OCI CLI가 OCI Tenancy에 접속하고 정상적으로 동작하기 위해서는 <strong>OCI CLI</strong> 사용자 설정을 해야 합니다. <strong>OCI CLI</strong> 사용자 설정에는 다음과 같은 정보가 필요합니다.</p>
+
+<ul>
+<li>User OCID</li>
+<li>Tenancy OCID</li>
+<li>Region</li>
+</ul>
+
+<p>이번 문서에서는 <strong>OCI CLI</strong> 사용자 설정 정보를 확인하고 <strong>OCI CLI</strong>에 사용자 정보를 설정하는 과정을 소개합니다. 다음과 같은 목차로 진행됩니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><p><nav id="TableOfContents">
+<ul>
+<li><a href="#oci-cli-설정">OCI CLI 설정</a>
+<ul>
+<li><a href="#사전-준비-사항">사전 준비 사항</a></li>
+<li><a href="#oci-cli-설정-정보-수집">OCI CLI 설정 정보 수집</a>
+<ul>
+<li><a href="#user-ocid">User OCID</a></li>
+<li><a href="#tenancy-명과-tenancy-ocid">Tenancy 명과 Tenancy OCID</a></li>
+<li><a href="#region-id">Region ID</a></li>
+</ul></li>
+<li><a href="#oci-cli-기본-설정-및-확인">OCI CLI 기본 설정 및 확인</a>
+<ul>
+<li><a href="#기본-설정">기본 설정</a></li>
+<li><a href="#rsa-공개키-등록">RSA 공개키 등록</a></li>
+<li><a href="#oci-cli-설정-테스트">OCI CLI 설정 테스트</a></li>
+</ul></li>
+<li><a href="#oci-cli-추가-프로파일-등록">OCI CLI 추가 프로파일 등록</a>
+<ul>
+<li><a href="#rsa-공개키-등록-1">RSA 공개키 등록</a></li>
+<li><a href="#oci-cli-프로파일-설정-테스트">OCI CLI 프로파일 설정 테스트</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></p>
+</div></div>
+
+
+<hr />
+
+<h2 id="oci-cli-설정-정보-수집">OCI CLI 설정 정보 수집</h2>
+
+<h3 id="user-ocid">User OCID</h3>
+
+<p>User OCID는 OCI Console의 OCI User 상세 페이지에서 확인할 수 있습니다. 현재 로그인 사용자의 OCI User 상세 페이지는 다음 메뉴 패스로 이동할 수 있습니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><ul>
+<li><strong>오른쪽 위 OCI User Icon</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>오른쪽 위 OCI User Icon</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>사용자 ID</strong></li>
+<li><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Users</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>사용자 목록에서 로그인 ID 클릭</strong></li>
+</ul>
+</div></div>
+
+
+<p>다음 그림과 같이 위 메뉴 패스를 통해서 OCI User 상세 페이지로 이동할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/ocicli/setting/010.jpg?classes=border,shadow" alt="" /></p>
+
+<p>OCI User 상세 페이지에서 다음 그림과 같이 <strong>copy</strong> 링크를 클릭하여 User OCID를 복사할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/ocicli/setting/020.jpg?classes=border,shadow" alt="" /></p>
+
+<p>위에서 복사한 User OCID는 다음과 같은 패턴을 갖습니다.</p>
+
+<pre><code>ocid1.user.oc1..aaaaaaaaqddvfo3p4tprztewinniya3zebqdqgpbnk4cjspyzcluzi2yndna
+</code></pre>
+
+<h3 id="tenancy-명과-tenancy-ocid">Tenancy 명과 Tenancy OCID</h3>
+
+<p>Tenancy 명과 Tenancy OCID는 OCI Console의 Tenancy 상세 페이지에서 확인할 수 있습니다. Tenancy 상세 페이지는 다음 메뉴 패스로 이동할 수 있습니다.</p>
+
+
+<div class="panel panel-primary"><div class="panel-body"><ul>
+<li><strong>오른쪽 위 OCI User Icon</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>오른쪽 위 OCI User Icon</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>사용자 ID</strong></li>
+<li><span class="glyphicon glyphicon-menu-hamburger" style="font-size:medium" aria-hidden="true"></span> (<strong>OCI 콘솔 왼쪽 위 햄버그 버튼</strong>) <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span>  <strong>Identity</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>Users</strong> <span class="glyphicon glyphicon-menu-right" style="font-size:medium" aria-hidden="true"></span> <strong>사용자 목록에서 로그인 ID 클릭</strong></li>
+</ul>
+</div></div>
+
+
+<p>다음 그림과 같이 위 메뉴 패스를 통해서 Tenancy 상세 페이지로 이동할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/ocicli/setting/030.jpg?classes=border,shadow" alt="" /></p>
+
+<p>Tenancy 상세 페이지에서 Tenancy 이름을 확인할 수 있고 다음 그림과 같이 <strong>copy</strong> 링크를 클릭하여 Tenancy OCID를 복사할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/ocicli/setting/040.jpg?classes=border,shadow" alt="" /></p>
+
+<p>위에서 복사한 Tenancy 이름과 Tenancy OCID는 다음과 같은 패턴을 갖습니다.</p>
+
+<pre><code>Tenancy 명: apackrsct01
+ocid1.tenancy.oc1..aaaaaaaa6ma7kq3bsiddduzqidv22cajs3fpesgpqmmsgxihlbcemkklrsqa
+</code></pre>
+
+<h3 id="region-id">Region ID</h3>
+
+<p>사용할 Region 명은 다음 그림과 같이 OCI Console의 오른쪽 위 메뉴에서 확인할 수 있습니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/ocicli/setting/040.jpg?classes=border,shadow" alt="" /></p>
+
+<p>위 그림에서 현재 계정이 사용하는 리전 이름은 <strong>Ashburn</strong>입니다. <strong>Ashburn</strong>의 Region ID는 다음 링크 페이지에서 확인할 수 있습니다.</p>
+
+<a href="/00_oci/oci_resion_info/" target="_blank">[taewan.kim/ocidocs] OCI 리전 정보 <span class="glyphicon glyphicon-new-window" style="font-size:medium" aria-hidden="true"></span> </a>
+
+
+
+<p>위 링크에서 <strong>Ashburn</strong>의 Region ID는 <strong>us-ashburn-1</strong>인 것을 확인할 수 있습니다.</p>
+
+<h2 id="oci-cli-기본-설정-및-확인">OCI CLI 기본 설정 및 확인</h2>
+
+<p>앞에서 OCI CLI 설정에 필요한 정보를 확인했습니다. 앞에서 확인한 정보는 다음과 같이 <strong>설정표</strong>로 나타낼 수 있습니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>항목 값</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>User OCID</td>
+<td>ocid1.user.oc1..aaaaaaaaqddvfo3p4tprztewinniya3zebqdqgpbnk4cjspyzcluzi2yndna</td>
+</tr>
+
+<tr>
+<td>Tenancy OCID</td>
+<td>ocid1.tenancy.oc1..aaaaaaaa6ma7kq3bsiddduzqidv22cajs3fpesgpqmmsgxihlbcemkklrsqa</td>
+</tr>
+
+<tr>
+<td>Region ID</td>
+<td>us-ashburn-1</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="기본-설정">기본 설정</h3>
+
+<p>OCI CLI는 다음 명령으로 환경 설정을 구성할 수 있습니다.</p>
+
+<pre><code>oci setup config
+</code></pre>
+
+<p>위 명령을 실행하면 몇 가지 입력이 요청됩니다. 각 입력 항목은 다음과 같습니다. 아래 표의 입력 값에서 엔터는 &lsquo;<strong>return</strong>&rsquo; 키 입력을 의미합니다. 각 질문 항목에 대한 기본 값은 사용하는 OS의 Account에 따라서 달라집니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>입력항목</th>
+<th>입력 값</th>
+<th>설명</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Enter a location for your config</td>
+<td>엔터</td>
+<td>파일 위치: <strong>$HOME/.oci/config</strong></td>
+</tr>
+
+<tr>
+<td>Enter a user OCID</td>
+<td>위 <strong>설정표</strong>의 User OCID</td>
+<td>앞에서 조사한 값</td>
+</tr>
+
+<tr>
+<td>Enter a tenancy OCID</td>
+<td>위 <strong>설정표</strong>의 Tenancy OCID</td>
+<td>앞에서 조사한 값</td>
+</tr>
+
+<tr>
+<td>Enter a region</td>
+<td>u위 <strong>설정표</strong>의 Region ID</td>
+<td>앞에서 조사한 값</td>
+</tr>
+
+<tr>
+<td>Do you want to generate a new RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/n]</td>
+<td>엔터</td>
+<td>RSA 키 쌍 파일 생성</td>
+</tr>
+
+<tr>
+<td>Enter a directory for your keys to be created [/Users/taewan/.oci]</td>
+<td>엔터</td>
+<td>기본 위치 사용 권장</td>
+</tr>
+
+<tr>
+<td>Enter a name for your key [oci_api_key]</td>
+<td>엔터</td>
+<td>RSA 키 파일 명</td>
+</tr>
+
+<tr>
+<td>Enter a passphrase for your private key (empty for no passphrase)</td>
+<td>엔터</td>
+<td>입력값 없음</td>
+</tr>
+</tbody>
+</table>
+
+<p>위 입력값으로 실행한 <code>oci setup config</code>의 전체 실행 로그는 다음과 같습니다.</p>
+
+<pre><code>$ oci setup config
+    This command provides a walkthrough of creating a valid CLI config file.
+
+    The following links explain where to find the information required by this
+    script:
+
+    User OCID and Tenancy OCID:
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#Other
+
+    Region:
+
+        https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+
+    General config documentation:
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm
+
+
+Enter a location for your config [/Users/taewan/.oci/config]:
+Enter a user OCID: ocid1.user.oc1..aaaaaaaaqddvfo3p4tprztenweniyg3zebqgqgpbnk4cjspyzcluzi2yndna
+Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaa6ma7kq3bsif76uzqidv22cajs3fpesgpqmmsgxihlbcemkklrsqa
+Enter a region (e.g. ap-melbourne-1, ap-mumbai-1, ap-osaka-1, ap-seoul-1, ap-sydney-1, ap-tokyo-1, ca-toronto-1, eu-amsterdam-1, eu-frankfurt-1, eu-zurich-1, me-jeddah-1, sa-saopaulo-1, uk-gov-london-1, uk-london-1, us-ashburn-1, us-gov-ashburn-1, us-gov-chicago-1, us-gov-phoenix-1, us-langley-1, us-luke-1, us-phoenix-1): us-ashburn-1
+Do you want to generate a new RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/n]:
+Enter a directory for your keys to be created [/Users/taewan/.oci]:
+Enter a name for your key [oci_api_key]:
+Public key written to: /Users/taewan/.oci/oci_api_key_public.pem
+Enter a passphrase for your private key (empty for no passphrase):
+Private key written to: /Users/taewan/.oci/oci_api_key.pem
+Fingerprint: aa:41:d3:08:3d:f1:61:19:ad:9e:db:bc:2e:de:82:43
+Config written to /Users/taewan/.oci/config
+
+
+    If you haven't already uploaded your public key through the console,
+    follow the instructions on the page linked below in the section 'How to
+    upload the public key':
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#How2
+
+ $
+</code></pre>
+
+<p>위 명령이 실행되면 <code>$HOME/.ocn/config</code> 파일에 다음과 같은 설정이 만들어집니다.</p>
+
+<pre><code>$ cat $HOME/.oci/config
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaaqddvfo3p4tprztewinniya3zebqdqgpbnk4cjspyzcluzi2yndna
+fingerprint=aa:41:d3:08:3d:f1:61:19:ad:9e:db:bc:2e:de:82:43
+key_file=/Users/taewan/.oci/oci_api_key.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaa6ma7kq3bsiddduzqidv22cajs3fpesgpqmmsgxihlbcemkklrsqa
+region=us-ashburn-1
+ $
+</code></pre>
+
+<h3 id="rsa-공개키-등록">RSA 공개키 등록</h3>
+
+<p><code>$HOME/.oci/config</code> 파일에 default 프로파일이 만들어진 것을 확인할 수 있습니다. 이 default 프로파일에 등록된 RSA 키 파일의 공개키를 OCI User 페이지에 등록합니다. <code>$HOME/.oci/oci_api_key_public.pem</code> 공개키 파일의 내용을 OCI User에 등록합니다.</p>
+
+<pre><code> $ cat $HOME/.oci/oci_api_key_public.pem
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp7gmJQu1g0wd1UNHht1g
+2NcAwE03Gi10DFHm/VXHOpZe+WH4igKCoCReg5sfX8winihySEgKeJTUrASRMvY8
+Z+WkpgAjmP0RVdM7i89jzBy1HDYTWSQouU+R/sWaTmbSpg18RgJF2Fg0znxJOkTD
+PqPIPxSf2f62m/SLZGz4teuvuUYQ3bXlDjTqio2x0vWXKwWVJqnY3tojNuRHYnbZ
+JGy55VTQGog4B1jaeE20xghDhx3TXHC1DeOS3lrIvxdQ0NnYhqwdcxv6lhwkACCc
+XcOjbdjqBARmkS+n/P+eh4wG1MqnGp7QnqymSp6rZaIU0dmdap2oym7yWMmtouPY
+mQIDAQAB
+-----END PUBLIC KEY-----
+$
+</code></pre>
+
+<p>OCI Console에서 오른쪽 위 사용자 프로파일 패스로 OCI User 사용자 상세 페이지에 이동합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/ocicli/setting/060.jpg?classes=border,shadow" alt="" /></p>
+
+<p>OCI User 사용자 상세 페이지에서 위 공개키 값을 다음과 같이 등록합니다.</p>
+
+<p><img src="https://taewanmerepo.github.io/2020/ocidocs/ocicli/setting/080.jpg?classes=border,shadow" alt="" /></p>
+
+<h3 id="oci-cli-설정-테스트">OCI CLI 설정 테스트</h3>
+
+<p>모든 설정이 정상적으로 설정되었다면, 다음 명령은 Tenancy 이름을 출력합니다.</p>
+
+<pre><code> $ oci os ns get
+{
+  &quot;data&quot;: &quot;apackrsct01&quot;
+}
+ $
+</code></pre>
+
+<h2 id="oci-cli-추가-프로파일-등록">OCI CLI 추가 프로파일 등록</h2>
+
+<p>Default 프로파일을 등록한 후 추가 프로파일을 등록하는 방법을 소개합니다. OCI CLI의 설정 파일인 $HOME/.oci/config에 seoul 프로파일을 등록하는 절차를 소개합니다.</p>
+
+<pre><code>oci setup config
+</code></pre>
+
+<p>위 명령을 실행하면 몇 가지 입력이 요청됩니다. 각 입력 항목은 다음과 같습니다. 아래 표의 입력 값에서 엔터는 &lsquo;<strong>return</strong>&rsquo; 키 입력을 의미합니다. 각 질문 항목에 대한 기본 값은 사용하는 OS의 Account에 따라서 달라집니다.</p>
+
+<table>
+<thead>
+<tr>
+<th>입력항목</th>
+<th>입력 값</th>
+<th>설명</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Enter a location for your config [/Users/taewan/.oci/config]</td>
+<td>엔터</td>
+<td>파일 위치: <strong>$HOME/.oci/config</strong></td>
+</tr>
+
+<tr>
+<td>config file: /Users/taewan/.oci/config already exists. Do you want add a profile here? (If no, you will be prompted to overwrite the file) [Y/n]</td>
+<td>위 <strong>설정표</strong>의 User OCID</td>
+<td>앞에서 조사한 값</td>
+</tr>
+
+<tr>
+<td>Enter the name of the profile you would like to create</td>
+<td>seoul</td>
+<td>프로파일 이름</td>
+</tr>
+
+<tr>
+<td>Enter a tenancy OCID</td>
+<td>위 <strong>설정표</strong>의 Tenancy OCID</td>
+<td>앞에서 조사한 값</td>
+</tr>
+
+<tr>
+<td>Enter a region</td>
+<td>위 <strong>설정표</strong>의 Region ID</td>
+<td>앞에서 조사한 값</td>
+</tr>
+
+<tr>
+<td>Do you want to generate a new RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/n]</td>
+<td>n</td>
+<td>RSA 키 쌍 생성하지 않음</td>
+</tr>
+
+<tr>
+<td>Enter the location of your private key file</td>
+<td>$HOME/.oci/oci_api_key.pem</td>
+<td>기본 비밀키 파일 위치/이름</td>
+</tr>
+</tbody>
+</table>
+
+<p>위 설정값을 입력한 전체 실행 로그는 다음과 같습니다.</p>
+
+<pre><code> $ oci setup config
+    This command provides a walkthrough of creating a valid CLI config file.
+
+    The following links explain where to find the information required by this
+    script:
+
+    User OCID and Tenancy OCID:
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#Other
+
+    Region:
+
+        https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+
+    General config documentation:
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm
+
+
+Enter a location for your config [/Users/taewan/.oci/config]:
+Config file: /Users/taewan/.oci/config already exists. Do you want add a profile here? (If no, you will be prompted to overwrite the file) [Y/n]:
+Enter the name of the profile you would like to create:  seoul
+Enter a user OCID: ocid1.user.oc1..aaaaaaaaqddvfo3p4tprztenweniyg3zebqgqgpbnk4cjspyzcluzi2yndna
+Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaa6ma7kq3bsif76uzqidv22cajs3fpesgpqmmsgxihlbcemkklrsqa
+Enter a region (e.g. ap-melbourne-1, ap-mumbai-1, ap-osaka-1, ap-seoul-1, ap-sydney-1, ap-tokyo-1, ca-toronto-1, eu-amsterdam-1, eu-frankfurt-1, eu-zurich-1, me-jeddah-1, sa-saopaulo-1, uk-gov-london-1, uk-london-1, us-ashburn-1, us-gov-ashburn-1, us-gov-chicago-1, us-gov-phoenix-1, us-langley-1, us-luke-1, us-phoenix-1): ap-seoul-1
+Do you want to generate a new RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/n]: n
+Enter the location of your private key file: /Users/taewan/.oci/oci_api_key.pem
+Fingerprint: aa:41:d3:08:3d:f1:61:19:ad:9e:db:bc:2e:de:82:43
+Config written to /Users/taewan/.oci/config
+
+
+    If you haven't already uploaded your public key through the console,
+    follow the instructions on the page linked below in the section 'How to
+    upload the public key':
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#How2
+
+ $
+</code></pre>
+
+<p>위 명령을 실행하면 $HOME/.oci/config에 SEOUL 프로파일이 추가된 것을 확인할 수 있습니다.</p>
+
+<pre><code> $ cat /Users/taewan/.oci/config
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaaqddvfo3p4tprztenwiniyg3aaaqgqgpbnk4cjspyzcluzi2yndna
+fingerprint=aa:41:d3:08:3d:f1:61:19:ad:9e:db:bc:2e:de:82:43
+key_file=/Users/taewan/.oci/oci_api_key.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaa6ma7kq3bsif76uzqidv22cajsasbcsgpqmmsgxihlbcemkklrsqa
+region=us-ashburn-1
+
+
+[SEOUL]
+user=ocid1.user.oc1..aaaaaaaaqddvfo3p4tprztenwiniyg3aaaqgqgpbnk4cjspyzcluzi2yndna
+fingerprint=aa:41:d3:08:3d:f1:61:19:ad:9e:db:bc:2e:de:82:43
+key_file=/Users/taewan/.oci/oci_api_key.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaa6ma7kq3bsif76uzqidv22cajsasbcsgpqmmsgxihlbcemkklrsqa
+region=ap-seoul-1
+
+ $
+</code></pre>
+
+<h3 id="rsa-공개키-등록-1">RSA 공개키 등록</h3>
+
+<p>OCI User는 글로벌 객체입니다. 앞에서 디폴트 프로파일을 설정할 때 RSA 공개 키를 OCI User 상세 페이지에 등록했습니다. 새로 등록한 Seoul 프로파일이 디폴트 프로파일에서 사용한 RAS 키를 사용한다면 추가로 RSA 공개키를 등록할 필요가 업습니다.</p>
+
+<p>새로 등록한 프로파일이 기존에 등록한 RAS 키가 아닌 새로운 RAS 키를 사용한다면 앞에서 등록한 절차에 따라 RAS 공개키를 OCI User 상세 페이지에 등록해야 합니다.</p>
+
+<h3 id="oci-cli-프로파일-설정-테스트">OCI CLI 프로파일 설정 테스트</h3>
+
+<p>OCI 명령을 실행할 때 &ndash;profile 옵션에 프로파일 이름을 지정할 수 있습니다. 프로파일 이름을 지정하지 않으면 DEFAULT 프로파일이 적용됩니다.</p>
+
+<pre><code> $ oci os ns get --profile SEOUL
+{
+  &quot;data&quot;: &quot;apackrsct01&quot;
+}
+ $ oci os ns get --profile DEFAULT
+{
+  &quot;data&quot;: &quot;apackrsct01&quot;
+}
+ $ oci os ns get 
+{
+  &quot;data&quot;: &quot;apackrsct01&quot;
+}
+ $
+</code></pre>
 
 
     
     
       <div class="alert alert-info" role="alter">
-  <li><strong>문서 생성:</strong> 2020-04-06 09:11 / <string>최종 문서 수정:</strong> 2020-04-06 09:11 </li>
+  <li><strong>문서 생성:</strong> 2020-03-03 08:20 / <string>최종 문서 수정:</strong> 2020-03-03 08:20 </li>
 </div><div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/700.oci_tools/010.cloud_shell/" title="OCI Cloud Shell"> <i class="fa fa-chevron-left"></i><label>OCI Cloud Shell</label></a>
-    <a class="nav nav-next" href="/700.oci_tools/010.cloud_shell/cloud_shell_features/" title="Cloud Shell 둘러보기" style="margin-right: 0px;"><label>Cloud Shell 둘러보기</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/700.oci_tools/020.oci_cli/manual_installation/" title="[OCI CLI 설치] 메뉴얼 설치"> <i class="fa fa-chevron-left"></i><label>[OCI CLI 설치] 메뉴얼 설치</label></a>
+    <a class="nav nav-next" href="/980.oci-related-sites/" title="OCI 관련 사이트 모음" style="margin-right: 0px;"><label>OCI 관련 사이트 모음</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
   <div class="chevrons">
       <div class="row">
@@ -693,7 +1161,7 @@
 <hr />
 
 
-<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kimhttp://cloud-docs.taewan.me/700.oci_tools/010.cloud_shell/cloud_shell_intro/"></div>
+<div class="fb-comments" data-width="100%" data-numposts="10" data-href="http://taewan.kimhttp://cloud-docs.taewan.me/700.oci_tools/020.oci_cli/config_of_ocicli/"></div>
 
   </div>
 
@@ -709,7 +1177,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 06/04/2020
+        <i class='fa fa-calendar'></i> Last update on 03/03/2020
     </div>
     
   </div>
