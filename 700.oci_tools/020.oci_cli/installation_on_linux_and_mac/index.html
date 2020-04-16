@@ -4,7 +4,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-04-13T19:15:05 KST">
+<meta name="revised" content="2020-04-16T09:02:33 KST">
 
 <meta name="description" content="오라클 클라우드 사용자 가이드입니다. 오라클 클라우드(OCI, Oracle Cloud Infrasturcture) 사용자를 위해 주요 문서를 정리합니다.">
 <meta name="generator" content="Hugo 0.27.1" />
@@ -337,6 +337,12 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="http://cloud-docs.taewan.me/010.oci_intro/hands-on-101/080.adb/" class="dd-item alwaysopen
+        ">
+      <div>
+      <a href="/010.oci_intro/hands-on-101/080.adb/">Autonomous DB</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
         </ul>
     </li>
         </ul>
@@ -546,6 +552,10 @@
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/050.reserved_public_ip/" >--- OCI VM 고정 IP 설정</option>
       <option value="/010.oci_intro/hands-on-101/030.oci_infra_basic/060.mapping_public_ip_to_domain/" >--- DNS 설정</option>
   
+    <option value="/010.oci_intro/hands-on-101/080.adb/" >
+  -- 
+   Autonomous DB</option> 
+  
   
   
     <option value="/300.data_and_ai/" >
@@ -607,8 +617,11 @@
 
 <div class="panel panel-primary"><div class="panel-body"><nav id="TableOfContents">
 <ul>
-<li><a href="#oci-cli-설치">OCI CLI 설치</a></li>
-<li><a href="#oci-cli-제거">OCI CLI 제거</a></li>
+<li><a href="#oci-cli-설치">OCI CLI 설치</a>
+<ul>
+<li><a href="#if-tab-completion-is-not-activated-verify-that-home-opc-bashrc-is-sourced-by-your-shell">&ndash; If tab completion is not activated, verify that &lsquo;/home/opc/.bashrc&rsquo; is sourced by your shell.</a></li>
+<li><a href="#run-exec-l-shell-to-restart-your-shell">&ndash; ** Run <code>exec -l $SHELL</code> to restart your shell. **</a></li>
+</ul></li>
 </ul>
 </nav>
 </div></div>
@@ -620,114 +633,80 @@
 
 <p><strong>OCI CLI</strong> 프로젝트에서는 리눅스 계열 OS와 Mac OS를 위한 쉡 스크립트를 제공합니다. 터미널상에서 다음 스크립트를 실행하여 간편하게 <strong>OCI CLI</strong>를 설치할 수 있습니다.</p>
 
-<pre><code>bash -c \
-&gt; &quot;$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)&quot;
+<p>&lt;
+bash -c <br />
+&gt; &ldquo;$(curl -L <a href="https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)&quot;">https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)&quot;</a></p>
+
+<pre><code>
+위 스크립트를 실행하면 다음과 같은 항목에 대한 입력이 요청됩니다. 모든 항목에 대하여 기본 값을 선택할 것을 추천합니다. 
+
+|입력 요청 질의|설명|입력값|
+|---|---|---|
+|===&gt; In what directory would you like to place the install? (leave blank to use '/home/opc/lib/oracle-cli'):|OCI CLI 설치 위치|기본 값 사용(Enter)|
+|===&gt; In what directory would you like to place the 'oci' executable? (leave blank to use '/home/opc/bin'):|OCI CLI 실행 파일 설치 위치|기본 값 사용(Enter)|
+|===&gt; In what directory would you like to place the OCI scripts? (leave blank to use '/home/opc/bin/oci-cli-scripts'):|OCI CLI 스크립트 파일 설치 위치|기본 값 사용(Enter)|
+|===&gt; Currently supported optional packages are: ['db (will install cx_Oracle)'] What optional CLI packages would you like to be installed (comma separated names; press enter if you don't need any optional packages)?:|추가패키지 설치|기본 값 사용(Enter)|
+|===&gt; Modify profile to update your $PATH and enable shell/tab completion now? (Y/n):|환경변수 수정|기본 값 사용(Enter)|
+|===&gt; Enter a path to an rc file to update (leave blank to use '/home/opc/.bashrc'):|패스 업데이트|기본 값 사용(Enter)|
+
+전체 설치 로그는 다음과 같습니다. 
+
 </code></pre>
 
-<p>위 스크립트를 실행하면 다음과 같은 항목에 대한 입력이 요청됩니다. 모든 항목에 대하여 기본 값을 선택할 것을 추천합니다.</p>
-
-<table>
-<thead>
-<tr>
-<th>입력 요청 질의</th>
-<th>설명</th>
-<th>입력값</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>===&gt; In what directory would you like to place the install? (leave blank to use &lsquo;/home/opc/lib/oracle-cli&rsquo;):</td>
-<td>OCI CLI 설치 위치</td>
-<td>기본 값 사용(Enter)</td>
-</tr>
-
-<tr>
-<td>===&gt; In what directory would you like to place the &lsquo;oci&rsquo; executable? (leave blank to use &lsquo;/home/opc/bin&rsquo;):</td>
-<td>OCI CLI 실행 파일 설치 위치</td>
-<td>기본 값 사용(Enter)</td>
-</tr>
-
-<tr>
-<td>===&gt; In what directory would you like to place the OCI scripts? (leave blank to use &lsquo;/home/opc/bin/oci-cli-scripts&rsquo;):</td>
-<td>OCI CLI 스크립트 파일 설치 위치</td>
-<td>기본 값 사용(Enter)</td>
-</tr>
-
-<tr>
-<td>===&gt; Currently supported optional packages are: [&lsquo;db (will install cx_Oracle)&lsquo;] What optional CLI packages would you like to be installed (comma separated names; press enter if you don&rsquo;t need any optional packages)?:</td>
-<td>추가패키지 설치</td>
-<td>기본 값 사용(Enter)</td>
-</tr>
-
-<tr>
-<td>===&gt; Modify profile to update your $PATH and enable shell/tab completion now? (Y/n):</td>
-<td>환경변수 수정</td>
-<td>기본 값 사용(Enter)</td>
-</tr>
-
-<tr>
-<td>===&gt; Enter a path to an rc file to update (leave blank to use &lsquo;/home/opc/.bashrc&rsquo;):</td>
-<td>패스 업데이트</td>
-<td>기본 값 사용(Enter)</td>
-</tr>
-</tbody>
-</table>
-
-<p>전체 설치 로그는 다음과 같습니다.</p>
-
-<pre><code>[opc@demo02 ~]$ bash -c \
-&gt; &quot;$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)&quot;
+<p>[opc@demo02 ~]$ bash -c <br />
+&gt; &ldquo;$(curl -L <a href="https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)&quot;">https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)&quot;</a>
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100 13979  100 13979    0     0  55147      0 --:--:-- --:--:-- --:--:-- 55472
+100 13979  100 13979    0     0  55147      0 &ndash;:&ndash;:&ndash; &ndash;:&ndash;:&ndash; &ndash;:&ndash;:&ndash; 55472</p>
 
-    ******************************************************************************
-    You have started the OCI CLI Installer in interactive mode. If you do not wish
-    to run this in interactive mode, please include the --accept-all-defaults option.
-    If you have the script locally and would like to know more about
-    input options for this script, then you can run:
-    ./install.sh -h
-    If you would like to know more about input options for this script, refer to:
-    https://github.com/oracle/oci-cli/blob/master/scripts/install/README.rst
-    ******************************************************************************
-Downloading Oracle Cloud Infrastructure CLI install script from https://raw.githubusercontent.com/oracle/oci-cli/v2.9.3/scripts/install/install.py to /tmp/oci_cli_install_tmp_2Rob.
+<pre><code>******************************************************************************
+You have started the OCI CLI Installer in interactive mode. If you do not wish
+to run this in interactive mode, please include the --accept-all-defaults option.
+If you have the script locally and would like to know more about
+input options for this script, then you can run:
+./install.sh -h
+If you would like to know more about input options for this script, refer to:
+https://github.com/oracle/oci-cli/blob/master/scripts/install/README.rst
+******************************************************************************
+</code></pre>
+
+<p>Downloading Oracle Cloud Infrastructure CLI install script from <a href="https://raw.githubusercontent.com/oracle/oci-cli/v2.9.3/scripts/install/install.py">https://raw.githubusercontent.com/oracle/oci-cli/v2.9.3/scripts/install/install.py</a> to /tmp/oci_cli_install_tmp_2Rob.
 ######################################################################## 100.0%
 Python3 not found on system PATH
 Running install script.
 python /tmp/oci_cli_install_tmp_2Rob
--- Verifying Python version.
--- Python version 2.7.5 okay.
+&ndash; Verifying Python version.
+&ndash; Python version 2.7.5 okay.</p>
 
-===&gt; In what directory would you like to place the install? (leave blank to use '/home/opc/lib/oracle-cli'):
--- Creating directory '/home/opc/lib/oracle-cli'.
--- We will install at '/home/opc/lib/oracle-cli'.
+<p>===&gt; In what directory would you like to place the install? (leave blank to use &lsquo;/home/opc/lib/oracle-cli&rsquo;):
+&ndash; Creating directory &lsquo;/home/opc/lib/oracle-cli&rsquo;.
+&ndash; We will install at &lsquo;/home/opc/lib/oracle-cli&rsquo;.</p>
 
-===&gt; In what directory would you like to place the 'oci' executable? (leave blank to use '/home/opc/bin'):
--- Creating directory '/home/opc/bin'.
--- The executable will be in '/home/opc/bin'.
+<p>===&gt; In what directory would you like to place the &lsquo;oci&rsquo; executable? (leave blank to use &lsquo;/home/opc/bin&rsquo;):
+&ndash; Creating directory &lsquo;/home/opc/bin&rsquo;.
+&ndash; The executable will be in &lsquo;/home/opc/bin&rsquo;.</p>
 
-===&gt; In what directory would you like to place the OCI scripts? (leave blank to use '/home/opc/bin/oci-cli-scripts'):
--- Creating directory '/home/opc/bin/oci-cli-scripts'.
--- The scripts will be in '/home/opc/bin/oci-cli-scripts'.
+<p>===&gt; In what directory would you like to place the OCI scripts? (leave blank to use &lsquo;/home/opc/bin/oci-cli-scripts&rsquo;):
+&ndash; Creating directory &lsquo;/home/opc/bin/oci-cli-scripts&rsquo;.
+&ndash; The scripts will be in &lsquo;/home/opc/bin/oci-cli-scripts&rsquo;.</p>
 
-===&gt; Currently supported optional packages are: ['db (will install cx_Oracle)']
-What optional CLI packages would you like to be installed (comma separated names; press enter if you don't need any optional packages)?:
--- The optional packages installed will be ''.
--- Trying to use python3 venv.
--- Executing: ['/usr/bin/python', '-m', 'venv', '/home/opc/lib/oracle-cli']
+<p>===&gt; Currently supported optional packages are: [&lsquo;db (will install cx_Oracle)&lsquo;]
+What optional CLI packages would you like to be installed (comma separated names; press enter if you don&rsquo;t need any optional packages)?:
+&ndash; The optional packages installed will be &ldquo;.
+&ndash; Trying to use python3 venv.
+&ndash; Executing: [&lsquo;/usr/bin/python&rsquo;, &lsquo;-m&rsquo;, &lsquo;venv&rsquo;, &lsquo;/home/opc/lib/oracle-cli&rsquo;]
 /usr/bin/python: No module named venv
--- System was unable to use venv, is going to download and create virtualenv.
--- Downloading virtualenv package from https://github.com/pypa/virtualenv/archive/15.0.0.tar.gz.
--- Downloaded virtualenv package to /tmp/tmpZCpUza/15.0.0.tar.gz.
--- Checksum of /tmp/tmpZCpUza/15.0.0.tar.gz OK.
--- Extracting '/tmp/tmpZCpUza/15.0.0.tar.gz' to '/tmp/tmpZCpUza'.
--- Executing: ['/usr/bin/python', 'virtualenv.py', '--python', '/usr/bin/python', '/home/opc/lib/oracle-cli']
+&ndash; System was unable to use venv, is going to download and create virtualenv.
+&ndash; Downloading virtualenv package from <a href="https://github.com/pypa/virtualenv/archive/15.0.0.tar.gz">https://github.com/pypa/virtualenv/archive/15.0.0.tar.gz</a>.
+&ndash; Downloaded virtualenv package to /tmp/tmpZCpUza/15.0.0.tar.gz.
+&ndash; Checksum of /tmp/tmpZCpUza/15.0.0.tar.gz OK.
+&ndash; Extracting &lsquo;/tmp/tmpZCpUza/15.0.0.tar.gz&rsquo; to &lsquo;/tmp/tmpZCpUza&rsquo;.
+&ndash; Executing: [&lsquo;/usr/bin/python&rsquo;, &lsquo;virtualenv.py&rsquo;, &lsquo;&ndash;python&rsquo;, &lsquo;/usr/bin/python&rsquo;, &lsquo;/home/opc/lib/oracle-cli&rsquo;]
 Already using interpreter /usr/bin/python
 New python executable in /home/opc/lib/oracle-cli/bin/python
-Installing setuptools, pip, wheel...done.
--- Executing: ['/home/opc/lib/oracle-cli/bin/pip', 'install', '--cache-dir', '/tmp/tmpZCpUza', 'oci_cli', '--upgrade']
-DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Installing setuptools, pip, wheel&hellip;done.
+&ndash; Executing: [&lsquo;/home/opc/lib/oracle-cli/bin/pip&rsquo;, &lsquo;install&rsquo;, &lsquo;&ndash;cache-dir&rsquo;, &lsquo;/tmp/tmpZCpUza&rsquo;, &lsquo;oci_cli&rsquo;, &lsquo;&ndash;upgrade&rsquo;]
+DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at <a href="https://pip.pypa.io/en/latest/development/release-process/#python-2-support">https://pip.pypa.io/en/latest/development/release-process/#python-2-support</a>
 Collecting oci_cli
   Downloading oci_cli-2.9.3-py2.py3-none-any.whl (7.4 MB)
      |████████████████████████████████| 7.4 MB 31.0 MB/s
@@ -751,7 +730,7 @@ Collecting oci==2.10.5
 Collecting pytz==2016.10
   Downloading pytz-2016.10-py2.py3-none-any.whl (483 kB)
      |████████████████████████████████| 483 kB 35.1 MB/s
-Collecting idna&lt;2.7,&gt;=2.5
+Collecting idna<2.7,>=2.5
   Downloading idna-2.6-py2.py3-none-any.whl (56 kB)
      |████████████████████████████████| 56 kB 6.5 MB/s
 Collecting PyYAML==5.1.2
@@ -774,87 +753,76 @@ Collecting click==6.7
 Collecting cffi!=1.11.3,&gt;=1.8
   Downloading cffi-1.14.0-cp27-cp27mu-manylinux1_x86_64.whl (387 kB)
      |████████████████████████████████| 387 kB 33.3 MB/s
-Collecting ipaddress; python_version &lt; &quot;3&quot;
+Collecting ipaddress; python_version &lt; &ldquo;3&rdquo;
   Downloading ipaddress-1.0.23-py2.py3-none-any.whl (18 kB)
-Collecting enum34; python_version &lt; &quot;3&quot;
+Collecting enum34; python_version &lt; &ldquo;3&rdquo;
   Downloading enum34-1.1.6-py2-none-any.whl (12 kB)
 Collecting pycparser
   Downloading pycparser-2.19.tar.gz (158 kB)
      |████████████████████████████████| 158 kB 43.3 MB/s
 Building wheels for collected packages: arrow, retrying, PyYAML, terminaltables, configparser, pycparser
-  Building wheel for arrow (setup.py) ... done
+  Building wheel for arrow (setup.py) &hellip; done
   Created wheel for arrow: filename=arrow-0.10.0-py2.py3-none-any.whl size=32852 sha256=588fb64659d6e482ab77ff9923c1a3b0df991546b38f6c8a2fa35d312d149d08
   Stored in directory: /tmp/tmpZCpUza/wheels/e9/2b/c1/e12eca55f056e9a41ed1d83bc42996bb12283c7509d5d690c6
-  Building wheel for retrying (setup.py) ... done
+  Building wheel for retrying (setup.py) &hellip; done
   Created wheel for retrying: filename=retrying-1.3.3-py2-none-any.whl size=11430 sha256=41590ed3406a3bb96547a454c2dcdef5c7317a5a563f35b52d57f46ac1347ba0
   Stored in directory: /tmp/tmpZCpUza/wheels/fa/24/c3/9912f4c9363033bbd0eafbec1b27c65b04d7ea6acd312876b0
-  Building wheel for PyYAML (setup.py) ... done
+  Building wheel for PyYAML (setup.py) &hellip; done
   Created wheel for PyYAML: filename=PyYAML-5.1.2-cp27-cp27mu-linux_x86_64.whl size=44911 sha256=008463f3440ed923750648617d3f55c8be612daef2ddcb8fa25f5a692d2c2f33
   Stored in directory: /tmp/tmpZCpUza/wheels/87/9b/a7/9bfdaa1487acce958269a6b5f86db2e4d38204dff4e256e23a
-  Building wheel for terminaltables (setup.py) ... done
+  Building wheel for terminaltables (setup.py) &hellip; done
   Created wheel for terminaltables: filename=terminaltables-3.1.0-py2-none-any.whl size=15354 sha256=8ccf0b3bc5630e3a28f8f2b0712cb4b0068d7a782cc06562dcd32d69d824f65d
   Stored in directory: /tmp/tmpZCpUza/wheels/f0/11/d1/8902b10e29e3ce2c8965a86533b76894c844565e02d5341520
-  Building wheel for configparser (setup.py) ... done
+  Building wheel for configparser (setup.py) &hellip; done
   Created wheel for configparser: filename=configparser-3.5.0-py2-none-any.whl size=21661 sha256=1e85a455796d38a0e4119626b41a5c1c0527d1de6f04952c4d60e02d2edfcc69
   Stored in directory: /tmp/tmpZCpUza/wheels/fe/e1/b2/ffea2d060a50955b9228e7a1dc7b1fc7a5013dc506da8c5272
-  Building wheel for pycparser (setup.py) ... done
+  Building wheel for pycparser (setup.py) &hellip; done
   Created wheel for pycparser: filename=pycparser-2.19-py2.py3-none-any.whl size=111028 sha256=ef0b916e255c13a6b24f2f827db4c01d8602e5a11c0505ba2ad977b5468ed606
   Stored in directory: /tmp/tmpZCpUza/wheels/f1/ed/ed/1cba03d3b567c6fabb01ea0e572dffecf350b7da49612d05b0
 Successfully built arrow retrying PyYAML terminaltables configparser pycparser
 Installing collected packages: six, pycparser, cffi, ipaddress, enum34, cryptography, certifi, pyOpenSSL, python-dateutil, arrow, retrying, pytz, configparser, oci, idna, PyYAML, terminaltables, jmespath, click, oci-cli
-Successfully installed PyYAML-5.1.2 arrow-0.10.0 certifi-2019.11.28 cffi-1.14.0 click-6.7 configparser-3.5.0 cryptography-2.8 enum34-1.1.6 idna-2.6 ipaddress-1.0.23 jmespath-0.9.3 oci-2.10.5 oci-cli-2.9.3 pyOpenSSL-18.0.0 pycparser-2.19 python-dateutil-2.7.3 pytz-2016.10 retrying-1.3.3 six-1.11.0 terminaltables-3.1.0
+Successfully installed PyYAML-5.1.2 arrow-0.10.0 certifi-2019.11.28 cffi-1.14.0 click-6.7 configparser-3.5.0 cryptography-2.8 enum34-1.1.6 idna-2.6 ipaddress-1.0.23 jmespath-0.9.3 oci-2.10.5 oci-cli-2.9.3 pyOpenSSL-18.0.0 pycparser-2.19 python-dateutil-2.7.3 pytz-2016.10 retrying-1.3.3 six-1.11.0 terminaltables-3.1.0</p>
 
-===&gt; Modify profile to update your $PATH and enable shell/tab completion now? (Y/n): Y
+<p>===&gt; Modify profile to update your $PATH and enable shell/tab completion now? (Y/n): Y</p>
 
-===&gt; Enter a path to an rc file to update (leave blank to use '/home/opc/.bashrc'):
--- Backed up '/home/opc/.bashrc' to '/home/opc/.bashrc.backup'
--- Tab completion set up complete.
--- If tab completion is not activated, verify that '/home/opc/.bashrc' is sourced by your shell.
---
--- ** Run `exec -l $SHELL` to restart your shell. **
---
--- Installation successful.
--- Run the CLI with /home/opc/bin/oci --help
-[opc@demo02 ~]$ 
+<p>===&gt; Enter a path to an rc file to update (leave blank to use &lsquo;/home/opc/.bashrc&rsquo;):
+&ndash; Backed up &lsquo;/home/opc/.bashrc&rsquo; to &lsquo;/home/opc/.bashrc.backup&rsquo;
+&ndash; Tab completion set up complete.</p>
+
+<h2 id="if-tab-completion-is-not-activated-verify-that-home-opc-bashrc-is-sourced-by-your-shell">&ndash; If tab completion is not activated, verify that &lsquo;/home/opc/.bashrc&rsquo; is sourced by your shell.</h2>
+
+<h2 id="run-exec-l-shell-to-restart-your-shell">&ndash; ** Run <code>exec -l $SHELL</code> to restart your shell. **</h2>
+
+<p>&ndash; Installation successful.
+&ndash; Run the CLI with /home/opc/bin/oci &ndash;help
+[opc@demo02 ~]$</p>
+
+<pre><code>
+설치 상태를 ```oci -v```명령으로 확인할 수 있습니다. 이 명령이 실행되면 설치된 __OCI CLI__ 버전이 출력됩니다. 
+
 </code></pre>
 
-<p>설치 상태를 <code>oci -v</code>명령으로 확인할 수 있습니다. 이 명령이 실행되면 설치된 <strong>OCI CLI</strong> 버전이 출력됩니다.</p>
-
-<pre><code>[opc@demo02 ~]$ oci -v
+<p>[opc@demo02 ~]$ oci -v
 2.9.3
-[opc@demo02 ~]$ 
+[opc@demo02 ~]$</p>
+
+<pre><code>
+# OCI CLI 제거
+
+__OCI CLI__가 설치된 상태에서 다음 디렉터리를 삭제하면 __OCI CLI__는 제거됩니다.
+
+|디렉터리 유형|기본 설정 값(기본 디렉터리)|
+|----|----|
+|OCI CLI 라이브러리 설치 위치|~/lib/oracle-cli|
+|OCI CLI 실행 파일 설치 위치|~/bin|
+
+__OCI CLI__ 라이브러리 설치 디렉터리와 실행 파일 설치 위치를 모두 삭제합니다. 기본 설정 값으로 설치했다면 다음 명령으로 __OCI CLI__를 제거할 수 있습니다. 
+
 </code></pre>
 
-<h1 id="oci-cli-제거">OCI CLI 제거</h1>
-
-<p><strong>OCI CLI</strong>가 설치된 상태에서 다음 디렉터리를 삭제하면 <strong>OCI CLI</strong>는 제거됩니다.</p>
-
-<table>
-<thead>
-<tr>
-<th>디렉터리 유형</th>
-<th>기본 설정 값(기본 디렉터리)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>OCI CLI 라이브러리 설치 위치</td>
-<td>~/lib/oracle-cli</td>
-</tr>
-
-<tr>
-<td>OCI CLI 실행 파일 설치 위치</td>
-<td>~/bin</td>
-</tr>
-</tbody>
-</table>
-
-<p><strong>OCI CLI</strong> 라이브러리 설치 디렉터리와 실행 파일 설치 위치를 모두 삭제합니다. 기본 설정 값으로 설치했다면 다음 명령으로 <strong>OCI CLI</strong>를 제거할 수 있습니다.</p>
-
-<pre><code>rm -rf $HOME/lib
+<p>rm -rf $HOME/lib
 rm -rf $HOME/bin
-</code></pre>
+```</p>
 
 
     
